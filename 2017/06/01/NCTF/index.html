@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="南邮NCTF训练平台里一些题的wp。">
 <meta property="og:image" content="http://i.imgur.com/H0XI1Wo.png">
-<meta property="og:updated_time" content="2017-06-13T15:27:04.180Z">
+<meta property="og:updated_time" content="2017-06-14T11:37:44.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp">
 <meta name="twitter:description" content="南邮NCTF训练平台里一些题的wp。">
@@ -251,6 +251,55 @@ include($file);
 
 ?&gt;
 &lt;/html&gt; 
+</code></pre><h2 id="0x06-Download-200"><a href="#0x06-Download-200" class="headerlink" title="0x06 Download~! 200"></a>0x06 Download~! 200</h2><p>URL: <a href="http://way.nuptzj.cn/web6/" target="_blank" rel="external">http://way.nuptzj.cn/web6/</a></p>
+<p>Tips说不要下载mp3文件，先看下源码：  </p>
+<pre><code>&lt;div id=&quot;templatemo_content&quot;&gt;
+
+        &lt;div class=&quot;content_title_01&quot;&gt;听会歌吧&lt;/div&gt;
+        &lt;div class=&quot;horizontal_divider_01&quot;&gt;&amp;nbsp;&lt;/div&gt;
+        &lt;div class=&quot;cleaner&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+        &lt;p&gt;为了让大家更轻松的比赛，为大家准备了两首歌让大家下载&lt;/p&gt;
+
+        &lt;p&gt;&lt;a href=&quot;download.php?url=eGluZ3hpbmdkaWFuZGVuZy5tcDM=&quot; target=&quot;_blank&quot;&gt;星星点灯&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;download.php?url=YnV4aWFuZ3poYW5nZGEubXAz&quot; target=&quot;_blank&quot;&gt;不想长大&lt;/a&gt;&lt;/p&gt;
+
+
+         &lt;div class=&quot;cleaner&quot;&gt;&amp;nbsp;&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre><p>发现下载链接格式均为：   </p>
+<pre><code>download.php?url=base64
+</code></pre><p>其中base64为文件名。还有一个提示是”down”，查询”down.php”的base64编码后构造：  </p>
+<pre><code>http://way.nuptzj.cn/web6/download.php?url=ZG93bi5waHA=
+</code></pre><p>没有得到什么东西。再尝试”download.php”：</p>
+<pre><code>http://way.nuptzj.cn/web6/download.php?url=ZG93bmxvYWQucGhw
+</code></pre><p>拿到一份php源码：  </p>
+<pre><code>    ??&lt;?php
+error_reporting(0);
+include(&quot;hereiskey.php&quot;);
+$url=base64_decode($_GET[url]);
+if( $url==&quot;hereiskey.php&quot; || $url==&quot;buxiangzhangda.mp3&quot; || $url==&quot;xingxingdiandeng.mp3&quot; || $url==&quot;download.php&quot;){
+    $file_size = filesize($url);
+    header ( &quot;Pragma: public&quot; );
+    header ( &quot;Cache-Control: must-revalidate, post-check=0, pre-check=0&quot; );
+    header ( &quot;Cache-Control: private&quot;, false );
+    header ( &quot;Content-Transfer-Encoding: binary&quot; );
+    header ( &quot;Content-Type:audio/mpeg MP3&quot;);
+    header ( &quot;Content-Length: &quot; . $file_size);
+    header ( &quot;Content-Disposition: attachment; filename=&quot;.$url);
+    echo(file_get_contents($url));
+    exit;
+}
+else {
+    echo &quot;Access Forbidden!&quot;;
+}
+?&gt;
+</code></pre><p>发现还有一个文件hereiskey.php，构造新的payload:   </p>
+<pre><code>http://way.nuptzj.cn/web6/download.php?url=aGVyZWlza2V5LnBocA==
+</code></pre><p>下载得到flag：  </p>
+<pre><code>?&lt;?php
+//flag:nctf{download_any_file_666}
+?&gt;
 </code></pre>
       
 
@@ -460,26 +509,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
@@ -492,7 +521,27 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
               </li>
             
             <div class="clearfix"></div>
