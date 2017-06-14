@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="南邮NCTF训练平台里一些题的wp。">
 <meta property="og:image" content="http://i.imgur.com/H0XI1Wo.png">
-<meta property="og:updated_time" content="2017-06-14T13:07:17.306Z">
+<meta property="og:updated_time" content="2017-06-14T14:16:41.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp">
 <meta name="twitter:description" content="南邮NCTF训练平台里一些题的wp。">
@@ -195,8 +195,8 @@
 <p>打开后是一张gif猫，下载到本地。记事本打开得到flag：   </p>
 <pre><code>nctf{photo_can_also_hid3_msg}   
 </code></pre><h2 id="0x03-层层递进-100"><a href="#0x03-层层递进-100" class="headerlink" title="0x03 层层递进 100"></a>0x03 层层递进 100</h2><p>URL: <a href="http://chinalover.sinaapp.com/web3/" target="_blank" rel="external">http://chinalover.sinaapp.com/web3/</a>  </p>
-<p>进去是个企业网站，F12反正没啥发现，看了WP才知道要访问：   <a href="http://chinalover.sinaapp.com/web3/404.html" target="_blank" rel="external">http://chinalover.sinaapp.com/web3/404.html</a>   </p>
-<p>得到源码……</p>
+<p>进去是个企业网站，一开始F12没啥发现，看了WP才知道要访问：   <a href="http://chinalover.sinaapp.com/web3/404.html" target="_blank" rel="external">http://chinalover.sinaapp.com/web3/404.html</a><br>再去F12看看发现有一个404.html的页面状态码是304，也是个思路吧，没找仔细…..</p>
+<p>得到源码：</p>
 <pre><code>&lt;td&gt;
 &lt;!-- Placed at the end of the document so the pages load faster --&gt;
 &lt;!--  
@@ -547,15 +547,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">樱花</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,11 +559,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
