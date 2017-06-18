@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://icyris.github.io/2017/05/13/git/index.html">
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="Ak师傅的小茶会里谈了些关于git的常见用法，这里做一点笔记。0X系列是git的一些基础命令（整理自阮一峰），1X系列是自己折腾的不算太完整的git与github的配置，使用方式。（附上Ak写的wiki（关于 git reset, git checkout, git revert 的区别与使用场景），还有廖雪峰的Git基础教程。）">
-<meta property="og:updated_time" content="2017-06-18T06:37:24.042Z">
+<meta property="og:updated_time" content="2017-06-18T07:26:12.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT时光机">
 <meta name="twitter:description" content="Ak师傅的小茶会里谈了些关于git的常见用法，这里做一点笔记。0X系列是git的一些基础命令（整理自阮一峰），1X系列是自己折腾的不算太完整的git与github的配置，使用方式。（附上Ak写的wiki（关于 git reset, git checkout, git revert 的区别与使用场景），还有廖雪峰的Git基础教程。）">
@@ -60,6 +60,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/绿生/">绿生</a></li>
 	        
 			</ul>
 		</nav>
@@ -119,6 +121,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -141,7 +145,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/tags/绿生/">绿生</a></li>
 		        
 				</ul>
 			</nav>
@@ -173,6 +179,35 @@
 </a>
         
       </header>
+    
+
+<!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0X00-时光机硬件说明书"><span class="toc-number">1.</span> <span class="toc-text">0X00 时光机硬件说明书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X01-零件组装"><span class="toc-number">2.</span> <span class="toc-text">0X01 零件组装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X02-时光机的配置"><span class="toc-number">3.</span> <span class="toc-text">0X02 时光机的配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X03-在时光机上注入add钙奶"><span class="toc-number">4.</span> <span class="toc-text">0X03 在时光机上注入add钙奶</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X04-挪挪挪，挪进仓库"><span class="toc-number">5.</span> <span class="toc-text">0X04 挪挪挪，挪进仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X05-时光机分机"><span class="toc-number">6.</span> <span class="toc-text">0X05 时光机分机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X06-Tag"><span class="toc-number">7.</span> <span class="toc-text">0X06 Tag</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X07-信息查看"><span class="toc-number">8.</span> <span class="toc-text">0X07 信息查看</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X08-远程同步篇"><span class="toc-number">9.</span> <span class="toc-text">0X08 远程同步篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0X09-时光回溯篇"><span class="toc-number">10.</span> <span class="toc-text">0X09 时光回溯篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1X00-Github与信仰"><span class="toc-number">11.</span> <span class="toc-text">1X00 Github与信仰</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1X01-设置Git"><span class="toc-number">12.</span> <span class="toc-text">1X01 设置Git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1X02-配置SSH"><span class="toc-number">13.</span> <span class="toc-text">1X02 配置SSH</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1X03-push-and-pull-from-github"><span class="toc-number">14.</span> <span class="toc-text">1X03 push and pull from github</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
+<!-- 目录内容结束 -->
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -538,6 +573,42 @@ git remote add origin URL
       <div class="clearfix"></div>
     </div>
   </div>
+
+
+  <div class="article-footer-copyright">
+
+
+<center>
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文标题：<b><a href="/2017/05/13/git/" target="_blank" title="GIT时光机">GIT时光机</a></b>	
+
+		<p style="text-align:justify">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文作者：Cyris 	</p>
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文链接：<b><a href="/2017/05/13/git/" target="_blank" title="GIT时光机">https://icyris.github.io/2017/05/13/git/</a></b>	</p>	
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		许可协议：<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">"©署名-非商用-相同方式共享 4.0"</a>，转载请保留原文链接及作者。	</p>
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		最后更新：
+            <time datetime="2017-06-18T07:26:12.983Z" itemprop="dateLastModified">
+            2017-06-18
+            </time>
+        </div>
+        <br>
+</center>
+
+
+
+
+
 </article>
 
   
@@ -572,26 +643,6 @@ git remote add origin URL
 
 
 
-
-
-  <div class="article-footer-copyright">
-
-
-<center>
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文标题：<b><a href="/2017/05/13/git/" target="_blank" title="GIT时光机">GIT时光机</a></b>	
-		<p style="text-align:justify">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文作者：Cyris 	</p>
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文链接：<b><a href="/2017/05/13/git/" target="_blank" title="GIT时光机">https://icyris.github.io/2017/05/13/git/</a></b>	</p>	
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		许可协议："©署名-非商用-相同方式共享 4.0" 转载请保留原文链接及作者。	</p>	</center>
-		<br>
-</div>
 
 
 
@@ -709,6 +760,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -717,15 +772,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绿生</a>
               </li>
             
             <div class="clearfix"></div>

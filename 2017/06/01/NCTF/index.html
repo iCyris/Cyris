@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="南邮NCTF训练平台里一些题的wp。">
 <meta property="og:image" content="http://i.imgur.com/H0XI1Wo.png">
-<meta property="og:updated_time" content="2017-06-18T06:37:24.121Z">
+<meta property="og:updated_time" content="2017-06-18T07:24:34.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp">
 <meta name="twitter:description" content="南邮NCTF训练平台里一些题的wp。">
@@ -62,6 +62,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/绿生/">绿生</a></li>
 	        
 			</ul>
 		</nav>
@@ -121,6 +123,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -143,7 +147,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/tags/绿生/">绿生</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,6 +181,35 @@
 </a>
         
       </header>
+    
+
+<!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-签到2-50"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 签到2 50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-这题不是WEB-100"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 这题不是WEB 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-层层递进-100"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 层层递进 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-AAencode-100"><span class="toc-number">1.4.</span> <span class="toc-text">0x04 AAencode 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-文件包含-100"><span class="toc-number">1.5.</span> <span class="toc-text">0x05 文件包含 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-Download-200"><span class="toc-number">1.6.</span> <span class="toc-text">0x06 Download~! 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-md5-collision-50"><span class="toc-number">1.7.</span> <span class="toc-text">0x07 md5 collision 50</span></a></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
+<!-- 目录内容结束 -->
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -412,6 +447,42 @@ Both of the strings are converted to 0 when compared with ==, if you want to com
       <div class="clearfix"></div>
     </div>
   </div>
+
+
+  <div class="article-footer-copyright">
+
+
+<center>
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文标题：<b><a href="/2017/06/01/NCTF/" target="_blank" title="NCTF WriteUp">NCTF WriteUp</a></b>	
+
+		<p style="text-align:justify">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文作者：Cyris 	</p>
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		本文链接：<b><a href="/2017/06/01/NCTF/" target="_blank" title="NCTF WriteUp">https://icyris.github.io/2017/06/01/NCTF/</a></b>	</p>	
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		许可协议：<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">"©署名-非商用-相同方式共享 4.0"</a>，转载请保留原文链接及作者。	</p>
+
+		<p style="text-align:justify">	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		最后更新：
+            <time datetime="2017-06-18T07:24:34.614Z" itemprop="dateLastModified">
+            2017-06-18
+            </time>
+        </div>
+        <br>
+</center>
+
+
+
+
+
 </article>
 
   
@@ -437,26 +508,6 @@ Both of the strings are converted to 0 when compared with ==, if you want to com
 
 
 
-
-
-  <div class="article-footer-copyright">
-
-
-<center>
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文标题：<b><a href="/2017/06/01/NCTF/" target="_blank" title="NCTF WriteUp">NCTF WriteUp</a></b>	
-		<p style="text-align:justify">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文作者：Cyris 	</p>
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		本文链接：<b><a href="/2017/06/01/NCTF/" target="_blank" title="NCTF WriteUp">https://icyris.github.io/2017/06/01/NCTF/</a></b>	</p>	
-		<p style="text-align:justify">	
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		许可协议："©署名-非商用-相同方式共享 4.0" 转载请保留原文链接及作者。	</p>	</center>
-		<br>
-</div>
 
 
 
@@ -574,6 +625,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -582,15 +637,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绿生</a>
               </li>
             
             <div class="clearfix"></div>
