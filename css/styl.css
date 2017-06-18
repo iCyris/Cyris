@@ -42,3 +42,8 @@ div.article-footer-copyright {
   margin: 10px;
   font-size: 100%;
 }
+.left {
+  text-align: left;
+  border: 1px dotted #000;
+  width: 50%;
+}
