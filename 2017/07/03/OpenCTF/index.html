@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://icyris.github.io/2017/07/03/OpenCTF/index.html">
 <meta property="og:site_name" content="绿生 | Cyris">
 <meta property="og:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
-<meta property="og:updated_time" content="2017-07-03T12:06:47.595Z">
+<meta property="og:updated_time" content="2017-07-03T14:20:48.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCTF WriteUp">
 <meta name="twitter:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
@@ -209,7 +209,8 @@
       
         <p><a href="http://hdopen.xctf.org.cn/" target="_blank" rel="external">软件嘉年华</a>部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）</p>
 <a id="more"></a> 
-<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-125"><a href="#web-125" class="headerlink" title="web 125"></a>web 125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a><br>done by 一叶知秋<br>原题题解： <a href="https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md" target="_blank" rel="external">https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md</a>    </p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-125"><a href="#web-125" class="headerlink" title="web 125"></a>web 125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a><br>done by 一叶知秋    </p>
+<p>参考链接： <a href="https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md" target="_blank" rel="external">https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md</a>    </p>
 <p>在about页面看到：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I used:   </div><div class="line">  -<span class="ruby"> Git   </span></div><div class="line">  -<span class="ruby"> PHP   </span></div><div class="line">  -<span class="ruby"> Bootstrap</span></div></pre></td></tr></table></figure></p>
 <p>想到从/.git里拖个源码，这里用的<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a>：   </p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GitHack<span class="selector-class">.py</span> http:<span class="comment">//202.112.51.184:8001/.git/</span></div></pre></td></tr></table></figure>
@@ -223,6 +224,11 @@
 <li>关于payload里的”/var/www/html/“，可以看看<a href="https://stackoverflow.com/questions/16197663/what-is-var-www-html" target="_blank" rel="external">https://stackoverflow.com/questions/16197663/what-is-var-www-html</a></li>
 </ul>
 <h2 id="web-150"><a href="#web-150" class="headerlink" title="web 150"></a>web 150</h2><p>URL: <a href="http://202.112.51.184:8002/" target="_blank" rel="external">http://202.112.51.184:8002/</a><br>done by ngc   </p>
+<p>参考链接：     </p>
+<ol>
+<li><a href="https://thegoonies.rocks/csaw-2016-wtf-sh-web/" target="_blank" rel="external">https://thegoonies.rocks/csaw-2016-wtf-sh-web/</a>            </li>
+<li><a href="https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh" target="_blank" rel="external">https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh</a></li>
+</ol>
 <p>先尝试文件包含读取 </p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/post.wtf?post=../users/</span></div></pre></td></tr></table></figure>
 <p>拉下来的列表里有一条        </p>
@@ -286,7 +292,7 @@
 		<p style="text-align:justify">	
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		最后更新：
-            <time datetime="2017-07-03T12:06:47.595Z" itemprop="dateLastModified">
+            <time datetime="2017-07-03T14:20:48.940Z" itemprop="dateLastModified">
             2017-07-03
             </time>
         </div>
@@ -431,15 +437,7 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,7 +461,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,7 +473,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">一些书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
             
             <div class="clearfix"></div>
