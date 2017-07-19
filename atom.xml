@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://icyris.github.io/"/>
-  <updated>2017-07-12T16:27:53.915Z</updated>
+  <updated>2017-07-19T16:09:04.615Z</updated>
   <id>https://icyris.github.io/</id>
   
   <author>
@@ -16,14 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SQL蛋糕试做-注入篇（一）</title>
+    <link href="https://icyris.github.io/2017/07/18/sqli-labs/"/>
+    <id>https://icyris.github.io/2017/07/18/sqli-labs/</id>
+    <published>2017-07-18T11:01:03.000Z</published>
+    <updated>2017-07-19T16:09:04.615Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2017/07/18/sqli-labs/1.jpg" alt=""></p>
+<p>一次系列制作尝试。</p>
+<a id="more"></a> 
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>开了个新坑。在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己做一个系列的想法。（当然要自己玩一遍才过瘾嘛(｡･∀･)ﾉﾞ）  </p>
+<p>长期不定时更，仅作为个人笔记。</p>
+<h2 id="0x01-搭建服务器环境"><a href="#0x01-搭建服务器环境" class="headerlink" title="0x01 搭建服务器环境"></a>0x01 搭建服务器环境</h2><ol>
+<li>下载<a href="https://www.apachefriends.org/download.html" target="_blank" rel="external">xampp包</a>。(易于安装，集成了Apache+MySQL+PHP+PERL，更容易使用。)  </li>
+<li>安装完成后启动Apache和MySQL（启动报错可能是因为80/443端口占用，在/xampp/apache/conf/extra/httpd-ssl.conf修改下Listen就可以了。）         </li>
+<li>启动完成后查看：<a href="http://localhost:442/xampp/" target="_blank" rel="external">http://localhost:442/xampp/</a>，页面正常则说明安装成功。（442改成自己设置的端口）</li>
+</ol>
+<h2 id="0x02-SQLi-Labs配置"><a href="#0x02-SQLi-Labs配置" class="headerlink" title="0x02 SQLi-Labs配置"></a>0x02 SQLi-Labs配置</h2><ol>
+<li>下载实验环境：<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="external">SQLi-Labs</a>。</li>
+<li>把源码包解压到\xampp\htdocs下，重命名为sqli-labs。</li>
+<li>打开<a href="http://localhost:442/sqli-labs/" target="_blank" rel="external">http://localhost:442/sqli-labs/</a>，点下Setup/reset Database for labs建立数据库。（也可作恢复数据库用。）</li>
+<li>来，回到之前的页面，选一个题试试：<a href="http://localhost:442/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://localhost:442/sqli-labs/Less-1/?id=1</a></li>
+</ol>
+<p><img src="/2017/07/18/sqli-labs/1.png" alt=""></p>
+<ul>
+<li>如果xampp下载的是PHP 7+的版本，可能会存在数据库连接的问题，网上有相应的解决方案，视情况自行解决吧XD。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/07/18/sqli-labs/1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一次系列制作尝试。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sqli" scheme="https://icyris.github.io/tags/sqli/"/>
+    
+      <category term="ctf" scheme="https://icyris.github.io/tags/ctf/"/>
+    
+  </entry>
+  
+  <entry>
     <title>可以说话的人</title>
     <link href="https://icyris.github.io/2017/07/12/the-seed/"/>
     <id>https://icyris.github.io/2017/07/12/the-seed/</id>
     <published>2017-07-12T12:34:52.000Z</published>
-    <updated>2017-07-12T16:27:53.915Z</updated>
+    <updated>2017-07-19T15:24:10.029Z</updated>
     
-    <content type="html"><![CDATA[<p>随便聊聊。 </p>
-<p><img src="/2017/07/12/the-seed/01.JPG" alt=""></p>
+    <content type="html"><![CDATA[<p><img src="/2017/07/12/the-seed/01.JPG" alt="">  </p>
+<p>随便聊聊。</p>
 <a id="more"></a>     
 <h2 id="靠在窗外的人-读着窗边的景"><a href="#靠在窗外的人-读着窗边的景" class="headerlink" title="靠在窗外的人 读着窗边的景"></a>靠在窗外的人 读着窗边的景</h2><p>初中高中的时候经常会在空间或者朋友圈发些简短的话，诸如“不是雪晚了，只是年早了（记某次终于到来的雪，很兴奋，看了以往的日历才发现，是那年年过得早，所以才有雪来得迟的感受）”，“把书夹在光里（第一次见到那种夹子式的移动台灯的时候，把它夹在了硬皮书上然后靠在床前阅读）”，类似的还有很多，似乎变成了动态圈的一股清流，也不求多少赞，不想多少评论，只是想说，就说了。（那时候也不会想到这些话会成为水母喜欢自己的一部分理由）。现在很少发朋友圈之类的，主要是多了些可以说话的人吧，表达的对象与地方都发生了些改变。当然不同的人会采取不同的表达方式，所以衍生出了各种各样的圈子，过得开心即可。     </p>
 <p>每个阶段的“回家”都是有不同的意义的。    </p>
@@ -56,8 +99,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;随便聊聊。 &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2017/07/12/the-seed/01.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2017/07/12/the-seed/01.JPG&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;随便聊聊。&lt;/p&gt;
     
     </summary>
     
@@ -248,7 +291,7 @@
 <pre><code>file=php://filter/read=convert.base64-encode/resource=index.php
 </code></pre><p>得到base64加密后的字符串：  </p>
 <pre><code>PGh0bWw+CiAgICA8dGl0bGU+YXNkZjwvdGl0bGU+CiAgICAKPD9waHAKCWVycm9yX3JlcG9ydGluZygwKTsKCWlmKCEkX0dFVFtmaWxlXSl7ZWNobyAnPGEgaHJlZj0iLi9pbmRleC5waHA/ZmlsZT1zaG93LnBocCI+Y2xpY2sgbWU/IG5vPC9hPic7fQoJJGZpbGU9JF9HRVRbJ2ZpbGUnXTsKCWlmKHN0cnN0cigkZmlsZSwiLi4vIil8fHN0cmlzdHIoJGZpbGUsICJ0cCIpfHxzdHJpc3RyKCRmaWxlLCJpbnB1dCIpfHxzdHJpc3RyKCRmaWxlLCJkYXRhIikpewoJCWVjaG8gIk9oIG5vISI7CgkJZXhpdCgpOwoJfQoJaW5jbHVkZSgkZmlsZSk7IAovL2ZsYWc6bmN0ZntlZHVsY25pX2VsaWZfbGFjb2xfc2lfc2lodH0KCj8+CjwvaHRtbD4=
-</code></pre><p>解密后得到flag：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>asdf<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">   </div><div class="line">&lt;?php</div><div class="line">error_reporting(0);</div><div class="line">if(!$_GET[file])&#123;echo '&lt;a href="./index.php?file=show.php"&gt;click me? no&lt;/a&gt;';&#125;</div><div class="line">$file=$_GET['file'];</div><div class="line">if(strstr($file,"../")||stristr($file, "tp")||stristr($file,"input")||stristr($file,"data"))&#123;</div><div class="line">	echo "Oh no!";</div><div class="line">	exit();</div><div class="line">&#125;</div><div class="line">include($file); </div><div class="line">//flag:nctf&#123;edulcni_elif_lacol_si_siht&#125;</div><div class="line"></div><div class="line">?&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</code></pre><p>解密后得到flag：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>asdf<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">   </div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line">error_reporting(<span class="number">0</span>);</div><div class="line"><span class="keyword">if</span>(!$_GET[file])&#123;<span class="keyword">echo</span> <span class="string">'&lt;a href="./index.php?file=show.php"&gt;click me? no&lt;/a&gt;'</span>;&#125;</div><div class="line">$file=$_GET[<span class="string">'file'</span>];</div><div class="line"><span class="keyword">if</span>(strstr($file,<span class="string">"../"</span>)||stristr($file, <span class="string">"tp"</span>)||stristr($file,<span class="string">"input"</span>)||stristr($file,<span class="string">"data"</span>))&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Oh no!"</span>;</div><div class="line">	<span class="keyword">exit</span>();</div><div class="line">&#125;</div><div class="line"><span class="keyword">include</span>($file); </div><div class="line"><span class="comment">//flag:nctf&#123;edulcni_elif_lacol_si_siht&#125;</span></div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h2 id="0x06-Download-200"><a href="#0x06-Download-200" class="headerlink" title="0x06 Download~! 200"></a>0x06 Download~! 200</h2><p>URL: <a href="http://way.nuptzj.cn/web6/" target="_blank" rel="external">http://way.nuptzj.cn/web6/</a></p>
 <p>Tips说不要下载mp3文件，先看下源码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"templatemo_content"</span>&gt;</span></div><div class="line">       	</div><div class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content_title_01"</span>&gt;</span>听会歌吧<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"horizontal_divider_01"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cleaner"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>为了让大家更轻松的比赛，为大家准备了两首歌让大家下载<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		</div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"download.php?url=eGluZ3hpbmdkaWFuZGVuZy5tcDM="</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>星星点灯<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"download.php?url=YnV4aWFuZ3poYW5nZGEubXAz"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>不想长大<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">           </div><div class="line">           </div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cleaner"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>发现下载链接格式均为：   </p>
