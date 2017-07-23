@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
+    <loc>https://icyris.github.io/2017/07/12/the-seed/</loc>
     
-    <lastmod>2017-07-19T16:09:04.615Z</lastmod>
+    <lastmod>2017-07-23T15:54:58.857Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://icyris.github.io/2017/07/12/the-seed/</loc>
+    <loc>https://icyris.github.io/links/index.html</loc>
     
-    <lastmod>2017-07-19T15:24:10.029Z</lastmod>
+    <lastmod>2017-07-20T00:52:11.263Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
+    
+    <lastmod>2017-07-19T16:09:04.615Z</lastmod>
     
   </url>
   
