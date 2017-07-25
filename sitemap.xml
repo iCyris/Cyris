@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icyris.github.io/2017/06/01/NCTF/</loc>
+    
+    <lastmod>2017-07-25T07:35:25.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icyris.github.io/2017/07/12/the-seed/</loc>
     
     <lastmod>2017-07-23T15:54:58.857Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://icyris.github.io/2017/07/12/blog-picture-issue/</loc>
     
     <lastmod>2017-07-12T12:28:56.997Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/06/01/NCTF/</loc>
-    
-    <lastmod>2017-07-12T11:44:24.469Z</lastmod>
     
   </url>
   

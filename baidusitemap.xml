@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>https://icyris.github.io/2017/06/01/NCTF/</loc>
+    <lastmod>2017-07-25T07:35:25.801Z</lastmod>
+    <data>
+        <display>
+        <title>NCTF WriteUp</title>
+        <pubTime>2017-06-01T08:28:25.000Z</pubTime>
+        
+        <tag>ctf</tag>
+         
+        <tag>NCTF</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://icyris.github.io/2017/07/12/the-seed/</loc>
     <lastmod>2017-07-23T15:54:58.857Z</lastmod>
     <data>
@@ -51,25 +70,6 @@
         <pubTime>2017-07-12T11:46:06.000Z</pubTime>
         
         <tag>hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://icyris.github.io/2017/06/01/NCTF/</loc>
-    <lastmod>2017-07-12T11:44:24.469Z</lastmod>
-    <data>
-        <display>
-        <title>NCTF WriteUp</title>
-        <pubTime>2017-06-01T08:28:25.000Z</pubTime>
-        
-        <tag>ctf</tag>
-         
-        <tag>NCTF</tag>
          
          
            
