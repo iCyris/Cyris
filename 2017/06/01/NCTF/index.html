@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://icyris.github.io/2017/06/01/NCTF/SQLi3-tables-2.png">
 <meta property="og:image" content="https://icyris.github.io/2017/06/01/NCTF/SQLi3-columns-ctf.png">
 <meta property="og:image" content="https://icyris.github.io/2017/06/01/NCTF/SQLi3-ctf4.png">
-<meta property="og:updated_time" content="2017-07-25T07:35:25.801Z">
+<meta property="og:updated_time" content="2017-07-25T07:40:11.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp">
 <meta name="twitter:description" content="南邮NCTF训练平台里一些题的wp。">
@@ -314,7 +314,9 @@ Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given i
 <p>列举表中字段：</p>
 <pre><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&apos;&quot; --columns -T ctf
 </code></pre><p><img src="/2017/06/01/NCTF/SQLi3-columns-ctf.png" alt=""></p>
-<p>没找到什么有用的东西。直接跑出所有表中的内容：<br><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&#39;&quot; --dump-all</code><br>在ctf4这张表里找到了flag。(在ctf2的表里还有个假flag…)    </p>
+<p>没找到什么有用的东西。直接跑出所有表中的内容：   </p>
+<pre><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&apos;&quot; --dump-all
+</code></pre><p>在ctf4这张表里找到了flag。(在ctf2的表里还有个假flag…)    </p>
 <p><img src="/2017/06/01/NCTF/SQLi3-ctf4.png" alt=""></p>
 <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1>
       
@@ -367,7 +369,7 @@ Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given i
 
 		<p style="text-align:justify; width:85%">	
 		最后更新：
-            <time datetime="2017-07-25T07:35:25.801Z" itemprop="dateLastModified">
+            <time datetime="2017-07-25T07:40:11.500Z" itemprop="dateLastModified">
             2017-07-25
             </time>
         </div>
@@ -541,6 +543,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">樱花</a>
               </li>
              
@@ -561,15 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sqli</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,15 +595,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sqli</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">一些书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
             
             <div class="clearfix"></div>

