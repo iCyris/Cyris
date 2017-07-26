@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://icyris.github.io/"/>
-  <updated>2017-07-25T11:42:34.046Z</updated>
+  <updated>2017-07-26T13:15:46.694Z</updated>
   <id>https://icyris.github.io/</id>
   
   <author>
@@ -14,6 +14,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL蛋糕试做-注入篇（二）</title>
+    <link href="https://icyris.github.io/2017/07/26/sqli-2/"/>
+    <id>https://icyris.github.io/2017/07/26/sqli-2/</id>
+    <published>2017-07-26T07:56:10.000Z</published>
+    <updated>2017-07-26T13:15:46.694Z</updated>
+    
+    <content type="html"><![CDATA[<p>天气太热啦，呆在屋子里写点东西吧。</p>
+<a id="more"></a> 
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><img src="/2017/07/26/sqli-2/14.png" alt=""></p>
+<p>今天我们讲讲一些基本的注入思路以及常见的注入类型。</p>
+<h2 id="0x01-什么是SQL注入呢？"><a href="#0x01-什么是SQL注入呢？" class="headerlink" title="0x01 什么是SQL注入呢？"></a>0x01 什么是SQL注入呢？</h2><p>我们看看百度是怎么讲的：  </p>
+<blockquote>
+<p>所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。</p>
+</blockquote>
+<p>再来看看google是怎么说的：  </p>
+<blockquote>
+<p>SQL攻击（英语：SQL injection），简称注入攻击，是发生于应用程序之数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了检查，那么这些注入进去的指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。</p>
+</blockquote>
+<p>当然只看这些并不能很好地理解“何为SQL注入”这个问题。觉得涛涛的例子不错，就照着那个再来理解一次吧ouo。比如说我们写了一个简单的博客，每篇文章都有对应的序号以便读者查询，读者说想看第一篇文章，于是服务器就从数据库里拿出第一篇文章的数据返回给浏览器，浏览器把图片，文字显示给读者。这个过程用代码来表示大概是这个样子：  </p>
+<p>Acaleph访问了：<a href="https://cyris.cn/show.php?id=1" target="_blank" rel="external">https://cyris.cn/show.php?id=1</a> （数字表示第几篇文章。）<br>此时服务器的处理语句可能是这个样子：  </p>
+<pre><code>$id = $_GET[&apos;id&apos;];  
+SELECT * FROM articles WHERE articles_id = 1
+</code></pre><p>看起来似乎没什么问题呢，但是Acaleph比较调皮，她说：“我要看第二篇文章，然后把你的数据都删掉XD！”<br>于是语句变成了：   </p>
+<pre><code>$id = $_GET[&apos;id&apos;];  
+SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
+</code></pre><p>聪明的永远是人而不是程序，这里程序直接把<code>id =2 and drop db_articles</code>当作一条命令去执行了，而非一条查询语句，那么我们的数据库就被次了，Acaleph成功删库跑路。    </p>
+<p>上面的例子只是一个初步的认识，想了解更多就自行Google啦。    </p>
+<h2 id="0x03-注入思路"><a href="#0x03-注入思路" class="headerlink" title="0x03 注入思路"></a>0x03 注入思路</h2><p><img src="/2017/07/26/sqli-2/25.png" alt="">  </p>
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><ol>
+<li>查询字段数（order by）</li>
+<li>找出注入点</li>
+<li>获取数据库名（database()）</li>
+<li>获取表名</li>
+<li>获取字段名</li>
+<li>获取具体数据</li>
+</ol>
+<p>下面说一下<del>其实也不是很</del>具体的做法吧：</p>
+<h4 id="1-查询字段数"><a href="#1-查询字段数" class="headerlink" title="1. 查询字段数"></a>1. 查询字段数</h4><p>主要是利用<code>order by</code>语句来查询。    </p>
+<blockquote>
+<p>ORDER BY 语句用于根据指定的列对结果集进行排序<br>ORDER BY 语句默认按照升序对记录进行排序    </p>
+</blockquote>
+<p>还是用上面的那个例子，我们可以在<code>?id = 1</code>后面跟上<code>order by 1</code>（1可以是其他的数字），假如在尝试某个数字的时候出现了报错（或者是之前都能看到一些数据，到某个数字后不再显示了），就可以确定字段数啦。  </p>
+<h4 id="2-找出注入点"><a href="#2-找出注入点" class="headerlink" title="2. 找出注入点"></a>2. 找出注入点</h4><p>在拿到字段数后就可以利用union语句来找出注入点了（可能会存在过滤），当然也有其他方法，在实例中讲吧。</p>
+<h4 id="3-获取数据库名"><a href="#3-获取数据库名" class="headerlink" title="3. 获取数据库名"></a>3. 获取数据库名</h4><p>sql语句中的database()函数可以显示当前数据库名，用法和上一步差不多，不过是把第二步中找到的注入点的位置的数字改为database()传入。比如说，上一步中使用的语句是<code>union select 1, 2, 3, 4</code>，爆出来的字段位置是2，那这一步的语句就是<code>union select 1, database(), 3, 4</code>。   </p>
+<h4 id="4-获取表名"><a href="#4-获取表名" class="headerlink" title="4. 获取表名"></a>4. 获取表名</h4><p>这里讲一下<code>information_schema</code>这张表，它里面保存了MySQL服务器所有数据库信息，比如数据库名，数据库的表，表格里的数据类型与访问权限等。  </p>
+<blockquote>
+<p>MySQL官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/information-schema.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/information-schema.html</a></p>
+</blockquote>
+<p>我们用得比较多的就是<code>TABLES</code>（表信息）和<code>COLUMNS</code>（列信息）了。<br>而<code>group_concat()</code>这个函数可以将结果合并，操作原理可以搜一搜，相关文章挺多的。我们主要用这个函数来获取表名。  </p>
+<h4 id="5-获取字段名"><a href="#5-获取字段名" class="headerlink" title="5. 获取字段名"></a>5. 获取字段名</h4><p>还是通过<code>group_concat()</code>函数，利用<code>COLUMNS</code>表来获取字段名。   </p>
+<h4 id="6-获取具体数据"><a href="#6-获取具体数据" class="headerlink" title="6. 获取具体数据"></a>6. 获取具体数据</h4><p>表名和字段名都get到了，下面的操作就比较简单了。还是用上面的例子吧，比如一系列试探后我们得到了表名<code>ctf</code>和字段名<code>flag</code>，就可以构造语句<code>union select 1, (select flag from ctf), 3, 4</code>来获取具体的数据了。   </p>
+<h3 id="名为技巧的小家伙们"><a href="#名为技巧的小家伙们" class="headerlink" title="名为技巧的小家伙们"></a>名为技巧的小家伙们</h3><p>记录一些有趣的绕过方式。  </p>
+<blockquote>
+<p>LoRexxar-关于sqli注入的特殊函数：<a href="https://lorexxar.cn/2015/10/24/sqli_h/" target="_blank" rel="external">https://lorexxar.cn/2015/10/24/sqli_h/</a><br>LoRexxar-SQL显错注入：<a href="https://lorexxar.cn/2015/11/19/sql-error/" target="_blank" rel="external">https://lorexxar.cn/2015/11/19/sql-error/</a><br>lightless-SQL Injection 的猥琐技巧：<a href="https://lightless.me/archives/SQL-Injection-weisuo-Skill.html" target="_blank" rel="external">https://lightless.me/archives/SQL-Injection-weisuo-Skill.html</a></p>
+</blockquote>
+<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。  </p>
+<ol>
+<li>字符型（最典型的就是单引号’了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</li>
+<li>数字型（1+1会被处理成2，在尝试时需要注意’+’要用’%2b’代替）</li>
+<li>Boolean-based blind SQL injection（布尔型注入）</li>
+<li>Error-based SQL injection（报错型注入）</li>
+<li>UNION query SQL injection（可联合查询注入）</li>
+<li>Stacked queries SQL injection（可多语句查询注入）</li>
+<li>Time-based blind SQL injection（基于时间延迟注入）<br>     </li>
+</ol>
+<ul>
+<li><em>各种注入类型会在接下来的实例中仔细地讲一下。</em></li>
+</ul>
+<h2 id="0x05-给牛奶盒上盖子"><a href="#0x05-给牛奶盒上盖子" class="headerlink" title="0x05 给牛奶盒上盖子"></a>0x05 给牛奶盒上盖子</h2><p><img src="/2017/07/26/sqli-2/31.png" alt=""></p>
+<p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。另外也打算写一篇番外 —— 关于sqlmap的用法总结。<br><br><br></p>
+<p>参考文章：    </p>
+<blockquote>
+<p>lightless的从零开始SQL注入系列：<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">https://lightless.me/archives/zero-to-n-sqli-1.html</a><br>一叶知秋的几篇关于SQL注入的文章：<a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">http://123.206.203.108/index.php/archives/18/</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;天气太热啦，呆在屋子里写点东西吧。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ctf" scheme="https://icyris.github.io/tags/ctf/"/>
+    
+      <category term="sqli" scheme="https://icyris.github.io/tags/sqli/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL蛋糕试做-注入篇（一）</title>
@@ -446,7 +536,7 @@ Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given i
     <link href="https://icyris.github.io/2017/05/13/git/"/>
     <id>https://icyris.github.io/2017/05/13/git/</id>
     <published>2017-05-12T16:17:27.000Z</published>
-    <updated>2017-07-25T10:08:15.915Z</updated>
+    <updated>2017-07-26T11:39:38.275Z</updated>
     
     <content type="html"><![CDATA[<p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
 <a id="more"></a> 
@@ -700,7 +790,8 @@ $ git revert [commit]
 $ git stash
 $ git stash pop
 </code></pre><hr>
-<h1 id="Github与信仰"><a href="#Github与信仰" class="headerlink" title="Github与信仰"></a>Github与信仰</h1><ul>
+<h1 id="Github与信仰"><a href="#Github与信仰" class="headerlink" title="Github与信仰"></a>Github与信仰</h1><p><img src="/2017/05/13/git/30.png" alt=""></p>
+<ul>
 <li>这个周目是关于Linux下git时光机的实际应用 —— 把已有项目推到Github上。     </li>
 <li>Github账号的创建与git的安装配置不再作说明。</li>
 </ul>
