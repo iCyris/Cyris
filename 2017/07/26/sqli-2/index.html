@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/14.png">
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/25.png">
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/31.png">
-<meta property="og:updated_time" content="2017-07-26T13:15:46.694Z">
+<meta property="og:updated_time" content="2017-07-26T13:22:52.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL蛋糕试做-注入篇（二）">
 <meta name="twitter:description" content="天气太热啦，呆在屋子里写点东西吧。">
@@ -219,9 +219,8 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 <p>还是用上面的那个例子，我们可以在<code>?id = 1</code>后面跟上<code>order by 1</code>（1可以是其他的数字），假如在尝试某个数字的时候出现了报错（或者是之前都能看到一些数据，到某个数字后不再显示了），就可以确定字段数啦。  </p>
 <h4 id="2-找出注入点"><a href="#2-找出注入点" class="headerlink" title="2. 找出注入点"></a>2. 找出注入点</h4><p>在拿到字段数后就可以利用union语句来找出注入点了（可能会存在过滤），当然也有其他方法，在实例中讲吧。</p>
 <h4 id="3-获取数据库名"><a href="#3-获取数据库名" class="headerlink" title="3. 获取数据库名"></a>3. 获取数据库名</h4><p>sql语句中的database()函数可以显示当前数据库名，用法和上一步差不多，不过是把第二步中找到的注入点的位置的数字改为database()传入。比如说，上一步中使用的语句是<code>union select 1, 2, 3, 4</code>，爆出来的字段位置是2，那这一步的语句就是<code>union select 1, database(), 3, 4</code>。   </p>
-<h4 id="4-获取表名"><a href="#4-获取表名" class="headerlink" title="4. 获取表名"></a>4. 获取表名</h4><p>这里讲一下<code>information_schema</code>这张表，它里面保存了MySQL服务器所有数据库信息，比如数据库名，数据库的表，表格里的数据类型与访问权限等。  </p>
-<blockquote>
-<p>MySQL官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/information-schema.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/information-schema.html</a></p>
+<h4 id="4-获取表名"><a href="#4-获取表名" class="headerlink" title="4. 获取表名"></a>4. 获取表名</h4><blockquote>
+<p>MySQL官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/information-schema.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/information-schema.html</a><br>这里讲一下<code>information_schema</code>这张表，它里面保存了MySQL服务器所有数据库信息，比如数据库名，数据库的表，表格里的数据类型与访问权限等。  </p>
 </blockquote>
 <p>我们用得比较多的就是<code>TABLES</code>（表信息）和<code>COLUMNS</code>（列信息）了。<br>而<code>group_concat()</code>这个函数可以将结果合并，操作原理可以搜一搜，相关文章挺多的。我们主要用这个函数来获取表名。  </p>
 <h4 id="5-获取字段名"><a href="#5-获取字段名" class="headerlink" title="5. 获取字段名"></a>5. 获取字段名</h4><p>还是通过<code>group_concat()</code>函数，利用<code>COLUMNS</code>表来获取字段名。   </p>
@@ -300,7 +299,7 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 
 		<p style="text-align:justify; width:85%">	
 		最后更新：
-            <time datetime="2017-07-26T13:15:46.694Z" itemprop="dateLastModified">
+            <time datetime="2017-07-26T13:22:52.534Z" itemprop="dateLastModified">
             2017-07-26
             </time>
         </div>
@@ -461,15 +460,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
+                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color3">OpenCTF</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,19 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sqli</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wiki</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sqli</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,15 +508,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">卡萨布兰卡</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">一些书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NCTF</a>
               </li>
             
             <div class="clearfix"></div>
