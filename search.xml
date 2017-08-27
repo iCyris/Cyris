@@ -774,6 +774,35 @@ git remote add origin URL
     </entry>
     
     <entry>
+      <title><![CDATA[利用python+Flask搭建简易留言板]]></title>
+      <url>/2017/04/27/Xshell-5/</url>
+      <content type="html"><![CDATA[<p>之前一直在图形化界面下折腾linux，命令技能树一直处在芽的状态，于是用<a href="https://www.netsarang.com/download/down_xsh.html" target="_blank" rel="external">Xshell 5</a> 连了台服务器玩，切掉图形界面，利用flask+python搭建一个留言板。<br><a id="more"></a></p>
+<h2 id="0X00-Xshell的配置"><a href="#0X00-Xshell的配置" class="headerlink" title="0X00 Xshell的配置"></a>0X00 Xshell的配置</h2><p>关于服务器就不多说啦，我用的是腾讯云的学生机，这里也贴上Ak师傅的推广链接<a href="http://www.hostker.com/" target="_blank" rel="external">主机壳-在这里注册</a>，<a href="http://www.zhujike.com/#/domain" target="_blank" rel="external">主机壳-在这里购买</a>。   </p>
+<p>Xshell 5安装完以后，点击文件 -&gt; 新建，名称自取，腾讯云的端口设置为22即可，其他服务器可去官网的个人页面查看开放的端口。（待补充）</p>
+<h2 id="0X01-pip以及Flask安装"><a href="#0X01-pip以及Flask安装" class="headerlink" title="0X01 pip以及Flask安装"></a>0X01 pip以及Flask安装</h2><p>在终端键入：   </p>
+<pre><code>1. $ wget https://bootstrap.pypa.io/get-pip.py  --no-check-certificate    
+2. $ sudo python get-pip.py
+</code></pre><p>pip安装完成后即可用它来安装Flask了：</p>
+<pre><code>$ sudo pip install Flask
+</code></pre><p>准备工作到这里结束。</p>
+<h2 id="0X02-相关文件夹创建"><a href="#0X02-相关文件夹创建" class="headerlink" title="0X02 相关文件夹创建"></a>0X02 相关文件夹创建</h2>]]></content>
+      
+        
+        <tags>
+            
+            <tag> Xshell 5 </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> flask </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[魔法禁书目录]]></title>
       <url>/2017/04/15/wiki/</url>
       <content type="html"><![CDATA[<p>vidar team整理的一份推荐书单，各个方向各个阶段均有。  </p>
