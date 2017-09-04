@@ -389,7 +389,7 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 <pre><code>file=php://filter/read=convert.base64-encode/resource=index.php
 </code></pre><p>得到base64加密后的字符串：  </p>
 <pre><code>PGh0bWw+CiAgICA8dGl0bGU+YXNkZjwvdGl0bGU+CiAgICAKPD9waHAKCWVycm9yX3JlcG9ydGluZygwKTsKCWlmKCEkX0dFVFtmaWxlXSl7ZWNobyAnPGEgaHJlZj0iLi9pbmRleC5waHA/ZmlsZT1zaG93LnBocCI+Y2xpY2sgbWU/IG5vPC9hPic7fQoJJGZpbGU9JF9HRVRbJ2ZpbGUnXTsKCWlmKHN0cnN0cigkZmlsZSwiLi4vIil8fHN0cmlzdHIoJGZpbGUsICJ0cCIpfHxzdHJpc3RyKCRmaWxlLCJpbnB1dCIpfHxzdHJpc3RyKCRmaWxlLCJkYXRhIikpewoJCWVjaG8gIk9oIG5vISI7CgkJZXhpdCgpOwoJfQoJaW5jbHVkZSgkZmlsZSk7IAovL2ZsYWc6bmN0ZntlZHVsY25pX2VsaWZfbGFjb2xfc2lfc2lodH0KCj8+CjwvaHRtbD4=
-</code></pre><p>解密后：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>asdf<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">   </div><div class="line">&lt;?php</div><div class="line">error_reporting(0);</div><div class="line">if(!$_GET[file])&#123;echo '&lt;a href="./index.php?file=show.php"&gt;click me? no&lt;/a&gt;';&#125;</div><div class="line">$file=$_GET['file'];</div><div class="line">if(strstr($file,"../")||stristr($file, "tp")||stristr($file,"input")||stristr($file,"data"))&#123;</div><div class="line">	echo "Oh no!";</div><div class="line">	exit();</div><div class="line">&#125;</div><div class="line">include($file); </div><div class="line">//flag:nctf&#123;edulcni_elif_lacol_si_siht&#125;</div><div class="line"></div><div class="line">?&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</code></pre><p>解密后：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>asdf<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">   </div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line">error_reporting(<span class="number">0</span>);</div><div class="line"><span class="keyword">if</span>(!$_GET[file])&#123;<span class="keyword">echo</span> <span class="string">'&lt;a href="./index.php?file=show.php"&gt;click me? no&lt;/a&gt;'</span>;&#125;</div><div class="line">$file=$_GET[<span class="string">'file'</span>];</div><div class="line"><span class="keyword">if</span>(strstr($file,<span class="string">"../"</span>)||stristr($file, <span class="string">"tp"</span>)||stristr($file,<span class="string">"input"</span>)||stristr($file,<span class="string">"data"</span>))&#123;</div><div class="line">	<span class="keyword">echo</span> <span class="string">"Oh no!"</span>;</div><div class="line">	<span class="keyword">exit</span>();</div><div class="line">&#125;</div><div class="line"><span class="keyword">include</span>($file); </div><div class="line"><span class="comment">//flag:nctf&#123;edulcni_elif_lacol_si_siht&#125;</span></div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h2 id="Download"><a href="#Download" class="headerlink" title="Download~!"></a>Download~!</h2><p>URL: <a href="http://way.nuptzj.cn/web6/" target="_blank" rel="external">http://way.nuptzj.cn/web6/</a></p>
 <p>Tips说不要下载mp3文件，先看下源码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"templatemo_content"</span>&gt;</span></div><div class="line">       	</div><div class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content_title_01"</span>&gt;</span>听会歌吧<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"horizontal_divider_01"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cleaner"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>为了让大家更轻松的比赛，为大家准备了两首歌让大家下载<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		</div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"download.php?url=eGluZ3hpbmdkaWFuZGVuZy5tcDM="</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>星星点灯<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"download.php?url=YnV4aWFuZ3poYW5nZGEubXAz"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>不想长大<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">           </div><div class="line">           </div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cleaner"</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>发现下载链接格式均为：   </p>
@@ -839,41 +839,6 @@ git remote add origin URL
       <category term="git" scheme="https://icyris.github.io/tags/git/"/>
     
       <category term="wiki" scheme="https://icyris.github.io/tags/wiki/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用python+Flask搭建简易留言板</title>
-    <link href="https://icyris.github.io/2017/04/27/Xshell-5/"/>
-    <id>https://icyris.github.io/2017/04/27/Xshell-5/</id>
-    <published>2017-04-27T13:32:28.000Z</published>
-    <updated>2017-05-07T15:07:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前一直在图形化界面下折腾linux，命令技能树一直处在芽的状态，于是用<a href="https://www.netsarang.com/download/down_xsh.html" target="_blank" rel="external">Xshell 5</a> 连了台服务器玩，切掉图形界面，利用flask+python搭建一个留言板。<br><a id="more"></a></p>
-<h2 id="0X00-Xshell的配置"><a href="#0X00-Xshell的配置" class="headerlink" title="0X00 Xshell的配置"></a>0X00 Xshell的配置</h2><p>关于服务器就不多说啦，我用的是腾讯云的学生机，这里也贴上Ak师傅的推广链接<a href="http://www.hostker.com/" target="_blank" rel="external">主机壳-在这里注册</a>，<a href="http://www.zhujike.com/#/domain" target="_blank" rel="external">主机壳-在这里购买</a>。   </p>
-<p>Xshell 5安装完以后，点击文件 -&gt; 新建，名称自取，腾讯云的端口设置为22即可，其他服务器可去官网的个人页面查看开放的端口。（待补充）</p>
-<h2 id="0X01-pip以及Flask安装"><a href="#0X01-pip以及Flask安装" class="headerlink" title="0X01 pip以及Flask安装"></a>0X01 pip以及Flask安装</h2><p>在终端键入：   </p>
-<pre><code>1. $ wget https://bootstrap.pypa.io/get-pip.py  --no-check-certificate    
-2. $ sudo python get-pip.py
-</code></pre><p>pip安装完成后即可用它来安装Flask了：</p>
-<pre><code>$ sudo pip install Flask
-</code></pre><p>准备工作到这里结束。</p>
-<h2 id="0X02-相关文件夹创建"><a href="#0X02-相关文件夹创建" class="headerlink" title="0X02 相关文件夹创建"></a>0X02 相关文件夹创建</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前一直在图形化界面下折腾linux，命令技能树一直处在芽的状态，于是用&lt;a href=&quot;https://www.netsarang.com/download/down_xsh.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Xshell 5&lt;/a&gt; 连了台服务器玩，切掉图形界面，利用flask+python搭建一个留言板。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Xshell 5" scheme="https://icyris.github.io/tags/Xshell-5/"/>
-    
-      <category term="linux" scheme="https://icyris.github.io/tags/linux/"/>
-    
-      <category term="flask" scheme="https://icyris.github.io/tags/flask/"/>
-    
-      <category term="python" scheme="https://icyris.github.io/tags/python/"/>
     
   </entry>
   
