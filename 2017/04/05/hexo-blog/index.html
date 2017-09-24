@@ -103,7 +103,7 @@
 <meta property="og:url" content="https://icyris.github.io/2017/04/05/hexo-blog/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="一篇关于hexo博客搭建的小教程。">
-<meta property="og:updated_time" content="2017-07-25T10:26:30.000Z">
+<meta property="og:updated_time" content="2017-09-24T02:50:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下利用Hexo+Coding搭建静态博客">
 <meta name="twitter:description" content="一篇关于hexo博客搭建的小教程。">
@@ -381,7 +381,7 @@
 
       
         <p>一篇关于hexo博客搭建的小教程。   </p>
-<a id="more"></a> 
+<a id="more"></a>
 <p>按照粉学姐和土土的教程搭了两三天，终于做成了这个静态博客。本文将介绍如何用Hexo+Coding搭建Blog，另外附上粉学姐和土土的教程，部分语句直接引用原文。</p>
 <blockquote>
 <p><a href="http://processor.pub/2016/10/07/Windows%E4%B8%8B%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">粉学姐的教程</a><br><a href="http://lorexxar.cn/2015/05/22/Hexo-blogs/" target="_blank" rel="external">土土的教程</a></p>
@@ -389,113 +389,97 @@
 <h1 id="Hexo的安装"><a href="#Hexo的安装" class="headerlink" title="Hexo的安装"></a>Hexo的安装</h1><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a><br>选择适合自己系统的git下载安装，我选择的windows。</p>
 <h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a><br>这里我选择的是V6.10.2 LFS，可以根据自己的系统选择合适的版本安装。</p>
 <h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>打开安装好的Git Bash，键入：</p>
-<pre><code>npm install -g hexo
-</code></pre><p>然后把Hexo更新到最新版本，键入：           </p>
-<pre><code>npm update hexo -g
-</code></pre><h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>这里创建一个名为hexo的文件夹，用来放置博客文件，然后在hexo文件夹内右键Git Bash，键入：    </p>
-<pre><code>$ hexo init
-</code></pre><p>然后，hexo会自动在这个文件夹里生成你建立网站的所有文件。<br>到这里我们已经搭建起本地的博客了，执行以下命令，同样在hexo文件夹下右键Git Bash输入以下命令：   </p>
-<pre><code>$ hexo g
-$ hexo s
-</code></pre><p>然后在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可以看到当前博客效果。（最初的模板不是很耐看，我们会在后面说明更换主题。）我们需要把博客部署在网络上，这样别人才看得到。Hexo博客只支持ie8以上的浏览器。</p>
+<blockquote>
+<p>npm install -g hexo</p>
+</blockquote>
+<p>然后把Hexo更新到最新版本，键入：           </p>
+<blockquote>
+<p>npm update hexo -g</p>
+</blockquote>
+<h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>这里创建一个名为hexo的文件夹，用来放置博客文件，然后在hexo文件夹内右键Git Bash，键入：    </p>
+<blockquote>
+<p>$ hexo init</p>
+</blockquote>
+<p>然后，hexo会自动在这个文件夹里生成你建立网站的所有文件。<br>到这里我们已经搭建起本地的博客了，执行以下命令，同样在hexo文件夹下右键Git Bash输入以下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo g</span></div><div class="line"><span class="meta">$</span><span class="bash"> hexo s</span></div></pre></td></tr></table></figure></p>
+<p>然后在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可以看到当前博客效果。（最初的模板不是很耐看，我们会在后面说明更换主题。）我们需要把博客部署在网络上，这样别人才看得到。Hexo博客只支持ie8以上的浏览器。</p>
 <h1 id="配置Coding"><a href="#配置Coding" class="headerlink" title="配置Coding"></a>配置Coding</h1><p>Coding是国内的网站，不用担心被墙的问题。</p>
 <h2 id="注册Coding"><a href="#注册Coding" class="headerlink" title="注册Coding"></a>注册Coding</h2><p><a href="https://coding.net" target="_blank" rel="external">Coding官网</a></p>
 <h2 id="添加项目"><a href="#添加项目" class="headerlink" title="添加项目"></a>添加项目</h2><p>登陆之后，新建一个空项目，名字和自己的ID一致。</p>
 <h2 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h2><p>1.在桌面右键Bit Bash，然后键入：    </p>
-<pre><code>$ cd ~/. ssh
-</code></pre><p>如果提示：No such file or directory 说明你是第一次使用Git，请直接跳到第三步。     </p>
-<p>2.如果不是第一次使用，执行下面的操作，然后跳到第四步：</p>
-<pre><code>1. $ mkdir key_backup
-2. $ cp id_rsa* key_backup  
-3. $ rm id_rsa*
-</code></pre><p>3.生成密钥，键入:（把邮箱改成自己邮箱地址）      </p>
-<pre><code>ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;
-</code></pre><p>生成过程中会让你输入passphrase口令，可以直接回车，以后出现都是空密码。  </p>
-<pre><code>1. $ ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot;
-2. Generating public/private rsa key pair.
-3. Enter passphrase (empty for no passphrase):
-4. Enter same passphrase again:
-5. Your identification has been saved in /c/Users/USERNAME/.ssh/id_rsa.
-6. Your public key has been saved in /c/Users/USERNAME/.ssh/id_rsa.pub.
-7. The key fingerprint is:
-8. 15:81:d2:7a:c6:6c:0f:ec:b0:b6:d4:18:b8:d1:41:48 YOUR_EMAIL@YOUREMAIL.COM
-</code></pre><p>4.生成密钥后，在目录找到私钥 id_rsa 和公钥 id_rsa.pub 这两个文件。千万不要把私钥文件 id_rsa 透露给任何人。否则别人可以以管理员身份登录你的blog。       </p>
+<blockquote>
+<p>   $ cd ~/. ssh</p>
+</blockquote>
+<p>如果提示：No such file or directory 说明你是第一次使用Git，请直接跳到第三步。     </p>
+<p>2.如果不是第一次使用，执行下面的操作，然后跳到第四步：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir key_backup</span></div><div class="line"><span class="meta">$</span><span class="bash"> cp id_rsa* key_backup  </span></div><div class="line"><span class="meta">$</span><span class="bash"> rm id_rsa*</span></div></pre></td></tr></table></figure></p>
+<p>3.生成密钥，键入:（把邮箱改成自己邮箱地址）      </p>
+<blockquote>
+<p>   ssh-keygen -t rsa -C “YOUR_EMAIL@YOUREMAIL.COM”</p>
+</blockquote>
+<p>生成过程中会让你输入passphrase口令，可以直接回车，以后出现都是空密码。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"YOUR_EMAIL@YOUREMAIL.COM"</span></div><div class="line">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa key pair.</div><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</div><div class="line">Enter same passphrase <span class="string">again:</span></div><div class="line">Your identification has been saved <span class="keyword">in</span> <span class="regexp">/c/</span>Users<span class="regexp">/USERNAME/</span>.ssh/id_rsa.</div><div class="line">Your <span class="keyword">public</span> key has been saved <span class="keyword">in</span> <span class="regexp">/c/</span>Users<span class="regexp">/USERNAME/</span>.ssh/id_rsa.pub.</div><div class="line">The key fingerprint <span class="string">is:</span></div><div class="line"><span class="number">15</span>:<span class="number">81</span>:<span class="string">d2:</span><span class="number">7</span><span class="string">a:</span><span class="string">c6:</span><span class="number">6</span><span class="string">c:</span><span class="number">0</span><span class="string">f:</span><span class="string">ec:</span><span class="string">b0:</span><span class="string">b6:</span><span class="string">d4:</span><span class="number">18</span>:<span class="string">b8:</span><span class="string">d1:</span><span class="number">41</span>:<span class="number">48</span> YOUR_EMAIL<span class="meta">@YOUREMAIL</span>.COM</div></pre></td></tr></table></figure></p>
+<p>4.生成密钥后，在目录找到私钥 id_rsa 和公钥 id_rsa.pub 这两个文件。千万不要把私钥文件 id_rsa 透露给任何人。否则别人可以以管理员身份登录你的blog。       </p>
 <p>5.在coding中添加ssh<br>使用文本工具打开id_rsa.pub,复制里面的所有内容。进入coding-&gt;项目-&gt;进入项目-&gt;左侧设置-&gt;部署公钥-&gt;新建部署公钥，公钥名称随意，在SSH-RSA公钥内容文本框中，把刚才复制的东西全部粘贴进去，然后添加。</p>
-<p>6.在桌面右键Git Bash，测试是否可以连接到服务器。 </p>
-<pre><code>ssh -T git@git.coding.net
-</code></pre><p>如果是第一次链接，会出现以下警告：</p>
-<pre><code>1. The authenticity of host &apos;git.coding.com (50.116.2.223)&apos; can&apos;t be established.
-2. #RSA key fingerprint is 84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e.
-3. #Are you sure you want to continue connecting (yes/no)?
-</code></pre><p>直接输入yes，然后会提示输入passphrase，如果刚才是空密码，那么直接回车过去就好。</p>
+<p>6.在桌面右键Git Bash，测试是否可以连接到服务器。</p>
+<blockquote>
+<p>   ssh -T git@git.coding.net</p>
+</blockquote>
+<p>如果是第一次链接，会出现以下警告：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity <span class="keyword">of</span> host 'git.coding.com (<span class="number">50.116</span><span class="number">.2</span><span class="number">.223</span>)' can't be established.</div><div class="line"><span class="comment">#RSA key fingerprint is 84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e.</span></div><div class="line"><span class="comment">#Are you sure you want to continue connecting (yes/no)?</span></div></pre></td></tr></table></figure></p>
+<p>直接输入yes，然后会提示输入passphrase，如果刚才是空密码，那么直接回车过去就好。</p>
 <p>如果出现下面的字符，就说明成功了：</p>
-<pre><code>Hi USERNAME! You&apos;ve successfully authenticated, but GitCafe does not provide shell access.
-</code></pre><h2 id="设置GIT账户信息"><a href="#设置GIT账户信息" class="headerlink" title="设置GIT账户信息"></a>设置GIT账户信息</h2><p>在桌面右键Git Bash，键入：   </p>
-<pre><code>1. $ git config --global user.name &quot;yourname&quot;                  //coding上的用户名
-2. $ git config --global user.email &quot;yourmaill@yourmaili.com&quot;  //填写自己的邮箱
-</code></pre><h2 id="添加Pages目录"><a href="#添加Pages目录" class="headerlink" title="添加Pages目录"></a>添加Pages目录</h2><p>如果直接上传，上传上去的只是所谓的博客源码，如果我们要让我们博客显示出来，就要建立pages目录。</p>
-<p>打开hexo文件夹，右键Git Bash，然后键入：   </p>
-<pre><code>1. echo &apos;Hello, world&apos; &gt; index.html
-2. git init
-3. git add .
-4. git commit -a -m &apos;Hello, world!&apos;
-5. git remote add origin git@git.coding.net:Cyris/Cyris.git     //把这里的Cyris替换成自己的id
-6. git checkout -b coding-pages
-7. git push origin coding-pages
-</code></pre><p>完成上面的操作，在coding的项目界面便会出现coding-pages的分支，然后进入分支界面，把默认分支改为coding-pages，删除原默认分支。</p>
-<h2 id="配置Hexo的配置文件-config-yml"><a href="#配置Hexo的配置文件-config-yml" class="headerlink" title="配置Hexo的配置文件_config.yml"></a>配置Hexo的配置文件_config.yml</h2><p>配置好Hexo和coding之后，我们需要把两者联系在一起。用编辑器打开_config.yml文件（推荐sublime），打开之后把最后的deploy改为：   </p>
-<pre><code>1. deploy:
-2. type: git
-3. repository: git@git.coding.net:Cyris/Cyris.git
-4. branch: coding-pages
-</code></pre><p>这里使用的是nodo.js语法，这种语法对格式的要求相当高，：后必须跟上空格，不然会报错，请严格按照格式来写。</p>
+<blockquote>
+<p>   Hi USERNAME! You’ve successfully authenticated, but GitCafe does not provide shell access.</p>
+</blockquote>
+<h2 id="设置GIT账户信息"><a href="#设置GIT账户信息" class="headerlink" title="设置GIT账户信息"></a>设置GIT账户信息</h2><p>在桌面右键Git Bash，键入：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"yourname"</span>                  <span class="comment">//coding上的用户名</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"yourmaill@yourmaili.com"</span>  <span class="comment">//填写自己的邮箱</span></div></pre></td></tr></table></figure></p>
+<h2 id="添加Pages目录"><a href="#添加Pages目录" class="headerlink" title="添加Pages目录"></a>添加Pages目录</h2><p>如果直接上传，上传上去的只是所谓的博客源码，如果我们要让我们博客显示出来，就要建立pages目录。</p>
+<p>打开hexo文件夹，右键Git Bash，然后键入：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">echo <span class="string">'Hello, world'</span> &gt; index<span class="selector-class">.html</span></div><div class="line">git init</div><div class="line">git add .</div><div class="line">git commit -<span class="selector-tag">a</span> -m <span class="string">'Hello, world!'</span></div><div class="line">git remote add origin git@git<span class="selector-class">.coding</span><span class="selector-class">.net</span>:Cyris/Cyris<span class="selector-class">.git</span>     <span class="comment">//把这里的Cyris替换成自己的id</span></div><div class="line">git checkout -<span class="selector-tag">b</span> coding-pages</div><div class="line">git push origin coding-pages</div></pre></td></tr></table></figure></p>
+<p>完成上面的操作，在coding的项目界面便会出现coding-pages的分支，然后进入分支界面，把默认分支改为coding-pages，删除原默认分支。</p>
+<h2 id="配置Hexo的配置文件-config-yml"><a href="#配置Hexo的配置文件-config-yml" class="headerlink" title="配置Hexo的配置文件_config.yml"></a>配置Hexo的配置文件_config.yml</h2><p>配置好Hexo和coding之后，我们需要把两者联系在一起。用编辑器打开_config.yml文件（推荐sublime），打开之后把最后的deploy改为：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line"><span class="attribute">type</span>: git</div><div class="line"><span class="attribute">repository</span>: git<span class="variable">@git</span>.coding.<span class="attribute">net</span>:Cyris/Cyris.git</div><div class="line"><span class="attribute">branch</span>: coding-pages</div></pre></td></tr></table></figure></p>
+<p>这里使用的是nodo.js语法，这种语法对格式的要求相当高，：后必须跟上空格，不然会报错，请严格按照格式来写。</p>
 <h2 id="开启Coding-Pages服务"><a href="#开启Coding-Pages服务" class="headerlink" title="开启Coding-Pages服务"></a>开启Coding-Pages服务</h2><p>登录Coding，点进项目 -&gt; 代码 -&gt; Pages服务 -&gt; 开启服务  </p>
 <h2 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h2><p>在Coding服务页，可以输入自己的域名，然后点击添加域名绑定。然后在你的域名管理页面添加一个CNAME记录，将他指向coding-pages：cyris.coding.me，然后保存。   </p>
-<h2 id="完成配置"><a href="#完成配置" class="headerlink" title="完成配置"></a>完成配置</h2><p>在Hexo目录右键Git Bash，键入：   </p>
-<pre><code>1. hexo g
-2. hexo d
-</code></pre><p>每次修改自己的任何配置文件，或者新建了博文，都必须输入这两个指令上传！</p>
+<h2 id="完成配置"><a href="#完成配置" class="headerlink" title="完成配置"></a>完成配置</h2><p>在Hexo目录右键Git Bash，键入：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo g</span></div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>每次修改自己的任何配置文件，或者新建了博文，都必须输入这两个指令上传！</p>
 <p>如果出现报错：</p>
-<pre><code>ERROR Deployer not found: git
-</code></pre><p>解决方法：  </p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><p>如果没有爆出错误，说明配置成功，可以打开xxx.git.coding.net(xxx为自己的id)查看自己的博客主页。如果报错，请检查前面的配置有没有错误，如果找不到错误，请参见Hexo的常见报错.</p>
+<blockquote>
+<p>   ERROR Deployer not found: git</p>
+</blockquote>
+<p>解决方法：  </p>
+<blockquote>
+<p>   npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>如果没有爆出错误，说明配置成功，可以打开xxx.git.coding.net(xxx为自己的id)查看自己的博客主页。如果报错，请检查前面的配置有没有错误，如果找不到错误，请参见Hexo的常见报错.</p>
 <h1 id="Hexo的优化"><a href="#Hexo的优化" class="headerlink" title="Hexo的优化"></a>Hexo的优化</h1><p>Hexo提供了一个默认主题，我们可以在官方网址寻找我们自己喜欢的主题。<br>这是我的主题yilia</p>
 <p>挑选好主题之后，在hexo目录下Git Bash，键入：  </p>
-<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre><p>在Hexo目录下，修改_config.yml里的项目</p>
-<pre><code>theme: yilia
-</code></pre><p>然后在hexo目录下键入:</p>
-<pre><code>hexo g
-</code></pre><p>每一个主题和主题的名字都有不同，但大部分主题，都会提供详细的书写方式。</p>
+<blockquote>
+<p>   $ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</blockquote>
+<p>在Hexo目录下，修改_config.yml里的项目</p>
+<blockquote>
+<p>   theme: yilia</p>
+</blockquote>
+<p>然后在hexo目录下键入:</p>
+<blockquote>
+<p>   hexo g</p>
+</blockquote>
+<p>每一个主题和主题的名字都有不同，但大部分主题，都会提供详细的书写方式。</p>
 <h2 id="加入多说评论系统"><a href="#加入多说评论系统" class="headerlink" title="加入多说评论系统"></a>加入多说评论系统</h2><p>1.注册多说<br>2.创建新项目，shortname用你的ID小写<br>由于博主主题只带多说评论系统插件，这里不多解释，只需要在hexo\themes\yilia下打开_config.yml，修改</p>
-<pre><code>duoshuo: Cyris
-</code></pre><h2 id="关于统计，打赏系统"><a href="#关于统计，打赏系统" class="headerlink" title="关于统计，打赏系统"></a>关于统计，打赏系统</h2><p>可以注册百度站长平台，里面有详细的使用方法。</p>
+<blockquote>
+<p>   duoshuo: Cyris</p>
+</blockquote>
+<h2 id="关于统计，打赏系统"><a href="#关于统计，打赏系统" class="headerlink" title="关于统计，打赏系统"></a>关于统计，打赏系统</h2><p>可以注册百度站长平台，里面有详细的使用方法。</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>1. hexo new &quot;postName&quot;                     #新建文章
-2. hexo new page &quot;pageName&quot;                #新建页面
-3. hexo g                                  #生成静态页面至public目录
-4. hexo s                                  #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）
-5. hexo d                                  #将.deploy目录部署到coding
-</code></pre><p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>
 <h2 id="Markdowm语法"><a href="#Markdowm语法" class="headerlink" title="Markdowm语法"></a>Markdowm语法</h2><p>当我们输入命令，新建了一个文章，我们发现在hexo文件夹下source/_posts下生成了一个md文件，md文件是什么呢？我们首先得了解Markdown语法。（本人用Markdownpad编辑器）</p>
-<h2 id="md文章头部"><a href="#md文章头部" class="headerlink" title=".md文章头部"></a>.md文章头部</h2><pre><code>1. title: postName               #文章页面上的显示名称，可以任意修改，不会出现在URL中
-2. date: 2017-04-05 15:30:16     #文章生成时间，一般不改，当然也可以任意修改
-3. categories: 
-4. - example                     #分类,多个分类依次
-5. tags:    
-6. - tag1                        #文章标签，可空，多标签请用格式，注意:后面有个空格
-7. description:                  #附加一段文章摘要，字数最好在140字以内。
-8. ---
-</code></pre><p><a href="http://www.jb51.net/article/56296.htm" target="_blank" rel="external">贴上Markdown语法</a></p>
+<h2 id="md文章头部"><a href="#md文章头部" class="headerlink" title=".md文章头部"></a>.md文章头部</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">postName</span>               <span class="comment">#文章页面上的显示名称，可以任意修改，不会出现在URL中</span></div><div class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-04</span><span class="bullet">-05</span> <span class="number">15</span><span class="string">:30:16</span>     <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></div><div class="line"><span class="attr">categories:</span></div><div class="line"><span class="bullet">-</span> <span class="string">example</span>                     <span class="comment">#分类,多个分类依次</span></div><div class="line"><span class="attr">tags:</span>    </div><div class="line"><span class="bullet">-</span> <span class="string">tag1</span>                        <span class="comment">#文章标签，可空，多标签请用格式，注意:后面有个空格</span></div><div class="line"><span class="attr">description:</span>                  <span class="comment">#附加一段文章摘要，字数最好在140字以内。</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.jb51.net/article/56296.htm" target="_blank" rel="external">贴上Markdown语法</a></p>
 <h2 id="关于本地图片和所属路径的问题"><a href="#关于本地图片和所属路径的问题" class="headerlink" title="关于本地图片和所属路径的问题"></a>关于本地图片和所属路径的问题</h2><p>当我们想使用我们自己的本地图片的时候，我们会纠结一件事，就是我们该把文件放在哪？路径又该怎么引用，我来解释下这个问题：</p>
 <p>1.当我们编辑好我们的博文的时候，我们输入指令hexo g ，会自动生成所对应的html页面添加到hexo文件夹下的public，然后上传public，所以public便是我们的主目录。</p>
 <p>2.但是我们发现public内的东西是修改不了的，所以本地图片不能存放在public中，所以我们要把图片放在source中，在source中新建img文件夹，然后建对应博文的文件夹，放置所属的图片，这样当我们需要引用本地图片的时候，则输入这样的路径(/img/Hexo_Blogs/1.png),然后我们就发现，图片没有问题了。</p>
-<h1 id="写在后面的"><a href="#写在后面的" class="headerlink" title="写在后面的"></a>写在后面的</h1><p>折腾了好久，搭完的时候还是很开心的（这些静态博客党），也算是完成了一个长久以来的心愿，也希望阅读的人在看完这篇教程后能够学会搭建一个自己的小空间。    </p>
+<h1 id="写在后面的"><a href="#写在后面的" class="headerlink" title="写在后面的"></a>写在后面的</h1><p>折腾了好久，搭完的时候还是很开心的，也算是完成了一个长久以来的心愿，也希望阅读的人在看完这篇教程后能够学会搭建一个自己的小空间。    </p>
 <p>再次感谢粉学姐和土土的教程，侵删。   </p>
 <p>以上。</p>
 
