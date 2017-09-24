@@ -103,12 +103,12 @@
 <meta property="og:url" content="https://icyris.github.io/2017/07/12/blog-picture-issue/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="关于hexo博客图片无法正常显示的问题的解决办法。">
-<meta property="og:image" content="https://icyris.github.io/2017/07/12/blog-picture-issue/1.PNG">
-<meta property="og:updated_time" content="2017-07-12T12:28:56.000Z">
+<meta property="og:image" content="https://icyris.github.io/2017/07/12/blog-picture-issue/1.png">
+<meta property="og:updated_time" content="2017-09-24T03:22:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客图片问题解决办法">
 <meta name="twitter:description" content="关于hexo博客图片无法正常显示的问题的解决办法。">
-<meta name="twitter:image" content="https://icyris.github.io/2017/07/12/blog-picture-issue/1.PNG">
+<meta name="twitter:image" content="https://icyris.github.io/2017/07/12/blog-picture-issue/1.png">
 
 
 
@@ -383,24 +383,25 @@
 
       
         <p>关于hexo博客图片无法正常显示的问题的解决办法。   </p>
-<a id="more"></a> 
+<a id="more"></a>
 <p>之前一直用的MarkdownPad2自带的添加图片按钮来添加图片（存储在hexo/source/imag里），但是经常会有显示不出的情况，不喜欢用各大图床，于是查了一波本地存储上传的方法，找到了一个<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">插件</a>来修正img标签以使图片正常显示。  </p>
 <p>参考自<a href="http://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="external">简书</a>。   </p>
 <h2 id="0x01-Asset设定确认"><a href="#0x01-Asset设定确认" class="headerlink" title="0x01 Asset设定确认"></a>0x01 Asset设定确认</h2><p>首先确认_config.yml 中有 post_asset_folder:true。<br>这时候每次hexo new会自动建立一个与文章同名的文件夹，我们可以把与该文章相关的所有资源都放到那个文件夹，来更方便得调用资源。     </p>
 <h2 id="0x02-插件添加"><a href="#0x02-插件添加" class="headerlink" title="0x02 插件添加"></a>0x02 插件添加</h2><p>在hexo文件夹执行：  </p>
-<pre><code>1. npm install https://github.com/CodeFalling/hexo-asset-image --save
-</code></pre><h2 id="0x03-图片添加"><a href="#0x03-图片添加" class="headerlink" title="0x03 图片添加"></a>0x03 图片添加</h2><p>完成安装后新建一个文件试试，发现在.md文件同级目录下会有一个同名文件夹。<br>比如我们新建了一个文件blog-picture-issue.md，然后在同名文件夹里放张图：1.PNG。   </p>
-<p>之后在md文件里加入下面的语句即可：   </p>
-<pre><code>![](blog-picture-issue/1.PNG)
-</code></pre><p><img src="/2017/07/12/blog-picture-issue/1.PNG" alt="">    </p>
-<ul>
-<li>[]里是图片的名称，可不写。   </li>
-</ul>
-<h2 id="0x04-issued"><a href="#0x04-issued" class="headerlink" title="0x04 issued"></a>0x04 issued</h2><p>这样的操作以后生成的html是：   </p>
-<pre><code>&lt;img src=&quot;/2017/07/12/blog-picture-issue/1.PNG&quot; alt=&quot;logo&quot;&gt;
-</code></pre><p>而非之前的：  </p>
-<pre><code>&lt;img src=&quot;blog-picture-issue/1.PNG&quot; alt=&quot;logo&quot;&gt;
-</code></pre><p>使得图片正常显示。</p>
+<blockquote>
+<p>   npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save</p>
+</blockquote>
+<h2 id="0x03-图片添加"><a href="#0x03-图片添加" class="headerlink" title="0x03 图片添加"></a>0x03 图片添加</h2><p>完成安装后新建一个文件试试，发现在.md文件同级目录下会有一个同名文件夹。<br>比如我们新建了一个文件blog-picture-issue.md，然后在同名文件夹里放张图：1.png。   </p>
+<p>之后在原图片引用语句的括号里写入：  </p>
+<blockquote>
+<p>   blog-picture-issue/1.PNG</p>
+</blockquote>
+<p>就能看到正常显示的图片了：   </p>
+<p><img src="/2017/07/12/blog-picture-issue/1.png" alt="">    </p>
+<p>注：[]里是图片的名称，可不写。   </p>
+<h2 id="0x04-issued"><a href="#0x04-issued" class="headerlink" title="0x04 issued"></a>0x04 issued</h2><p>这样的操作以后生成的html是：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"/2017/07/12/blog-picture-issue/1.PNG"</span> alt=<span class="string">"logo"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>而非之前的：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"blog-picture-issue/1.PNG"</span> alt=<span class="string">"logo"</span>&gt;”</div></pre></td></tr></table></figure></p>
+<p>使得图片正常显示。</p>
 
       
     </div>

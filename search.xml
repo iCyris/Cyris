@@ -48,8 +48,8 @@
     <entry>
       <title><![CDATA[SQL蛋糕试做-注入篇（二）]]></title>
       <url>/2017/07/26/sqli-2/</url>
-      <content type="html"><![CDATA[<p>天气太热啦，呆在屋子里写点东西吧。</p>
-<a id="more"></a> 
+      <content type="html"><![CDATA[<p>熊孩子在数据库里吃糖到底是哪里出了问题！</p>
+<a id="more"></a>
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><img src="/2017/07/26/sqli-2/14.png" alt=""></p>
 <p>今天我们讲讲一些基本的注入思路以及常见的注入类型。</p>
 <h2 id="0x01-什么是SQL注入呢？"><a href="#0x01-什么是SQL注入呢？" class="headerlink" title="0x01 什么是SQL注入呢？"></a>0x01 什么是SQL注入呢？</h2><p>我们看看百度是怎么讲的：  </p>
@@ -61,23 +61,12 @@
 <p>SQL攻击（英语：SQL injection），简称注入攻击，是发生于应用程序之数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了检查，那么这些注入进去的指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。</p>
 </blockquote>
 <p>当然只看这些并不能很好地理解“何为SQL注入”这个问题。觉得涛涛的例子不错，就照着那个再来理解一次吧ouo。比如说我们写了一个简单的博客，每篇文章都有对应的序号以便读者查询，读者说想看第一篇文章，于是服务器就从数据库里拿出第一篇文章的数据返回给浏览器，浏览器把图片，文字显示给读者。这个过程用代码来表示大概是这个样子：  </p>
-<p>Acaleph访问了：<a href="https://cyris.cn/show.php?id=1" target="_blank" rel="external">https://cyris.cn/show.php?id=1</a> （数字表示第几篇文章。）<br>此时服务器的处理语句可能是这个样子：  </p>
-<pre><code>$id = $_GET[&apos;id&apos;];  
-SELECT * FROM articles WHERE articles_id = 1
-</code></pre><p>看起来似乎没什么问题呢，但是Acaleph比较调皮，她说：“我要看第二篇文章，然后把你的数据都删掉XD！”<br>于是语句变成了：   </p>
-<pre><code>$id = $_GET[&apos;id&apos;];  
-SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
-</code></pre><p>聪明的永远是人而不是程序，这里程序直接把<code>id =2 and drop db_articles</code>当作一条命令去执行了，而非一条查询语句，那么我们的数据库就被次了，Acaleph成功删库跑路。    </p>
+<p>Acaleph访问了：<a href="https://cyris.cn/show.php?id=1" target="_blank" rel="external">https://cyris.cn/show.php?id=1</a> （数字表示第几篇文章。）<br>此时服务器的处理语句可能是这个样子：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $_GET[<span class="string">'id'</span>]<span class="comment">;  </span></div><div class="line"><span class="keyword">SELECT</span> * FROM articles WHERE articles_id = <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>看起来似乎没什么问题呢，但是Acaleph比较调皮，她说：“我要看第二篇文章，然后把你的数据都删掉XD！”<br>于是语句变成了：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $<span class="variable">_GET</span>[<span class="string">'id'</span>];  </div><div class="line"><span class="built_in">SELECT</span> * <span class="keyword">FROM</span> articles WHERE articles_id = <span class="number">2</span> <span class="built_in">and</span> <span class="built_in">drop</span> db_articles</div></pre></td></tr></table></figure></p>
+<p>聪明的永远是人而不是程序，这里程序直接把<code>id =2 and drop db_articles</code>当作一条命令去执行了，而非一条查询语句，那么我们的数据库就被次了，Acaleph成功删库跑路。    </p>
 <p>上面的例子只是一个初步的认识，想了解更多就自行Google啦。    </p>
 <h2 id="0x03-注入思路"><a href="#0x03-注入思路" class="headerlink" title="0x03 注入思路"></a>0x03 注入思路</h2><p><img src="/2017/07/26/sqli-2/25.png" alt="">  </p>
-<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><ol>
-<li>查询字段数（order by）</li>
-<li>找出注入点</li>
-<li>获取数据库名（database()）</li>
-<li>获取表名</li>
-<li>获取字段名</li>
-<li>获取具体数据</li>
-</ol>
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">查询字段数（<span class="keyword">order</span> <span class="title">by</span>）</div><div class="line">找出注入点</div><div class="line">获取数据库名（database()）</div><div class="line">获取表名</div><div class="line">获取字段名</div><div class="line">获取具体数据</div></pre></td></tr></table></figure>
 <p>下面说一下<del>其实也不是很</del>具体的做法吧：</p>
 <h4 id="1-查询字段数"><a href="#1-查询字段数" class="headerlink" title="1. 查询字段数"></a>1. 查询字段数</h4><p>主要是利用<code>order by</code>语句来查询。    </p>
 <blockquote>
@@ -92,31 +81,18 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 </blockquote>
 <h4 id="5-获取字段名"><a href="#5-获取字段名" class="headerlink" title="5. 获取字段名"></a>5. 获取字段名</h4><p>还是通过<code>group_concat()</code>函数，利用<code>COLUMNS</code>表来获取字段名。   </p>
 <h4 id="6-获取具体数据"><a href="#6-获取具体数据" class="headerlink" title="6. 获取具体数据"></a>6. 获取具体数据</h4><p>表名和字段名都get到了，下面的操作就比较简单了。还是用上面的例子吧，比如一系列试探后我们得到了表名<code>ctf</code>和字段名<code>flag</code>，就可以构造语句<code>union select 1, (select flag from ctf), 3, 4</code>来获取具体的数据了。   </p>
-<ul>
-<li><em>当然以上都是一些比较基础的操作，实战过程中难免会遇到很多的防御措施，这时候就需要一些技巧来绕过了。</em></li>
-</ul>
+<p>当然以上都是一些比较基础的操作，实战过程中难免会遇到很多的防御措施，这时候就需要一些技巧来绕过了。</p>
 <h3 id="名为技巧的小家伙们"><a href="#名为技巧的小家伙们" class="headerlink" title="名为技巧的小家伙们"></a>名为技巧的小家伙们</h3><p>记录一些有趣的绕过方式。  </p>
 <blockquote>
-<p>LoRexxar-关于sqli注入的特殊函数：<a href="https://lorexxar.cn/2015/10/24/sqli_h/" target="_blank" rel="external">https://lorexxar.cn/2015/10/24/sqli_h/</a><br>LoRexxar-SQL显错注入：<a href="https://lorexxar.cn/2015/11/19/sql-error/" target="_blank" rel="external">https://lorexxar.cn/2015/11/19/sql-error/</a><br>lightless-SQL Injection 的猥琐技巧：<a href="https://lightless.me/archives/SQL-Injection-weisuo-Skill.html" target="_blank" rel="external">https://lightless.me/archives/SQL-Injection-weisuo-Skill.html</a></p>
+<p><a href="https://lorexxar.cn/2015/10/24/sqli_h/" target="_blank" rel="external">LoRexxar-关于sqli注入的特殊函数</a><br><a href="https://lorexxar.cn/2015/11/19/sql-error/" target="_blank" rel="external">LoRexxar-SQL显错注入</a><br><a href="https://lightless.me/archives/SQL-Injection-weisuo-Skill.html" target="_blank" rel="external">lightless-SQL Injection 的猥琐技巧</a></p>
 </blockquote>
-<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。  </p>
-<ol>
-<li>字符型（最典型的就是单引号’了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</li>
-<li>数字型（1+1会被处理成2，在尝试时需要注意’+’要用’%2b’代替）</li>
-<li>Boolean-based blind SQL injection（布尔型注入）</li>
-<li>Error-based SQL injection（报错型注入）</li>
-<li>UNION query SQL injection（可联合查询注入）</li>
-<li>Stacked queries SQL injection（可多语句查询注入）</li>
-<li>Time-based blind SQL injection（基于时间延迟注入）<br>     </li>
-</ol>
-<ul>
-<li><em>各种注入类型会在接下来的实例中仔细地讲一下。</em></li>
-</ul>
+<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）&lt;/br&gt;</div></pre></td></tr></table></figure></p>
+<p>各种注入类型会在接下来的实例中仔细地讲一下。</p>
 <h2 id="0x05-给牛奶盒上盖子"><a href="#0x05-给牛奶盒上盖子" class="headerlink" title="0x05 给牛奶盒上盖子"></a>0x05 给牛奶盒上盖子</h2><p><img src="/2017/07/26/sqli-2/31.png" alt=""></p>
 <p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。另外也打算写一篇番外 —— 关于sqlmap的用法总结。<br><br><br></p>
 <p>参考文章：    </p>
 <blockquote>
-<p>lightless的从零开始SQL注入系列：<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">https://lightless.me/archives/zero-to-n-sqli-1.html</a><br>一叶知秋的几篇关于SQL注入的文章：<a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">http://123.206.203.108/index.php/archives/18/</a></p>
+<p><a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">lightless的从零开始SQL注入系列</a><br><a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">一叶知秋的几篇关于SQL注入的文章</a></p>
 </blockquote>
 ]]></content>
       
@@ -134,8 +110,8 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
     <entry>
       <title><![CDATA[SQL蛋糕试做-注入篇（一）]]></title>
       <url>/2017/07/18/sqli-labs/</url>
-      <content type="html"><![CDATA[<p>一次系列制作尝试。</p>
-<a id="more"></a> 
+      <content type="html"><![CDATA[<p>$ cat ~/Fate/SQLi</p>
+<a id="more"></a>
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>开了个新坑。在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己做一个系列的想法。（当然要自己玩一遍才过瘾嘛(｡･∀･)ﾉﾞ）  </p>
 <p>长期不定时更，仅作为个人笔记。</p>
 <h2 id="0x01-搭建服务器环境"><a href="#0x01-搭建服务器环境" class="headerlink" title="0x01 搭建服务器环境"></a>0x01 搭建服务器环境</h2><ol>
@@ -150,9 +126,7 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 <li>来，回到之前的页面，选一个题试试：<a href="http://localhost:442/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://localhost:442/sqli-labs/Less-1/?id=1</a></li>
 </ol>
 <p><img src="/2017/07/18/sqli-labs/1.png" alt=""></p>
-<ul>
-<li>如果xampp下载的是PHP 7+的版本，可能会存在数据库连接的问题，网上有相应的解决方案，视情况自行解决吧XD。</li>
-</ul>
+<p>注：如果xampp下载的是PHP 7+的版本，可能会存在数据库连接的问题，网上有相应的解决方案，视情况自行解决吧XD。</p>
 ]]></content>
       
         
@@ -220,24 +194,25 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
       <title><![CDATA[hexo博客图片问题解决办法]]></title>
       <url>/2017/07/12/blog-picture-issue/</url>
       <content type="html"><![CDATA[<p>关于hexo博客图片无法正常显示的问题的解决办法。   </p>
-<a id="more"></a> 
+<a id="more"></a>
 <p>之前一直用的MarkdownPad2自带的添加图片按钮来添加图片（存储在hexo/source/imag里），但是经常会有显示不出的情况，不喜欢用各大图床，于是查了一波本地存储上传的方法，找到了一个<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">插件</a>来修正img标签以使图片正常显示。  </p>
 <p>参考自<a href="http://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="external">简书</a>。   </p>
 <h2 id="0x01-Asset设定确认"><a href="#0x01-Asset设定确认" class="headerlink" title="0x01 Asset设定确认"></a>0x01 Asset设定确认</h2><p>首先确认_config.yml 中有 post_asset_folder:true。<br>这时候每次hexo new会自动建立一个与文章同名的文件夹，我们可以把与该文章相关的所有资源都放到那个文件夹，来更方便得调用资源。     </p>
 <h2 id="0x02-插件添加"><a href="#0x02-插件添加" class="headerlink" title="0x02 插件添加"></a>0x02 插件添加</h2><p>在hexo文件夹执行：  </p>
-<pre><code>1. npm install https://github.com/CodeFalling/hexo-asset-image --save
-</code></pre><h2 id="0x03-图片添加"><a href="#0x03-图片添加" class="headerlink" title="0x03 图片添加"></a>0x03 图片添加</h2><p>完成安装后新建一个文件试试，发现在.md文件同级目录下会有一个同名文件夹。<br>比如我们新建了一个文件blog-picture-issue.md，然后在同名文件夹里放张图：1.PNG。   </p>
-<p>之后在md文件里加入下面的语句即可：   </p>
-<pre><code>![](blog-picture-issue/1.PNG)
-</code></pre><p><img src="/2017/07/12/blog-picture-issue/1.PNG" alt="">    </p>
-<ul>
-<li>[]里是图片的名称，可不写。   </li>
-</ul>
-<h2 id="0x04-issued"><a href="#0x04-issued" class="headerlink" title="0x04 issued"></a>0x04 issued</h2><p>这样的操作以后生成的html是：   </p>
-<pre><code>&lt;img src=&quot;/2017/07/12/blog-picture-issue/1.PNG&quot; alt=&quot;logo&quot;&gt;
-</code></pre><p>而非之前的：  </p>
-<pre><code>&lt;img src=&quot;blog-picture-issue/1.PNG&quot; alt=&quot;logo&quot;&gt;
-</code></pre><p>使得图片正常显示。</p>
+<blockquote>
+<p>   npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save</p>
+</blockquote>
+<h2 id="0x03-图片添加"><a href="#0x03-图片添加" class="headerlink" title="0x03 图片添加"></a>0x03 图片添加</h2><p>完成安装后新建一个文件试试，发现在.md文件同级目录下会有一个同名文件夹。<br>比如我们新建了一个文件blog-picture-issue.md，然后在同名文件夹里放张图：1.png。   </p>
+<p>之后在原图片引用语句的括号里写入：  </p>
+<blockquote>
+<p>   blog-picture-issue/1.PNG</p>
+</blockquote>
+<p>就能看到正常显示的图片了：   </p>
+<p><img src="/2017/07/12/blog-picture-issue/1.png" alt="">    </p>
+<p>注：[]里是图片的名称，可不写。   </p>
+<h2 id="0x04-issued"><a href="#0x04-issued" class="headerlink" title="0x04 issued"></a>0x04 issued</h2><p>这样的操作以后生成的html是：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"/2017/07/12/blog-picture-issue/1.PNG"</span> alt=<span class="string">"logo"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>而非之前的：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"blog-picture-issue/1.PNG"</span> alt=<span class="string">"logo"</span>&gt;”</div></pre></td></tr></table></figure></p>
+<p>使得图片正常显示。</p>
 ]]></content>
       
         
@@ -671,7 +646,7 @@ SELECT * FROM articles WHERE articles_id = 2 and drop db_articles
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="comment">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="comment">#新建页面</span></div><div class="line">hexo g                                  <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="comment">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
 <p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>
