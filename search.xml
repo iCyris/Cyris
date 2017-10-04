@@ -34,6 +34,12 @@
 <p>由于使用了htmlentities()函数，所以无法使用分号来闭合。因此我们用反斜杠去逃出单引号的限制，利用它构造payload：<code>?username=admin\&amp;password= or 1%23</code>，这样查询语句就变成了<code>SELECT * FROM users WHERE name=&#39;admin\&#39;AND pass=&#39; or 1#&#39;</code>，即可拿到flag。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -96,6 +102,12 @@
 </blockquote>
 ]]></content>
       
+        <categories>
+            
+            <category> SQL </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -129,6 +141,12 @@
 <p>注：如果xampp下载的是PHP 7+的版本，可能会存在数据库连接的问题，网上有相应的解决方案，视情况自行解决吧XD。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> SQL </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -179,6 +197,12 @@
 <p>以上。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 煮字 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -215,6 +239,12 @@
 <p>使得图片正常显示。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -277,6 +307,12 @@
 <p>这题采用的是crc32碰撞法。  </p>
 ]]></content>
       
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -306,6 +342,12 @@
 <p><del>看似坏的东西也不一定全是坏事，也可能是以一小部分的坏抵消了一大部分的坏也说不准。</del> 看起来有点像毒鸡汤，于是上个删除线。不会喜欢鸡汤类的东西，并不是那么适合大部分人，有时候还会变成强扭某种境遇的措辞，看着不是很舒服。当然翻倒的柠檬水的清香是真，这个体验是真实存在的，也的确愉悦了一会儿，再过一会儿味道没了，便又回到了一股燥热中。以及地面似乎没拖干净，黏，乎，乎……</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 煮字 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -433,6 +475,12 @@
 <p><img src="/2017/06/01/NCTF/SQLi3-ctf4.png" alt=""></p>
 ]]></content>
       
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -448,10 +496,16 @@
       <title><![CDATA[C++一些良好的编程习惯与要点]]></title>
       <url>/2017/05/26/C-habit/</url>
       <content type="html"><![CDATA[<p>C++一些良好的编程习惯摘录。</p>
-<a id="more"></a> 
+<a id="more"></a>
 <p>放个链接吧： <a href="http://www.cnblogs.com/QG-whz/p/5517643.html" target="_blank" rel="external">http://www.cnblogs.com/QG-whz/p/5517643.html</a><br>zizi是个不错的人呢。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> C/C++ </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -510,6 +564,12 @@
 <p>4.提交完成，去GitHub看眼Repository。内容修改成功。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> Git </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -543,6 +603,12 @@
 </ul>
 ]]></content>
       
+        <categories>
+            
+            <category> 学习资料 </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -661,6 +727,12 @@
 <p>以上。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -685,6 +757,12 @@
 <p>以上。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> 煮字 </category>
+            
+        </categories>
+        
         
         <tags>
             
