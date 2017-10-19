@@ -141,7 +141,7 @@
     <link href="https://icyris.github.io/2017/07/26/sqli-2/"/>
     <id>https://icyris.github.io/2017/07/26/sqli-2/</id>
     <published>2017-07-26T07:56:10.000Z</published>
-    <updated>2017-10-04T03:16:03.000Z</updated>
+    <updated>2017-10-19T14:05:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>熊孩子在数据库里吃糖到底是哪里出了问题！</p>
 <a id="more"></a>
@@ -181,7 +181,7 @@
 <blockquote>
 <p><a href="https://lorexxar.cn/2015/10/24/sqli_h/" target="_blank" rel="external">LoRexxar-关于sqli注入的特殊函数</a><br><a href="https://lorexxar.cn/2015/11/19/sql-error/" target="_blank" rel="external">LoRexxar-SQL显错注入</a><br><a href="https://lightless.me/archives/SQL-Injection-weisuo-Skill.html" target="_blank" rel="external">lightless-SQL Injection 的猥琐技巧</a></p>
 </blockquote>
-<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）&lt;/br&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）</div></pre></td></tr></table></figure></p>
 <p>各种注入类型会在接下来的实例中仔细地讲一下。</p>
 <h2 id="0x05-给牛奶盒上盖子"><a href="#0x05-给牛奶盒上盖子" class="headerlink" title="0x05 给牛奶盒上盖子"></a>0x05 给牛奶盒上盖子</h2><p><img src="/2017/07/26/sqli-2/31.png" alt=""></p>
 <p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。另外也打算写一篇番外 —— 关于sqlmap的用法总结。<br><br><br></p>
