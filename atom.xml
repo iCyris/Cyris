@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://icyris.github.io/"/>
-  <updated>2017-10-19T14:11:00.000Z</updated>
+  <updated>2017-10-20T17:05:50.000Z</updated>
   <id>https://icyris.github.io/</id>
   
   <author>
@@ -14,6 +14,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac配置Python虚拟环境Virtualenv</title>
+    <link href="https://icyris.github.io/2017/10/20/python-venv/"/>
+    <id>https://icyris.github.io/2017/10/20/python-venv/</id>
+    <published>2017-10-20T15:52:41.000Z</published>
+    <updated>2017-10-20T17:05:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>冬天来一碗白米粥，搭配点榨菜丝，很暖胃，很清口。</p>
+<a id="more"></a>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>在Mac自带的Python环境下直接安装一些包时经常会遇到各种问题，也不太喜欢把原生的环境弄乱，于是开始尝试一些解决办法。之前在写Flask的时候接触了Python的虚拟环境Virtualenv，觉得挺好用的，就在Mac里也配置了一下，表现还不错，搭配一些插件管理起来也很方便，记录一下留着日后用吧。</p>
+<p>Virtualenv可以用来创建一个独立的Python运行环境，很干净，很便捷，搭配virtualenvwrapper（一个扩展包，可以更方便地管理虚拟环境。）食用更佳。  </p>
+<h2 id="0x01-安装-virtualenv"><a href="#0x01-安装-virtualenv" class="headerlink" title="0x01 安装 virtualenv"></a>0x01 安装 virtualenv</h2><ol>
+<li><p>安装virtualenv：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo pip install virtualenv</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>建立测试目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir testvirtual    </span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> testvirtual</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>创建虚拟环境venv：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> virtualenv venv</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="0x02-安装-virtualenvwrapper"><a href="#0x02-安装-virtualenvwrapper" class="headerlink" title="0x02 安装 virtualenvwrapper"></a>0x02 安装 virtualenvwrapper</h2><p>Virtualenvwrapper是一个Virtualenv的扩展包，可以更方便地管理虚拟环境（新增、删除，启动等）。</p>
+<ol>
+<li><p>安装Virtualenvwrapper（默认安装在<code>/usr/local/bin</code>下面）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo easy_install virtualenvwrapper</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个文件夹，用来存放所有虚拟环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir ~/Workspaces</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/Workspaces</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量。把下面两行代码写入<code>~/.zshrc</code>（这个根据自己的shell来写，比如如果你用的是bash，就在<code>~/.bashrc</code>中添加）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> WORKON_HOME=~/Workspace</div><div class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>使配置生效：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ./zshrc</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个或多个虚拟环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv2</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>创建成功后路径前面就会有<code>(venv)</code>等字样。</p>
+<h2 id="0x03-常见操作命令"><a href="#0x03-常见操作命令" class="headerlink" title="0x03 常见操作命令"></a>0x03 常见操作命令</h2><p>一些基本操作命令：   </p>
+<ol>
+<li>列出虚拟环境：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> workon</span></div><div class="line">venv</div><div class="line">venv3</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>或者用<code>lsvirtualenv -b</code>，效果一样。</p>
+<ol>
+<li><p>切换虚拟环境：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">workon venv</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>查看环境里安装了哪些包：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> lssitepackages</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>进入当前环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdvirtualenv</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>进入当前环境的site-packages：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages</span></div><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages pip</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>复制虚拟环境：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> cpvirtualenv venv venv3</div><div class="line"><span class="function"><span class="title">Copying</span></span> venv as venv3...</div></pre></td></tr></table></figure>
+</li>
+<li><p>退出虚拟环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> deactivate</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>删除虚拟环境：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> rmvirtualenv venv2</div><div class="line"><span class="function"><span class="title">Removing</span></span> venv2...</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>接下来安装Python的各种包就很顺利流畅了。</p>
+<h2 id="0x04-小白粥"><a href="#0x04-小白粥" class="headerlink" title="0x04 小白粥"></a>0x04 小白粥</h2><p>做了对自觉挺好看的印章，刻了喜欢的句子，浅蓝色的纯白很棒，看到粥粥收到礼物时的表情，自己也挺开心的。万事万物，喜欢最好。</p>
+<p>冬天到啦，大家都要注意保暖呢。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;冬天来一碗白米粥，搭配点榨菜丝，很暖胃，很清口。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://icyris.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://icyris.github.io/tags/Python/"/>
+    
+      <category term="Virtualenv" scheme="https://icyris.github.io/tags/Virtualenv/"/>
+    
+  </entry>
   
   <entry>
     <title>给你压缩包却不给你密码的人到底在想什么</title>
@@ -823,7 +913,7 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="comment">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="comment">#新建页面</span></div><div class="line">hexo g                                  <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="comment">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
 <p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>
