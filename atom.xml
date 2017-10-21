@@ -98,12 +98,12 @@
     
     </summary>
     
-      <category term="Python" scheme="https://icyris.github.io/categories/Python/"/>
+      <category term="Python" scheme="https://icyris.github.io/categories/python/"/>
     
     
-      <category term="Python" scheme="https://icyris.github.io/tags/Python/"/>
+      <category term="Python" scheme="https://icyris.github.io/tags/python/"/>
     
-      <category term="Virtualenv" scheme="https://icyris.github.io/tags/Virtualenv/"/>
+      <category term="Virtualenv" scheme="https://icyris.github.io/tags/virtualenv/"/>
     
   </entry>
   
@@ -170,10 +170,10 @@
     
     </summary>
     
-      <category term="CTF" scheme="https://icyris.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/categories/ctf/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
   </entry>
   
@@ -219,12 +219,12 @@
     
     </summary>
     
-      <category term="CTF" scheme="https://icyris.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/categories/ctf/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
-      <category term="NCTF" scheme="https://icyris.github.io/tags/NCTF/"/>
+      <category term="NCTF" scheme="https://icyris.github.io/tags/nctf/"/>
     
   </entry>
   
@@ -289,12 +289,12 @@
     
     </summary>
     
-      <category term="SQL" scheme="https://icyris.github.io/categories/SQL/"/>
+      <category term="SQL" scheme="https://icyris.github.io/categories/sql/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
-      <category term="SQLi" scheme="https://icyris.github.io/tags/SQLi/"/>
+      <category term="SQLi" scheme="https://icyris.github.io/tags/sqli/"/>
     
   </entry>
   
@@ -330,12 +330,12 @@
     
     </summary>
     
-      <category term="SQL" scheme="https://icyris.github.io/categories/SQL/"/>
+      <category term="SQL" scheme="https://icyris.github.io/categories/sql/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
-      <category term="SQLi" scheme="https://icyris.github.io/tags/SQLi/"/>
+      <category term="SQLi" scheme="https://icyris.github.io/tags/sqli/"/>
     
   </entry>
   
@@ -403,7 +403,7 @@
     <link href="https://icyris.github.io/2017/07/12/blog-picture-issue/"/>
     <id>https://icyris.github.io/2017/07/12/blog-picture-issue/</id>
     <published>2017-07-12T11:46:06.000Z</published>
-    <updated>2017-10-21T14:15:28.000Z</updated>
+    <updated>2017-10-21T14:27:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于hexo博客图片无法正常显示的问题的解决办法。   </p>
 <a id="more"></a>
@@ -433,10 +433,10 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://icyris.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://icyris.github.io/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="https://icyris.github.io/tags/hexo/"/>
+      <category term="Hexo" scheme="https://icyris.github.io/tags/hexo/"/>
     
   </entry>
   
@@ -503,12 +503,12 @@
     
     </summary>
     
-      <category term="CTF" scheme="https://icyris.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/categories/ctf/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
-      <category term="OpenCTF" scheme="https://icyris.github.io/tags/OpenCTF/"/>
+      <category term="OpenCTF" scheme="https://icyris.github.io/tags/openctf/"/>
     
   </entry>
   
@@ -676,12 +676,12 @@
     
     </summary>
     
-      <category term="CTF" scheme="https://icyris.github.io/categories/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/categories/ctf/"/>
     
     
-      <category term="CTF" scheme="https://icyris.github.io/tags/CTF/"/>
+      <category term="CTF" scheme="https://icyris.github.io/tags/ctf/"/>
     
-      <category term="NCTF" scheme="https://icyris.github.io/tags/NCTF/"/>
+      <category term="NCTF" scheme="https://icyris.github.io/tags/nctf/"/>
     
   </entry>
   
@@ -703,10 +703,10 @@
     
     </summary>
     
-      <category term="C/C++" scheme="https://icyris.github.io/categories/C-C/"/>
+      <category term="C/C++" scheme="https://icyris.github.io/categories/c-c/"/>
     
     
-      <category term="C++" scheme="https://icyris.github.io/tags/C/"/>
+      <category term="C++" scheme="https://icyris.github.io/tags/c/"/>
     
   </entry>
   
@@ -769,12 +769,12 @@
     
     </summary>
     
-      <category term="Git" scheme="https://icyris.github.io/categories/Git/"/>
+      <category term="Git" scheme="https://icyris.github.io/categories/git/"/>
     
+    
+      <category term="Git" scheme="https://icyris.github.io/tags/git/"/>
     
       <category term="wiki" scheme="https://icyris.github.io/tags/wiki/"/>
-    
-      <category term="Git" scheme="https://icyris.github.io/tags/Git/"/>
     
   </entry>
   
@@ -934,10 +934,10 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://icyris.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://icyris.github.io/categories/hexo/"/>
     
     
-      <category term="Hexo" scheme="https://icyris.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://icyris.github.io/tags/hexo/"/>
     
   </entry>
   
