@@ -651,29 +651,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[C++一些良好的编程习惯与要点]]></title>
-      <url>/2017/05/26/C-habit/</url>
-      <content type="html"><![CDATA[<p>C++一些良好的编程习惯摘录。</p>
-<a id="more"></a>
-<p>放个链接吧： <a href="http://www.cnblogs.com/QG-whz/p/5517643.html" target="_blank" rel="external">http://www.cnblogs.com/QG-whz/p/5517643.html</a><br>zizi是个不错的人呢。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> C/C++ </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> C++ </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[GIT时光机]]></title>
       <url>/2017/05/13/git/</url>
       <content type="html"><![CDATA[<p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
