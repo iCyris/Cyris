@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icyris.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-10-21T15:16:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icyris.github.io/2017/04/15/wiki/</loc>
     
     <lastmod>2017-10-21T14:27:43.000Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>https://icyris.github.io/about/index.html</loc>
     
     <lastmod>2017-09-23T16:40:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-09-23T16:16:02.000Z</lastmod>
     
   </url>
   
