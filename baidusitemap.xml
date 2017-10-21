@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://icyris.github.io/2017/04/15/wiki/</loc>
+    <lastmod>2017-10-21T14:27:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>魔法禁书目录</title>
+        <pubTime>2017-04-15T01:38:00.000Z</pubTime>
+        
+        <tag>wiki</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习资料" url="https://icyris.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://icyris.github.io/2017/07/12/blog-picture-issue/</loc>
     <lastmod>2017-10-21T14:27:28.000Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="Hexo" url="https://icyris.github.io/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://icyris.github.io/2017/04/15/wiki/</loc>
-    <lastmod>2017-10-21T14:16:15.000Z</lastmod>
-    <data>
-        <display>
-        <title>魔法禁书目录</title>
-        <pubTime>2017-04-15T01:38:00.000Z</pubTime>
-        
-        <tag>wiki</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习资料" url="https://icyris.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
           
         </display>
     </data>
