@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icyris.github.io/2017/10/26/urllib2/</loc>
+    
+    <lastmod>2017-10-26T11:47:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/10/21/python-venv/</loc>
+    
+    <lastmod>2017-10-26T11:44:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
+    
+    <lastmod>2017-10-26T03:12:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
+    
+    <lastmod>2017-10-26T03:11:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/05/13/git/</loc>
+    
+    <lastmod>2017-10-26T03:08:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icyris.github.io/2017/07/02/tea-maker/</loc>
     
     <lastmod>2017-10-21T15:35:47.000Z</lastmod>
@@ -9,30 +44,9 @@
   </url>
   
   <url>
-    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
-    
-    <lastmod>2017-10-21T15:35:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
-    
-    <lastmod>2017-10-21T15:35:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://icyris.github.io/2017/10/19/rar-attack/</loc>
     
     <lastmod>2017-10-21T15:35:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/10/21/python-venv/</loc>
-    
-    <lastmod>2017-10-21T15:34:59.000Z</lastmod>
     
   </url>
   
@@ -54,13 +68,6 @@
     <loc>https://icyris.github.io/2017/09/23/NCTF-2/</loc>
     
     <lastmod>2017-10-21T15:34:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/05/13/git/</loc>
-    
-    <lastmod>2017-10-21T15:34:30.000Z</lastmod>
     
   </url>
   
