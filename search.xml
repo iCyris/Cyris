@@ -47,64 +47,33 @@
       <content type="html"><![CDATA[<p>在Mac自带的Python环境下直接安装一些包时经常会遇到各种问题，也不太喜欢把原生的环境弄乱，就装了个虚拟环境，记录下留着日后用吧。</p>
 <a id="more"></a>
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>之前在写Flask的时候接触了Python的虚拟环境Virtualenv，它可以用来创建一个独立的Python运行环境，很干净，很便捷，搭配virtualenvwrapper（一个扩展包，可以更方便地管理虚拟环境）食用更佳。  </p>
-<h2 id="0x01-安装-virtualenv"><a href="#0x01-安装-virtualenv" class="headerlink" title="0x01 安装 virtualenv"></a>0x01 安装 virtualenv</h2><ol>
-<li><p>安装virtualenv：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo pip install virtualenv</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>建立测试目录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir testvirtual    </span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> testvirtual</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>创建虚拟环境venv：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> virtualenv venv</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+<hr>
+<h2 id="0x01-安装-virtualenv"><a href="#0x01-安装-virtualenv" class="headerlink" title="0x01 安装 virtualenv"></a>0x01 安装 virtualenv</h2><h3 id="1-安装-virtualenv"><a href="#1-安装-virtualenv" class="headerlink" title="1. 安装 virtualenv"></a>1. 安装 virtualenv</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo pip install virtualenv</span></div></pre></td></tr></table></figure>
+<h3 id="2-建立测试目录"><a href="#2-建立测试目录" class="headerlink" title="2. 建立测试目录"></a>2. 建立测试目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir testvirtual    </span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> testvirtual</span></div></pre></td></tr></table></figure>
+<h3 id="3-创建虚拟环境-venv"><a href="#3-创建虚拟环境-venv" class="headerlink" title="3. 创建虚拟环境 venv"></a>3. 创建虚拟环境 venv</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> virtualenv venv</span></div></pre></td></tr></table></figure>
+<hr>
 <h2 id="0x02-安装-virtualenvwrapper"><a href="#0x02-安装-virtualenvwrapper" class="headerlink" title="0x02 安装 virtualenvwrapper"></a>0x02 安装 virtualenvwrapper</h2><p>Virtualenvwrapper是一个Virtualenv的扩展包，可以更方便地管理虚拟环境（新增、删除，启动等）。</p>
-<ol>
-<li><p>安装Virtualenvwrapper（默认安装在<code>/usr/local/bin</code>下面）：</p>
+<h3 id="1-安装-Virtualenvwrapper"><a href="#1-安装-Virtualenvwrapper" class="headerlink" title="1. 安装 Virtualenvwrapper"></a>1. 安装 Virtualenvwrapper</h3><p>默认安装在<code>/usr/local/bin</code>下面</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo easy_install virtualenvwrapper</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>创建一个文件夹，用来存放所有虚拟环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir ~/Workspace</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/Workspace</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>设置环境变量。把下面两行代码写入<code>~/.zshrc</code>（这个根据自己的shell来写，比如如果你用的是bash，就在<code>~/.bashrc</code>中添加）：</p>
+<h3 id="2-创建一个文件夹，用来存放所有虚拟环境"><a href="#2-创建一个文件夹，用来存放所有虚拟环境" class="headerlink" title="2. 创建一个文件夹，用来存放所有虚拟环境"></a>2. 创建一个文件夹，用来存放所有虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkdir ~/Workspace</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/Workspace</span></div></pre></td></tr></table></figure>
+<h3 id="3-设置环境变量"><a href="#3-设置环境变量" class="headerlink" title="3. 设置环境变量"></a>3. 设置环境变量</h3><p>把下面两行代码写入<code>~/.zshrc</code>（这个根据自己的shell来写，比如如果你用的是bash，就在<code>~/.bashrc</code>中添加)。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> WORKON_HOME=~/Workspace</div><div class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>使配置生效：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ./zshrc</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>创建一个或多个虚拟环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv2</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="4-使配置生效"><a href="#4-使配置生效" class="headerlink" title="4. 使配置生效"></a>4. 使配置生效</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ./zshrc</span></div></pre></td></tr></table></figure>
+<h3 id="5-创建一个或多个虚拟环境"><a href="#5-创建一个或多个虚拟环境" class="headerlink" title="5. 创建一个或多个虚拟环境"></a>5. 创建一个或多个虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> mkvirtualenv venv2</span></div></pre></td></tr></table></figure>
 <p>创建成功后路径前面就会有<code>(venv)</code>等字样。</p>
+<hr>
 <h2 id="0x03-常见操作命令"><a href="#0x03-常见操作命令" class="headerlink" title="0x03 常见操作命令"></a>0x03 常见操作命令</h2><p>一些基本操作命令：   </p>
-<ol>
-<li><p>列出虚拟环境 (或者用<code>lsvirtualenv -b</code>，效果一样)：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> workon</span></div><div class="line">venv</div><div class="line">venv3</div></pre></td></tr></table></figure>
-</li>
-<li><p>切换虚拟环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> workon venv</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>查看环境里安装了哪些包：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> lssitepackages</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>进入当前环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdvirtualenv</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>进入当前环境的site-packages：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages</span></div><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages pip</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>复制虚拟环境：</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> cpvirtualenv venv venv3</div><div class="line"><span class="function"><span class="title">Copying</span></span> venv as venv3...</div></pre></td></tr></table></figure>
-</li>
-<li><p>退出虚拟环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> deactivate</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>删除虚拟环境：</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> rmvirtualenv venv2</div><div class="line"><span class="function"><span class="title">Removing</span></span> venv2...</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="1-列出虚拟环境"><a href="#1-列出虚拟环境" class="headerlink" title="1. 列出虚拟环境"></a>1. 列出虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> workon</span></div><div class="line">venv</div><div class="line">venv3</div></pre></td></tr></table></figure>
+<p>或者用<code>lsvirtualenv -b</code>，效果一样。</p>
+<h3 id="2-建立测试目录-1"><a href="#2-建立测试目录-1" class="headerlink" title="2. 建立测试目录"></a>2. 建立测试目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> workon venv</span></div></pre></td></tr></table></figure>
+<h3 id="3-查看环境里安装了哪些包"><a href="#3-查看环境里安装了哪些包" class="headerlink" title="3. 查看环境里安装了哪些包"></a>3. 查看环境里安装了哪些包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> lssitepackages</span></div></pre></td></tr></table></figure>
+<h3 id="4-进入当前环境"><a href="#4-进入当前环境" class="headerlink" title="4. 进入当前环境"></a>4. 进入当前环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdvirtualenv</span></div></pre></td></tr></table></figure>
+<h3 id="5-进入当前环境的site-packages"><a href="#5-进入当前环境的site-packages" class="headerlink" title="5. 进入当前环境的site-packages"></a>5. 进入当前环境的site-packages</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages</span></div><div class="line"><span class="meta">$</span><span class="bash"> cdsitepackages pip</span></div></pre></td></tr></table></figure>
+<h3 id="6-复制虚拟环境"><a href="#6-复制虚拟环境" class="headerlink" title="6. 复制虚拟环境"></a>6. 复制虚拟环境</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> cpvirtualenv venv venv3</div><div class="line"><span class="function"><span class="title">Copying</span></span> venv as venv3...</div></pre></td></tr></table></figure>
+<h3 id="7-退出虚拟环境"><a href="#7-退出虚拟环境" class="headerlink" title="7. 退出虚拟环境"></a>7. 退出虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> deactivate</span></div></pre></td></tr></table></figure>
+<h3 id="8-删除虚拟环境"><a href="#8-删除虚拟环境" class="headerlink" title="8. 删除虚拟环境"></a>8. 删除虚拟环境</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> rmvirtualenv venv2</div><div class="line"><span class="function"><span class="title">Removing</span></span> venv2...</div></pre></td></tr></table></figure>
 <p>接下来安装Python的各种包就很顺利了。</p>
+<hr>
 <h2 id="0x04-纯白刻印"><a href="#0x04-纯白刻印" class="headerlink" title="0x04 纯白刻印"></a>0x04 纯白刻印</h2><p>做了对自觉挺好看的印章，刻了喜欢的句子，浅蓝色的纯白很棒。万事万物，喜欢最好。</p>
 <p>冬天到啦，大家都要注意保暖呢。</p>
 <p>参考文章：</p>
@@ -203,18 +172,20 @@
       <url>/2017/09/23/NCTF-2/</url>
       <content type="html"><![CDATA[<p>下午又写了几个题，做点小笔记。</p>
 <a id="more"></a>  
-<h2 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h2><p>URL:<br><a href="http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html" target="_blank" rel="external">http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html</a>   </p>
+<h2 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h2><p>URL: <a href="http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html" target="_blank" rel="external">http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html</a>   </p>
 <p>一个简易的上传界面，先传了个png格式的图片试水，得到回显：“必须上传成后缀名为php的文件才行啊!”。要同时满足这些条件，应该要用到截断，试了很多姿势都不行，于是开burp看了看：  </p>
 <p><img src="/2017/09/23/NCTF-2/scrg-1.png" alt="">  </p>
 <p>留意到这个“/uploads/”，试试在后面加个”.php”，得到了这个：  </p>
 <p><img src="/2017/09/23/NCTF-2/scrg-2.png" alt="">  </p>
 <p>下面就可以进行截断了。把刚才的语句改成”.php （末尾多个空格）”，然后去hex界面把对应位置的”20”改成”00”进行截断，Go。  </p>
 <p><img src="/2017/09/23/NCTF-2/scrg-3.png" alt=""></p>
-<h2 id="起名字真难"><a href="#起名字真难" class="headerlink" title="起名字真难"></a>起名字真难</h2><p>URL:<br><a href="http://chinalover.sinaapp.com/web12/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web12/index.php</a>   </p>
+<hr>
+<h2 id="起名字真难"><a href="#起名字真难" class="headerlink" title="起名字真难"></a>起名字真难</h2><p>URL: <a href="http://chinalover.sinaapp.com/web12/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web12/index.php</a>   </p>
 <p>直接给出了源码：  </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">noother_says_correct</span><span class="params">($number)</span></span></div><div class="line">&#123;</div><div class="line">        $one = ord(<span class="string">'1'</span>);</div><div class="line">        $nine = ord(<span class="string">'9'</span>);</div><div class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; strlen($number); $i++)</div><div class="line">        &#123;   </div><div class="line">                $digit = ord($number&#123;$i&#125;);</div><div class="line">                <span class="keyword">if</span> ( ($digit &gt;= $one) &amp;&amp; ($digit &lt;= $nine) )</div><div class="line">                &#123;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">          <span class="keyword">return</span> $number == <span class="string">'54975581388'</span>;</div><div class="line">&#125;</div><div class="line">$flag=<span class="string">'*******'</span>;</div><div class="line"><span class="keyword">if</span>(noother_says_correct($_GET[<span class="string">'key'</span>]))</div><div class="line">    <span class="keyword">echo</span> $flag;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    <span class="keyword">echo</span> <span class="string">'access denied'</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>可以看到这个函数做了一个对数字的判断，很巧的是number的值转16进制后为”0xccccccccc”，可以传入。于是payload便为”?key=0xccccccccc”。</p>
-<h2 id="sql-injection-4"><a href="#sql-injection-4" class="headerlink" title="sql injection 4"></a>sql injection 4</h2><p>URL:<br><a href="http://chinalover.sinaapp.com/web15/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web15/index.php</a>   </p>
+<hr>
+<h2 id="sql-injection-4"><a href="#sql-injection-4" class="headerlink" title="sql injection 4"></a>sql injection 4</h2><p>URL: <a href="http://chinalover.sinaapp.com/web15/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web15/index.php</a>   </p>
 <p>TIP:<br>反斜杠可以用来转义<br>仔细查看相关函数的用法  </p>
 <p>F12有源码：  </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clean</span><span class="params">($str)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(get_magic_quotes_gpc())&#123;</div><div class="line">        $str=stripslashes($str);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> htmlentities($str, ENT_QUOTES);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$username = @clean((string)$_GET[<span class="string">'username'</span>]);</div><div class="line">$password = @clean((string)$_GET[<span class="string">'password'</span>]);</div><div class="line"></div><div class="line">$query=<span class="string">'SELECT * FROM users WHERE name=\''</span>.$username.<span class="string">'\' AND pass=\''</span>.$password.<span class="string">'\';'</span>;</div><div class="line">$result=mysql_query($query);</div><div class="line"><span class="keyword">if</span>(!$result || mysql_num_rows($result) &lt; <span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">die</span>(<span class="string">'Invalid password!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>

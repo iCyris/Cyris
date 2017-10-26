@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://icyris.github.io/2017/10/26/urllib2/</loc>
+    <loc>https://icyris.github.io/2017/09/23/NCTF-2/</loc>
     
-    <lastmod>2017-10-26T11:47:05.000Z</lastmod>
+    <lastmod>2017-10-26T12:14:04.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://icyris.github.io/2017/10/21/python-venv/</loc>
     
-    <lastmod>2017-10-26T11:44:01.000Z</lastmod>
+    <lastmod>2017-10-26T12:08:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/10/26/urllib2/</loc>
+    
+    <lastmod>2017-10-26T11:47:05.000Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://icyris.github.io/2017/06/01/NCTF/</loc>
     
     <lastmod>2017-10-21T15:34:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/09/23/NCTF-2/</loc>
-    
-    <lastmod>2017-10-21T15:34:36.000Z</lastmod>
     
   </url>
   
