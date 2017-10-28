@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
+    
+    <lastmod>2017-10-28T14:48:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icyris.github.io/2017/10/27/code-leakage/</loc>
     
     <lastmod>2017-10-28T12:34:53.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://icyris.github.io/2017/10/26/urllib2/</loc>
     
     <lastmod>2017-10-26T11:47:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
-    
-    <lastmod>2017-10-26T03:12:22.000Z</lastmod>
     
   </url>
   

@@ -106,7 +106,7 @@
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/14.png">
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/25.png">
 <meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/31.png">
-<meta property="og:updated_time" content="2017-10-26T03:12:22.000Z">
+<meta property="og:updated_time" content="2017-10-28T14:48:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始的SQL注入（二）">
 <meta name="twitter:description" content="熊孩子在数据库里吃糖到底是哪里出了问题！">
@@ -467,7 +467,7 @@
 <h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）</div></pre></td></tr></table></figure></p>
 <p>各种注入类型会在接下来的实例中仔细地讲一下。</p>
 <h2 id="0x05-给牛奶盒上盖子"><a href="#0x05-给牛奶盒上盖子" class="headerlink" title="0x05 给牛奶盒上盖子"></a>0x05 给牛奶盒上盖子</h2><p><img src="/2017/07/26/sqli-2/31.png" alt=""></p>
-<p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。另外也打算写一篇番外 —— 关于sqlmap的用法总结。<br><br><br></p>
+<p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。<br><br><br></p>
 <p>参考文章：    </p>
 <blockquote>
 <p><a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">lightless的从零开始SQL注入系列</a><br><a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">一叶知秋的几篇关于SQL注入的文章</a></p>
@@ -603,7 +603,7 @@
                alt="Cyris" />
           <p class="site-author-name" itemprop="name">Cyris</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">知言养气，抓住有味。</p>
           
         </div>
         <nav class="site-state motion-element">
