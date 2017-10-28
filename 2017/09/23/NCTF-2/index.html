@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ctf,NCTF," />
+  <meta name="keywords" content="ctf,writeup," />
 
 
 
@@ -97,7 +97,7 @@
 
 
 <meta name="description" content="下午又写了几个题，做点小笔记。">
-<meta name="keywords" content="ctf,NCTF">
+<meta name="keywords" content="ctf,writeup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NCTF WriteUp（二）">
 <meta property="og:url" content="https://icyris.github.io/2017/09/23/NCTF-2/index.html">
@@ -106,7 +106,7 @@
 <meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-1.png">
 <meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-2.png">
 <meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-3.png">
-<meta property="og:updated_time" content="2017-10-26T12:14:04.000Z">
+<meta property="og:updated_time" content="2017-10-28T04:51:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NCTF WriteUp（二）">
 <meta name="twitter:description" content="下午又写了几个题，做点小笔记。">
@@ -451,7 +451,7 @@
 <ol>
 <li><a href="http://php.net/manual/zh/function.get-magic-quotes-gpc.php" target="_blank" rel="external">get_magic_quotes_gpc()</a>: 这个函数如果设置为”On”可以判断用户传入（如: post、get、cookie）的数据，增加转义字符“\”，以确保这些数据不会引起程序，特别是数据库语句因为特殊字符而产生的一系列错误。  </li>
 <li><a href="http://www.w3school.com.cn/php/func_string_stripslashes.asp" target="_blank" rel="external">stripslashes()</a>: 这个函数则能删除由 addslashes() 函数添加的反斜杠，可用于清理从数据库中或者从 HTML 表单中取回的数据。  </li>
-<li><a href="http://www.w3school.com.cn/php/func_string_htmlentities.asp" target="_blank" rel="external">htmlentities()</a>: 把字符转换为 HTML 实体。</li>
+<li><a href="http://www.w3school.com.cn/php/func_string_htmlentities.asp" target="_blank" rel="external">htmlentities()</a>: 把字符转换为 HTML 实体。     </li>
 </ol>
 </blockquote>
 <p>由于使用了htmlentities()函数，所以无法使用分号来闭合。因此我们用反斜杠去逃出单引号的限制，利用它构造payload：<code>?username=admin\&amp;password= or 1%23</code>，这样查询语句就变成了<code>SELECT * FROM users WHERE name=&#39;admin\&#39;AND pass=&#39; or 1#&#39;</code>，即可拿到flag。</p>
@@ -492,7 +492,7 @@
           
             <a href="/tags/ctf/" rel="tag"># ctf</a>
           
-            <a href="/tags/NCTF/" rel="tag"># NCTF</a>
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
           
         </div>
       
@@ -594,7 +594,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
