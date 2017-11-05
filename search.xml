@@ -3,6 +3,51 @@
   
     
     <entry>
+      <title><![CDATA[Jarvios OJ Writeup]]></title>
+      <url>/2017/11/04/jarviosoj-wp/</url>
+      <content type="html"><![CDATA[<p>$ which <a href="https://www.jarvisoj.com/" target="_blank" rel="external">platform</a></p>
+<a id="more"></a>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>Jarvios OJ 部分题目的writeup。   </p>
+<p>（不定期更。）</p>
+<hr>
+<h2 id="0x01-Web部分"><a href="#0x01-Web部分" class="headerlink" title="0x01 Web部分"></a>0x01 Web部分</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
+<p>题目链接：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
+<p>在 Headers 里找到一条hint：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></div></pre></td></tr></table></figure></p>
+<p>涉及到一个MD5加密后的注入问题。    </p>
+<p>关于这条md5语句我们先来看下php手册中的描述：</p>
+<blockquote>
+<p><strong>Description</strong></p>
+<p>string md5 ( string str [, bool raw_output] )</p>
+<p>Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. If the optional raw_output is set to TRUE, then the md5 digest is instead returned in raw binary format with a length of 16.</p>
+<p>注: The optional raw_output parameter was added in PHP 5.0.0 and defaults to FALSE</p>
+</blockquote>
+<p>也就是说，如果md5后的hex转换成字符串后，若包含 <code>&#39;or&#39;&lt;trash&gt;</code> 这样的字符串，那整个sql语句就会变成：   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM admin WHERE <span class="keyword">pass</span> = <span class="string">''</span>o<span class="string">r'&lt;trash&gt;'</span></div></pre></td></tr></table></figure>
+<p>就可以进行注入了。   </p>
+<p>网上找到一个字符串：<code>ffifdyop</code></p>
+<p>md5以后：<code>276f722736c95d99e921722cf9ed621c</code></p>
+<p>再转换成字符串即为<code>&#39;or&#39;&lt;trash&gt;</code>  </p>
+<p>这题把上面这个字符串作为 password 传入即可。  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ctf </tag>
+            
+            <tag> writeup </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Web源码泄漏总结]]></title>
       <url>/2017/10/27/code-leakage/</url>
       <content type="html"><![CDATA[<p>源码泄漏的问题经常在一些渗透测试或者CTF中出现，这篇文章对一些常见的情况做了点整理XD。  </p>
@@ -152,7 +197,7 @@
 <a id="more"></a>
 <h2 id="0x01-常见用法整理"><a href="#0x01-常见用法整理" class="headerlink" title="0x01 常见用法整理"></a>0x01 常见用法整理</h2><p>这部分纯搬运自：<a href="https://lightless.me/archives/38.html" target="_blank" rel="external">Lightless - Python urllib2</a>   </p>
 <h3 id="1-通过-urllib2-获取网页内容"><a href="#1-通过-urllib2-获取网页内容" class="headerlink" title="1. 通过 urllib2 获取网页内容"></a>1. 通过 urllib2 获取网页内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">html = response.read()</div><div class="line"><span class="keyword">print</span> html</div><div class="line"></div><div class="line"><span class="comment"># or</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">req = urllib2.Request(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()</div><div class="line"><span class="keyword">print</span> the_page</div></pre></td></tr></table></figure>
-<h3 id="2-发送POST请求"><a href="#2-发送POST请求" class="headerlink" title="2. 发送POST请求"></a>2. 发送POST请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">url = <span class="string">'http://www.someserver.com/register.cgi'</span></div><div class="line">values = &#123;<span class="string">'name'</span> : <span class="string">'WHY'</span>,</div><div class="line">          <span class="string">'location'</span> : <span class="string">'SDU'</span>,</div><div class="line">          <span class="string">'language'</span> : <span class="string">'Python'</span> &#125;</div><div class="line">data = urllib.urlencode(values) <span class="comment"># 编码工作</span></div><div class="line">req = urllib2.Request(url, data)  <span class="comment"># 发送请求同时传data表单</span></div><div class="line">response = urllib2.urlopen(req)  <span class="comment">#接受反馈的信息</span></div><div class="line">the_page = response.read()  <span class="comment">#读取反馈的内容</span></div></pre></td></tr></table></figure>
+<h3 id="2-发送POST请求"><a href="#2-发送POST请求" class="headerlink" title="2. 发送POST请求"></a>2. 发送POST请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">url = <span class="string">'http://www.someserver.com/register.cgi'</span></div><div class="line">values = &#123;<span class="string">'name'</span> : <span class="string">'WHY'</span>,</div><div class="line">          <span class="string">'location'</span> : <span class="string">'SDU'</span>,</div><div class="line">          <span class="string">'language'</span> : <span class="string">'Python'</span> &#125;</div><div class="line">data = urllib.urlencode(values) <span class="comment"># 编码工作</span></div><div class="line">req = urllib2.Request(url, data)  <span class="comment"># 发送请求同时传data表单</span></div><div class="line">response = urllib2.urlopen(req)  <span class="comment"># 接受反馈的信息</span></div><div class="line">the_page = response.read()  <span class="comment"># 读取反馈的内容</span></div></pre></td></tr></table></figure>
 <h3 id="3-发送GET请求"><a href="#3-发送GET请求" class="headerlink" title="3. 发送GET请求"></a>3. 发送GET请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"></div><div class="line">data = &#123;&#125;</div><div class="line"></div><div class="line">data[<span class="string">'name'</span>] = <span class="string">'WHY'</span></div><div class="line">data[<span class="string">'location'</span>] = <span class="string">'SDU'</span></div><div class="line">data[<span class="string">'language'</span>] = <span class="string">'Python'</span></div><div class="line"></div><div class="line">url_values = urllib.urlencode(data)</div><div class="line"><span class="keyword">print</span> url_values</div><div class="line"></div><div class="line">name=Somebody+Here&amp;language=Python&amp;location=Northampton</div><div class="line">url = <span class="string">'http://www.example.com/example.cgi'</span></div><div class="line">full_url = url + <span class="string">'?'</span> + url_values</div><div class="line">data = urllib2.open(full_url)</div></pre></td></tr></table></figure>
 <h3 id="4-设置-UA"><a href="#4-设置-UA" class="headerlink" title="4. 设置 UA"></a>4. 设置 UA</h3><p>python 的默认 UA 是 python-urllib/x.y。  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">url = <span class="string">'http://www.someserver.com/cgi-bin/register.cgi'</span></div><div class="line"></div><div class="line">user_agent = <span class="string">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span></div><div class="line">values = &#123;<span class="string">'name'</span> : <span class="string">'WHY'</span>,</div><div class="line">          <span class="string">'location'</span> : <span class="string">'SDU'</span>,</div><div class="line">          <span class="string">'language'</span> : <span class="string">'Python'</span> &#125;</div><div class="line"></div><div class="line">headers = &#123; <span class="string">'User-Agent'</span> : user_agent &#125;</div><div class="line">data = urllib.urlencode(values)</div><div class="line">req = urllib2.Request(url, data, headers)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure>
@@ -997,7 +1042,7 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="comment">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="comment">#新建页面</span></div><div class="line">hexo g                                  <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="comment">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
 <p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>

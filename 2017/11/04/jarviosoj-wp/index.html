@@ -96,21 +96,17 @@
 
 
 
-<meta name="description" content="下午又写了几个题，做点小笔记。">
+<meta name="description" content="$ which platform">
 <meta name="keywords" content="ctf,writeup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NCTF WriteUp（二）">
-<meta property="og:url" content="https://icyris.github.io/2017/09/23/NCTF-2/index.html">
+<meta property="og:title" content="Jarvios OJ Writeup">
+<meta property="og:url" content="https://icyris.github.io/2017/11/04/jarviosoj-wp/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
-<meta property="og:description" content="下午又写了几个题，做点小笔记。">
-<meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-1.png">
-<meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-2.png">
-<meta property="og:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-3.png">
-<meta property="og:updated_time" content="2017-10-28T04:51:23.000Z">
+<meta property="og:description" content="$ which platform">
+<meta property="og:updated_time" content="2017-11-05T00:13:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NCTF WriteUp（二）">
-<meta name="twitter:description" content="下午又写了几个题，做点小笔记。">
-<meta name="twitter:image" content="https://icyris.github.io/2017/09/23/NCTF-2/scrg-1.png">
+<meta name="twitter:title" content="Jarvios OJ Writeup">
+<meta name="twitter:description" content="$ which platform">
 
 
 
@@ -139,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://icyris.github.io/2017/09/23/NCTF-2/"/>
+  <link rel="canonical" href="https://icyris.github.io/2017/11/04/jarviosoj-wp/"/>
 
 
 
 
 
-  <title>NCTF WriteUp（二） | Cyris | 绿生</title>
+  <title>Jarvios OJ Writeup | Cyris | 绿生</title>
   
 
 
@@ -332,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://icyris.github.io/2017/09/23/NCTF-2/">
+    <link itemprop="mainEntityOfPage" href="https://icyris.github.io/2017/11/04/jarviosoj-wp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cyris">
@@ -349,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NCTF WriteUp（二）</h1>
+          <h1 class="post-title" itemprop="name headline">Jarvios OJ Writeup</h1>
         
 
         <div class="post-meta">
@@ -361,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T21:55:10+08:00">
-                2017-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T11:23:21+08:00">
+                2017-11-04
               </time>
             
 
@@ -426,35 +422,29 @@
       
 
       
-        <p>下午又写了几个题，做点小笔记。</p>
-<a id="more"></a>  
-<h2 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h2><p>URL: <a href="http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html" target="_blank" rel="external">http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html</a>   </p>
-<p>一个简易的上传界面，先传了个png格式的图片试水，得到回显：“必须上传成后缀名为php的文件才行啊!”。要同时满足这些条件，应该要用到截断，试了很多姿势都不行，于是开burp看了看：  </p>
-<p><img src="/2017/09/23/NCTF-2/scrg-1.png" alt="">  </p>
-<p>留意到这个“/uploads/”，试试在后面加个”.php”，得到了这个：  </p>
-<p><img src="/2017/09/23/NCTF-2/scrg-2.png" alt="">  </p>
-<p>下面就可以进行截断了。把刚才的语句改成”.php （末尾多个空格）”，然后去hex界面把对应位置的”20”改成”00”进行截断，Go。  </p>
-<p><img src="/2017/09/23/NCTF-2/scrg-3.png" alt=""></p>
+        <p>$ which <a href="https://www.jarvisoj.com/" target="_blank" rel="external">platform</a></p>
+<a id="more"></a>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>Jarvios OJ 部分题目的writeup。   </p>
+<p>（不定期更。）</p>
 <hr>
-<h2 id="起名字真难"><a href="#起名字真难" class="headerlink" title="起名字真难"></a>起名字真难</h2><p>URL: <a href="http://chinalover.sinaapp.com/web12/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web12/index.php</a>   </p>
-<p>直接给出了源码：  </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">noother_says_correct</span><span class="params">($number)</span></span></div><div class="line">&#123;</div><div class="line">        $one = ord(<span class="string">'1'</span>);</div><div class="line">        $nine = ord(<span class="string">'9'</span>);</div><div class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; strlen($number); $i++)</div><div class="line">        &#123;   </div><div class="line">                $digit = ord($number&#123;$i&#125;);</div><div class="line">                <span class="keyword">if</span> ( ($digit &gt;= $one) &amp;&amp; ($digit &lt;= $nine) )</div><div class="line">                &#123;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">          <span class="keyword">return</span> $number == <span class="string">'54975581388'</span>;</div><div class="line">&#125;</div><div class="line">$flag=<span class="string">'*******'</span>;</div><div class="line"><span class="keyword">if</span>(noother_says_correct($_GET[<span class="string">'key'</span>]))</div><div class="line">    <span class="keyword">echo</span> $flag;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    <span class="keyword">echo</span> <span class="string">'access denied'</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>可以看到这个函数做了一个对数字的判断，很巧的是number的值转16进制后为”0xccccccccc”，可以传入。于是payload便为”?key=0xccccccccc”。</p>
-<hr>
-<h2 id="sql-injection-4"><a href="#sql-injection-4" class="headerlink" title="sql injection 4"></a>sql injection 4</h2><p>URL: <a href="http://chinalover.sinaapp.com/web15/index.php" target="_blank" rel="external">http://chinalover.sinaapp.com/web15/index.php</a>   </p>
-<p>TIP:<br>反斜杠可以用来转义<br>仔细查看相关函数的用法  </p>
-<p>F12有源码：  </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clean</span><span class="params">($str)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(get_magic_quotes_gpc())&#123;</div><div class="line">        $str=stripslashes($str);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> htmlentities($str, ENT_QUOTES);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$username = @clean((string)$_GET[<span class="string">'username'</span>]);</div><div class="line">$password = @clean((string)$_GET[<span class="string">'password'</span>]);</div><div class="line"></div><div class="line">$query=<span class="string">'SELECT * FROM users WHERE name=\''</span>.$username.<span class="string">'\' AND pass=\''</span>.$password.<span class="string">'\';'</span>;</div><div class="line">$result=mysql_query($query);</div><div class="line"><span class="keyword">if</span>(!$result || mysql_num_rows($result) &lt; <span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">die</span>(<span class="string">'Invalid password!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>发现sql查询语句使用了分号，对于此类sql注入需要闭合分号。   </p>
-<p>先来看看这几个函数：</p>
+<h2 id="0x01-Web部分"><a href="#0x01-Web部分" class="headerlink" title="0x01 Web部分"></a>0x01 Web部分</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
+<p>题目链接：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
+<p>在 Headers 里找到一条hint：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></div></pre></td></tr></table></figure></p>
+<p>涉及到一个MD5加密后的注入问题。    </p>
+<p>关于这条md5语句我们先来看下php手册中的描述：</p>
 <blockquote>
-<ol>
-<li><a href="http://php.net/manual/zh/function.get-magic-quotes-gpc.php" target="_blank" rel="external">get_magic_quotes_gpc()</a>: 这个函数如果设置为”On”可以判断用户传入（如: post、get、cookie）的数据，增加转义字符“\”，以确保这些数据不会引起程序，特别是数据库语句因为特殊字符而产生的一系列错误。  </li>
-<li><a href="http://www.w3school.com.cn/php/func_string_stripslashes.asp" target="_blank" rel="external">stripslashes()</a>: 这个函数则能删除由 addslashes() 函数添加的反斜杠，可用于清理从数据库中或者从 HTML 表单中取回的数据。  </li>
-<li><a href="http://www.w3school.com.cn/php/func_string_htmlentities.asp" target="_blank" rel="external">htmlentities()</a>: 把字符转换为 HTML 实体。     </li>
-</ol>
+<p><strong>Description</strong></p>
+<p>string md5 ( string str [, bool raw_output] )</p>
+<p>Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. If the optional raw_output is set to TRUE, then the md5 digest is instead returned in raw binary format with a length of 16.</p>
+<p>注: The optional raw_output parameter was added in PHP 5.0.0 and defaults to FALSE</p>
 </blockquote>
-<p>由于使用了htmlentities()函数，所以无法使用分号来闭合。因此我们用反斜杠去逃出单引号的限制，利用它构造payload：<code>?username=admin\&amp;password= or 1%23</code>，这样查询语句就变成了<code>SELECT * FROM users WHERE name=&#39;admin\&#39;AND pass=&#39; or 1#&#39;</code>，即可拿到flag。</p>
+<p>也就是说，如果md5后的hex转换成字符串后，若包含 <code>&#39;or&#39;&lt;trash&gt;</code> 这样的字符串，那整个sql语句就会变成：   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM admin WHERE <span class="keyword">pass</span> = <span class="string">''</span>o<span class="string">r'&lt;trash&gt;'</span></div></pre></td></tr></table></figure>
+<p>就可以进行注入了。   </p>
+<p>网上找到一个字符串：<code>ffifdyop</code></p>
+<p>md5以后：<code>276f722736c95d99e921722cf9ed621c</code></p>
+<p>再转换成字符串即为<code>&#39;or&#39;&lt;trash&gt;</code>  </p>
+<p>这题把上面这个字符串作为 password 传入即可。  </p>
 
       
     </div>
@@ -475,7 +465,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://icyris.github.io/2017/09/23/NCTF-2/" title="NCTF WriteUp（二）">https://icyris.github.io/2017/09/23/NCTF-2/</a>
+    <a href="https://icyris.github.io/2017/11/04/jarviosoj-wp/" title="Jarvios OJ Writeup">https://icyris.github.io/2017/11/04/jarviosoj-wp/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -505,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/26/sqli-2/" rel="next" title="从零开始的SQL注入（二）">
-                <i class="fa fa-chevron-left"></i> 从零开始的SQL注入（二）
+              <a href="/2017/10/27/code-leakage/" rel="next" title="Web源码泄漏总结">
+                <i class="fa fa-chevron-left"></i> Web源码泄漏总结
               </a>
             
           </div>
@@ -514,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/19/rar-attack/" rel="prev" title="给你压缩包却不给你密码的人到底在想什么">
-                给你压缩包却不给你密码的人到底在想什么 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上传绕过"><span class="nav-text">上传绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#起名字真难"><span class="nav-text">起名字真难</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql-injection-4"><span class="nav-text">sql injection 4</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-text">0x00 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-Web部分"><span class="nav-text">0x01 Web部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Login"><span class="nav-text">Login</span></a></li></ol></li></ol></div>
             
 
           </div>
