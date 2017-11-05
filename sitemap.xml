@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icyris.github.io/2017/09/23/NCTF-2/</loc>
+    
+    <lastmod>2017-11-05T00:50:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
+    
+    <lastmod>2017-11-05T00:49:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
+    
+    <lastmod>2017-11-05T00:49:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icyris.github.io/2017/11/04/jarviosoj-wp/</loc>
     
     <lastmod>2017-11-05T00:13:51.000Z</lastmod>
@@ -23,23 +44,9 @@
   </url>
   
   <url>
-    <loc>https://icyris.github.io/2017/07/26/sqli-2/</loc>
-    
-    <lastmod>2017-10-28T14:48:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://icyris.github.io/2017/10/27/code-leakage/</loc>
     
     <lastmod>2017-10-28T12:34:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/09/23/NCTF-2/</loc>
-    
-    <lastmod>2017-10-28T04:51:23.000Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://icyris.github.io/2017/10/21/python-venv/</loc>
     
     <lastmod>2017-10-26T12:08:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icyris.github.io/2017/07/18/sqli-labs/</loc>
-    
-    <lastmod>2017-10-26T03:11:58.000Z</lastmod>
     
   </url>
   

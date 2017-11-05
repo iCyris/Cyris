@@ -358,7 +358,7 @@
     <entry>
       <title><![CDATA[NCTF WriteUp（二）]]></title>
       <url>/2017/09/23/NCTF-2/</url>
-      <content type="html"><![CDATA[<p>下午又写了几个题，做点小笔记。</p>
+      <content type="html"><![CDATA[<p>某个无所事事的下午的一篇随手记。</p>
 <a id="more"></a>  
 <h2 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h2><p>URL: <a href="http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html" target="_blank" rel="external">http://teamxlc.sinaapp.com/web5/21232f297a57a5a743894a0e4a801fc3/index.html</a>   </p>
 <p>一个简易的上传界面，先传了个png格式的图片试水，得到回显：“必须上传成后缀名为php的文件才行啊!”。要同时满足这些条件，应该要用到截断，试了很多姿势都不行，于是开burp看了看：  </p>
@@ -409,7 +409,8 @@
     <entry>
       <title><![CDATA[从零开始的SQL注入（二）]]></title>
       <url>/2017/07/26/sqli-2/</url>
-      <content type="html"><![CDATA[<p>熊孩子在数据库里吃糖到底是哪里出了问题！</p>
+      <content type="html"><![CDATA[<p>熊孩子在数据库里吃糖到底是哪里出了问题！ </p>
+<p><img src="/2017/07/26/sqli-2/1.png" alt=""></p>
 <a id="more"></a>
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><img src="/2017/07/26/sqli-2/14.png" alt=""></p>
 <p>今天我们讲讲一些基本的注入思路以及常见的注入类型。</p>
@@ -477,7 +478,8 @@
     <entry>
       <title><![CDATA[从零开始的SQL注入（一）]]></title>
       <url>/2017/07/18/sqli-labs/</url>
-      <content type="html"><![CDATA[<p>$ cat ~/Fate/SQLi</p>
+      <content type="html"><![CDATA[<p>少打CTF多看书。</p>
+<p><img src="/2017/07/18/sqli-labs/0.png" alt=""></p>
 <a id="more"></a>
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>开了个新坑。在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己做一个系列的想法。（当然要自己玩一遍才过瘾嘛(｡･∀･)ﾉﾞ）  </p>
 <p>长期不定时更，仅作为个人笔记。</p>
@@ -1042,7 +1044,7 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="comment">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="comment">#新建页面</span></div><div class="line">hexo g                                  <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="comment">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
 <p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>
