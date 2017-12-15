@@ -96,22 +96,17 @@
 
 
 
-<meta name="description" content="熊孩子在数据库里吃糖到底是哪里出了问题！">
+<meta name="description" content="第三期咕咕咕预告。">
 <meta name="keywords" content="ctf,sqli">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从零开始的SQL注入（二）">
 <meta property="og:url" content="https://icyris.github.io/2017/07/26/sqli-2/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
-<meta property="og:description" content="熊孩子在数据库里吃糖到底是哪里出了问题！">
-<meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/1.png">
-<meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/14.png">
-<meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/25.png">
-<meta property="og:image" content="https://icyris.github.io/2017/07/26/sqli-2/31.png">
-<meta property="og:updated_time" content="2017-11-05T00:49:23.000Z">
+<meta property="og:description" content="第三期咕咕咕预告。">
+<meta property="og:updated_time" content="2017-12-15T15:08:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始的SQL注入（二）">
-<meta name="twitter:description" content="熊孩子在数据库里吃糖到底是哪里出了问题！">
-<meta name="twitter:image" content="https://icyris.github.io/2017/07/26/sqli-2/1.png">
+<meta name="twitter:description" content="第三期咕咕咕预告。">
 
 
 
@@ -404,11 +399,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
 
           
 
@@ -427,11 +417,9 @@
       
 
       
-        <p>熊孩子在数据库里吃糖到底是哪里出了问题！ </p>
-<p><img src="/2017/07/26/sqli-2/1.png" alt=""></p>
+        <p>第三期咕咕咕预告。</p>
 <a id="more"></a>
-<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><img src="/2017/07/26/sqli-2/14.png" alt=""></p>
-<p>今天我们讲讲一些基本的注入思路以及常见的注入类型。</p>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>记录一些基本的注入思路以及常见的注入类型。</p>
 <h2 id="0x01-什么是SQL注入呢？"><a href="#0x01-什么是SQL注入呢？" class="headerlink" title="0x01 什么是SQL注入呢？"></a>0x01 什么是SQL注入呢？</h2><p>我们看看百度是怎么讲的：  </p>
 <blockquote>
 <p>所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。</p>
@@ -445,8 +433,7 @@
 <p>看起来似乎没什么问题呢，但是Acaleph比较调皮，她说：“我要看第二篇文章，然后把你的数据都删掉XD！”<br>于是语句变成了：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $<span class="variable">_GET</span>[<span class="string">'id'</span>];  </div><div class="line"><span class="built_in">SELECT</span> * <span class="keyword">FROM</span> articles WHERE articles_id = <span class="number">2</span> <span class="built_in">and</span> <span class="built_in">drop</span> db_articles</div></pre></td></tr></table></figure></p>
 <p>聪明的永远是人而不是程序，这里程序直接把<code>id =2 and drop db_articles</code>当作一条命令去执行了，而非一条查询语句，那么我们的数据库就被次了，Acaleph成功删库跑路。    </p>
 <p>上面的例子只是一个初步的认识，想了解更多就自行Google啦。    </p>
-<h2 id="0x03-注入思路"><a href="#0x03-注入思路" class="headerlink" title="0x03 注入思路"></a>0x03 注入思路</h2><p><img src="/2017/07/26/sqli-2/25.png" alt="">  </p>
-<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">查询字段数（<span class="keyword">order</span> <span class="title">by</span>）</div><div class="line">找出注入点</div><div class="line">获取数据库名（database()）</div><div class="line">获取表名</div><div class="line">获取字段名</div><div class="line">获取具体数据</div></pre></td></tr></table></figure>
+<h2 id="0x03-注入思路"><a href="#0x03-注入思路" class="headerlink" title="0x03 注入思路"></a>0x03 注入思路</h2><h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">查询字段数（<span class="keyword">order</span> <span class="title">by</span>）</div><div class="line">找出注入点</div><div class="line">获取数据库名（database()）</div><div class="line">获取表名</div><div class="line">获取字段名</div><div class="line">获取具体数据</div></pre></td></tr></table></figure>
 <p>下面说一下<del>其实也不是很</del>具体的做法吧：</p>
 <h4 id="1-查询字段数"><a href="#1-查询字段数" class="headerlink" title="1. 查询字段数"></a>1. 查询字段数</h4><p>主要是利用<code>order by</code>语句来查询。    </p>
 <blockquote>
@@ -468,8 +455,6 @@
 </blockquote>
 <h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）</div></pre></td></tr></table></figure></p>
 <p>各种注入类型会在接下来的实例中仔细地讲一下。</p>
-<h2 id="0x05-给牛奶盒上盖子"><a href="#0x05-给牛奶盒上盖子" class="headerlink" title="0x05 给牛奶盒上盖子"></a>0x05 给牛奶盒上盖子</h2><p><img src="/2017/07/26/sqli-2/31.png" alt=""></p>
-<p>这次主要整理了一些概括性的东西 —— 对SQLi的初步认识和理解。其中也还有很多不足的地方，要继续加油呢。下期开始就是各种注入方法的实例啦<del>（正片总在三集后）</del>。<br><br><br></p>
 <p>参考文章：    </p>
 <blockquote>
 <p><a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">lightless的从零开始SQL注入系列</a><br><a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">一叶知秋的几篇关于SQL注入的文章</a></p>
@@ -701,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-text">0x00 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-什么是SQL注入呢？"><span class="nav-text">0x01 什么是SQL注入呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-注入思路"><span class="nav-text">0x03 注入思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本流程"><span class="nav-text">基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查询字段数"><span class="nav-text">1. 查询字段数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找出注入点"><span class="nav-text">2. 找出注入点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-获取数据库名"><span class="nav-text">3. 获取数据库名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-获取表名"><span class="nav-text">4. 获取表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-获取字段名"><span class="nav-text">5. 获取字段名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-获取具体数据"><span class="nav-text">6. 获取具体数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名为技巧的小家伙们"><span class="nav-text">名为技巧的小家伙们</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-SQL注入类型"><span class="nav-text">0x04 SQL注入类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-给牛奶盒上盖子"><span class="nav-text">0x05 给牛奶盒上盖子</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-前言"><span class="nav-text">0x00 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-什么是SQL注入呢？"><span class="nav-text">0x01 什么是SQL注入呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-注入思路"><span class="nav-text">0x03 注入思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本流程"><span class="nav-text">基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查询字段数"><span class="nav-text">1. 查询字段数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找出注入点"><span class="nav-text">2. 找出注入点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-获取数据库名"><span class="nav-text">3. 获取数据库名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-获取表名"><span class="nav-text">4. 获取表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-获取字段名"><span class="nav-text">5. 获取字段名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-获取具体数据"><span class="nav-text">6. 获取具体数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名为技巧的小家伙们"><span class="nav-text">名为技巧的小家伙们</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-SQL注入类型"><span class="nav-text">0x04 SQL注入类型</span></a></li></ol></div>
             
 
           </div>
@@ -733,7 +718,7 @@
 
 
 <div class="powered-by">
-  #include <<a class="theme-link" href="https://hexo.io">hexo</a>>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -745,26 +730,6 @@
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      ❦
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
         
       </div>
