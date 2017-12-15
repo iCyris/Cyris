@@ -1027,7 +1027,7 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>1.如果想要修改边框，头像，边栏超链接地址，这个一般因不同的主题而异，所以不好详述，详细要参阅对应的官方文档。</p>
 <p>2.其实hexo还能添加很多不同的插件，博主修为尚浅，所以就不写出不清楚的插件用法，这里贴上一些别人的博客。Hexo的优化与定制</p>
 <h1 id="Hexo的使用"><a href="#Hexo的使用" class="headerlink" title="Hexo的使用"></a>Hexo的使用</h1><p>我们终于搭好了自己的Blog，却发现并没有“写博客”的功能。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="meta">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="meta">#新建页面</span></div><div class="line">hexo g                                  <span class="meta">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="meta">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>                     <span class="comment">#新建文章</span></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span>                <span class="comment">#新建页面</span></div><div class="line">hexo g                                  <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s                                  <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d                                  <span class="comment">#将.deploy目录部署到coding</span></div></pre></td></tr></table></figure>
 <p>1.第一个命令也就是最常用的命令，postname可以替换为我们想要的文章名，文章名方便记忆就好，只是在书写的时候我们能够区分就可以了，别人是看不到的。</p>
 <p>2.第二个命令比较复杂，但是如果仅仅是写博文的话，第二个是用不到的。</p>
 <p>3.3,5命令就不用多解释了，每次写完博文，都需要这两个命令上传。</p>
@@ -1060,11 +1060,7 @@
     <entry>
       <title><![CDATA[写在前面的]]></title>
       <url>/2017/04/04/acaleph/</url>
-      <content type="html"><![CDATA[<ul>
-<li>干净·深刻·精致    </li>
-<li>这是那一刻的绿生，  </li>
-<li>所带给我的欣喜。</li>
-</ul>
+      <content type="html"><![CDATA[<p>干净，深刻，精致。<br>这是那一刻的绿生，所带给我的欣喜。</p>
 <a id="more"></a>
 <h2 id="一、绿生"><a href="#一、绿生" class="headerlink" title="一、绿生"></a>一、绿生</h2><p>一直有搭一个个人博客的想法，现在终于做了起来。花了点时间，却也很开心。这里是Cyris的个人小站，他和阅读这篇文字的你们一样，经历和思考着这些那些。前几天和Ak师傅聊了聊，有了些新的想法，也有了下面的这些话。  </p>
 <p>有事想做的兴奋存一点也不错，干干净净地着手做起来也很棒。把日子过得精致即可。这份精致，也是对生活的一种自信。“我们读诗写诗，非为它的灵巧，我们读诗写诗，因为我们是人类的一员。而人类充满了热情”，对我来说，最有魅力的，还是那些拥有自己的热情的人。这里想提提Acaleph，Aklis以及蔡师傅。  </p>
