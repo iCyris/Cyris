@@ -3,13 +3,47 @@
   
     
     <entry>
+      <title><![CDATA[【pwnhub 密码学专场】warmup1 & asymmetric1]]></title>
+      <url>/2017/12/22/pwnhub-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%93%E5%9C%BA/</url>
+      <content type="html"><![CDATA[<p>pwnhub密码学公开赛里的两个题，wp交得太匆忙，写得有点简陋，没过审。下次再加油吧。</p>
+<a id="more"></a>
+<h2 id="warmup1"><a href="#warmup1" class="headerlink" title="warmup1"></a>warmup1</h2><p>LL：这是我多少年前玩剩的套路了。</p>
+<p>txt文件一片空白，二进制格式打开为一片<code>09</code>，<code>20</code>。分别用<code>1</code>与<code>0</code>替代即可，因为<code>0x09</code>代表<code>tab</code>，<code>0x20</code>代表空格，所以看不到任何东西。</p>
+<p>写了个糙脚本处理了下数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"><span class="comment"># author: cyris</span></div><div class="line"></div><div class="line">s = <span class="string">'20090909 20202020 20090909 20090909 20090920 09090920 20090920 09202020 20090909 20092009 20090920 20200920 20090909 09200909 20090909 20090909 20090920 09202020 20090920 09202009 20090909 20092020 20090920 20092009 20090909 20200909 20090909 20202020 20090920 20202009 20090920 20200909 20090920 20092009 20092009 09090909 20090909 20200909 20090909 20092020 20090920 20092009 20090920 20090909 20090920 20202009 20090920 09090920 20090920 09090909 20090920 20090909 20090909 20200920 20090920 20202009 20090909 20202020 20090920 09202020 20090909 09202009 20090909 09092009'</span></div><div class="line">  </div><div class="line">temp = ((s.replace(<span class="string">'20'</span>,<span class="string">'0'</span>)).replace(<span class="string">'09'</span>, <span class="string">'1'</span>)).split()</div><div class="line">result = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> temp:</div><div class="line">    result.append(hex(int(i,<span class="number">2</span>)))</div><div class="line"></div><div class="line">flag_hex = <span class="string">"flag_hex: "</span></div><div class="line"><span class="keyword">for</span> j <span class="keyword">in</span> result:</div><div class="line">    flag_hex += j.replace(<span class="string">'0x'</span>,<span class="string">''</span>)</div><div class="line"><span class="keyword">print</span> flag_hex</div><div class="line"></div><div class="line"><span class="comment"># flag_hex: 70776e6875627b776869746573706163655f73746567616e6f6772617068797d</span></div><div class="line"><span class="comment"># flag: pwnhub&#123;whitespace_steganography&#125;</span></div></pre></td></tr></table></figure>
+<h2 id="asymmetric1"><a href="#asymmetric1" class="headerlink" title="asymmetric1"></a>asymmetric1</h2><p>题目给出的信息如下：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">N：<span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line"></div><div class="line">E：<span class="number">3</span></div><div class="line"></div><div class="line">C：<span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581</span>L</div><div class="line"></div><div class="line">flag?</div></pre></td></tr></table></figure>
+<p>e为3时会产生小明文攻击。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"><span class="comment"># author: cyris</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> gmpy</div><div class="line"></div><div class="line">N = <span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line">C = <span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581L</span></div><div class="line"></div><div class="line">k=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    (x,y)=gmpy.root(C+k*N,<span class="number">3</span>)</div><div class="line">    <span class="keyword">if</span>(y==<span class="number">1</span>):</div><div class="line">        <span class="keyword">print</span> x;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    k+=<span class="number">1</span></div><div class="line"></div><div class="line">flag_hex = hex(x)</div><div class="line"><span class="keyword">print</span> flag_hex</div><div class="line"></div><div class="line"><span class="comment"># flag: pwnhub&#123;f233dd92e8c379983d394ccd7c26122c&#125;</span></div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> CTF </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ctf </tag>
+            
+            <tag> writeup </tag>
+            
+            <tag> pwnhub </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Jarvios OJ Writeup]]></title>
       <url>/2017/11/04/jarviosoj-wp/</url>
       <content type="html"><![CDATA[<p>其实大部分题目是从其他比赛中搬运过来的，持续更新。</p>
 <a id="more"></a> 
 <hr>
 <h2 id="0x01-Web部分"><a href="#0x01-Web部分" class="headerlink" title="0x01 Web部分"></a>0x01 Web部分</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
-<p>题目链接：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
 <p>在 Headers 里找到一条hint：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></div></pre></td></tr></table></figure></p>
 <p>涉及到一个MD5加密后的注入问题。    </p>
 <p>关于这条md5语句我们先来看下php手册中的描述：</p>

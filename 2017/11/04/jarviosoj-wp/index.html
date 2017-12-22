@@ -103,7 +103,7 @@
 <meta property="og:url" content="https://icyris.github.io/2017/11/04/jarviosoj-wp/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="其实大部分题目是从其他比赛中搬运过来的，持续更新。">
-<meta property="og:updated_time" content="2017-12-15T15:00:56.000Z">
+<meta property="og:updated_time" content="2017-12-17T02:23:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jarvios OJ Writeup">
 <meta name="twitter:description" content="其实大部分题目是从其他比赛中搬运过来的，持续更新。">
@@ -421,7 +421,7 @@
 <a id="more"></a> 
 <hr>
 <h2 id="0x01-Web部分"><a href="#0x01-Web部分" class="headerlink" title="0x01 Web部分"></a>0x01 Web部分</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
-<p>题目链接：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
 <p>在 Headers 里找到一条hint：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></div></pre></td></tr></table></figure></p>
 <p>涉及到一个MD5加密后的注入问题。    </p>
 <p>关于这条md5语句我们先来看下php手册中的描述：</p>
@@ -498,6 +498,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/12/22/pwnhub-密码学专场/" rel="prev" title="【pwnhub 密码学专场】warmup1 & asymmetric1">
+                【pwnhub 密码学专场】warmup1 & asymmetric1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -573,7 +577,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -595,7 +599,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
