@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iCyris.github.io/"/>
-  <updated>2017-12-22T11:38:00.000Z</updated>
+  <updated>2018-01-09T13:03:49.000Z</updated>
   <id>https://iCyris.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XSS Challenge</title>
+    <link href="https://iCyris.github.io/2018/01/09/xss-ch/"/>
+    <id>https://iCyris.github.io/2018/01/09/xss-ch/</id>
+    <published>2018-01-09T11:50:36.000Z</published>
+    <updated>2018-01-09T13:03:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://prompt.ml/0" target="_blank" rel="external">平台地址</a> &amp; <a href="https://github.com/cure53/XSSChallengeWiki/wiki/prompt.ml" target="_blank" rel="external">源码地址</a></p>
+<a id="more"></a>
+<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>1、成功执行prompt(1)<br>2、payload不需要用户交互（成功会显示you won）<br>3、payload必须对下述浏览器有效：<br>Chrome(最新版) - Firefox(最新版) - IE10 及以上版本(或者IE10兼容模式)<br>4、每个级别至少给出两种浏览器的答案<br>5、字符越少越好</p>
+<blockquote>
+<p>偷个懒，直接搬了土土的翻译，附上土土的<a href="https://lorexxar.cn/2015/07/02/xss-p/" target="_blank" rel="external">wp</a>。虽然是很早前的练习了，但是没玩过的不会的东西，对菜鸡来说都是新鲜的吧。</p>
+</blockquote>
+<h2 id="Level-0"><a href="#Level-0" class="headerlink" title="Level 0"></a>Level 0</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">escape</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="comment">// warm up</span></div><div class="line">    <span class="comment">// script should be executed without user interaction</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'&lt;input type="text" value="'</span> + input + <span class="string">'"&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>什么过滤都没有，直接svg就好了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"&gt;&lt;svg/onload=prompt(1)&gt;</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://prompt.ml/0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;平台地址&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/cure53/XSSChallengeWiki/wiki/prompt.ml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
+    
+    
+      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+    
+      <category term="xss" scheme="https://iCyris.github.io/tags/xss/"/>
+    
+  </entry>
   
   <entry>
     <title>【pwnhub 密码学专场】warmup1 &amp; asymmetric1</title>
@@ -535,11 +568,11 @@
     <link href="https://iCyris.github.io/2017/07/18/sqli-labs/"/>
     <id>https://iCyris.github.io/2017/07/18/sqli-labs/</id>
     <published>2017-07-18T11:01:03.000Z</published>
-    <updated>2017-12-15T14:37:04.000Z</updated>
+    <updated>2018-01-17T16:01:28.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在开坑中激发学习欲，在补坑中学习。</p>
+    <content type="html"><![CDATA[<p>开了个新坑。</p>
 <a id="more"></a>
-<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>开了个新坑。在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己做一个系列的想法。 就当是</p>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己写一个系列的想法。 </p>
 <h2 id="0x01-搭建服务器环境"><a href="#0x01-搭建服务器环境" class="headerlink" title="0x01 搭建服务器环境"></a>0x01 搭建服务器环境</h2><ol>
 <li>下载<a href="https://www.apachefriends.org/download.html" target="_blank" rel="external">xampp包</a>。(易于安装，集成了Apache+MySQL+PHP+PERL，更容易使用。)  </li>
 <li>安装完成后启动Apache和MySQL（启动报错可能是因为80/443端口占用，在/xampp/apache/conf/extra/httpd-ssl.conf修改下Listen就可以了。）         </li>
@@ -557,7 +590,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;在开坑中激发学习欲，在补坑中学习。&lt;/p&gt;
+      &lt;p&gt;开了个新坑。&lt;/p&gt;
     
     </summary>
     

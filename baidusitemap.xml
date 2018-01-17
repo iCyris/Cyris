@@ -3,6 +3,50 @@
 
 
     
+  <url>
+    <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
+    <lastmod>2018-01-17T16:01:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>从零开始的SQL注入（一）</title>
+        <pubTime>2017-07-18T11:01:03.000Z</pubTime>
+        
+        <tag>ctf</tag>
+         
+        <tag>sqli</tag>
+         
+         
+           
+             
+              <breadCrumb title="SQL" url="https://iCyris.github.io/categories/SQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
+    <lastmod>2018-01-09T13:03:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>XSS Challenge</title>
+        <pubTime>2018-01-09T11:50:36.000Z</pubTime>
+        
+        <tag>ctf</tag>
+         
+        <tag>xss</tag>
+         
+         
+           
+             
+              <breadCrumb title="CTF" url="https://iCyris.github.io/categories/CTF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://iCyris.github.io/2017/12/22/pwnhub-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%93%E5%9C%BA/</loc>
@@ -156,28 +200,6 @@
            
              
               <breadCrumb title="煮字" url="https://iCyris.github.io/categories/%E7%85%AE%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
-    <lastmod>2017-12-15T14:37:04.000Z</lastmod>
-    <data>
-        <display>
-        <title>从零开始的SQL注入（一）</title>
-        <pubTime>2017-07-18T11:01:03.000Z</pubTime>
-        
-        <tag>ctf</tag>
-         
-        <tag>sqli</tag>
-         
-         
-           
-             
-              <breadCrumb title="SQL" url="https://iCyris.github.io/categories/SQL/"/>
           
         </display>
     </data>

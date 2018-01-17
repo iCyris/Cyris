@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
+    
+    <lastmod>2018-01-17T16:01:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
+    
+    <lastmod>2018-01-09T13:03:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iCyris.github.io/links/index.html</loc>
     
     <lastmod>2017-12-25T15:13:36.000Z</lastmod>
@@ -54,13 +68,6 @@
     <loc>https://iCyris.github.io/2017/07/02/tea-maker/</loc>
     
     <lastmod>2017-12-15T14:55:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
-    
-    <lastmod>2017-12-15T14:37:04.000Z</lastmod>
     
   </url>
   
