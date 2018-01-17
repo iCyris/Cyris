@@ -103,7 +103,7 @@
 <meta property="og:url" content="https://iCyris.github.io/2018/01/09/xss-ch/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="平台地址 &amp;amp; 源码地址">
-<meta property="og:updated_time" content="2018-01-09T13:03:49.000Z">
+<meta property="og:updated_time" content="2018-01-17T16:04:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS Challenge">
 <meta name="twitter:description" content="平台地址 &amp;amp; 源码地址">
@@ -424,8 +424,9 @@
 <p>偷个懒，直接搬了土土的翻译，附上土土的<a href="https://lorexxar.cn/2015/07/02/xss-p/" target="_blank" rel="external">wp</a>。虽然是很早前的练习了，但是没玩过的不会的东西，对菜鸡来说都是新鲜的吧。</p>
 </blockquote>
 <h2 id="Level-0"><a href="#Level-0" class="headerlink" title="Level 0"></a>Level 0</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">escape</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="comment">// warm up</span></div><div class="line">    <span class="comment">// script should be executed without user interaction</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'&lt;input type="text" value="'</span> + input + <span class="string">'"&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>什么过滤都没有，直接svg就好了</p>
+<p>什么过滤都没有，直接svg就好了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"&gt;&lt;svg/onload=prompt(1)&gt;</span></div></pre></td></tr></table></figure>
+<p>【滚去复习了，寒假补上</p>
 
       
     </div>

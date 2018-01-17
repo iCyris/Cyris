@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
+    <lastmod>2018-01-17T16:04:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>XSS Challenge</title>
+        <pubTime>2018-01-09T11:50:36.000Z</pubTime>
+        
+        <tag>ctf</tag>
+         
+        <tag>xss</tag>
+         
+         
+           
+             
+              <breadCrumb title="CTF" url="https://iCyris.github.io/categories/CTF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
     <lastmod>2018-01-17T16:01:28.000Z</lastmod>
     <data>
@@ -19,28 +41,6 @@
            
              
               <breadCrumb title="SQL" url="https://iCyris.github.io/categories/SQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
-    <lastmod>2018-01-09T13:03:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>XSS Challenge</title>
-        <pubTime>2018-01-09T11:50:36.000Z</pubTime>
-        
-        <tag>ctf</tag>
-         
-        <tag>xss</tag>
-         
-         
-           
-             
-              <breadCrumb title="CTF" url="https://iCyris.github.io/categories/CTF/"/>
           
         </display>
     </data>
