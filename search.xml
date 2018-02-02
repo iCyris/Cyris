@@ -151,7 +151,7 @@
     <entry>
       <title><![CDATA[Jarvis OJ Writeup]]></title>
       <url>/2017/11/04/jarvisoj-wp/</url>
-      <content type="html"><![CDATA[<p>这里记录一些jarvis oj上的题。</p>
+      <content type="html"><![CDATA[<p>这里记录一些 Jarvis OJ 上的题。</p>
 <a id="more"></a> 
 <hr>
 <h2 id="Web部分"><a href="#Web部分" class="headerlink" title="Web部分"></a>Web部分</h2><h3 id="0x01-Login"><a href="#0x01-Login" class="headerlink" title="0x01 Login"></a>0x01 Login</h3><p>需要密码才能获得flag哦。     </p>
