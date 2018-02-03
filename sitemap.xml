@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://iCyris.github.io/2017/11/04/jarvisoj-wp/</loc>
+    <loc>https://iCyris.github.io/2018/02/02/hash-extender-attack/</loc>
     
-    <lastmod>2018-02-02T16:23:45.000Z</lastmod>
+    <lastmod>2018-02-03T00:15:28.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://iCyris.github.io/2018/02/02/hash-extender-attack/</loc>
+    <loc>https://iCyris.github.io/2017/10/27/code-leakage/</loc>
     
-    <lastmod>2018-02-02T16:20:52.000Z</lastmod>
+    <lastmod>2018-02-03T00:14:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://iCyris.github.io/2017/11/04/jarvisoj-wp/</loc>
+    
+    <lastmod>2018-02-02T16:23:45.000Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://iCyris.github.io/2017/04/04/acaleph/</loc>
     
     <lastmod>2017-12-15T15:23:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/2017/10/27/code-leakage/</loc>
-    
-    <lastmod>2017-12-15T15:08:15.000Z</lastmod>
     
   </url>
   

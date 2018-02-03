@@ -103,7 +103,7 @@
 <meta property="og:url" content="https://iCyris.github.io/2017/10/27/code-leakage/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="源码泄漏的问题经常在一些渗透测试或者CTF中出现，这篇文章对一些常见的情况做了点整理。">
-<meta property="og:updated_time" content="2017-12-15T15:08:15.000Z">
+<meta property="og:updated_time" content="2018-02-03T00:14:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web源码泄漏总结">
 <meta name="twitter:description" content="源码泄漏的问题经常在一些渗透测试或者CTF中出现，这篇文章对一些常见的情况做了点整理。">
@@ -422,9 +422,7 @@
 <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>别看了这里没东西Σ(っ °Д °;)っ</p>
 <p>大概是强迫症想加个前言∑(O_O；)</p>
 <p>不过趁着放假还是说两句吧ᔪ꒰ ꒪ω꒪ |||꒱</p>
-<p>昨天带着小饼干跑去远远的地方搭帐篷玩耍了，很久前就买了的帐篷一直没地方用。带的东西不多，就一点零食，两只包。两个人，一片湖，一份太阳，一个下午。在包围苍天的小世界里很懒散地度过一段什么都不用去想的时间还是挺棒的。再过一小段时间一些杂事也就都清完了，花了一年的时间寻找方向，寻找方法，调理时间，接下来就去安安静静地大干一场吧。</p>
-<p><a href="https://bangumi.bilibili.com/anime/6439/" target="_blank" rel="external">幻界战线</a>第二季开更啦，有生之年！是自己非常喜欢的一部番，做个小推荐吧⁽⁽٩( ´͈ ᗨ `͈ )۶⁾⁾     ``</p>
-<p>好啦下面开始正题。</p>
+<p>昨天带着小饼干跑去远远的地方搭帐篷玩耍了，很久前就买了的帐篷一直没地方用。带的东西不多，就一点零食，两只包。两个人，一片湖，一份太阳，一个下午。在包围苍天的小世界里很懒散地度过一段什么都不用去想的时间还是挺棒的。</p>
 <hr>
 <h2 id="0x01-hg源码泄漏"><a href="#0x01-hg源码泄漏" class="headerlink" title="0x01 .hg源码泄漏"></a>0x01 .hg源码泄漏</h2><p><a href="https://www.mercurial-scm.org/" target="_blank" rel="external">Mercurial</a>，一个版本管理软件。名字是水银的意思，所以用了<code>hg</code>（汞）的缩写。</p>
 <p>它的用法和git有点类似，但也保留了svn命令简明的特点，而且原生地支持Windows/MacOS/Linux三大平台，不像git需要MinGW才得以运行，所以也有不少人喜欢用hg进行版本管理。   </p>

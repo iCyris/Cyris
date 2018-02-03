@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://icyris.github.io/2018/02/02/hash-extender-attack/3.png">
 <meta property="og:image" content="https://icyris.github.io/2018/02/02/hash-extender-attack/4.png">
 <meta property="og:image" content="https://icyris.github.io/2018/02/02/hash-extender-attack/5.png">
-<meta property="og:updated_time" content="2018-02-02T16:20:52.000Z">
+<meta property="og:updated_time" content="2018-02-03T00:15:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈希长度扩展攻击">
 <meta name="twitter:description" content="哈希长度扩展攻击利用了 MD5 ，SHA1 等加密算法的缺陷，可以在不知道原始密钥的情况下计算出一个对应的 hash 值。">
@@ -468,11 +468,11 @@
 <li><p>利用完成前几步补足操作的数据进行复杂运算。取出 64 字节信息，第一轮运算中使用的链变量为初始链变量，之后每一次运算链变量都会被覆盖更新，最后一轮运算产生的链变量经过高低位互换后就是我们得到的 MD5 值。</p>
 </li>
 </ol>
-<h2 id="0x03-哈希长度扩展攻击"><a href="#0x03-哈希长度扩展攻击" class="headerlink" title="0x03 哈希长度扩展攻击"></a>0x03 哈希长度扩展攻击</h2><p>MD5的补位操作正是实现长度扩展攻击的关键。</p>
+<h2 id="0x02-哈希长度扩展攻击"><a href="#0x02-哈希长度扩展攻击" class="headerlink" title="0x02 哈希长度扩展攻击"></a>0x02 哈希长度扩展攻击</h2><p>MD5的补位操作正是实现长度扩展攻击的关键。</p>
 <p>我们虽然不知道具体的 salt 值，但如果我们得到了其 hash 值以及一个可控的信息，我们就可以利用这些点进行哈希长度扩展攻击。我们得到的 hash 值正是最后一轮运算产生的链变量经过高低位互换后得到的结果，如果我们要把可控的信息进行下一轮运算，只需要知道上一轮信息产生的链变量。</p>
 <p>回到开头贴的那份代码，关键语句为</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ($role===<span class="string">"admin"</span> &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[<span class="string">"role"</span>]))) &#123;    </div><div class="line">            $auth = <span class="keyword">true</span>;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<p>简单说一下思路：我们可以从 cookie 里拿到一段已知的 hash ，我们也知道需要校验的内容（admin），salt与其长度是未知的，但我们可以通过哈希长度扩展攻击来构造一段想利用的校验内容，即使不知道 salt 也可以得出它的 hash 值。</p>
+<p>简单说一下思路：我们可以从 cookie 里拿到一段已知的 hash ，我们也知道需要校验的内容（ admin ），salt 与其长度是未知的，但我们可以通过哈希长度扩展攻击来构造一段想利用的校验内容，即使不知道 salt 也可以得出它的 hash 值。</p>
 <p>先将明文进行分组与填充，在其后添加我们想要增加的新内容，即新的校验内容，然后我们把原来得到的 hash 值逆为 key 值（注意 md5 中的值都是小端的），根据 MD5 加密原理，我们已经得到了 key ，就可以得出下一轮的 hash 值了（例如此处的 admin 的 hash 值。）</p>
 <p>因为这个题里还有一个 strrev 函数（字符串反转），构造如下 payload：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">原校验的内容：;"<span class="selector-tag">tseug</span>"<span class="selector-pseudo">:5</span><span class="selector-pseudo">:s</span></div><div class="line">新添加的内容：;"<span class="selector-tag">nimda</span>"<span class="selector-pseudo">:5</span><span class="selector-pseudo">:s</span></div><div class="line">原<span class="selector-tag">hash</span>值：3<span class="selector-tag">a4727d57463f122833d9e732f94e4e0</span></div><div class="line"><span class="selector-tag">salt</span> 长度未知，需要进行爆破</div></pre></td></tr></table></figure>
@@ -704,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-引言"><span class="nav-text">0x00 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-简单了解hash函数"><span class="nav-text">0x01 简单了解hash函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-哈希长度扩展攻击"><span class="nav-text">0x03 哈希长度扩展攻击</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-引言"><span class="nav-text">0x00 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-简单了解hash函数"><span class="nav-text">0x01 简单了解hash函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-哈希长度扩展攻击"><span class="nav-text">0x02 哈希长度扩展攻击</span></a></li></ol></div>
             
 
           </div>
