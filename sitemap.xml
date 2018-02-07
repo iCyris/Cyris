@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iCyris.github.io/about/index.html</loc>
+    
+    <lastmod>2018-02-07T08:19:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iCyris.github.io/2018/02/02/hash-extender-attack/</loc>
     
     <lastmod>2018-02-03T00:15:28.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://iCyris.github.io/2017/11/04/jarvisoj-wp/</loc>
     
     <lastmod>2018-02-02T16:23:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
-    
-    <lastmod>2018-01-17T16:04:35.000Z</lastmod>
     
   </url>
   
@@ -82,13 +82,6 @@
     <loc>https://iCyris.github.io/2017/10/19/rar-attack/</loc>
     
     <lastmod>2017-11-23T05:42:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/about/index.html</loc>
-    
-    <lastmod>2017-11-12T08:48:06.000Z</lastmod>
     
   </url>
   

@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>https://iCyris.github.io/2018/02/02/hash-extender-attack/</loc>
     <lastmod>2018-02-03T00:15:28.000Z</lastmod>
@@ -58,28 +59,6 @@
         <tag>ctf</tag>
          
         <tag>writeup</tag>
-         
-         
-           
-             
-              <breadCrumb title="CTF" url="https://iCyris.github.io/categories/CTF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://iCyris.github.io/2018/01/09/xss-ch/</loc>
-    <lastmod>2018-01-17T16:04:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>XSS Challenge</title>
-        <pubTime>2018-01-09T11:50:36.000Z</pubTime>
-        
-        <tag>ctf</tag>
-         
-        <tag>xss</tag>
          
          
            
@@ -247,7 +226,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://iCyris.github.io/2017/09/23/NCTF-2/</loc>

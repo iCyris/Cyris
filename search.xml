@@ -83,38 +83,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[XSS Challenge]]></title>
-      <url>/2018/01/09/xss-ch/</url>
-      <content type="html"><![CDATA[<p><a href="http://prompt.ml/0" target="_blank" rel="external">平台地址</a> &amp; <a href="https://github.com/cure53/XSSChallengeWiki/wiki/prompt.ml" target="_blank" rel="external">源码地址</a></p>
-<a id="more"></a>
-<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>1、成功执行prompt(1)<br>2、payload不需要用户交互（成功会显示you won）<br>3、payload必须对下述浏览器有效：<br>Chrome(最新版) - Firefox(最新版) - IE10 及以上版本(或者IE10兼容模式)<br>4、每个级别至少给出两种浏览器的答案<br>5、字符越少越好</p>
-<blockquote>
-<p>偷个懒，直接搬了土土的翻译，附上土土的<a href="https://lorexxar.cn/2015/07/02/xss-p/" target="_blank" rel="external">wp</a>。虽然是很早前的练习了，但是没玩过的不会的东西，对菜鸡来说都是新鲜的吧。</p>
-</blockquote>
-<h2 id="Level-0"><a href="#Level-0" class="headerlink" title="Level 0"></a>Level 0</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">escape</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="comment">// warm up</span></div><div class="line">    <span class="comment">// script should be executed without user interaction</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'&lt;input type="text" value="'</span> + input + <span class="string">'"&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>什么过滤都没有，直接svg就好了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"&gt;&lt;svg/onload=prompt(1)&gt;</span></div></pre></td></tr></table></figure>
-<p>【滚去复习了，寒假补上</p>
-]]></content>
-      
-        <categories>
-            
-            <category> CTF </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> ctf </tag>
-            
-            <tag> xss </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[【pwnhub 密码学专场】warmup1 & asymmetric1]]></title>
       <url>/2017/12/22/pwnhub-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%93%E5%9C%BA/</url>
       <content type="html"><![CDATA[<p>pwnhub密码学公开赛里的两个题。wp交得太匆忙，写得有点简陋，没过审，下次再加油吧。</p>
