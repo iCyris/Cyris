@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[HCTF-GAME writeup]]></title>
+      <url>/2018/02/10/hgame-2018/</url>
+      <content type="html"><![CDATA[<p>哒哒啦哒<br><a id="more"></a></p>
+<h2 id="Re"><a href="#Re" class="headerlink" title="Re"></a>Re</h2><h3 id="week1-nop-popp"><a href="#week1-nop-popp" class="headerlink" title="week1 - nop_popp"></a>week1 - nop_popp</h3><p>题目链接：</p>
+<p>od 搜索下字符串，发现 “nop_me” ，双击跟进后把上下存在 nop_me 字样的部分用 nop 填充掉后就好。</p>
+<h3 id="week1-sc2"><a href="#week1-sc2" class="headerlink" title="week1 - sc2"></a>week1 - sc2</h3><p>题目链接：</p>
+<p>ida 载入后 f5 ：</p>
+<p><img src="/2018/02/10/hgame-2018/sc2-1.png" alt=""></p>
+<p>猜测是进行了分组加密，然后对结果进行判断，检查一下各个函数：</p>
+<p><strong>sub_4010B0：</strong><br><img src="/2018/02/10/hgame-2018/sc2-2.png" alt=""></p>
+<p>一个简单的异或。</p>
+<p><strong>sub_401110：</strong><br><img src="/2018/02/10/hgame-2018/sc2-3.png" alt=""></p>
+<p>又一次进行了异或。</p>
+<p><strong>sub_401160：</strong><br><img src="/2018/02/10/hgame-2018/sc2-4.png" alt=""></p>
+<p>这里就是一个比较函数了，7个为一组</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[哈希长度扩展攻击]]></title>
       <url>/2018/02/02/hash-extender-attack/</url>
       <content type="html"><![CDATA[<p>哈希长度扩展攻击利用了 MD5 ，SHA1 等加密算法的缺陷，可以在不知道原始密钥的情况下计算出一个对应的 hash 值。</p>
