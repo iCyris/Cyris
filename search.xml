@@ -74,9 +74,9 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
-            <tag> Crypto </tag>
+            <tag> CRYPTO </tag>
             
         </tags>
         
@@ -106,11 +106,9 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
-            <tag> writeup </tag>
-            
-            <tag> pwnhub </tag>
+            <tag> PWNHUB </tag>
             
         </tags>
         
@@ -196,9 +194,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
-            
-            <tag> writeup </tag>
+            <tag> CTF </tag>
             
         </tags>
         
@@ -336,7 +332,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
             <tag> 源码泄漏 </tag>
             
@@ -375,16 +371,14 @@
         
         <tags>
             
-            <tag> python </tag>
-            
-            <tag> Web Crawler </tag>
+            <tag> PYTHON </tag>
             
         </tags>
         
     </entry>
     
     <entry>
-      <title><![CDATA[Mac配置虚拟环境Virtualenv]]></title>
+      <title><![CDATA[Mac 配置虚拟环境 Virtualenv]]></title>
       <url>/2017/10/21/python-venv/</url>
       <content type="html"><![CDATA[<p>在Mac自带的Python环境下直接安装一些包时经常会遇到各种问题，也不太喜欢把原生的环境弄乱，就装了个虚拟环境，记录下留着日后用吧。</p>
 <a id="more"></a>
@@ -433,7 +427,7 @@
         
         <tags>
             
-            <tag> python </tag>
+            <tag> PYTHON </tag>
             
             <tag> Virtualenv </tag>
             
@@ -503,7 +497,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
         </tags>
         
@@ -552,9 +546,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
-            
-            <tag> writeup </tag>
+            <tag> CTF </tag>
             
         </tags>
         
@@ -616,9 +608,9 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
-            <tag> sqli </tag>
+            <tag> SQLi </tag>
             
         </tags>
         
@@ -654,9 +646,9 @@
         
         <tags>
             
-            <tag> ctf </tag>
+            <tag> CTF </tag>
             
-            <tag> sqli </tag>
+            <tag> SQLi </tag>
             
         </tags>
         
@@ -704,9 +696,7 @@
         
         <tags>
             
-            <tag> 绿生 </tag>
-            
-            <tag> 卡萨布兰卡 </tag>
+            <tag> 煮字 </tag>
             
         </tags>
         
@@ -746,7 +736,7 @@
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> HEXO </tag>
             
         </tags>
         
@@ -814,9 +804,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
-            
-            <tag> writeup </tag>
+            <tag> CTF </tag>
             
         </tags>
         
@@ -848,11 +836,7 @@
         
         <tags>
             
-            <tag> 绿生 </tag>
-            
-            <tag> 柠檬之涩 </tag>
-            
-            <tag> 番茄蛋汤 </tag>
+            <tag> 煮字 </tag>
             
         </tags>
         
@@ -981,9 +965,7 @@
         
         <tags>
             
-            <tag> ctf </tag>
-            
-            <tag> writeup </tag>
+            <tag> CTF </tag>
             
         </tags>
         
@@ -1047,9 +1029,9 @@
         
         <tags>
             
-            <tag> git </tag>
+            <tag> GIT </tag>
             
-            <tag> wiki </tag>
+            <tag> Wiki </tag>
             
         </tags>
         
@@ -1086,7 +1068,7 @@
         
         <tags>
             
-            <tag> wiki </tag>
+            <tag> Wiki </tag>
             
         </tags>
         
@@ -1208,7 +1190,7 @@
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> HEXO </tag>
             
         </tags>
         
@@ -1238,9 +1220,7 @@
         
         <tags>
             
-            <tag> 樱花 </tag>
-            
-            <tag> 绿生 </tag>
+            <tag> 煮字 </tag>
             
         </tags>
         

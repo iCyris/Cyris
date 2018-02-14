@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iCyris.github.io/"/>
-  <updated>2018-02-03T00:15:28.000Z</updated>
+  <updated>2018-02-14T13:29:23.000Z</updated>
   <id>https://iCyris.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://iCyris.github.io/2018/02/02/hash-extender-attack/"/>
     <id>https://iCyris.github.io/2018/02/02/hash-extender-attack/</id>
     <published>2018-02-02T09:00:58.000Z</published>
-    <updated>2018-02-03T00:15:28.000Z</updated>
+    <updated>2018-02-14T13:29:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>哈希长度扩展攻击利用了 MD5 ，SHA1 等加密算法的缺陷，可以在不知道原始密钥的情况下计算出一个对应的 hash 值。</p>
 <a id="more"></a>
@@ -91,9 +91,9 @@
       <category term="Crypto" scheme="https://iCyris.github.io/categories/Crypto/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
-      <category term="Crypto" scheme="https://iCyris.github.io/tags/Crypto/"/>
+      <category term="CRYPTO" scheme="https://iCyris.github.io/tags/CRYPTO/"/>
     
   </entry>
   
@@ -102,7 +102,7 @@
     <link href="https://iCyris.github.io/2017/12/22/pwnhub-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%93%E5%9C%BA/"/>
     <id>https://iCyris.github.io/2017/12/22/pwnhub-密码学专场/</id>
     <published>2017-12-22T08:36:49.000Z</published>
-    <updated>2017-12-22T11:38:00.000Z</updated>
+    <updated>2018-02-14T13:29:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>pwnhub密码学公开赛里的两个题。wp交得太匆忙，写得有点简陋，没过审，下次再加油吧。</p>
 <a id="more"></a>
@@ -125,11 +125,9 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
-      <category term="writeup" scheme="https://iCyris.github.io/tags/writeup/"/>
-    
-      <category term="pwnhub" scheme="https://iCyris.github.io/tags/pwnhub/"/>
+      <category term="PWNHUB" scheme="https://iCyris.github.io/tags/PWNHUB/"/>
     
   </entry>
   
@@ -138,7 +136,7 @@
     <link href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/"/>
     <id>https://iCyris.github.io/2017/11/04/jarvisoj-wp/</id>
     <published>2017-11-04T03:23:21.000Z</published>
-    <updated>2018-02-02T16:23:45.000Z</updated>
+    <updated>2018-02-14T13:29:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>这里记录一些 Jarvis OJ 上的题。</p>
 <a id="more"></a> 
@@ -217,9 +215,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="https://iCyris.github.io/tags/writeup/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -228,7 +224,7 @@
     <link href="https://iCyris.github.io/2017/10/27/code-leakage/"/>
     <id>https://iCyris.github.io/2017/10/27/code-leakage/</id>
     <published>2017-10-27T13:35:15.000Z</published>
-    <updated>2018-02-03T00:14:02.000Z</updated>
+    <updated>2018-02-14T13:30:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>源码泄漏的问题经常在一些渗透测试或者CTF中出现，这篇文章对一些常见的情况做了点整理。  </p>
 <a id="more"></a>
@@ -359,7 +355,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
       <category term="源码泄漏" scheme="https://iCyris.github.io/tags/%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F/"/>
     
@@ -370,7 +366,7 @@
     <link href="https://iCyris.github.io/2017/10/26/urllib2/"/>
     <id>https://iCyris.github.io/2017/10/26/urllib2/</id>
     <published>2017-10-26T03:17:52.000Z</published>
-    <updated>2017-10-31T10:38:29.000Z</updated>
+    <updated>2018-02-14T13:30:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>Python urllib2 模块学习笔记。</p>
 <a id="more"></a>
@@ -400,18 +396,16 @@
       <category term="Python" scheme="https://iCyris.github.io/categories/Python/"/>
     
     
-      <category term="python" scheme="https://iCyris.github.io/tags/python/"/>
-    
-      <category term="Web Crawler" scheme="https://iCyris.github.io/tags/Web-Crawler/"/>
+      <category term="PYTHON" scheme="https://iCyris.github.io/tags/PYTHON/"/>
     
   </entry>
   
   <entry>
-    <title>Mac配置虚拟环境Virtualenv</title>
+    <title>Mac 配置虚拟环境 Virtualenv</title>
     <link href="https://iCyris.github.io/2017/10/21/python-venv/"/>
     <id>https://iCyris.github.io/2017/10/21/python-venv/</id>
     <published>2017-10-20T17:15:41.000Z</published>
-    <updated>2017-10-26T12:08:41.000Z</updated>
+    <updated>2018-02-14T13:41:05.000Z</updated>
     
     <content type="html"><![CDATA[<p>在Mac自带的Python环境下直接安装一些包时经常会遇到各种问题，也不太喜欢把原生的环境弄乱，就装了个虚拟环境，记录下留着日后用吧。</p>
 <a id="more"></a>
@@ -460,7 +454,7 @@
       <category term="Python" scheme="https://iCyris.github.io/categories/Python/"/>
     
     
-      <category term="python" scheme="https://iCyris.github.io/tags/python/"/>
+      <category term="PYTHON" scheme="https://iCyris.github.io/tags/PYTHON/"/>
     
       <category term="Virtualenv" scheme="https://iCyris.github.io/tags/Virtualenv/"/>
     
@@ -471,7 +465,7 @@
     <link href="https://iCyris.github.io/2017/10/19/rar-attack/"/>
     <id>https://iCyris.github.io/2017/10/19/rar-attack/</id>
     <published>2017-10-19T06:58:50.000Z</published>
-    <updated>2017-11-23T05:42:06.000Z</updated>
+    <updated>2018-02-14T13:30:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>纯转载。原帖戳这里：<a href="http://veritas501.space/2017/06/23/%E7%BB%99%E4%BD%A0%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%8D%B4%E4%B8%8D%E7%BB%99%E4%BD%A0%E5%AF%86%E7%A0%81%E7%9A%84%E4%BA%BA%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/" target="_blank" rel="external">veritas501 - 给你压缩包却不给你密码的人到底在想什么</a></p>
 <a id="more"></a>
@@ -532,7 +526,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -541,7 +535,7 @@
     <link href="https://iCyris.github.io/2017/09/23/NCTF-2/"/>
     <id>https://iCyris.github.io/2017/09/23/NCTF-2/</id>
     <published>2017-09-23T13:55:10.000Z</published>
-    <updated>2017-11-05T00:50:59.000Z</updated>
+    <updated>2018-02-14T13:31:04.000Z</updated>
     
     <content type="html"><![CDATA[<p>某个无所事事的下午的一篇随手记。</p>
 <a id="more"></a>  
@@ -583,9 +577,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="https://iCyris.github.io/tags/writeup/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -594,7 +586,7 @@
     <link href="https://iCyris.github.io/2017/07/26/sqli-2/"/>
     <id>https://iCyris.github.io/2017/07/26/sqli-2/</id>
     <published>2017-07-26T07:56:10.000Z</published>
-    <updated>2017-12-15T15:08:14.000Z</updated>
+    <updated>2018-02-14T13:31:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>第三期咕咕咕预告。</p>
 <a id="more"></a>
@@ -649,9 +641,9 @@
       <category term="SQL" scheme="https://iCyris.github.io/categories/SQL/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
-      <category term="sqli" scheme="https://iCyris.github.io/tags/sqli/"/>
+      <category term="SQLi" scheme="https://iCyris.github.io/tags/SQLi/"/>
     
   </entry>
   
@@ -660,7 +652,7 @@
     <link href="https://iCyris.github.io/2017/07/18/sqli-labs/"/>
     <id>https://iCyris.github.io/2017/07/18/sqli-labs/</id>
     <published>2017-07-18T11:01:03.000Z</published>
-    <updated>2018-01-17T16:01:28.000Z</updated>
+    <updated>2018-02-14T13:32:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>开了个新坑。</p>
 <a id="more"></a>
@@ -689,9 +681,9 @@
       <category term="SQL" scheme="https://iCyris.github.io/categories/SQL/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
-      <category term="sqli" scheme="https://iCyris.github.io/tags/sqli/"/>
+      <category term="SQLi" scheme="https://iCyris.github.io/tags/SQLi/"/>
     
   </entry>
   
@@ -700,7 +692,7 @@
     <link href="https://iCyris.github.io/2017/07/12/the-seed/"/>
     <id>https://iCyris.github.io/2017/07/12/the-seed/</id>
     <published>2017-07-12T12:34:52.000Z</published>
-    <updated>2017-12-15T15:07:19.000Z</updated>
+    <updated>2018-02-14T13:32:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>只是你不知道我的狂野。</p>
 <a id="more"></a>     
@@ -741,9 +733,7 @@
       <category term="煮字" scheme="https://iCyris.github.io/categories/%E7%85%AE%E5%AD%97/"/>
     
     
-      <category term="绿生" scheme="https://iCyris.github.io/tags/%E7%BB%BF%E7%94%9F/"/>
-    
-      <category term="卡萨布兰卡" scheme="https://iCyris.github.io/tags/%E5%8D%A1%E8%90%A8%E5%B8%83%E5%85%B0%E5%8D%A1/"/>
+      <category term="煮字" scheme="https://iCyris.github.io/tags/%E7%85%AE%E5%AD%97/"/>
     
   </entry>
   
@@ -752,7 +742,7 @@
     <link href="https://iCyris.github.io/2017/07/12/blog-picture-issue/"/>
     <id>https://iCyris.github.io/2017/07/12/blog-picture-issue/</id>
     <published>2017-07-12T11:46:06.000Z</published>
-    <updated>2017-10-21T14:27:28.000Z</updated>
+    <updated>2018-02-14T13:33:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>关于hexo博客图片无法正常显示的问题的解决办法。   </p>
 <a id="more"></a>
@@ -785,7 +775,7 @@
       <category term="Hexo" scheme="https://iCyris.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://iCyris.github.io/tags/Hexo/"/>
+      <category term="HEXO" scheme="https://iCyris.github.io/tags/HEXO/"/>
     
   </entry>
   
@@ -794,7 +784,7 @@
     <link href="https://iCyris.github.io/2017/07/03/OpenCTF/"/>
     <id>https://iCyris.github.io/2017/07/03/OpenCTF/</id>
     <published>2017-07-03T09:01:47.000Z</published>
-    <updated>2017-10-28T04:50:56.000Z</updated>
+    <updated>2018-02-14T13:33:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>软件嘉年华部分题的题解。</p>
 <a id="more"></a>
@@ -855,9 +845,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="https://iCyris.github.io/tags/writeup/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -866,7 +854,7 @@
     <link href="https://iCyris.github.io/2017/07/02/tea-maker/"/>
     <id>https://iCyris.github.io/2017/07/02/tea-maker/</id>
     <published>2017-07-02T03:54:20.000Z</published>
-    <updated>2017-12-15T14:55:03.000Z</updated>
+    <updated>2018-02-14T13:31:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>菠萝，青菜，牛肉，米饭，芝麻，番茄蛋汤。      </p>
 <a id="more"></a>   
@@ -891,11 +879,7 @@
       <category term="煮字" scheme="https://iCyris.github.io/categories/%E7%85%AE%E5%AD%97/"/>
     
     
-      <category term="绿生" scheme="https://iCyris.github.io/tags/%E7%BB%BF%E7%94%9F/"/>
-    
-      <category term="柠檬之涩" scheme="https://iCyris.github.io/tags/%E6%9F%A0%E6%AA%AC%E4%B9%8B%E6%B6%A9/"/>
-    
-      <category term="番茄蛋汤" scheme="https://iCyris.github.io/tags/%E7%95%AA%E8%8C%84%E8%9B%8B%E6%B1%A4/"/>
+      <category term="煮字" scheme="https://iCyris.github.io/tags/%E7%85%AE%E5%AD%97/"/>
     
   </entry>
   
@@ -904,7 +888,7 @@
     <link href="https://iCyris.github.io/2017/06/01/NCTF/"/>
     <id>https://iCyris.github.io/2017/06/01/NCTF/</id>
     <published>2017-06-01T08:28:25.000Z</published>
-    <updated>2017-10-28T04:50:39.000Z</updated>
+    <updated>2018-02-14T13:32:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>南邮NCTF训练平台里一些题的wp。     </p>
 <a id="more"></a>  
@@ -1026,9 +1010,7 @@
       <category term="CTF" scheme="https://iCyris.github.io/categories/CTF/"/>
     
     
-      <category term="ctf" scheme="https://iCyris.github.io/tags/ctf/"/>
-    
-      <category term="writeup" scheme="https://iCyris.github.io/tags/writeup/"/>
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
     
   </entry>
   
@@ -1037,7 +1019,7 @@
     <link href="https://iCyris.github.io/2017/05/13/git/"/>
     <id>https://iCyris.github.io/2017/05/13/git/</id>
     <published>2017-05-12T16:17:27.000Z</published>
-    <updated>2017-10-26T03:08:54.000Z</updated>
+    <updated>2018-02-14T13:39:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
 <a id="more"></a>
@@ -1094,9 +1076,9 @@
       <category term="Git" scheme="https://iCyris.github.io/categories/Git/"/>
     
     
-      <category term="git" scheme="https://iCyris.github.io/tags/git/"/>
+      <category term="GIT" scheme="https://iCyris.github.io/tags/GIT/"/>
     
-      <category term="wiki" scheme="https://iCyris.github.io/tags/wiki/"/>
+      <category term="Wiki" scheme="https://iCyris.github.io/tags/Wiki/"/>
     
   </entry>
   
@@ -1105,7 +1087,7 @@
     <link href="https://iCyris.github.io/2017/04/15/wiki/"/>
     <id>https://iCyris.github.io/2017/04/15/wiki/</id>
     <published>2017-04-15T01:38:00.000Z</published>
-    <updated>2017-10-21T14:27:43.000Z</updated>
+    <updated>2018-02-14T13:39:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>vidar team整理的一份推荐书单，各个方向各个阶段均有。  </p>
 <a id="more"></a>  
@@ -1135,7 +1117,7 @@
       <category term="学习资料" scheme="https://iCyris.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
     
     
-      <category term="wiki" scheme="https://iCyris.github.io/tags/wiki/"/>
+      <category term="Wiki" scheme="https://iCyris.github.io/tags/Wiki/"/>
     
   </entry>
   
@@ -1144,7 +1126,7 @@
     <link href="https://iCyris.github.io/2017/04/05/hexo-blog/"/>
     <id>https://iCyris.github.io/2017/04/05/hexo-blog/</id>
     <published>2017-04-05T08:13:35.000Z</published>
-    <updated>2017-10-21T14:15:39.000Z</updated>
+    <updated>2018-02-14T13:32:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>一篇关于hexo博客搭建的小教程。   </p>
 <a id="more"></a>
@@ -1259,7 +1241,7 @@
       <category term="Hexo" scheme="https://iCyris.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://iCyris.github.io/tags/Hexo/"/>
+      <category term="HEXO" scheme="https://iCyris.github.io/tags/HEXO/"/>
     
   </entry>
   
@@ -1268,7 +1250,7 @@
     <link href="https://iCyris.github.io/2017/04/04/acaleph/"/>
     <id>https://iCyris.github.io/2017/04/04/acaleph/</id>
     <published>2017-04-04T08:19:49.000Z</published>
-    <updated>2017-12-15T15:23:29.000Z</updated>
+    <updated>2018-02-14T13:32:04.000Z</updated>
     
     <content type="html"><![CDATA[<p>干净，深刻，精致。<br>这是那一刻的绿生，所带给我的欣喜。</p>
 <a id="more"></a>
@@ -1291,9 +1273,7 @@
       <category term="煮字" scheme="https://iCyris.github.io/categories/%E7%85%AE%E5%AD%97/"/>
     
     
-      <category term="樱花" scheme="https://iCyris.github.io/tags/%E6%A8%B1%E8%8A%B1/"/>
-    
-      <category term="绿生" scheme="https://iCyris.github.io/tags/%E7%BB%BF%E7%94%9F/"/>
+      <category term="煮字" scheme="https://iCyris.github.io/tags/%E7%85%AE%E5%AD%97/"/>
     
   </entry>
   
