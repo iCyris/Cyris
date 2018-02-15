@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iCyris.github.io/2017/06/01/NCTF/</loc>
+    
+    <lastmod>2018-02-15T04:19:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iCyris.github.io/2017/10/21/python-venv/</loc>
     
     <lastmod>2018-02-14T13:41:05.000Z</lastmod>
@@ -51,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://iCyris.github.io/2017/06/01/NCTF/</loc>
-    
-    <lastmod>2018-02-14T13:32:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://iCyris.github.io/2017/07/18/sqli-labs/</loc>
     
     <lastmod>2018-02-14T13:32:20.000Z</lastmod>
@@ -89,13 +89,6 @@
     <loc>https://iCyris.github.io/2017/07/26/sqli-2/</loc>
     
     <lastmod>2018-02-14T13:31:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/2017/09/23/NCTF-2/</loc>
-    
-    <lastmod>2018-02-14T13:31:04.000Z</lastmod>
     
   </url>
   
