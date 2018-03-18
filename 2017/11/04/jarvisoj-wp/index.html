@@ -105,7 +105,7 @@
 <meta property="og:description" content="记录一些 Jarvis OJ 上的题。">
 <meta property="og:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/1.png">
 <meta property="og:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/PHPINFO-1.png">
-<meta property="og:updated_time" content="2018-03-18T08:17:31.000Z">
+<meta property="og:updated_time" content="2018-03-18T08:19:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jarvis OJ Writeup">
 <meta name="twitter:description" content="记录一些 Jarvis OJ 上的题。">
@@ -538,10 +538,10 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print_r(file_get_contents(<span class="string">"/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php"</span>));</div></pre></td></tr></table></figure>
 <p>序列化及一些小处理后得到最终 payload ：</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">|O:5:<span class="symbol">\"</span>OowoO<span class="symbol">\"</span>:1:&#123;s:4:<span class="symbol">\"</span>mdzz<span class="symbol">\"</span>;s:88:<span class="symbol">\"</span>print_r(file_get_contents(<span class="symbol">\"</span>/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php<span class="symbol">\"</span>));<span class="symbol">\"</span>;&#125;</div></pre></td></tr></table></figure>
-<p>用刚刚同样的方式 POST 一下就好了。</p>
+<p>用同样的方式 POST 一下就好了。</p>
 <p><code>CTF{4d96e37f4be998c50aa586de4ada354a}</code></p>
 <hr>
-<h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="XMAN-level0"><a href="#XMAN-level0" class="headerlink" title="[XMAN]level0"></a>[XMAN]level0</h3><p>题目描述：</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h3 id="XMAN-level0"><a href="#XMAN-level0" class="headerlink" title="[XMAN]level0"></a>[XMAN]level0</h3><p>题目描述：</p>
 <blockquote>
 <p>nc pwn2.jarvisoj.com 9881</p>
 <p><a href="https://dn.jarvisoj.com/challengefiles/level0.b9ded3801d6dd36a97468e128b81a65d" target="_blank" rel="external">level0.b9ded3801d6dd36a97468e128b81a65d</a></p>
@@ -694,7 +694,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -705,7 +705,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -716,7 +716,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -782,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web"><span class="nav-text">Web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Login"><span class="nav-text">Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api调用"><span class="nav-text">api调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神盾局的秘密"><span class="nav-text">神盾局的秘密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag在管理员手里"><span class="nav-text">flag在管理员手里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPINFO"><span class="nav-text">PHPINFO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PWN"><span class="nav-text">PWN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMAN-level0"><span class="nav-text">[XMAN]level0</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web"><span class="nav-text">Web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Login"><span class="nav-text">Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api调用"><span class="nav-text">api调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神盾局的秘密"><span class="nav-text">神盾局的秘密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag在管理员手里"><span class="nav-text">flag在管理员手里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPINFO"><span class="nav-text">PHPINFO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pwn"><span class="nav-text">Pwn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMAN-level0"><span class="nav-text">[XMAN]level0</span></a></li></ol></li></ol></div>
             
 
           </div>
