@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iCyris.github.io/"/>
-  <updated>2018-03-19T13:50:19.000Z</updated>
+  <updated>2018-03-19T14:00:22.000Z</updated>
   <id>https://iCyris.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://iCyris.github.io/2018/03/19/docker-php/"/>
     <id>https://iCyris.github.io/2018/03/19/docker-php/</id>
     <published>2018-03-19T06:28:15.000Z</published>
-    <updated>2018-03-19T13:50:19.000Z</updated>
+    <updated>2018-03-19T14:00:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>利用 Docker 手动配置 PHP + Njinx + MySQL 开发环境。</p>
 <a id="more"></a>
-<p>手动配置的方法为：先拉取一个 ubuntu 镜像并创建相应的容器，在容器内部进行 PHP 相关环境部署。关于 docker 的说明以及具体的安装的方法就不多说了，直接进入正题。</p>
+<p>手动配置的方法为：先拉取一个 ubuntu 镜像并创建相应的容器，在容器内部进行 PHP 相关环境部署。关于 docker 的说明以及具体的安装的方法请参考官方文档。</p>
 <h2 id="1-安装-docker"><a href="#1-安装-docker" class="headerlink" title="1. 安装 docker"></a>1. 安装 docker</h2><p>如果是在服务器端（以 ubuntu 为例），安装 docker 的基础操作有：</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> install -y docker.io       <span class="comment">#安装docker</span></div><div class="line">service docker <span class="built_in">start</span>                    <span class="comment">#启动docker</span></div><div class="line">service docker <span class="built_in">stop</span>                     <span class="comment">#关闭docker</span></div></pre></td></tr></table></figure>
 <p>简单说一下 image 与 container 的区别。前者为镜像，后者为容器，容器基于镜像，而我们平时用的 docker run 命令是从已有镜像中开启一个新的容器。</p>
