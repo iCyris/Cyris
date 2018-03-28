@@ -103,10 +103,16 @@
 <meta property="og:url" content="https://iCyris.github.io/2018/03/28/密码学笔记/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="长期更新一些密码学相关的知识点。">
-<meta property="og:updated_time" content="2018-03-28T08:18:30.000Z">
+<meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-0-1.jpg">
+<meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-0-2.jpg">
+<meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-1.png">
+<meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-2.png">
+<meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-3.png">
+<meta property="og:updated_time" content="2018-03-28T15:52:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="密码学笔记">
 <meta name="twitter:description" content="长期更新一些密码学相关的知识点。">
+<meta name="twitter:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-0-1.jpg">
 
 
 
@@ -423,9 +429,40 @@
 <h1 id="一、流密码"><a href="#一、流密码" class="headerlink" title="一、流密码"></a>一、流密码</h1><p>序列密码也称为流密码（Stream Cipher），它是对称密码算法的一种。</p>
 <p>TODO</p>
 <hr>
-<h1 id="二、数据加密标准-DES"><a href="#二、数据加密标准-DES" class="headerlink" title="二、数据加密标准 DES"></a>二、数据加密标准 DES</h1><p>DES 分组长度为 64 比特，其中有 8 位是奇偶校验位，因此实际长度为 56 比特。因为它使用的 56 位密钥过短，现已被 AES 替代。</p>
-<p><strong>加密过程：</strong><br>64 位明文 –&gt; 初始置换 IP（用于重排明文分组）–&gt; 16 轮加密变换 –&gt; 逆初始置换 IP<sup>-1</sup> –&gt; 密文</p>
-<p><strong>初始置换 IP ：</strong></p>
+<h1 id="二、数据加密标准-DES"><a href="#二、数据加密标准-DES" class="headerlink" title="二、数据加密标准 DES"></a>二、数据加密标准 DES</h1><p>DES 算法为密码体制中的对称密码体制，又被称为美国数据加密标准。</p>
+<p>DES 是一个分组加密算法，分组长度为 64 比特，其中有 8 位（第8、16、24、32、40、48、56、64位）是奇偶校验位，因此实际长度为 56 比特。因为它使用的 56 位密钥过短，现已被 AES 替代。</p>
+<p>加密过程概览：</p>
+<p><img src="/2018/03/28/密码学笔记/DES-0-1.jpg" alt=""></p>
+<p>解密其实和加密类似，但是子密钥的使用次序与加密变换相反。</p>
+<p><img src="/2018/03/28/密码学笔记/DES-0-2.jpg" alt=""></p>
+<p>下面说一下具体的加密过程。</p>
+<h2 id="2-1-流程概览"><a href="#2-1-流程概览" class="headerlink" title="2.1 流程概览"></a>2.1 流程概览</h2><p>64 位明文 –&gt; 初始置换 IP（用于重排明文分组）–&gt; 16 轮加密变换 –&gt; 逆初始置换 IP<sup>-1</sup> –&gt; 密文</p>
+<p><img src="/2018/03/28/密码学笔记/DES-1.png" alt=""></p>
+<h2 id="2-2-初始置换-IP"><a href="#2-2-初始置换-IP" class="headerlink" title="2.2 初始置换 IP"></a>2.2 初始置换 IP</h2><p>IP 置换是为了将输入的 64 位数据块按位重新组合，并输出为 L<sub>0</sub> ，R<sub>0</sub> 两部分，两部分均长 32 位。</p>
+<p>置换规则如下：</p>
+<blockquote>
+<p>58 50 42 34 26 18 10 2<br>60 52 44 36 28 20 12 4<br>62 54 46 38 30 22 14 6<br>64 56 48 40 32 24 16 8<br>57 49 41 33 25 17 &nbsp;9 &nbsp;&nbsp;1<br>59 51 43 35 27 19 11 3<br>61 53 45 37 29 21 13 5<br>63 55 47 39 31 23 15 7 </p>
+</blockquote>
+<p>置换规则表中数字的意义为：比如第一个数字是 58 ，表示将第 58 个比特换到第 1 个比特的位置，接下来把第 50 比特换到第 2 个比特的位置，以此类推。</p>
+<p>置换后的数据分为左 32 位（L<sub>0</sub>）与右 32 位（R<sub>0</sub>）。前四行（从 58 - 8 ）数据为 L<sub>0</sub> ，后四行（从 57 - 7 ）数据为 R<sub>0</sub> 。这张表还是有一定规律的，比如 L<sub>0</sub> 部分均为偶数，且按从上到下，从右到左的方式看，数据按 2 ，4 ，6，8… 这样的规律排列。</p>
+<h2 id="2-3-加密函数-F"><a href="#2-3-加密函数-F" class="headerlink" title="2.3 加密函数 F"></a>2.3 加密函数 F</h2><p>F 函数的加密过程如图：<br><img src="/2018/03/28/密码学笔记/DES-2.png" alt=""></p>
+<p>其每次对半块（32位）进行操作，并包括四个步骤：</p>
+<ol>
+<li><strong>扩张</strong> — 用扩张置换（图中的E）将 32 位的半块扩展到48位，其输出包括 8 个 6 位的块，每块包含 4 位对应的输入位，加上两个邻接的块中紧邻的位。</li>
+<li><strong>与密钥混合</strong> — 用异或操作将扩张的结果和一个子密钥进行混合。一共有 16 个 48 位的子密钥，每个用于一个回次的 F 变换。密钥是利用密钥调度从主密钥生成的（见下文 - 密钥调度）。</li>
+<li><strong>S盒</strong> — 在与子密钥混合之后，块被分成 8 个 6 位的块，然后使用“S盒”，或称“置换盒”进行处理。8 个S盒的每一个都使用以查找表方式提供的非线性的变换将它的 6 个输入位变成 4 个输出位。S 盒提供了 DES 的核心安全性，如果没有 S 盒，密码会是线性的，很容易破解。</li>
+<li><strong>置换</strong> — 最后，S 盒的 32 个输出位利用固定的置换，“P置换”进行重组。这个设计是为了将每个 S 盒的 4 位输出在下一回次的扩张后，使用 4 个不同的 S 盒进行处理。</li>
+</ol>
+<p>轮变换的过程为：</p>
+<blockquote>
+<p>L<sub>i</sub> = R<sub>i-1</sub><br>R<sub>i</sub> = L<sub>i-1</sub> ⊕ F (R<sub>i-1</sub>, K<sub>i</sub>)</p>
+</blockquote>
+<h2 id="2-4-密钥调度"><a href="#2-4-密钥调度" class="headerlink" title="2.4 密钥调度"></a>2.4 密钥调度</h2><p><img src="/2018/03/28/密码学笔记/DES-3.png" alt=""></p>
+<p>上图显示了加密过程中的密钥调度 — 产生子密钥的算法。</p>
+<p>首先，使用选择置换1（PC-1）从 64 位输入密钥中选出 56 位的密钥，剩下的 8 位要么直接丢弃，要么作为奇偶校验位。</p>
+<p>然后，56 位分成两个 28 位的半密钥；每个半密钥接下来都被分别处理。在接下来的回次中，两个半密钥都被左移 1 或 2 位（由回次数决定），然后通过选择置换2（PC-2）产生 48 位的子密钥—每个半密钥 24 位。移位（图中由&lt;&lt;标示）表明每个子密钥中使用了不同的位，每个位大致在 16 个子密钥中的 14 个出现。</p>
+<p>解密过程中，除了子密钥输出的顺序相反外，密钥调度的过程与加密完全相同。</p>
+<p>（部分参考自维基百科。）</p>
 <hr>
 <h1 id="三、高级加密标准-AES"><a href="#三、高级加密标准-AES" class="headerlink" title="三、高级加密标准 AES"></a>三、高级加密标准 AES</h1><p>TODO</p>
 <hr>
@@ -493,8 +530,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/28/markdown-tip/" rel="prev" title="利用 HTML 在 Markdown 中打出数学符号">
-                利用 HTML 在 Markdown 中打出数学符号 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/28/markdown-tip/" rel="prev" title="如何在 Markdown 中打出数学符号">
+                如何在 Markdown 中打出数学符号 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、流密码"><span class="nav-text">一、流密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据加密标准-DES"><span class="nav-text">二、数据加密标准 DES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、高级加密标准-AES"><span class="nav-text">三、高级加密标准 AES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、哈希函数"><span class="nav-text">四、哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD5"><span class="nav-text">MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHA-1"><span class="nav-text">SHA-1</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、RSA"><span class="nav-text">五、RSA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、CBC"><span class="nav-text">六、CBC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、流密码"><span class="nav-text">一、流密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据加密标准-DES"><span class="nav-text">二、数据加密标准 DES</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-流程概览"><span class="nav-text">2.1 流程概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-初始置换-IP"><span class="nav-text">2.2 初始置换 IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-加密函数-F"><span class="nav-text">2.3 加密函数 F</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-密钥调度"><span class="nav-text">2.4 密钥调度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、高级加密标准-AES"><span class="nav-text">三、高级加密标准 AES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、哈希函数"><span class="nav-text">四、哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD5"><span class="nav-text">MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHA-1"><span class="nav-text">SHA-1</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、RSA"><span class="nav-text">五、RSA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、CBC"><span class="nav-text">六、CBC</span></a></li></ol></div>
             
 
           </div>
