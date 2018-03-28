@@ -3,6 +3,292 @@
   
     
     <entry>
+      <title><![CDATA[利用 HTML 在 Markdown 中打出数学符号]]></title>
+      <url>/2018/03/28/markdown-tip/</url>
+      <content type="html"><![CDATA[<p>想要打出奇奇怪怪的符号。</p>
+<a id="more"></a>
+<p>在做密码学笔记的时候遇到了一些特殊符号，无法直接打出来，贴图？不存在的 XD ，后来找到了<a href="https://www.jianshu.com/p/80ac23666a98" target="_blank" rel="external">这篇文章</a>，直接用 HTML 语法打出公式符号，那就记录一些常用的语法吧。</p>
+<p>注：其他支持 Markdown 语法的地方可能会不适用。</p>
+<h2 id="1-上标"><a href="#1-上标" class="headerlink" title="1. 上标"></a>1. 上标</h2><p>n<sup>2</sup>=n+1</p>
+<p><code>n&lt;sup&gt;2&lt;/sup&gt;=n+1</code></p>
+<h2 id="2-下标"><a href="#2-下标" class="headerlink" title="2. 下标"></a>2. 下标</h2><p>a=log<sub>2</sub>b</p>
+<p><code>a=log&lt;sub&gt;2&lt;/sub&gt;b</code></p>
+<h2 id="3-注册商标"><a href="#3-注册商标" class="headerlink" title="3. 注册商标"></a>3. 注册商标</h2><p>hexo &reg;</p>
+<p><code>hexo &amp;reg;</code></p>
+<h2 id="4-function-符号"><a href="#4-function-符号" class="headerlink" title="4. function 符号"></a>4. function 符号</h2><p>&fnof;(x)=x+1</p>
+<p><code>&amp;fnof;(x)=x+1</code></p>
+<h2 id="5-根号"><a href="#5-根号" class="headerlink" title="5. 根号"></a>5. 根号</h2><p>&radic;2 （感觉不是很好看）</p>
+<p><code>&amp;radic;2</code></p>
+<h2 id="6-角度符号"><a href="#6-角度符号" class="headerlink" title="6. 角度符号"></a>6. 角度符号</h2><p>30&deg;</p>
+<p><code>30&amp;deg;</code></p>
+<h2 id="7-最后送张表"><a href="#7-最后送张表" class="headerlink" title="7. 最后送张表"></a>7. 最后送张表</h2><p>整理了一些常用特殊符号的 HTML 编码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&quot;</td>
+<td style="text-align:left">双引号</td>
+<td style="text-align:left"><code>&amp;quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">AND符号</td>
+<td style="text-align:left"><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&times;</td>
+<td style="text-align:left">乘号</td>
+<td style="text-align:left"><code>&amp;times;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&divide;</td>
+<td style="text-align:left">除号</td>
+<td style="text-align:left"><code>&amp;divide;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&larr;</td>
+<td style="text-align:left">向左箭头</td>
+<td style="text-align:left"><code>&amp;larr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&rarr;</td>
+<td style="text-align:left">向右箭头</td>
+<td style="text-align:left"><code>&amp;rarr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&uarr;</td>
+<td style="text-align:left">向上箭头</td>
+<td style="text-align:left"><code>&amp;uarr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&darr;</td>
+<td style="text-align:left">向下箭头</td>
+<td style="text-align:left"><code>&amp;darr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&harr;</td>
+<td style="text-align:left">双向箭头</td>
+<td style="text-align:left"><code>&amp;harr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lArr;</td>
+<td style="text-align:left">双线向左箭头</td>
+<td style="text-align:left"><code>&amp;lArr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&rArr;</td>
+<td style="text-align:left">双线向右箭头</td>
+<td style="text-align:left"><code>&amp;rArr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&hArr;</td>
+<td style="text-align:left">双线双向箭头</td>
+<td style="text-align:left"><code>&amp;hArr;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">空格</td>
+<td style="text-align:left"><code>&amp;nbsp;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&plusmn;</td>
+<td style="text-align:left">正负符号</td>
+<td style="text-align:left"><code>&amp;plusmn;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&infin;</td>
+<td style="text-align:left">无限大符号</td>
+<td style="text-align:left"><code>&amp;infin;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&ang;</td>
+<td style="text-align:left">角度符号</td>
+<td style="text-align:left"><code>&amp;ang;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&int;</td>
+<td style="text-align:left">微积分符号</td>
+<td style="text-align:left"><code>&amp;int;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&iquest;</td>
+<td style="text-align:left">倒问号</td>
+<td style="text-align:left"><code>&amp;iquest;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&ne;</td>
+<td style="text-align:left">不等于符号</td>
+<td style="text-align:left"><code>&amp;ne;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&equiv;</td>
+<td style="text-align:left">相等符号</td>
+<td style="text-align:left"><code>&amp;equiv;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&le;</td>
+<td style="text-align:left">小于等于符号</td>
+<td style="text-align:left"><code>&amp;le;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&ge;</td>
+<td style="text-align:left">大于等于符号</td>
+<td style="text-align:left"><code>&amp;ge;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&para;</td>
+<td style="text-align:left">段落符号</td>
+<td style="text-align:left"><code>&amp;para;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&sect;</td>
+<td style="text-align:left">章节符号</td>
+<td style="text-align:left"><code>&amp;sect;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&perp;</td>
+<td style="text-align:left">垂直符号</td>
+<td style="text-align:left"><code>&amp;perp;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&copy;</td>
+<td style="text-align:left">版权所有符号</td>
+<td style="text-align:left"><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&trade;</td>
+<td style="text-align:left">商标符号</td>
+<td style="text-align:left"><code>&amp;trade;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&reg;</td>
+<td style="text-align:left">注册商标符号</td>
+<td style="text-align:left"><code>&amp;reg;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&frac12;</td>
+<td style="text-align:left">二分之一符号</td>
+<td style="text-align:left"><code>&amp;frac12;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&permil;</td>
+<td style="text-align:left">百分符号</td>
+<td style="text-align:left"><code>&amp;permil;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&there4;</td>
+<td style="text-align:left">所以符号</td>
+<td style="text-align:left"><code>&amp;there4;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&pi;</td>
+<td style="text-align:left">圆周率符号</td>
+<td style="text-align:left"><code>&amp;pi;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&alpha;</td>
+<td style="text-align:left">Alpha 符号</td>
+<td style="text-align:left"><code>&amp;alpha;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&beta;</td>
+<td style="text-align:left">Bata 符号</td>
+<td style="text-align:left"><code>&amp;beta;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&gamma;</td>
+<td style="text-align:left">Gamma 符号</td>
+<td style="text-align:left"><code>&amp;gamma;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&Delta;</td>
+<td style="text-align:left">Delta 符号</td>
+<td style="text-align:left"><code>&amp;Delta;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&theta;</td>
+<td style="text-align:left">Theta 符号</td>
+<td style="text-align:left"><code>&amp;theta;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lambda;</td>
+<td style="text-align:left">Lambda 符号</td>
+<td style="text-align:left"><code>&amp;lambda;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&Sigma;</td>
+<td style="text-align:left">Sigma 符号</td>
+<td style="text-align:left"><code>&amp;Sigma;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&tau;</td>
+<td style="text-align:left">Tau 符号</td>
+<td style="text-align:left"><code>&amp;tau;</code></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> 小笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Notebook </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[密码学笔记]]></title>
+      <url>/2018/03/28/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>长期更新一些密码学相关的知识点。 </p>
+<a id="more"></a>
+<hr>
+<h1 id="一、流密码"><a href="#一、流密码" class="headerlink" title="一、流密码"></a>一、流密码</h1><p>序列密码也称为流密码（Stream Cipher），它是对称密码算法的一种。</p>
+<p>TODO</p>
+<hr>
+<h1 id="二、数据加密标准-DES"><a href="#二、数据加密标准-DES" class="headerlink" title="二、数据加密标准 DES"></a>二、数据加密标准 DES</h1><p>DES 分组长度为 64 比特，其中有 8 位是奇偶校验位，因此实际长度为 56 比特。因为它使用的 56 位密钥过短，现已被 AES 替代。</p>
+<p><strong>加密过程：</strong><br>64 位明文 –&gt; 初始置换 IP（用于重排明文分组）–&gt; 16 轮加密变换 –&gt; 逆初始置换 IP<sup>-1</sup> –&gt; 密文</p>
+<p><strong>初始置换 IP ：</strong></p>
+<hr>
+<h1 id="三、高级加密标准-AES"><a href="#三、高级加密标准-AES" class="headerlink" title="三、高级加密标准 AES"></a>三、高级加密标准 AES</h1><p>TODO</p>
+<hr>
+<h1 id="四、哈希函数"><a href="#四、哈希函数" class="headerlink" title="四、哈希函数"></a>四、哈希函数</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>TODO</p>
+<h2 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h2><p>TODO</p>
+<hr>
+<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><p>TODO</p>
+<hr>
+<h1 id="六、CBC"><a href="#六、CBC" class="headerlink" title="六、CBC"></a>六、CBC</h1><p>TODO</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Crypto </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> CRYPTO </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[利用 Dokcer 部署 PHP 开发环境]]></title>
       <url>/2018/03/19/docker-php/</url>
       <content type="html"><![CDATA[<p>利用 Docker 手动配置 PHP + Njinx + MySQL 开发环境。</p>
