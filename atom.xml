@@ -256,46 +256,6 @@
   </entry>
   
   <entry>
-    <title>密码学笔记</title>
-    <link href="https://iCyris.github.io/2018/03/28/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://iCyris.github.io/2018/03/28/密码学笔记/</id>
-    <published>2018-03-28T03:14:38.000Z</published>
-    <updated>2018-03-28T08:18:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>长期更新一些密码学相关的知识点。 </p>
-<a id="more"></a>
-<hr>
-<h1 id="一、流密码"><a href="#一、流密码" class="headerlink" title="一、流密码"></a>一、流密码</h1><p>序列密码也称为流密码（Stream Cipher），它是对称密码算法的一种。</p>
-<p>TODO</p>
-<hr>
-<h1 id="二、数据加密标准-DES"><a href="#二、数据加密标准-DES" class="headerlink" title="二、数据加密标准 DES"></a>二、数据加密标准 DES</h1><p>DES 分组长度为 64 比特，其中有 8 位是奇偶校验位，因此实际长度为 56 比特。因为它使用的 56 位密钥过短，现已被 AES 替代。</p>
-<p><strong>加密过程：</strong><br>64 位明文 –&gt; 初始置换 IP（用于重排明文分组）–&gt; 16 轮加密变换 –&gt; 逆初始置换 IP<sup>-1</sup> –&gt; 密文</p>
-<p><strong>初始置换 IP ：</strong></p>
-<hr>
-<h1 id="三、高级加密标准-AES"><a href="#三、高级加密标准-AES" class="headerlink" title="三、高级加密标准 AES"></a>三、高级加密标准 AES</h1><p>TODO</p>
-<hr>
-<h1 id="四、哈希函数"><a href="#四、哈希函数" class="headerlink" title="四、哈希函数"></a>四、哈希函数</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>TODO</p>
-<h2 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h2><p>TODO</p>
-<hr>
-<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><p>TODO</p>
-<hr>
-<h1 id="六、CBC"><a href="#六、CBC" class="headerlink" title="六、CBC"></a>六、CBC</h1><p>TODO</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;长期更新一些密码学相关的知识点。 &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Crypto" scheme="https://iCyris.github.io/categories/Crypto/"/>
-    
-    
-      <category term="CRYPTO" scheme="https://iCyris.github.io/tags/CRYPTO/"/>
-    
-  </entry>
-  
-  <entry>
     <title>利用 Dokcer 部署 PHP 开发环境</title>
     <link href="https://iCyris.github.io/2018/03/19/docker-php/"/>
     <id>https://iCyris.github.io/2018/03/19/docker-php/</id>
@@ -1652,6 +1612,45 @@
     
     
       <category term="GIT" scheme="https://iCyris.github.io/tags/GIT/"/>
+    
+      <category term="Wiki" scheme="https://iCyris.github.io/tags/Wiki/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>魔法禁书目录</title>
+    <link href="https://iCyris.github.io/2017/04/15/wiki/"/>
+    <id>https://iCyris.github.io/2017/04/15/wiki/</id>
+    <published>2017-04-15T01:38:00.000Z</published>
+    <updated>2018-02-14T13:39:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>vidar team整理的一份推荐书单，各个方向各个阶段均有。  </p>
+<a id="more"></a>  
+<h1 id="推荐图书目录"><a href="#推荐图书目录" class="headerlink" title="推荐图书目录"></a>推荐图书目录</h1><h2 id="渗透方向："><a href="#渗透方向：" class="headerlink" title="渗透方向："></a>渗透方向：</h2><h3 id="·-基础类"><a href="#·-基础类" class="headerlink" title="· 基础类"></a>· 基础类</h3><p>&#160; &#160; &#160; &#160;《PHP基础教程.第4版》<br>&#160; &#160; &#160; &#160;《PHP与MySQL权威指南》<br>&#160; &#160; &#160; &#160;《Javascript权威指南》<br>&#160; &#160; &#160; &#160;《Python基础教程》<br>&#160; &#160; &#160; &#160;《Python 网络编程》<br>&#160; &#160; &#160; &#160;《TCP/IP协议详解 三卷》<br>&#160; &#160; &#160; &#160;《图解TCP/IP》<br>&#160; &#160; &#160; &#160;《HTTP权威指南》<br>&#160; &#160; &#160; &#160;《图解HTTP》<br>&#160; &#160; &#160; &#160;《HTTP协议详解》<br>&#160; &#160; &#160; &#160;《Python绝技：运用Python成为顶级黑客》</p>
+<h3 id="·-攻防类"><a href="#·-攻防类" class="headerlink" title="· 攻防类"></a>· 攻防类</h3><p>&#160; &#160; &#160; &#160;《白帽子讲WEB安全》<br>&#160; &#160; &#160; &#160;《Web前端 黑客技术揭秘》<br>&#160; &#160; &#160; &#160;《Kali Linux Web 渗透测试》<br>&#160; &#160; &#160; &#160;《黑客攻防技术宝典Web实战篇》<br>&#160; &#160; &#160; &#160;《SQL注入攻击与防御》<br>&#160; &#160; &#160; &#160;《XSS跨站脚本攻击剖析与防御》<br>&#160; &#160; &#160; &#160;《安全参考系列》<br>&#160; &#160; &#160; &#160;《Python黑帽子：黑客与渗透测试编程之道》</p>
+<h2 id="逆向方向："><a href="#逆向方向：" class="headerlink" title="逆向方向："></a>逆向方向：</h2><h3 id="·-基础类（建议按顺序学习）"><a href="#·-基础类（建议按顺序学习）" class="headerlink" title="· 基础类（建议按顺序学习）"></a>· 基础类（建议按顺序学习）</h3><p>&#160; &#160; &#160; &#160;《汇编语言》<br>&#160; &#160; &#160; &#160;《汇编语言编程艺术》<br>&#160; &#160; &#160; &#160;《Windows环境下32位汇编语言程序设计-琢石成器 第3版》<br>&#160; &#160; &#160; &#160;《WINDOWSPE权威指南》<br>&#160; &#160; &#160; &#160;《C++反汇编与逆向分析技术揭秘》<br>&#160; &#160; &#160; &#160;《Windows程序设计》<br>&#160; &#160; &#160; &#160;《逆向工程实战》<br>&#160; &#160; &#160; &#160;《逆向工程核心原理 》<br>&#160; &#160; &#160; &#160;《逆向工程揭密/安全技术大系中文版》<br>&#160; &#160; &#160; &#160;《Malware analyst’s cookbook》<br>&#160; &#160; &#160; &#160;《Python灰帽子：黑客与逆向工程师的Python编程之道》</p>
+<h3 id="·-进阶类"><a href="#·-进阶类" class="headerlink" title="· 进阶类"></a>· 进阶类</h3><p>&#160; &#160; &#160; &#160;《加密与解密》<br>&#160; &#160; &#160; &#160;《Windows PE权威指南》<br>&#160; &#160; &#160; &#160;《恶意代码分析实战》<br>&#160; &#160; &#160; &#160;《0day安全软件漏洞分析技术》<br>&#160; &#160; &#160; &#160;《数据结构》（严蔚敏著）</p>
+<h2 id="Android-方向："><a href="#Android-方向：" class="headerlink" title="Android 方向："></a>Android 方向：</h2><h3 id="·-开发"><a href="#·-开发" class="headerlink" title="· 开发"></a>· 开发</h3><p>&#160; &#160; &#160; &#160;《疯狂JAVA讲义》<br>&#160; &#160; &#160; &#160;《疯狂Android讲义》<br>&#160; &#160; &#160; &#160;《第一行代码-Android》<br>&#160; &#160; &#160; &#160;《Android移动开发一本就够了》<br>&#160; &#160; &#160; &#160;《Android基础教程》<br>&#160; &#160; &#160; &#160;《Android C++ 高级编程-使用NDK》<br>&#160; &#160; &#160; &#160;《Android驱动开发权威指南》<br>&#160; &#160; &#160; &#160;《Android软件安全与逆向分析》<br>&#160; &#160; &#160; &#160;《深入理解Android II卷》<br>&#160; &#160; &#160; &#160;《Android安全攻防实战》</p>
+<h2 id="Windows-amp-Linux-方向："><a href="#Windows-amp-Linux-方向：" class="headerlink" title="Windows&amp;Linux 方向："></a>Windows&amp;Linux 方向：</h2><p>&#160; &#160; &#160; &#160;《Windows程序设计》<br>&#160; &#160; &#160; &#160;《Windows核心编程》<br>&#160; &#160; &#160; &#160;《寒江独钓Windows内核安全编程》<br>&#160; &#160; &#160; &#160;《鸟哥的linux私房菜基础篇+服务器篇》<br>&#160; &#160; &#160; &#160;《Linux内核精髓》<br>&#160; &#160; &#160; &#160;《深入理解LINUX内核》</p>
+<h2 id="网络方向："><a href="#网络方向：" class="headerlink" title="网络方向："></a>网络方向：</h2><p>&#160; &#160; &#160; &#160;《思科网络技术学院教程CCNA Exploration: 网络基础知识》<br>&#160; &#160; &#160; &#160;《思科 网络技术学院教程CCNA Exploration:路由协议和概念》<br>&#160; &#160; &#160; &#160;《图解TCP/IP》<br>&#160; &#160; &#160; &#160;《计算机网络》（Andrew S.Tanenbaum著）<br>&#160; &#160; &#160; &#160;《Wireshark数据包分析实战》<br>&#160; &#160; &#160; &#160;《网络分析技术揭秘》</p>
+<h2 id="无线电安全方向："><a href="#无线电安全方向：" class="headerlink" title="无线电安全方向："></a>无线电安全方向：</h2><p>&#160; &#160; &#160; &#160;《无线网络安全攻防实战进阶》<br>&#160; &#160; &#160; &#160;《无线电安全攻防大揭秘》<br>&#160; &#160; &#160; &#160;《射频识别(RFID)核心技术详解》<br>&#160; &#160; &#160; &#160;《黑客大曝光：无线网络安全》<br>&#160; &#160; &#160; &#160;《BackTrack 5 Wireless Penetration Testing Beginner’s Guide》</p>
+<p>&#160; &#160; &#160; &#160;<strong>文章</strong>：（因为图书比较少，遂从某大佬处Get一些比较好的案例分析）<br>&#160; &#160; &#160; &#160;《RFID Hacking ④ : ProxMark3 破解门禁》<br>&#160; &#160; &#160; &#160;《RFID Hacking ③ : ProxMark3 使用案例：嗅探银行闪付卡信息》<br>&#160; &#160; &#160; &#160;《HackRF嗅探蓝牙重放iBeacons信号》<br>&#160; &#160; &#160; &#160;《永不消逝的电波（三）：低功耗蓝牙（BLE）入门之如何调戏别人的小米手环》<br>&#160; &#160; &#160; &#160;《Mousejack Hacking : 利用MouseJack进行物理攻击浅析》<br>&#160; &#160; &#160; &#160;《MouseJack Hacking 测试指南》<br>&#160; &#160; &#160; &#160;《BLE Hacking：使用Ubertoothone扫描嗅探低功耗蓝牙》<br>&#160; &#160; &#160; &#160;《RFID Hacking – 资源大合集》</p>
+<h2 id="新技术（容器、云、机器学习相关）："><a href="#新技术（容器、云、机器学习相关）：" class="headerlink" title="新技术（容器、云、机器学习相关）："></a>新技术（容器、云、机器学习相关）：</h2><h3 id="·-Docker"><a href="#·-Docker" class="headerlink" title="· Docker"></a>· Docker</h3><p>&#160; &#160; &#160; &#160;《第一本Docker书》<br>&#160; &#160; &#160; &#160;《Docker入门实战》<br>&#160; &#160; &#160; &#160;《Docker容器与容器云》<br>&#160; &#160; &#160; &#160;《Docker开发实践》</p>
+<h3 id="·-机器学习"><a href="#·-机器学习" class="headerlink" title="· 机器学习"></a>· 机器学习</h3><p>&#160; &#160; &#160; &#160;《机器学习》<br>&#160; &#160; &#160; &#160;《深入浅出数据分析》<br>&#160; &#160; &#160; &#160;《啤酒与尿布》<br>&#160; &#160; &#160; &#160;《集体智慧编程》<br>&#160; &#160; &#160; &#160;《统计学习方法》</p>
+<h3 id="·-云计算"><a href="#·-云计算" class="headerlink" title="· 云计算"></a>· 云计算</h3><p>&#160; &#160; &#160; &#160;《云计算：概念、技术与架构》<br>&#160; &#160; &#160; &#160;《深入理解云计算：基本原理和应用程序编程技术》<br>&#160; &#160; &#160; &#160;《云数据中心构建实战：核心技术、运维管理、安全与高可用》<br>&#160; &#160; &#160; &#160;《云计算核心技术剖析》<br>&#160; &#160; &#160; &#160;《实战Hadoop》</p>
+<ul>
+<li>另外附上协会<a href="https://wiki.vidar.club/doku.php?id=start" target="_blank" rel="external">wiki</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vidar team整理的一份推荐书单，各个方向各个阶段均有。  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习资料" scheme="https://iCyris.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    
     
       <category term="Wiki" scheme="https://iCyris.github.io/tags/Wiki/"/>
     

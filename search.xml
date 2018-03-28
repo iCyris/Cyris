@@ -241,44 +241,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[密码学笔记]]></title>
-      <url>/2018/03/28/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<p>长期更新一些密码学相关的知识点。 </p>
-<a id="more"></a>
-<hr>
-<h1 id="一、流密码"><a href="#一、流密码" class="headerlink" title="一、流密码"></a>一、流密码</h1><p>序列密码也称为流密码（Stream Cipher），它是对称密码算法的一种。</p>
-<p>TODO</p>
-<hr>
-<h1 id="二、数据加密标准-DES"><a href="#二、数据加密标准-DES" class="headerlink" title="二、数据加密标准 DES"></a>二、数据加密标准 DES</h1><p>DES 分组长度为 64 比特，其中有 8 位是奇偶校验位，因此实际长度为 56 比特。因为它使用的 56 位密钥过短，现已被 AES 替代。</p>
-<p><strong>加密过程：</strong><br>64 位明文 –&gt; 初始置换 IP（用于重排明文分组）–&gt; 16 轮加密变换 –&gt; 逆初始置换 IP<sup>-1</sup> –&gt; 密文</p>
-<p><strong>初始置换 IP ：</strong></p>
-<hr>
-<h1 id="三、高级加密标准-AES"><a href="#三、高级加密标准-AES" class="headerlink" title="三、高级加密标准 AES"></a>三、高级加密标准 AES</h1><p>TODO</p>
-<hr>
-<h1 id="四、哈希函数"><a href="#四、哈希函数" class="headerlink" title="四、哈希函数"></a>四、哈希函数</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>TODO</p>
-<h2 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h2><p>TODO</p>
-<hr>
-<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><p>TODO</p>
-<hr>
-<h1 id="六、CBC"><a href="#六、CBC" class="headerlink" title="六、CBC"></a>六、CBC</h1><p>TODO</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Crypto </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CRYPTO </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[利用 Dokcer 部署 PHP 开发环境]]></title>
       <url>/2018/03/19/docker-php/</url>
       <content type="html"><![CDATA[<p>利用 Docker 手动配置 PHP + Njinx + MySQL 开发环境。</p>
