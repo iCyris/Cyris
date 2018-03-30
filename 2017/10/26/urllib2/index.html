@@ -103,7 +103,7 @@
 <meta property="og:url" content="https://iCyris.github.io/2017/10/26/urllib2/index.html">
 <meta property="og:site_name" content="Cyris | 绿生">
 <meta property="og:description" content="Python urllib2 模块学习笔记。">
-<meta property="og:updated_time" content="2018-02-14T13:30:20.000Z">
+<meta property="og:updated_time" content="2018-03-30T10:10:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python urllib2 学习笔记">
 <meta name="twitter:description" content="Python urllib2 模块学习笔记。">
@@ -419,7 +419,6 @@
       
         <p>Python urllib2 模块学习笔记。</p>
 <a id="more"></a>
-<h2 id="0x01-常见用法整理"><a href="#0x01-常见用法整理" class="headerlink" title="0x01 常见用法整理"></a>0x01 常见用法整理</h2><p>这部分纯搬运自：<a href="https://lightless.me/archives/38.html" target="_blank" rel="external">Lightless - Python urllib2</a>   </p>
 <h3 id="1-通过-urllib2-获取网页内容"><a href="#1-通过-urllib2-获取网页内容" class="headerlink" title="1. 通过 urllib2 获取网页内容"></a>1. 通过 urllib2 获取网页内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">html = response.read()</div><div class="line"><span class="keyword">print</span> html</div><div class="line"></div><div class="line"><span class="comment"># or</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">req = urllib2.Request(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()</div><div class="line"><span class="keyword">print</span> the_page</div></pre></td></tr></table></figure>
 <h3 id="2-发送POST请求"><a href="#2-发送POST请求" class="headerlink" title="2. 发送POST请求"></a>2. 发送POST请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">url = <span class="string">'http://www.someserver.com/register.cgi'</span></div><div class="line">values = &#123;<span class="string">'name'</span> : <span class="string">'WHY'</span>,</div><div class="line">          <span class="string">'location'</span> : <span class="string">'SDU'</span>,</div><div class="line">          <span class="string">'language'</span> : <span class="string">'Python'</span> &#125;</div><div class="line">data = urllib.urlencode(values) <span class="comment"># 编码工作</span></div><div class="line">req = urllib2.Request(url, data)  <span class="comment"># 发送请求同时传data表单</span></div><div class="line">response = urllib2.urlopen(req)  <span class="comment"># 接受反馈的信息</span></div><div class="line">the_page = response.read()  <span class="comment"># 读取反馈的内容</span></div></pre></td></tr></table></figure>
 <h3 id="3-发送GET请求"><a href="#3-发送GET请求" class="headerlink" title="3. 发送GET请求"></a>3. 发送GET请求</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"></div><div class="line">data = &#123;&#125;</div><div class="line"></div><div class="line">data[<span class="string">'name'</span>] = <span class="string">'WHY'</span></div><div class="line">data[<span class="string">'location'</span>] = <span class="string">'SDU'</span></div><div class="line">data[<span class="string">'language'</span>] = <span class="string">'Python'</span></div><div class="line"></div><div class="line">url_values = urllib.urlencode(data)</div><div class="line"><span class="keyword">print</span> url_values</div><div class="line"></div><div class="line">name=Somebody+Here&amp;language=Python&amp;location=Northampton</div><div class="line">url = <span class="string">'http://www.example.com/example.cgi'</span></div><div class="line">full_url = url + <span class="string">'?'</span> + url_values</div><div class="line">data = urllib2.open(full_url)</div></pre></td></tr></table></figure>
@@ -434,6 +433,10 @@
 <h3 id="10-Timeout-设置"><a href="#10-Timeout-设置" class="headerlink" title="10. Timeout 设置"></a>10. Timeout 设置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># version &lt; 2.6</span></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> socket</div><div class="line">socket.setdefaulttimeout(<span class="number">10</span>)</div><div class="line">urllib2.socket.setdefaulttimeout(<span class="number">10</span>)</div><div class="line"></div><div class="line"><span class="comment"># version &gt;= 2.6</span></div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.google.com'</span>， timeout=<span class="number">10</span>)</div></pre></td></tr></table></figure>
 <h3 id="11-在-HTTP-Requset-中增加指定的-Header"><a href="#11-在-HTTP-Requset-中增加指定的-Header" class="headerlink" title="11. 在 HTTP Requset 中增加指定的 Header"></a>11. 在 HTTP Requset 中增加指定的 Header</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">request = urllib2.Request(<span class="string">'http://www.baidu.com/'</span>)</div><div class="line">request.add_header(<span class="string">'User-Agent'</span>, <span class="string">'fake-client'</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure>
 <h3 id="12-打开-Debug-log"><a href="#12-打开-Debug-log" class="headerlink" title="12. 打开 Debug log"></a>12. 打开 Debug log</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">httpHandler = urllib2.HTTPHandler(debuglevel=<span class="number">1</span>)</div><div class="line">httpsHandler = urllib2.HTTPSHandler(debuglevel=<span class="number">1</span>)</div><div class="line">opener = urllib2.build_opener(httpHandler, httpsHandler)</div><div class="line">urllib2.install_opener(opener)</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.google.com'</span>)</div></pre></td></tr></table></figure>
+<p>参考文章</p>
+<blockquote>
+<p><a href="https://lightless.me/archives/38.html" target="_blank" rel="external">Lightless - Python urllib2</a>   </p>
+</blockquote>
 
       
     </div>
@@ -492,8 +495,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/27/code-leakage/" rel="prev" title="Web源码泄漏总结">
-                Web源码泄漏总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/27/code-leakage/" rel="prev" title="Web 源码泄漏总结">
+                Web 源码泄漏总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -571,7 +574,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +585,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +596,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -659,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-常见用法整理"><span class="nav-text">0x01 常见用法整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过-urllib2-获取网页内容"><span class="nav-text">1. 通过 urllib2 获取网页内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-发送POST请求"><span class="nav-text">2. 发送POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-发送GET请求"><span class="nav-text">3. 发送GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置-UA"><span class="nav-text">4. 设置 UA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-URL-ERROR"><span class="nav-text">5. URL ERROR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HTTP-ERROR"><span class="nav-text">6. HTTP ERROR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-获取真实的-URL"><span class="nav-text">7. 获取真实的 URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-获取-Header-信息"><span class="nav-text">8. 获取 Header 信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Proxy-的设置"><span class="nav-text">9. Proxy 的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Timeout-设置"><span class="nav-text">10. Timeout 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-在-HTTP-Requset-中增加指定的-Header"><span class="nav-text">11. 在 HTTP Requset 中增加指定的 Header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-打开-Debug-log"><span class="nav-text">12. 打开 Debug log</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过-urllib2-获取网页内容"><span class="nav-text">1. 通过 urllib2 获取网页内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-发送POST请求"><span class="nav-text">2. 发送POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-发送GET请求"><span class="nav-text">3. 发送GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置-UA"><span class="nav-text">4. 设置 UA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-URL-ERROR"><span class="nav-text">5. URL ERROR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HTTP-ERROR"><span class="nav-text">6. HTTP ERROR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-获取真实的-URL"><span class="nav-text">7. 获取真实的 URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-获取-Header-信息"><span class="nav-text">8. 获取 Header 信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Proxy-的设置"><span class="nav-text">9. Proxy 的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Timeout-设置"><span class="nav-text">10. Timeout 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-在-HTTP-Requset-中增加指定的-Header"><span class="nav-text">11. 在 HTTP Requset 中增加指定的 Header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-打开-Debug-log"><span class="nav-text">12. 打开 Debug log</span></a></li></ol></div>
             
 
           </div>

@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-4-1-1.png">
 <meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-4-3.png">
 <meta property="og:image" content="https://icyris.github.io/2018/03/28/密码学笔记/DES-4-4.png">
-<meta property="og:updated_time" content="2018-03-29T16:51:59.000Z">
+<meta property="og:updated_time" content="2018-03-30T10:19:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="密码学笔记">
 <meta name="twitter:description" content="长期更新一些密码学相关的知识点。">
@@ -505,7 +505,11 @@
 <h1 id="四、哈希函数"><a href="#四、哈希函数" class="headerlink" title="四、哈希函数"></a>四、哈希函数</h1><h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>TODO</p>
 <h2 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h2><p>TODO</p>
 <hr>
-<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><p>TODO</p>
+<h1 id="五、RSA"><a href="#五、RSA" class="headerlink" title="五、RSA"></a>五、RSA</h1><h2 id="5-1-加密原理"><a href="#5-1-加密原理" class="headerlink" title="5.1 加密原理"></a>5.1 加密原理</h2><h2 id="5-2-攻击手段"><a href="#5-2-攻击手段" class="headerlink" title="5.2 攻击手段"></a>5.2 攻击手段</h2><h3 id="1-小明文攻击"><a href="#1-小明文攻击" class="headerlink" title="1). 小明文攻击"></a>1). 小明文攻击</h3><p>e 为 3 时会产生小明文攻击。 </p>
+<p>一个简单的例子，题目给出的信息如下：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">N：<span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line"></div><div class="line">E：<span class="number">3</span></div><div class="line"></div><div class="line">C：<span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581</span>L</div><div class="line"></div><div class="line">flag?</div></pre></td></tr></table></figure>
+<p>exp: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/python </span></div><div class="line"><span class="comment"># coding=utf-8 </span></div><div class="line"></div><div class="line"><span class="keyword">import</span> gmpy</div><div class="line"><span class="keyword">import</span> libnum</div><div class="line"></div><div class="line">N = <span class="number">179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639477074095512480796227391561801824887394139579933613278628104952355769470429079061808809522886423955917442317693387325171135071792698344550223571732405562649211</span></div><div class="line">C = <span class="number">826315331619023570333927368402415746375121931530175503997253550521249603484788863000488498971763172906490538445007322279725379352003051009132296583666591835676940471026344712455146169609370787877307086577742407351355619892014203721206411825379081930406716230574277137708287779956941012581L</span></div><div class="line"></div><div class="line">k=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    (x,y)=gmpy.root(C+k*N,<span class="number">3</span>)</div><div class="line">    <span class="keyword">if</span>(y==<span class="number">1</span>):</div><div class="line">        <span class="keyword">print</span> <span class="string">"flag: "</span> + libnum.n2s(x);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    k+=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># flag: pwnhub&#123;f233dd92e8c379983d394ccd7c26122c&#125;</span></div></pre></td></tr></table></figure>
 <hr>
 <h1 id="六、CBC"><a href="#六、CBC" class="headerlink" title="六、CBC"></a>六、CBC</h1><p>TODO</p>
 
@@ -566,8 +570,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/28/markdown-tip/" rel="prev" title="如何在 Markdown 中打出数学符号">
-                如何在 Markdown 中打出数学符号 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/28/markdown-tip/" rel="prev" title="利用 HTML 在 Markdown 中打出数学符号">
+                利用 HTML 在 Markdown 中打出数学符号 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,7 +649,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -656,7 +660,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -667,7 +671,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -733,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、流密码"><span class="nav-text">一、流密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据加密标准-DES"><span class="nav-text">二、数据加密标准 DES</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-流程概览"><span class="nav-text">2.1 流程概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-初始置换-IP"><span class="nav-text">2.2 初始置换 IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-密钥调度"><span class="nav-text">2.3 密钥调度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-PC-1"><span class="nav-text">1). PC-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-LS-与-PC-2"><span class="nav-text">2). LS 与 PC-2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-十六轮加密"><span class="nav-text">2.4 十六轮加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-扩展变换-E"><span class="nav-text">1). 扩展变换 E</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-与密钥混合"><span class="nav-text">2). 与密钥混合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-S-盒置换"><span class="nav-text">3). S 盒置换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-P-盒置换"><span class="nav-text">4). P 盒置换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-IP-1-末置换"><span class="nav-text">2.5 IP-1 末置换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Python-实现"><span class="nav-text">2.6 Python 实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、高级加密标准-AES"><span class="nav-text">三、高级加密标准 AES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、哈希函数"><span class="nav-text">四、哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD5"><span class="nav-text">MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHA-1"><span class="nav-text">SHA-1</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、RSA"><span class="nav-text">五、RSA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、CBC"><span class="nav-text">六、CBC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、流密码"><span class="nav-text">一、流密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据加密标准-DES"><span class="nav-text">二、数据加密标准 DES</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-流程概览"><span class="nav-text">2.1 流程概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-初始置换-IP"><span class="nav-text">2.2 初始置换 IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-密钥调度"><span class="nav-text">2.3 密钥调度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-PC-1"><span class="nav-text">1). PC-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-LS-与-PC-2"><span class="nav-text">2). LS 与 PC-2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-十六轮加密"><span class="nav-text">2.4 十六轮加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-扩展变换-E"><span class="nav-text">1). 扩展变换 E</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-与密钥混合"><span class="nav-text">2). 与密钥混合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-S-盒置换"><span class="nav-text">3). S 盒置换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-P-盒置换"><span class="nav-text">4). P 盒置换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-IP-1-末置换"><span class="nav-text">2.5 IP-1 末置换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Python-实现"><span class="nav-text">2.6 Python 实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、高级加密标准-AES"><span class="nav-text">三、高级加密标准 AES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、哈希函数"><span class="nav-text">四、哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD5"><span class="nav-text">MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHA-1"><span class="nav-text">SHA-1</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、RSA"><span class="nav-text">五、RSA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-加密原理"><span class="nav-text">5.1 加密原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-攻击手段"><span class="nav-text">5.2 攻击手段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-小明文攻击"><span class="nav-text">1). 小明文攻击</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、CBC"><span class="nav-text">六、CBC</span></a></li></ol></div>
             
 
           </div>
