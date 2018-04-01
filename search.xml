@@ -373,17 +373,17 @@
   
     
     <entry>
-      <title>おもしろい！</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>About</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h2 id="Whoami"><a href="#Whoami" class="headerlink" title="Whoami"></a>Whoami</h2><p>> 在读大学生<br>> 喜欢吃汉堡，面食，很香的白米饭<br>> 柔软，像卡比兽的肚子一样<br>> 绝对音高</p><p>正在学习 Web 与 Pwn ，<br>努力用自己的笔去画出包围苍天的小世界。   </p><p>时雨金时，抓住有味。<br>探寻真理者不可心存傲慢。 </p><p>这是一个记录知识与心情的地方。 </p><h2 id="Friends"><a href="#Friends" class="headerlink" title="Friends"></a>Friends</h2><p>rへ<br>　　 ｒ7´　｀ヽ､-,. ─-､　　,.へ､<br>　　ｒ7　　　ｧ’”＞’-─｀-＜　　ヽ!<br>　r7’　　 &gt;’´::::::::::::::::::::::::::::::::｀ヽ.　ﾊ　　　　 　　　　 　　 　　 　へ　<br>　,くi ヽ/:::::/::::::::::::::::::::::::::::::::::::::Y i{　　　　　　　　　　　　　／／〉<br>　ヽ.／!/::/::::::/:::/:::::i:::::ﾊ:::i:::::::;::’,」　　　　　　　　　　　　／／〉〈〉<br>　　/:7 ,’:::i::::::/:ﾊ,ゝ､ﾊ/　!:ハ::::i::iヽ.　　　　　　　　　　／／〈〉〈〉 　 　 Link<br>　くｋ<strong>!::::::L:ﾊ/〈　!ｿ｀　 ｫ’r7!/!」　!　　　　　　　　 ／／　〈〉　〈〉<br>　　 |::ﾊ:::::::}.| “　　_</strong>└’ i{ヽ､!　 <em>,,. -/⌒ヽ／／　　　〈〉　〈〉　 　 　 　 　 　 Start!<br>　　ﾉ:::!ﾊﾍ::|::::iヽ､　(　 ｀i　,.ｲ:::|,.-‘“´　l　l i　しゝ’　　　　〈〉　　　〈〉<br>　/:::::ﾊ::::!::ﾊ::::!;:イ＞ｰｒ＜ﾊ:|::/!　　　　　| lYノ´<br>　i:::/:::::!::::::rｨ’;:|´　|／､　　/」|:/ !-　　 ヽヽゝ’i　<br>　ﾚ’i::::::!;:へ､ヽ!／ムヽ､</em>/i　ｨ,ﾍ､　　　　　Y /<br>　　ヽ/⌒i､. Y:::::/ i」::::::::::!-/ﾚ’　｀ヽ.　　　 i/<br>　　　!　　iﾉi 7:::く__ﾊ|:::::::::::Yiﾊ|　　　 ｀’ー-‘<br>　　 /iヽ-ｲ| .i::::::::::ﾊ:::::::::::::ﾊ!</p><ul><li><p>Web<br><a href="http://blog.acalepher.cn/" target="_blank" rel="noopener">Aca1eph</a><br><a href="http://aklis.info/" target="_blank" rel="noopener">Aklis</a><br><a href="https://lightless.me/" target="_blank" rel="noopener">Lightless</a><br><a href="http://lorexxar.cn/" target="_blank" rel="noopener">Lorexxar</a><br><a href="http://www.venenof.com/" target="_blank" rel="noopener">Veneno</a><br><a href="http://c014.cn/" target="_blank" rel="noopener">C014</a><br><a href="http://tan90.me/" target="_blank" rel="noopener">一叶知秋</a><br><a href="http://heartsky.info/#blog" target="_blank" rel="noopener">heartsky</a><br><a href="http://0x48.pw/" target="_blank" rel="noopener">Hcamael</a><br><a href="http://ngc7.cn/" target="_blank" rel="noopener">ngc7293</a><br><a href="http://webdog.top/" target="_blank" rel="noopener">hammer</a><br><a href="http://www.sysorem.xyz/" target="_blank" rel="noopener">Sysorem</a></p></li><li><p>Bin<br><a href="http://veritas501.space/" target="_blank" rel="noopener">veritas501</a><br><a href="http://spineee.space/" target="_blank" rel="noopener">Spine</a><br><a href="http://vvv-347.space/" target="_blank" rel="noopener">vvv_347</a><br><a href="http://processor.pub/" target="_blank" rel="noopener">processor</a><br><a href="https://b0lv42.github.io/" target="_blank" rel="noopener">b0lv42</a><br><a href="http://libc.pw/" target="_blank" rel="noopener">explorer</a></p></li></ul>]]></content>
+    </entry>
+    
+    <entry>
+      <title>おもしろい！</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
@@ -397,6 +397,13 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
