@@ -3,7 +3,7 @@
 /* for color-themes-for-google-code-prettify */
 /* Automatically add a scroll bar instead of a newline */
 pre{
-    white-space: nowrap;
+    white-space: pre;
 }
 
 #post-content .prettyprint{
@@ -12,7 +12,7 @@ pre{
 }
 
 #post-content ol,#post-content ul{
-    padding-left: 51px;
+    padding-left: 32px;
     font-size: 1rem;
     margin: 0;
     overflow: initial;
@@ -27,5 +27,5 @@ pre{
 #post-content .prettyprint li.L4, #post-content .prettyprint li.L5,
 #post-content .prettyprint li.L6, #post-content .prettyprint li.L7,
 #post-content .prettyprint li.L8, #post-content .prettyprint li.L9 {
-    padding-left: 0.8em;
+    padding-left: 0.5em;
 }
