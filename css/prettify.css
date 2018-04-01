@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /* for color-themes-for-google-code-prettify */
+/* Automatically add a scroll bar instead of a newline */
 pre{
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
+    white-space: nowrap;
 }
 
 #post-content .prettyprint{
@@ -16,6 +15,11 @@ pre{
     padding-left: 51px;
     font-size: 1rem;
     margin: 0;
+    overflow: initial;
+}
+
+#post-content pre code, #post-content pre tt {
+    padding-right: 2em;
 }
 
 #post-content .prettyprint li.L0, #post-content .prettyprint li.L1,
