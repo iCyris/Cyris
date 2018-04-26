@@ -1,424 +1,486 @@
 <!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            给你压缩包却不给你密码的人到底在想什么 | 
+        
+        Cyris | 绿生
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
+    <meta name="keywords" content="null,CTF">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?VbSuLZyOpxJuf3o2tYEOVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
   
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #4d4d4d;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #4d4d4d !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #4d4d4d !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #4d4d4d !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #4d4d4d;
+    text-decoration: underline;
+  }
+
+</style>
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
 
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
 
 
 
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Cyris | 绿生">
+    <meta name="msapplication-starturl" content="https://iCyris.github.io/2017/10/19/rar-attack/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Cyris | 绿生">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Site Verification -->
     
     
-  
 
-  
-
-  
-
-  
-
-  
-
-  
+    <!-- RSS -->
     
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://iCyris.github.io/2017/10/19/rar-attack/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="给你压缩包却不给你密码的人到底在想什么 | Cyris | 绿生">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
+    <meta property="og:article:tag" content="CTF"> 
+
+    
+        <meta property="article:published_time" content="Thu Oct 19 2017 14:58:50 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 01 2018 14:35:58 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://iCyris.github.io/2017/10/19/rar-attack/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
 
 
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="CTF," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Cyris | 绿生" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
-<meta name="keywords" content="CTF">
-<meta property="og:type" content="article">
-<meta property="og:title" content="给你压缩包却不给你密码的人到底在想什么">
-<meta property="og:url" content="https://iCyris.github.io/2017/10/19/rar-attack/index.html">
-<meta property="og:site_name" content="Cyris | 绿生">
-<meta property="og:description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/1.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/2.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/3.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/4.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/5.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/6.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/7.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/8.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/9.png">
-<meta property="og:image" content="https://icyris.github.io/2017/10/19/rar-attack/10.png">
-<meta property="og:updated_time" content="2018-04-01T06:35:58.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给你压缩包却不给你密码的人到底在想什么">
-<meta name="twitter:description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
-<meta name="twitter:image" content="https://icyris.github.io/2017/10/19/rar-attack/1.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://iCyris.github.io/2017/10/19/rar-attack/index.html",
+    "headline": "给你压缩包却不给你密码的人到底在想什么",
+    "datePublished": "Thu Oct 19 2017 14:58:50 GMT+0800",
+    "dateModified": "Sun Apr 01 2018 14:35:58 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Cyris",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/cyris.png"
+        },
+        "description": "时雨金时，抓住有味。"
     },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+    "publisher": {
+        "@type": "Organization",
+        "name": "Cyris | 绿生",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",CTFnull",
+    "description": "纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么",
+}
 </script>
 
 
+    
 
-  <link rel="canonical" href="https://iCyris.github.io/2017/10/19/rar-attack/"/>
+    <!-- Analytics -->
+    
+    
+    
 
-
-
-
-
-  <title>给你压缩包却不给你密码的人到底在想什么 | Cyris | 绿生</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Custom Head -->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cyris | 绿生</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="https://cyris.cn" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sun-o"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-external-link"></i> <br />
-            
-            友链
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://iCyris.github.io/2017/10/19/rar-attack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cyris">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/cyris.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cyris | 绿生">
-    </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">给你压缩包却不给你密码的人到底在想什么</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T14:58:50+08:00">
-                2017-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CTF/" itemprop="url" rel="index">
-                    <span itemprop="name">CTF</span>
-                  </a>
-                </span>
-
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
-                
-              
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-          
+        </a>
+    </div>
+    -->
 
-          
-            
-          
 
-          
-          
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-          
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00-开始"><span class="post-toc-text">0x00 开始</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01-注释"><span class="post-toc-text">0x01 注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-弱密码"><span class="post-toc-text">0x02 弱密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x03-压缩包伪加密"><span class="post-toc-text">0x03 压缩包伪加密</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x04-已知明文攻击"><span class="post-toc-text">0x04 已知明文攻击</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x05-CRC碰撞"><span class="post-toc-text">0x05 CRC碰撞</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x06-MORE"><span class="post-toc-text">0x06 MORE</span></a></li></ol>
+    </ul>
+    
 
-          
 
-          
 
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 3 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                给你压缩包却不给你密码的人到底在想什么
+            </p>
         </div>
-      </header>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/cyris.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Cyris</strong>
+        <span>Oct 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CTF/">CTF</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
     
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+    <!-- Share Weibo -->
+    
 
-      
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=给你压缩包却不给你密码的人到底在想什么&summary=静水流深&pics=https://iCyris.github.io/img/favicon.png&url=https://iCyris.github.io/2017/10/19/rar-attack/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
         <p>纯转载。原帖戳这里：<a href="http://veritas501.space/2017/06/23/%E7%BB%99%E4%BD%A0%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%8D%B4%E4%B8%8D%E7%BB%99%E4%BD%A0%E5%AF%86%E7%A0%81%E7%9A%84%E4%BA%BA%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/" target="_blank" rel="noopener">veritas501 - 给你压缩包却不给你密码的人到底在想什么</a></p>
 <a id="more"></a>
 <h2 id="0x00-开始"><a href="#0x00-开始" class="headerlink" title="0x00 开始"></a>0x00 开始</h2><p>在这里，我建议大家装两个解压软件，一个随意（我用的7z），一个是winrar。   </p>
@@ -448,10 +510,15 @@
 <p>而未加密的依然都为0。</p>
 <p>综上，大家应该已经知道怎么改标志位来构造伪加密以及如何搞定伪加密了。（这里添一句，mac OS可以直接打开伪加密的压缩包。）</p>
 <h2 id="0x04-已知明文攻击"><a href="#0x04-已知明文攻击" class="headerlink" title="0x04 已知明文攻击"></a>0x04 已知明文攻击</h2><p>一种比较巧妙的攻击方法，首先你需要一个压缩包中已知的文件(文件大小大于12bytes)，比如readme.txt   </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├─<span class="selector-tag">enc</span><span class="selector-class">.zip</span></span><br><span class="line">│  ├─<span class="selector-tag">flag</span><span class="selector-class">.txt</span> *</span><br><span class="line">│  └─<span class="selector-tag">readme</span><span class="selector-class">.txt</span> *</span><br><span class="line">│</span><br><span class="line">└─<span class="selector-tag">readme</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
-<p>这样我们就可以构造明文zip</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">├─<span class="selector-tag">plaintext</span><span class="selector-class">.zip</span></span><br><span class="line">│  └─<span class="selector-tag">readme</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
-<p>原理大概是压缩包里的所有文件都是使用同一个加密密钥来加密的，所以可以用已知文件反推加密密钥，利用密钥来解密其他加密文件。</p>
+<pre><code>├─enc.zip
+│  ├─flag.txt *
+│  └─readme.txt *
+│
+└─readme.txt
+</code></pre><p>这样我们就可以构造明文zip</p>
+<pre><code>├─plaintext.zip
+│  └─readme.txt
+</code></pre><p>原理大概是压缩包里的所有文件都是使用同一个加密密钥来加密的，所以可以用已知文件反推加密密钥，利用密钥来解密其他加密文件。</p>
 <p>划重点：<strong>构造明文压缩包时要选用与加密压缩包相同的压缩软件</strong>，如果他用winrar压的，你用7z构造出的压缩包来做明文压缩包，软件是会报错的。</p>
 <p><img src="/2017/10/19/rar-attack/7.png" alt=""></p>
 <p>这样就是还原出密钥了，点OK后软件会叫你保存解密后的压缩包。   </p>
@@ -459,302 +526,790 @@
 <h2 id="0x05-CRC碰撞"><a href="#0x05-CRC碰撞" class="headerlink" title="0x05 CRC碰撞"></a>0x05 CRC碰撞</h2><p>CRC32碰撞用于非常小的文件（6字节以上基本就别试了），就是通过CRC来反推文件内容。</p>
 <p>而且CRC32是很容易碰撞的，所以就6字节而言，同一个CRC32可能对应着十几个字符串（纯可视字符）。</p>
 <p>当文件刚好是6字节时，使用下面的crc32.py脚本</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># CRC32 tools by Victor</span></span><br><span class="line"><span class="comment">#usage: python crc32.py reverse 0xffffffff（the crc）</span></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">permitted_characters = set(</span><br><span class="line">    map(ord, <span class="string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_'</span>))  <span class="comment"># \w</span></span><br><span class="line">testing = <span class="keyword">False</span></span><br><span class="line">args = <span class="keyword">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_poly</span><span class="params">()</span>:</span></span><br><span class="line">    poly = parse_dword(args.poly)</span><br><span class="line">    <span class="keyword">if</span> args.msb:</span><br><span class="line">        poly = reverseBits(poly)</span><br><span class="line">    check32(poly)</span><br><span class="line">    <span class="keyword">return</span> poly</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_input</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> args.instr:</span><br><span class="line">        <span class="keyword">return</span> tuple(map(ord, args.instr))</span><br><span class="line">    <span class="keyword">with</span> args.infile <span class="keyword">as</span> f:  <span class="comment"># pragma: no cover</span></span><br><span class="line">        <span class="keyword">return</span> tuple(map(ord, f.read()))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">out</span><span class="params">(msg)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> testing:  <span class="comment"># pragma: no cover</span></span><br><span class="line">        args.outfile.write(msg)</span><br><span class="line">        args.outfile.write(os.linesep)</span><br><span class="line">table = []</span><br><span class="line">table_reverse = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_tables</span><span class="params">(poly, reverse=True)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> table, table_reverse</span><br><span class="line">    table = []</span><br><span class="line">    <span class="comment"># build CRC32 table</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">            <span class="keyword">if</span> i &amp; <span class="number">1</span>:</span><br><span class="line">                i &gt;&gt;= <span class="number">1</span></span><br><span class="line">                i ^= poly</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i &gt;&gt;= <span class="number">1</span></span><br><span class="line">        table.append(i)</span><br><span class="line">    <span class="keyword">assert</span> len(table) == <span class="number">256</span>, <span class="string">"table is wrong size"</span></span><br><span class="line">    <span class="comment"># build reverse table</span></span><br><span class="line">    <span class="keyword">if</span> reverse:</span><br><span class="line">        table_reverse = []</span><br><span class="line">        found_none = set()</span><br><span class="line">        found_multiple = set()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">            found = []</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">                <span class="keyword">if</span> table[j] &gt;&gt; <span class="number">24</span> == i:</span><br><span class="line">                    found.append(j)</span><br><span class="line">            table_reverse.append(tuple(found))</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> found:</span><br><span class="line">                found_none.add(i)</span><br><span class="line">            <span class="keyword">elif</span> len(found) &gt; <span class="number">1</span>:</span><br><span class="line">                found_multiple.add(i)</span><br><span class="line">        <span class="keyword">assert</span> len(table_reverse) == <span class="number">256</span>, <span class="string">"reverse table is wrong size"</span></span><br><span class="line">        <span class="keyword">if</span> found_multiple:</span><br><span class="line">            out(<span class="string">'WARNING: Multiple table entries have an MSB in &#123;0&#125;'</span>.format(</span><br><span class="line">                rangess(found_multiple)))</span><br><span class="line">        <span class="keyword">if</span> found_none:</span><br><span class="line">            out(<span class="string">'ERROR: no MSB in the table equals bytes in &#123;0&#125;'</span>.format(</span><br><span class="line">                rangess(found_none)))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(data, accum=<span class="number">0</span>)</span>:</span></span><br><span class="line">    accum = ~accum</span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> data:</span><br><span class="line">        accum = table[(accum ^ b) &amp; <span class="number">0xFF</span>] ^ ((accum &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0x00FFFFFF</span>)</span><br><span class="line">    accum = ~accum</span><br><span class="line">    <span class="keyword">return</span> accum &amp; <span class="number">0xFFFFFFFF</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rewind</span><span class="params">(accum, data)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">        <span class="keyword">return</span> (accum,)</span><br><span class="line">    stack = [(len(data), ~accum)]</span><br><span class="line">    solutions = set()</span><br><span class="line">    <span class="keyword">while</span> stack:</span><br><span class="line">        node = stack.pop()</span><br><span class="line">        prev_offset = node[<span class="number">0</span>] - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> table_reverse[(node[<span class="number">1</span>] &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>]:</span><br><span class="line">            prevCRC = (((node[<span class="number">1</span>] ^ table[i]) &lt;&lt; <span class="number">8</span>) |</span><br><span class="line">                       (i ^ data[prev_offset])) &amp; <span class="number">0xFFFFFFFF</span></span><br><span class="line">            <span class="keyword">if</span> prev_offset:</span><br><span class="line">                stack.append((prev_offset, prevCRC))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                solutions.add((~prevCRC) &amp; <span class="number">0xFFFFFFFF</span>)</span><br><span class="line">    <span class="keyword">return</span> solutions</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findReverse</span><span class="params">(desired, accum)</span>:</span></span><br><span class="line">    solutions = set()</span><br><span class="line">    accum = ~accum</span><br><span class="line">    stack = [(~desired,)]</span><br><span class="line">    <span class="keyword">while</span> stack:</span><br><span class="line">        node = stack.pop()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> table_reverse[(node[<span class="number">0</span>] &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>]:</span><br><span class="line">            <span class="keyword">if</span> len(node) == <span class="number">4</span>:</span><br><span class="line">                a = accum</span><br><span class="line">                data = []</span><br><span class="line">                node = node[<span class="number">1</span>:] + (j,)</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">                    data.append((a ^ node[i]) &amp; <span class="number">0xFF</span>)</span><br><span class="line">                    a &gt;&gt;= <span class="number">8</span></span><br><span class="line">                    a ^= table[node[i]]</span><br><span class="line">                solutions.add(tuple(data))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                stack.append(((node[<span class="number">0</span>] ^ table[j]) &lt;&lt; <span class="number">8</span>,) + node[<span class="number">1</span>:] + (j,))</span><br><span class="line">    <span class="keyword">return</span> solutions</span><br><span class="line"><span class="comment"># Tools</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_dword</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> int(x, <span class="number">0</span>) &amp; <span class="number">0xFFFFFFFF</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseBits</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="comment"># http://graphics.stanford.edu/~seander/bithacks.html#ReverseParallel</span></span><br><span class="line">    <span class="comment"># http://stackoverflow.com/a/20918545</span></span><br><span class="line">    x = ((x &amp; <span class="number">0x55555555</span>) &lt;&lt; <span class="number">1</span>) | ((x &amp; <span class="number">0xAAAAAAAA</span>) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">    x = ((x &amp; <span class="number">0x33333333</span>) &lt;&lt; <span class="number">2</span>) | ((x &amp; <span class="number">0xCCCCCCCC</span>) &gt;&gt; <span class="number">2</span>)</span><br><span class="line">    x = ((x &amp; <span class="number">0x0F0F0F0F</span>) &lt;&lt; <span class="number">4</span>) | ((x &amp; <span class="number">0xF0F0F0F0</span>) &gt;&gt; <span class="number">4</span>)</span><br><span class="line">    x = ((x &amp; <span class="number">0x00FF00FF</span>) &lt;&lt; <span class="number">8</span>) | ((x &amp; <span class="number">0xFF00FF00</span>) &gt;&gt; <span class="number">8</span>)</span><br><span class="line">    x = ((x &amp; <span class="number">0x0000FFFF</span>) &lt;&lt; <span class="number">16</span>) | ((x &amp; <span class="number">0xFFFF0000</span>) &gt;&gt; <span class="number">16</span>)</span><br><span class="line">    <span class="keyword">return</span> x &amp; <span class="number">0xFFFFFFFF</span></span><br><span class="line"><span class="comment"># Compatibility with Python 2.6 and earlier.</span></span><br><span class="line"><span class="keyword">if</span> hasattr(int, <span class="string">"bit_length"</span>):</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bit_length</span><span class="params">(num)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> num.bit_length()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bit_length</span><span class="params">(n)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        bits = <span class="number">-32</span></span><br><span class="line">        m = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> n:</span><br><span class="line">            m = n</span><br><span class="line">            n &gt;&gt;= <span class="number">32</span></span><br><span class="line">            bits += <span class="number">32</span></span><br><span class="line">        <span class="keyword">while</span> m:</span><br><span class="line">            m &gt;&gt;= <span class="number">1</span></span><br><span class="line">            bits += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> bits</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check32</span><span class="params">(poly)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> poly &amp; <span class="number">0x80000000</span> == <span class="number">0</span>:</span><br><span class="line">        out(<span class="string">'WARNING: polynomial degree (&#123;0&#125;) != 32'</span>.format(bit_length(poly)))</span><br><span class="line">        out(<span class="string">'         instead, try'</span>)</span><br><span class="line">        out(<span class="string">'         0x&#123;0:08x&#125; (reversed/lsbit-first)'</span>.format(poly | <span class="number">0x80000000</span>))</span><br><span class="line">        out(<span class="string">'         0x&#123;0:08x&#125; (normal/msbit-first)'</span>.format(reverseBits(poly | <span class="number">0x80000000</span>)))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reciprocal</span><span class="params">(poly)</span>:</span></span><br><span class="line">    <span class="string">''' Return the reversed reciprocal (Koopman notatation) polynomial of a</span></span><br><span class="line"><span class="string">        reversed (lsbit-first) polynomial '''</span></span><br><span class="line">    <span class="keyword">return</span> reverseBits((poly &lt;&lt; <span class="number">1</span>) | <span class="number">1</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_num</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="string">''' Write a numeric result in various forms '''</span></span><br><span class="line">    out(<span class="string">'hex: 0x&#123;0:08x&#125;'</span>.format(num))</span><br><span class="line">    out(<span class="string">'dec:   &#123;0:d&#125;'</span>.format(num))</span><br><span class="line">    out(<span class="string">'oct: 0o&#123;0:011o&#125;'</span>.format(num))</span><br><span class="line">    out(<span class="string">'bin: 0b&#123;0:032b&#125;'</span>.format(num))</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ranges</span><span class="params">(i)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> kg <span class="keyword">in</span> itertools.groupby(enumerate(i), <span class="keyword">lambda</span> x: x[<span class="number">1</span>] - x[<span class="number">0</span>]):</span><br><span class="line">        g = list(kg[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">yield</span> g[<span class="number">0</span>][<span class="number">1</span>], g[<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rangess</span><span class="params">(i)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">', '</span>.join(map(<span class="keyword">lambda</span> x: <span class="string">'[&#123;0&#125;,&#123;1&#125;]'</span>.format(*x), ranges(i)))</span><br><span class="line"><span class="comment"># Parsers</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_parser</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">''' Return the command-line parser '''</span></span><br><span class="line">    parser = argparse.ArgumentParser(</span><br><span class="line">        description=<span class="string">"Reverse, undo, and calculate CRC32 checksums"</span>)</span><br><span class="line">    subparsers = parser.add_subparsers(metavar=<span class="string">'action'</span>)</span><br><span class="line">    poly_flip_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    subparser_group = poly_flip_parser.add_mutually_exclusive_group()</span><br><span class="line">    subparser_group.add_argument(</span><br><span class="line">        <span class="string">'-m'</span>, <span class="string">'--msbit'</span>, dest=<span class="string">"msb"</span>, action=<span class="string">'store_true'</span>,</span><br><span class="line">        help=<span class="string">'treat the polynomial as normal (msbit-first)'</span>)</span><br><span class="line">    subparser_group.add_argument(<span class="string">'-l'</span>, <span class="string">'--lsbit'</span>, action=<span class="string">'store_false'</span>,</span><br><span class="line">                                 help=<span class="string">'treat the polynomial as reversed (lsbit-first) [default]'</span>)</span><br><span class="line">    desired_poly_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    desired_poly_parser.add_argument(</span><br><span class="line">        <span class="string">'desired'</span>, type=str, help=<span class="string">'[int] desired checksum'</span>)</span><br><span class="line">    default_poly_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    default_poly_parser.add_argument(</span><br><span class="line">        <span class="string">'poly'</span>, default=<span class="string">'0xEDB88320'</span>, type=str, nargs=<span class="string">'?'</span>,</span><br><span class="line">        help=<span class="string">'[int] polynomial [default: 0xEDB88320]'</span>)</span><br><span class="line">    accum_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    accum_parser.add_argument(</span><br><span class="line">        <span class="string">'accum'</span>, type=str, help=<span class="string">'[int] accumulator (final checksum)'</span>)</span><br><span class="line">    default_accum_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    default_accum_parser.add_argument(</span><br><span class="line">        <span class="string">'accum'</span>, default=<span class="string">'0'</span>, type=str, nargs=<span class="string">'?'</span>,</span><br><span class="line">        help=<span class="string">'[int] starting accumulator [default: 0]'</span>)</span><br><span class="line">    outfile_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    outfile_parser.add_argument(<span class="string">'-o'</span>, <span class="string">'--outfile'</span>,</span><br><span class="line">                                metavar=<span class="string">"f"</span>,</span><br><span class="line">                                type=argparse.FileType(<span class="string">'w'</span>),</span><br><span class="line">                                default=sys.stdout,</span><br><span class="line">                                help=<span class="string">"Output to a file instead of stdout"</span>)</span><br><span class="line">    infile_parser = argparse.ArgumentParser(add_help=<span class="keyword">False</span>)</span><br><span class="line">    subparser_group = infile_parser.add_mutually_exclusive_group()</span><br><span class="line">    subparser_group.add_argument(<span class="string">'-i'</span>, <span class="string">'--infile'</span>,</span><br><span class="line">                                 metavar=<span class="string">"f"</span>,</span><br><span class="line">                                 type=argparse.FileType(<span class="string">'rb'</span>),</span><br><span class="line">                                 default=sys.stdin,</span><br><span class="line">                                 help=<span class="string">"Input from a file instead of stdin"</span>)</span><br><span class="line">    subparser_group.add_argument(<span class="string">'-s'</span>, <span class="string">'--str'</span>,</span><br><span class="line">                                 metavar=<span class="string">"s"</span>,</span><br><span class="line">                                 type=str,</span><br><span class="line">                                 default=<span class="string">''</span>,</span><br><span class="line">                                 dest=<span class="string">'instr'</span>,</span><br><span class="line">                                 help=<span class="string">"Use a string as input"</span>)</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'flip'</span>, parents=[outfile_parser],</span><br><span class="line">                                      help=<span class="string">"flip the bits to convert normal(msbit-first) polynomials to reversed (lsbit-first) and vice versa"</span>)</span><br><span class="line">    subparser.add_argument(<span class="string">'poly'</span>, type=str, help=<span class="string">'[int] polynomial'</span>)</span><br><span class="line">    subparser.set_defaults(</span><br><span class="line">        func=<span class="keyword">lambda</span>: print_num(reverseBits(parse_dword(args.poly))))</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'reciprocal'</span>, parents=[outfile_parser],</span><br><span class="line">                                      help=<span class="string">"find the reciprocal (Koopman notation) of a reversed (lsbit-first) polynomial and vice versa"</span>)</span><br><span class="line">    subparser.add_argument(<span class="string">'poly'</span>, type=str, help=<span class="string">'[int] polynomial'</span>)</span><br><span class="line">    subparser.set_defaults(func=reciprocal_callback)</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'table'</span>, parents=[outfile_parser,</span><br><span class="line">                                                        poly_flip_parser,</span><br><span class="line">                                                        default_poly_parser],</span><br><span class="line">                                      help=<span class="string">"generate a lookup table for a polynomial"</span>)</span><br><span class="line">    subparser.set_defaults(func=table_callback)</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'reverse'</span>, parents=[</span><br><span class="line">        outfile_parser,</span><br><span class="line">        poly_flip_parser,</span><br><span class="line">        desired_poly_parser,</span><br><span class="line">        default_accum_parser,</span><br><span class="line">        default_poly_parser],</span><br><span class="line">        help=<span class="string">"find a patch that causes the CRC32 checksum to become a desired value"</span>)</span><br><span class="line">    subparser.set_defaults(func=reverse_callback)</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'undo'</span>, parents=[</span><br><span class="line">        outfile_parser,</span><br><span class="line">        poly_flip_parser,</span><br><span class="line">        accum_parser,</span><br><span class="line">        default_poly_parser,</span><br><span class="line">        infile_parser],</span><br><span class="line">        help=<span class="string">"rewind a CRC32 checksum"</span>)</span><br><span class="line">    subparser.add_argument(<span class="string">'-n'</span>, <span class="string">'--len'</span>, metavar=<span class="string">'l'</span>, type=str,</span><br><span class="line">                           default=<span class="string">'0'</span>, help=<span class="string">'[int] number of bytes to rewind [default: 0]'</span>)</span><br><span class="line">    subparser.set_defaults(func=undo_callback)</span><br><span class="line">    subparser = subparsers.add_parser(<span class="string">'calc'</span>, parents=[</span><br><span class="line">        outfile_parser,</span><br><span class="line">        poly_flip_parser,</span><br><span class="line">        default_accum_parser,</span><br><span class="line">        default_poly_parser,</span><br><span class="line">        infile_parser],</span><br><span class="line">        help=<span class="string">"calculate the CRC32 checksum"</span>)</span><br><span class="line">    subparser.set_defaults(func=calc_callback)</span><br><span class="line">    <span class="keyword">return</span> parser</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reciprocal_callback</span><span class="params">()</span>:</span></span><br><span class="line">    poly = parse_dword(args.poly)</span><br><span class="line">    check32(poly)</span><br><span class="line">    print_num(reciprocal(poly))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">table_callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># initialize tables</span></span><br><span class="line">    init_tables(get_poly(), <span class="keyword">False</span>)</span><br><span class="line">    <span class="comment"># print table</span></span><br><span class="line">    out(<span class="string">'[&#123;0&#125;]'</span>.format(<span class="string">', '</span>.join(map(<span class="string">'0x&#123;0:08x&#125;'</span>.format, table))))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse_callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># initialize tables</span></span><br><span class="line">    init_tables(get_poly())</span><br><span class="line">    <span class="comment"># find reverse bytes</span></span><br><span class="line">    desired = parse_dword(args.desired)</span><br><span class="line">    accum = parse_dword(args.accum)</span><br><span class="line">    <span class="comment"># 4-byte patch</span></span><br><span class="line">    patches = findReverse(desired, accum)</span><br><span class="line">    <span class="keyword">for</span> patch <span class="keyword">in</span> patches:</span><br><span class="line">        out(<span class="string">'4 bytes: &#123;&#123;0x&#123;0:02x&#125;, 0x&#123;1:02x&#125;, 0x&#123;2:02x&#125;, 0x&#123;3:02x&#125;&#125;&#125;'</span>.format(*patch))</span><br><span class="line">        checksum = calc(patch, accum)</span><br><span class="line">        out(<span class="string">'verification checksum: 0x&#123;0:08x&#125; (&#123;1&#125;)'</span>.format(</span><br><span class="line">            checksum, <span class="string">'OK'</span> <span class="keyword">if</span> checksum == desired <span class="keyword">else</span> <span class="string">'ERROR'</span>))</span><br><span class="line">    <span class="comment"># 6-byte alphanumeric patches</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> permitted_characters:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> permitted_characters:</span><br><span class="line">            patch = [i, j]</span><br><span class="line">            patches = findReverse(desired, calc(patch, accum))</span><br><span class="line">            <span class="keyword">for</span> last_4_bytes <span class="keyword">in</span> patches:</span><br><span class="line">                <span class="keyword">if</span> all(p <span class="keyword">in</span> permitted_characters <span class="keyword">for</span> p <span class="keyword">in</span> last_4_bytes):</span><br><span class="line">                    patch.extend(last_4_bytes)</span><br><span class="line">                    out(<span class="string">'alternative: &#123;1&#125;&#123;2&#125;&#123;3&#125;&#123;4&#125;&#123;5&#125;&#123;6&#125; (&#123;0&#125;)'</span>.format(</span><br><span class="line">                        <span class="string">'OK'</span> <span class="keyword">if</span> calc(patch, accum) == desired <span class="keyword">else</span> <span class="string">'ERROR'</span>, *map(chr, patch)))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">undo_callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># initialize tables</span></span><br><span class="line">    init_tables(get_poly())</span><br><span class="line">    <span class="comment"># calculate checksum</span></span><br><span class="line">    accum = parse_dword(args.accum)</span><br><span class="line">    maxlen = int(args.len, <span class="number">0</span>)</span><br><span class="line">    data = get_input()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt; maxlen &lt;= len(data):</span><br><span class="line">        maxlen = len(data)</span><br><span class="line">    out(<span class="string">'rewinded &#123;0&#125;/&#123;1&#125; (&#123;2:.2f&#125;%)'</span>.format(maxlen, len(data),</span><br><span class="line">        maxlen * <span class="number">100.0</span> / len(data) <span class="keyword">if</span> len(data) <span class="keyword">else</span> <span class="number">100</span>))</span><br><span class="line">    <span class="keyword">for</span> solution <span class="keyword">in</span> rewind(accum, data[-maxlen:]):</span><br><span class="line">        out(<span class="string">''</span>)</span><br><span class="line">        print_num(solution)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_callback</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># initialize tables</span></span><br><span class="line">    init_tables(get_poly(), <span class="keyword">False</span>)</span><br><span class="line">    <span class="comment"># calculate checksum</span></span><br><span class="line">    accum = parse_dword(args.accum)</span><br><span class="line">    data = get_input()</span><br><span class="line">    out(<span class="string">'data len: &#123;0&#125;'</span>.format(len(data)))</span><br><span class="line">    out(<span class="string">''</span>)</span><br><span class="line">    print_num(calc(data, accum))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(argv=None)</span>:</span></span><br><span class="line">    <span class="string">''' Runs the program and handles command line options '''</span></span><br><span class="line">    parser = get_parser()</span><br><span class="line">    <span class="comment"># Parse arguments and run the function</span></span><br><span class="line">    <span class="keyword">global</span> args</span><br><span class="line">    args = parser.parse_args(argv)</span><br><span class="line">    args.func()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()  <span class="comment"># pragma: no cover</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Python">#!/usr/bin/env python
+# CRC32 tools by Victor
+#usage: python crc32.py reverse 0xffffffff（the crc）
+import argparse
+import os
+import sys
+permitted_characters = set(
+    map(ord, &#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_&#39;))  # \w
+testing = False
+args = None
+def get_poly():
+    poly = parse_dword(args.poly)
+    if args.msb:
+        poly = reverseBits(poly)
+    check32(poly)
+    return poly
+def get_input():
+    if args.instr:
+        return tuple(map(ord, args.instr))
+    with args.infile as f:  # pragma: no cover
+        return tuple(map(ord, f.read()))
+def out(msg):
+    if not testing:  # pragma: no cover
+        args.outfile.write(msg)
+        args.outfile.write(os.linesep)
+table = []
+table_reverse = []
+def init_tables(poly, reverse=True):
+    global table, table_reverse
+    table = []
+    # build CRC32 table
+    for i in range(256):
+        for j in range(8):
+            if i &amp; 1:
+                i &gt;&gt;= 1
+                i ^= poly
+            else:
+                i &gt;&gt;= 1
+        table.append(i)
+    assert len(table) == 256, &quot;table is wrong size&quot;
+    # build reverse table
+    if reverse:
+        table_reverse = []
+        found_none = set()
+        found_multiple = set()
+        for i in range(256):
+            found = []
+            for j in range(256):
+                if table[j] &gt;&gt; 24 == i:
+                    found.append(j)
+            table_reverse.append(tuple(found))
+            if not found:
+                found_none.add(i)
+            elif len(found) &gt; 1:
+                found_multiple.add(i)
+        assert len(table_reverse) == 256, &quot;reverse table is wrong size&quot;
+        if found_multiple:
+            out(&#39;WARNING: Multiple table entries have an MSB in {0}&#39;.format(
+                rangess(found_multiple)))
+        if found_none:
+            out(&#39;ERROR: no MSB in the table equals bytes in {0}&#39;.format(
+                rangess(found_none)))
+def calc(data, accum=0):
+    accum = ~accum
+    for b in data:
+        accum = table[(accum ^ b) &amp; 0xFF] ^ ((accum &gt;&gt; 8) &amp; 0x00FFFFFF)
+    accum = ~accum
+    return accum &amp; 0xFFFFFFFF
+def rewind(accum, data):
+    if not data:
+        return (accum,)
+    stack = [(len(data), ~accum)]
+    solutions = set()
+    while stack:
+        node = stack.pop()
+        prev_offset = node[0] - 1
+        for i in table_reverse[(node[1] &gt;&gt; 24) &amp; 0xFF]:
+            prevCRC = (((node[1] ^ table[i]) &lt;&lt; 8) |
+                       (i ^ data[prev_offset])) &amp; 0xFFFFFFFF
+            if prev_offset:
+                stack.append((prev_offset, prevCRC))
+            else:
+                solutions.add((~prevCRC) &amp; 0xFFFFFFFF)
+    return solutions
+def findReverse(desired, accum):
+    solutions = set()
+    accum = ~accum
+    stack = [(~desired,)]
+    while stack:
+        node = stack.pop()
+        for j in table_reverse[(node[0] &gt;&gt; 24) &amp; 0xFF]:
+            if len(node) == 4:
+                a = accum
+                data = []
+                node = node[1:] + (j,)
+                for i in range(3, -1, -1):
+                    data.append((a ^ node[i]) &amp; 0xFF)
+                    a &gt;&gt;= 8
+                    a ^= table[node[i]]
+                solutions.add(tuple(data))
+            else:
+                stack.append(((node[0] ^ table[j]) &lt;&lt; 8,) + node[1:] + (j,))
+    return solutions
+# Tools
+def parse_dword(x):
+    return int(x, 0) &amp; 0xFFFFFFFF
+def reverseBits(x):
+    # http://graphics.stanford.edu/~seander/bithacks.html#ReverseParallel
+    # http://stackoverflow.com/a/20918545
+    x = ((x &amp; 0x55555555) &lt;&lt; 1) | ((x &amp; 0xAAAAAAAA) &gt;&gt; 1)
+    x = ((x &amp; 0x33333333) &lt;&lt; 2) | ((x &amp; 0xCCCCCCCC) &gt;&gt; 2)
+    x = ((x &amp; 0x0F0F0F0F) &lt;&lt; 4) | ((x &amp; 0xF0F0F0F0) &gt;&gt; 4)
+    x = ((x &amp; 0x00FF00FF) &lt;&lt; 8) | ((x &amp; 0xFF00FF00) &gt;&gt; 8)
+    x = ((x &amp; 0x0000FFFF) &lt;&lt; 16) | ((x &amp; 0xFFFF0000) &gt;&gt; 16)
+    return x &amp; 0xFFFFFFFF
+# Compatibility with Python 2.6 and earlier.
+if hasattr(int, &quot;bit_length&quot;):
+    def bit_length(num):
+        return num.bit_length()
+else:
+    def bit_length(n):
+        if n == 0:
+            return 0
+        bits = -32
+        m = 0
+        while n:
+            m = n
+            n &gt;&gt;= 32
+            bits += 32
+        while m:
+            m &gt;&gt;= 1
+            bits += 1
+        return bits
+def check32(poly):
+    if poly &amp; 0x80000000 == 0:
+        out(&#39;WARNING: polynomial degree ({0}) != 32&#39;.format(bit_length(poly)))
+        out(&#39;         instead, try&#39;)
+        out(&#39;         0x{0:08x} (reversed/lsbit-first)&#39;.format(poly | 0x80000000))
+        out(&#39;         0x{0:08x} (normal/msbit-first)&#39;.format(reverseBits(poly | 0x80000000)))
+def reciprocal(poly):
+    &#39;&#39;&#39; Return the reversed reciprocal (Koopman notatation) polynomial of a
+        reversed (lsbit-first) polynomial &#39;&#39;&#39;
+    return reverseBits((poly &lt;&lt; 1) | 1)
+def print_num(num):
+    &#39;&#39;&#39; Write a numeric result in various forms &#39;&#39;&#39;
+    out(&#39;hex: 0x{0:08x}&#39;.format(num))
+    out(&#39;dec:   {0:d}&#39;.format(num))
+    out(&#39;oct: 0o{0:011o}&#39;.format(num))
+    out(&#39;bin: 0b{0:032b}&#39;.format(num))
+import itertools
+def ranges(i):
+    for kg in itertools.groupby(enumerate(i), lambda x: x[1] - x[0]):
+        g = list(kg[1])
+        yield g[0][1], g[-1][1]
+def rangess(i):
+    return &#39;, &#39;.join(map(lambda x: &#39;[{0},{1}]&#39;.format(*x), ranges(i)))
+# Parsers
+def get_parser():
+    &#39;&#39;&#39; Return the command-line parser &#39;&#39;&#39;
+    parser = argparse.ArgumentParser(
+        description=&quot;Reverse, undo, and calculate CRC32 checksums&quot;)
+    subparsers = parser.add_subparsers(metavar=&#39;action&#39;)
+    poly_flip_parser = argparse.ArgumentParser(add_help=False)
+    subparser_group = poly_flip_parser.add_mutually_exclusive_group()
+    subparser_group.add_argument(
+        &#39;-m&#39;, &#39;--msbit&#39;, dest=&quot;msb&quot;, action=&#39;store_true&#39;,
+        help=&#39;treat the polynomial as normal (msbit-first)&#39;)
+    subparser_group.add_argument(&#39;-l&#39;, &#39;--lsbit&#39;, action=&#39;store_false&#39;,
+                                 help=&#39;treat the polynomial as reversed (lsbit-first) [default]&#39;)
+    desired_poly_parser = argparse.ArgumentParser(add_help=False)
+    desired_poly_parser.add_argument(
+        &#39;desired&#39;, type=str, help=&#39;[int] desired checksum&#39;)
+    default_poly_parser = argparse.ArgumentParser(add_help=False)
+    default_poly_parser.add_argument(
+        &#39;poly&#39;, default=&#39;0xEDB88320&#39;, type=str, nargs=&#39;?&#39;,
+        help=&#39;[int] polynomial [default: 0xEDB88320]&#39;)
+    accum_parser = argparse.ArgumentParser(add_help=False)
+    accum_parser.add_argument(
+        &#39;accum&#39;, type=str, help=&#39;[int] accumulator (final checksum)&#39;)
+    default_accum_parser = argparse.ArgumentParser(add_help=False)
+    default_accum_parser.add_argument(
+        &#39;accum&#39;, default=&#39;0&#39;, type=str, nargs=&#39;?&#39;,
+        help=&#39;[int] starting accumulator [default: 0]&#39;)
+    outfile_parser = argparse.ArgumentParser(add_help=False)
+    outfile_parser.add_argument(&#39;-o&#39;, &#39;--outfile&#39;,
+                                metavar=&quot;f&quot;,
+                                type=argparse.FileType(&#39;w&#39;),
+                                default=sys.stdout,
+                                help=&quot;Output to a file instead of stdout&quot;)
+    infile_parser = argparse.ArgumentParser(add_help=False)
+    subparser_group = infile_parser.add_mutually_exclusive_group()
+    subparser_group.add_argument(&#39;-i&#39;, &#39;--infile&#39;,
+                                 metavar=&quot;f&quot;,
+                                 type=argparse.FileType(&#39;rb&#39;),
+                                 default=sys.stdin,
+                                 help=&quot;Input from a file instead of stdin&quot;)
+    subparser_group.add_argument(&#39;-s&#39;, &#39;--str&#39;,
+                                 metavar=&quot;s&quot;,
+                                 type=str,
+                                 default=&#39;&#39;,
+                                 dest=&#39;instr&#39;,
+                                 help=&quot;Use a string as input&quot;)
+    subparser = subparsers.add_parser(&#39;flip&#39;, parents=[outfile_parser],
+                                      help=&quot;flip the bits to convert normal(msbit-first) polynomials to reversed (lsbit-first) and vice versa&quot;)
+    subparser.add_argument(&#39;poly&#39;, type=str, help=&#39;[int] polynomial&#39;)
+    subparser.set_defaults(
+        func=lambda: print_num(reverseBits(parse_dword(args.poly))))
+    subparser = subparsers.add_parser(&#39;reciprocal&#39;, parents=[outfile_parser],
+                                      help=&quot;find the reciprocal (Koopman notation) of a reversed (lsbit-first) polynomial and vice versa&quot;)
+    subparser.add_argument(&#39;poly&#39;, type=str, help=&#39;[int] polynomial&#39;)
+    subparser.set_defaults(func=reciprocal_callback)
+    subparser = subparsers.add_parser(&#39;table&#39;, parents=[outfile_parser,
+                                                        poly_flip_parser,
+                                                        default_poly_parser],
+                                      help=&quot;generate a lookup table for a polynomial&quot;)
+    subparser.set_defaults(func=table_callback)
+    subparser = subparsers.add_parser(&#39;reverse&#39;, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        desired_poly_parser,
+        default_accum_parser,
+        default_poly_parser],
+        help=&quot;find a patch that causes the CRC32 checksum to become a desired value&quot;)
+    subparser.set_defaults(func=reverse_callback)
+    subparser = subparsers.add_parser(&#39;undo&#39;, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        accum_parser,
+        default_poly_parser,
+        infile_parser],
+        help=&quot;rewind a CRC32 checksum&quot;)
+    subparser.add_argument(&#39;-n&#39;, &#39;--len&#39;, metavar=&#39;l&#39;, type=str,
+                           default=&#39;0&#39;, help=&#39;[int] number of bytes to rewind [default: 0]&#39;)
+    subparser.set_defaults(func=undo_callback)
+    subparser = subparsers.add_parser(&#39;calc&#39;, parents=[
+        outfile_parser,
+        poly_flip_parser,
+        default_accum_parser,
+        default_poly_parser,
+        infile_parser],
+        help=&quot;calculate the CRC32 checksum&quot;)
+    subparser.set_defaults(func=calc_callback)
+    return parser
+def reciprocal_callback():
+    poly = parse_dword(args.poly)
+    check32(poly)
+    print_num(reciprocal(poly))
+def table_callback():
+    # initialize tables
+    init_tables(get_poly(), False)
+    # print table
+    out(&#39;[{0}]&#39;.format(&#39;, &#39;.join(map(&#39;0x{0:08x}&#39;.format, table))))
+def reverse_callback():
+    # initialize tables
+    init_tables(get_poly())
+    # find reverse bytes
+    desired = parse_dword(args.desired)
+    accum = parse_dword(args.accum)
+    # 4-byte patch
+    patches = findReverse(desired, accum)
+    for patch in patches:
+        out(&#39;4 bytes: {{0x{0:02x}, 0x{1:02x}, 0x{2:02x}, 0x{3:02x}}}&#39;.format(*patch))
+        checksum = calc(patch, accum)
+        out(&#39;verification checksum: 0x{0:08x} ({1})&#39;.format(
+            checksum, &#39;OK&#39; if checksum == desired else &#39;ERROR&#39;))
+    # 6-byte alphanumeric patches
+    for i in permitted_characters:
+        for j in permitted_characters:
+            patch = [i, j]
+            patches = findReverse(desired, calc(patch, accum))
+            for last_4_bytes in patches:
+                if all(p in permitted_characters for p in last_4_bytes):
+                    patch.extend(last_4_bytes)
+                    out(&#39;alternative: {1}{2}{3}{4}{5}{6} ({0})&#39;.format(
+                        &#39;OK&#39; if calc(patch, accum) == desired else &#39;ERROR&#39;, *map(chr, patch)))
+def undo_callback():
+    # initialize tables
+    init_tables(get_poly())
+    # calculate checksum
+    accum = parse_dword(args.accum)
+    maxlen = int(args.len, 0)
+    data = get_input()
+    if not 0 &lt; maxlen &lt;= len(data):
+        maxlen = len(data)
+    out(&#39;rewinded {0}/{1} ({2:.2f}%)&#39;.format(maxlen, len(data),
+        maxlen * 100.0 / len(data) if len(data) else 100))
+    for solution in rewind(accum, data[-maxlen:]):
+        out(&#39;&#39;)
+        print_num(solution)
+def calc_callback():
+    # initialize tables
+    init_tables(get_poly(), False)
+    # calculate checksum
+    accum = parse_dword(args.accum)
+    data = get_input()
+    out(&#39;data len: {0}&#39;.format(len(data)))
+    out(&#39;&#39;)
+    print_num(calc(data, accum))
+def main(argv=None):
+    &#39;&#39;&#39; Runs the program and handles command line options &#39;&#39;&#39;
+    parser = get_parser()
+    # Parse arguments and run the function
+    global args
+    args = parser.parse_args(argv)
+    args.func()
+if __name__ == &#39;__main__&#39;:
+    main()  # pragma: no cover
+</code></pre>
 <p>示例：</p>
 <p><img src="/2017/10/19/rar-attack/9.png" alt=""></p>
 <p>当字节数小于6时，用下面的crack.py脚本（用python3）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">'file'</span>, nargs=<span class="string">'*'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--hex'</span>, action=<span class="string">'append'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--dec'</span>, action=<span class="string">'append'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--limit'</span>, type=int)</span><br><span class="line">parser.add_argument(<span class="string">'--compiler'</span>, default=<span class="string">'g++'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--alphabet'</span>, type=os.fsencode, default=string.printable.encode())</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">targets = collections.OrderedDict()</span><br><span class="line">limit = <span class="number">0</span></span><br><span class="line">crcs = []</span><br><span class="line"><span class="keyword">if</span> args.limit:</span><br><span class="line">    limit = max(limit, args.limit)</span><br><span class="line"><span class="keyword">if</span> args.hex <span class="keyword">or</span> args.dec:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> args.limit:</span><br><span class="line">        parser.error(<span class="string">'Limit of length not specified'</span>)</span><br><span class="line"><span class="keyword">if</span> args.hex:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> args.hex:</span><br><span class="line">        crc = int(s, <span class="number">16</span>)</span><br><span class="line">        targets[s] = crc</span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> range(args.limit + <span class="number">1</span>):</span><br><span class="line">            crcs += [( crc, l )]</span><br><span class="line"><span class="keyword">if</span> args.dec:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> args.dec:</span><br><span class="line">        crc = int(s)</span><br><span class="line">        targets[s] = crc</span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> range(args.limit + <span class="number">1</span>):</span><br><span class="line">            crcs += [( crc, l )]</span><br><span class="line"><span class="keyword">if</span> args.file:</span><br><span class="line">    print(<span class="string">'reading zip files...'</span>, file=sys.stderr)</span><br><span class="line">    <span class="keyword">import</span> zipfile</span><br><span class="line">    <span class="keyword">for</span> zipname <span class="keyword">in</span> args.file:</span><br><span class="line">        fh = zipfile.ZipFile(zipname)</span><br><span class="line">        <span class="keyword">for</span> info <span class="keyword">in</span> fh.infolist():</span><br><span class="line">            targets[<span class="string">'%s / %s'</span> % ( zipname, info.filename )] = ( info.CRC, info.file_size )</span><br><span class="line">            crcs += [( info.CRC, info.file_size )]</span><br><span class="line">            limit = max(limit, info.file_size)</span><br><span class="line">            print(<span class="string">'file found: %s / %s: crc = 0x%08x, size = %d'</span> % (zipname, info.filename, info.CRC, info.file_size), file=sys.stderr)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> crcs:</span><br><span class="line">    parser.error(<span class="string">'No CRCs given'</span>)</span><br><span class="line"><span class="comment"># compiling c++ in python script is the easy way to have the both a good interface and better speed</span></span><br><span class="line">code = <span class="string">''</span></span><br><span class="line">code += <span class="string">r'''</span></span><br><span class="line"><span class="string">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="string">#include &lt;vector&gt;</span></span><br><span class="line"><span class="string">#include &lt;array&gt;</span></span><br><span class="line"><span class="string">#include &lt;string&gt;</span></span><br><span class="line"><span class="string">#include &lt;set&gt;</span></span><br><span class="line"><span class="string">#include &lt;cstdint&gt;</span></span><br><span class="line"><span class="string">#include &lt;cctype&gt;</span></span><br><span class="line"><span class="string">#define repeat(i,n) for (int i = 0; (i) &lt; (n); ++(i))</span></span><br><span class="line"><span class="string">using namespace std;</span></span><br><span class="line"><span class="string">uint32_t crc_table[256];</span></span><br><span class="line"><span class="string">void make_crc_table() &#123;</span></span><br><span class="line"><span class="string">    repeat (i, 256) &#123;</span></span><br><span class="line"><span class="string">        uint32_t c = i;</span></span><br><span class="line"><span class="string">        repeat (j, 8) &#123;</span></span><br><span class="line"><span class="string">            c = (c &amp; 1) ? (0xedb88320 ^ (c &gt;&gt; 1)) : (c &gt;&gt; 1);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        crc_table[i] = c;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">const uint32_t initial_crc32 = 0xffffffff;</span></span><br><span class="line"><span class="string">uint32_t next_crc32(uint32_t c, char b) &#123;</span></span><br><span class="line"><span class="string">    return crc_table[(c ^ b) &amp; 0xff] ^ (c &gt;&gt; 8);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">const uint32_t mask_crc32 = 0xffffffff;</span></span><br><span class="line"><span class="string">const char alphabet[] = &#123; '''</span> + <span class="string">', '</span>.join(map(str, args.alphabet)) + <span class="string">r''' &#125;;</span></span><br><span class="line"><span class="string">const int limit = '''</span> + str(limit) + <span class="string">r''';</span></span><br><span class="line"><span class="string">array&lt;set&lt;uint32_t&gt;, limit+1&gt; crcs;</span></span><br><span class="line"><span class="string">string stk;</span></span><br><span class="line"><span class="string">void dfs(uint32_t crc) &#123;</span></span><br><span class="line"><span class="string">    if (crcs[stk.length()].count(crc ^ mask_crc32)) &#123;</span></span><br><span class="line"><span class="string">        fprintf(stderr, "crc found: 0x%08x: \"", crc ^ mask_crc32);</span></span><br><span class="line"><span class="string">        for (char c : stk) fprintf(stderr, isprint(c) &amp;&amp; (c != '\\') ? "%c" : "\\x%02x", c);</span></span><br><span class="line"><span class="string">        fprintf(stderr, "\"\n");</span></span><br><span class="line"><span class="string">        printf("%08x ", crc ^ mask_crc32);</span></span><br><span class="line"><span class="string">        for (char c : stk) printf(" %02x", c);</span></span><br><span class="line"><span class="string">        printf("\n");</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    if (stk.length() &lt; limit) &#123;</span></span><br><span class="line"><span class="string">        for (char c : alphabet) &#123;</span></span><br><span class="line"><span class="string">            stk.push_back(c);</span></span><br><span class="line"><span class="string">            dfs(next_crc32(crc, c));</span></span><br><span class="line"><span class="string">            stk.pop_back();</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">int main() &#123;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">for</span> crc, size <span class="keyword">in</span> crcs:</span><br><span class="line">    code += <span class="string">'    crcs['</span> + str(size) + <span class="string">'].insert('</span> + hex(crc) + <span class="string">');\n'</span></span><br><span class="line">code += <span class="string">r'''</span></span><br><span class="line"><span class="string">    make_crc_table();</span></span><br><span class="line"><span class="string">    dfs(initial_crc32);</span></span><br><span class="line"><span class="string">    return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> tempfile</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">with</span> tempfile.TemporaryDirectory() <span class="keyword">as</span> tmpdir:</span><br><span class="line">    cppname = os.path.join(tmpdir, <span class="string">'a.cpp'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(cppname, <span class="string">'w'</span>) <span class="keyword">as</span> fh:</span><br><span class="line">        fh.write(code)</span><br><span class="line">    binname = os.path.join(tmpdir, <span class="string">'a.out'</span>)</span><br><span class="line">    print(<span class="string">'compiling...'</span>, file=sys.stderr)</span><br><span class="line">    p = subprocess.check_call([args.compiler, <span class="string">'-std=c++11'</span>, <span class="string">'-O3'</span>, <span class="string">'-o'</span>, binname, cppname])</span><br><span class="line">    print(<span class="string">'searching...'</span>, file=sys.stderr)</span><br><span class="line">    p = subprocess.Popen([binname], stdout=subprocess.PIPE)</span><br><span class="line">    output, _ = p.communicate()</span><br><span class="line">print(<span class="string">'done'</span>, file=sys.stderr)</span><br><span class="line">print(file=sys.stderr)</span><br><span class="line">result = collections.defaultdict(list)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> output.decode().strip().split(<span class="string">'\n'</span>):</span><br><span class="line">    crc, *val = map(<span class="keyword">lambda</span> x: int(x, <span class="number">16</span>), line.split())</span><br><span class="line">    result[( crc, len(val) )] += [ bytes(val) ]</span><br><span class="line"><span class="keyword">for</span> key, crc <span class="keyword">in</span> targets.items():</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> result[crc]:</span><br><span class="line">        print(<span class="string">'%s : %s'</span> % (key, repr(s)[<span class="number">1</span>:]))</span><br></pre></td></tr></table></figure>
+<pre><code class="Python">#!/usr/bin/env python3
+import sys
+import os
+import string
+import collections
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument(&#39;file&#39;, nargs=&#39;*&#39;)
+parser.add_argument(&#39;--hex&#39;, action=&#39;append&#39;)
+parser.add_argument(&#39;--dec&#39;, action=&#39;append&#39;)
+parser.add_argument(&#39;--limit&#39;, type=int)
+parser.add_argument(&#39;--compiler&#39;, default=&#39;g++&#39;)
+parser.add_argument(&#39;--alphabet&#39;, type=os.fsencode, default=string.printable.encode())
+args = parser.parse_args()
+targets = collections.OrderedDict()
+limit = 0
+crcs = []
+if args.limit:
+    limit = max(limit, args.limit)
+if args.hex or args.dec:
+    if not args.limit:
+        parser.error(&#39;Limit of length not specified&#39;)
+if args.hex:
+    for s in args.hex:
+        crc = int(s, 16)
+        targets[s] = crc
+        for l in range(args.limit + 1):
+            crcs += [( crc, l )]
+if args.dec:
+    for s in args.dec:
+        crc = int(s)
+        targets[s] = crc
+        for l in range(args.limit + 1):
+            crcs += [( crc, l )]
+if args.file:
+    print(&#39;reading zip files...&#39;, file=sys.stderr)
+    import zipfile
+    for zipname in args.file:
+        fh = zipfile.ZipFile(zipname)
+        for info in fh.infolist():
+            targets[&#39;%s / %s&#39; % ( zipname, info.filename )] = ( info.CRC, info.file_size )
+            crcs += [( info.CRC, info.file_size )]
+            limit = max(limit, info.file_size)
+            print(&#39;file found: %s / %s: crc = 0x%08x, size = %d&#39; % (zipname, info.filename, info.CRC, info.file_size), file=sys.stderr)
+if not crcs:
+    parser.error(&#39;No CRCs given&#39;)
+# compiling c++ in python script is the easy way to have the both a good interface and better speed
+code = &#39;&#39;
+code += r&#39;&#39;&#39;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;array&gt;
+#include &lt;string&gt;
+#include &lt;set&gt;
+#include &lt;cstdint&gt;
+#include &lt;cctype&gt;
+#define repeat(i,n) for (int i = 0; (i) &lt; (n); ++(i))
+using namespace std;
+uint32_t crc_table[256];
+void make_crc_table() {
+    repeat (i, 256) {
+        uint32_t c = i;
+        repeat (j, 8) {
+            c = (c &amp; 1) ? (0xedb88320 ^ (c &gt;&gt; 1)) : (c &gt;&gt; 1);
+        }
+        crc_table[i] = c;
+    }
+}
+const uint32_t initial_crc32 = 0xffffffff;
+uint32_t next_crc32(uint32_t c, char b) {
+    return crc_table[(c ^ b) &amp; 0xff] ^ (c &gt;&gt; 8);
+}
+const uint32_t mask_crc32 = 0xffffffff;
+const char alphabet[] = { &#39;&#39;&#39; + &#39;, &#39;.join(map(str, args.alphabet)) + r&#39;&#39;&#39; };
+const int limit = &#39;&#39;&#39; + str(limit) + r&#39;&#39;&#39;;
+array&lt;set&lt;uint32_t&gt;, limit+1&gt; crcs;
+string stk;
+void dfs(uint32_t crc) {
+    if (crcs[stk.length()].count(crc ^ mask_crc32)) {
+        fprintf(stderr, &quot;crc found: 0x%08x: \&quot;&quot;, crc ^ mask_crc32);
+        for (char c : stk) fprintf(stderr, isprint(c) &amp;&amp; (c != &#39;\\&#39;) ? &quot;%c&quot; : &quot;\\x%02x&quot;, c);
+        fprintf(stderr, &quot;\&quot;\n&quot;);
+        printf(&quot;%08x &quot;, crc ^ mask_crc32);
+        for (char c : stk) printf(&quot; %02x&quot;, c);
+        printf(&quot;\n&quot;);
+    }
+    if (stk.length() &lt; limit) {
+        for (char c : alphabet) {
+            stk.push_back(c);
+            dfs(next_crc32(crc, c));
+            stk.pop_back();
+        }
+    }
+}
+int main() {
+&#39;&#39;&#39;
+for crc, size in crcs:
+    code += &#39;    crcs[&#39; + str(size) + &#39;].insert(&#39; + hex(crc) + &#39;);\n&#39;
+code += r&#39;&#39;&#39;
+    make_crc_table();
+    dfs(initial_crc32);
+    return 0;
+}
+&#39;&#39;&#39;
+import tempfile
+import subprocess
+with tempfile.TemporaryDirectory() as tmpdir:
+    cppname = os.path.join(tmpdir, &#39;a.cpp&#39;)
+    with open(cppname, &#39;w&#39;) as fh:
+        fh.write(code)
+    binname = os.path.join(tmpdir, &#39;a.out&#39;)
+    print(&#39;compiling...&#39;, file=sys.stderr)
+    p = subprocess.check_call([args.compiler, &#39;-std=c++11&#39;, &#39;-O3&#39;, &#39;-o&#39;, binname, cppname])
+    print(&#39;searching...&#39;, file=sys.stderr)
+    p = subprocess.Popen([binname], stdout=subprocess.PIPE)
+    output, _ = p.communicate()
+print(&#39;done&#39;, file=sys.stderr)
+print(file=sys.stderr)
+result = collections.defaultdict(list)
+for line in output.decode().strip().split(&#39;\n&#39;):
+    crc, *val = map(lambda x: int(x, 16), line.split())
+    result[( crc, len(val) )] += [ bytes(val) ]
+for key, crc in targets.items():
+    for s in result[crc]:
+        print(&#39;%s : %s&#39; % (key, repr(s)[1:]))
+</code></pre>
 <p>示例：</p>
 <p><img src="/2017/10/19/rar-attack/10.png" alt=""></p>
 <h2 id="0x06-MORE"><a href="#0x06-MORE" class="headerlink" title="0x06 MORE"></a>0x06 MORE</h2><p>还有很多压缩包的密码需要联系题中的其他文件来解，这个就不在本篇的讨论范围内了，故不再讨论。</p>
 
-      
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            版权声明： 本文遵循 <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0</a> 协议，转载请注明出处。
+                        </strong>
+                        <br>
+                        <strong>Link to this article: </strong><a href="https://iCyris.github.io/2017/10/19/rar-attack/">https://iCyris.github.io/2017/10/19/rar-attack/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/10/21/python-venv/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/07/12/the-seed/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
     </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/cyris.png" alt="Cyris's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        i@cyris.top
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: i@cyris.top" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
     
-    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                Home
+            </a>
+        </li>
+        
     
 
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
     
 
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习资料/">学习资料<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/小笔记/">小笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/煮字/">煮字<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
     
 
+    <!-- Pages  -->
     
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    Cyris
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://iCyris.github.io/2017/10/19/rar-attack/" title="给你压缩包却不给你密码的人到底在想什么">https://iCyris.github.io/2017/10/19/rar-attack/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
 </ul>
 
-      </div>
-    
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/CTF/" rel="tag"># CTF</a>
-          
-        </div>
-      
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
 
-      
-      
-      
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/12/the-seed/" rel="next" title="觉得理性的人快乐吗">
-                <i class="fa fa-chevron-left"></i> 觉得理性的人快乐吗
-              </a>
-            
-          </div>
+<!-- Sidebar Divider -->
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/21/python-venv/" rel="prev" title="Mac 配置虚拟环境 Virtualenv">
-                Mac 配置虚拟环境 Virtualenv <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
+    <div class="sidebar-divider"></div>
 
 
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
+<!-- Theme Material -->
 
 
-          </div>
-          
+<!-- Help & Support -->
+<!--
 
+-->
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
+<!-- Feedback -->
+<!--
 
+-->
 
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+<!-- About Theme -->
+<!--
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/cyris.png"
-               alt="Cyris" />
-          <p class="site-author-name" itemprop="name">Cyris</p>
-           
-              <p class="site-description motion-element" itemprop="description">静水流深</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">标签</span>
-              
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/iCyris" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                    
-                      GitHub
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/icyris/activities" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-pencil-square-o"></i>
-                  
-                    
-                      知乎
-                    
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-开始"><span class="nav-text">0x00 开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-注释"><span class="nav-text">0x01 注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-弱密码"><span class="nav-text">0x02 弱密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-压缩包伪加密"><span class="nav-text">0x03 压缩包伪加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-已知明文攻击"><span class="nav-text">0x04 已知明文攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-CRC碰撞"><span class="nav-text">0x05 CRC碰撞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x06-MORE"><span class="nav-text">0x06 MORE</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
+-->
 
     </div>
-  </aside>
 
+    <!-- Sidebar Image -->
+    
 
-        
-      </div>
-    </main>
+</aside>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Cyris</span>
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/iCyris" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/icyris/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Cyris | 绿生
+            
+        </div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    Muse
-  </a>
-</div>
+        <!-- Paradox Footer Right Section -->
 
-        
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
-      </div>
-    </footer>
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+</footer>
 
-  </div>
 
-  
+                    <!-- Import JS File -->
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
@@ -765,424 +1320,88 @@
 
 
 
-  
 
 
 
 
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
+<!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
 
+<!-- MathJax Load-->
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+<!-- Bing Background -->
 
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
 
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Custom Footer -->
 
 
-  
 
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
         }
-      });
-    }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
 
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>
