@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iCyris.github.io/about/index.html</loc>
+    
+    <lastmod>2018-04-26T01:16:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://iCyris.github.io/2018/04/23/Vidar-logo/</loc>
     
     <lastmod>2018-04-26T01:01:30.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://iCyris.github.io/links/index.html</loc>
     
     <lastmod>2018-04-25T17:10:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://iCyris.github.io/about/index.html</loc>
-    
-    <lastmod>2018-04-25T17:04:43.000Z</lastmod>
     
   </url>
   
