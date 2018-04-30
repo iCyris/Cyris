@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.cyris.cn/posts/Vidar-logo/</loc>
+    
+    <lastmod>2018-04-30T14:55:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.cyris.cn/posts/python-with-anaconda/</loc>
     
     <lastmod>2018-04-29T10:11:41.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.cyris.cn/about/index.html</loc>
     
     <lastmod>2018-04-26T01:16:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyris.cn/posts/Vidar-logo/</loc>
-    
-    <lastmod>2018-04-26T01:01:30.000Z</lastmod>
     
   </url>
   
