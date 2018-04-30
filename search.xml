@@ -362,6 +362,13 @@
     </entry>
     
     <entry>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Friends</title>
       <link href="/links/index.html"/>
       <url>/links/index.html</url>
@@ -372,13 +379,6 @@
       <title>timeline</title>
       <link href="/timeline/index.html"/>
       <url>/timeline/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
