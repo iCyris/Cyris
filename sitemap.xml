@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.cyris.cn/posts/pyqt5/</loc>
+    
+    <lastmod>2018-05-06T02:47:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.cyris.cn/posts/markdown-tip/</loc>
+    
+    <lastmod>2018-05-06T02:46:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.cyris.cn/posts/Vidar-logo/</loc>
     
     <lastmod>2018-04-30T15:02:03.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://blog.cyris.cn/links/index.html</loc>
     
     <lastmod>2018-04-25T17:10:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyris.cn/posts/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2018-04-25T16:42:16.000Z</lastmod>
     
   </url>
   
@@ -110,13 +117,6 @@
     <loc>https://blog.cyris.cn/posts/pwnable-kr/</loc>
     
     <lastmod>2018-04-01T05:03:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyris.cn/posts/markdown-tip/</loc>
-    
-    <lastmod>2018-03-30T10:17:33.000Z</lastmod>
     
   </url>
   
