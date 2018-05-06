@@ -3,9 +3,32 @@
 
 
     
+    
+  <url>
+    <loc>https://blog.cyris.cn/posts/php-fpm/</loc>
+    <lastmod>2018-05-06T14:43:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>浅谈 PHP-FPM</title>
+        <pubTime>2018-05-06T11:20:00.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>FPM</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="https://blog.cyris.cn/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://blog.cyris.cn/posts/pyqt5/</loc>
-    <lastmod>2018-05-06T02:47:30.000Z</lastmod>
+    <lastmod>2018-05-06T11:19:28.000Z</lastmod>
     <data>
         <display>
         <title>从零开始学习 PyQt5</title>
@@ -84,7 +107,6 @@
     </data>
     </url>
 
-    
     
     
   <url>
