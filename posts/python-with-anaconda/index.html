@@ -248,7 +248,7 @@
 
     
         <meta property="article:published_time" content="Sun Apr 29 2018 13:47:25 GMT+0800">
-        <meta property="article:modified_time" content="Wed May 09 2018 00:42:28 GMT+0800">
+        <meta property="article:modified_time" content="Wed May 09 2018 07:50:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "https://blog.cyris.cn/posts/python-with-anaconda/index.html",
     "headline": "Anaconda 初体验",
     "datePublished": "Sun Apr 29 2018 13:47:25 GMT+0800",
-    "dateModified": "Wed May 09 2018 00:42:28 GMT+0800",
+    "dateModified": "Wed May 09 2018 07:50:19 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Cyris",
@@ -355,7 +355,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-安装-Anaconda"><span class="post-toc-text">一. 安装 Anaconda</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-使用-Conda-进行环境管理"><span class="post-toc-text">二. 使用 Conda 进行环境管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三-Package-管理"><span class="post-toc-text">三. Package 管理</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、-安装-Anaconda"><span class="post-toc-text">一、 安装 Anaconda</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、-使用-Conda-进行环境管理"><span class="post-toc-text">二、 使用 Conda 进行环境管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、-Package-管理"><span class="post-toc-text">三、 Package 管理</span></a></li></ol>
     </ul>
     
 
@@ -484,7 +484,7 @@
         <p>Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。</p>
 <a id="more"></a>
 <p>它的体积确实有点大，小容量选手可以考虑 <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda</a>。</p>
-<h2 id="一-安装-Anaconda"><a href="#一-安装-Anaconda" class="headerlink" title="一. 安装 Anaconda"></a>一. 安装 Anaconda</h2><p>下载地址：<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">https://www.anaconda.com/download/</a></p>
+<h2 id="一、-安装-Anaconda"><a href="#一、-安装-Anaconda" class="headerlink" title="一、 安装 Anaconda"></a>一、 安装 Anaconda</h2><p>下载地址：<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">https://www.anaconda.com/download/</a></p>
 <p>以 macOS 为例，程序安装时它会在 <code>~/.bash_profile</code> 写入 Path：</p>
 <pre><code># added by Anaconda3 5.1.0 installer
 export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
@@ -493,7 +493,7 @@ export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
 <pre><code>$ source .zshrc
 </code></pre><p>查看配置是否生效：</p>
 <pre><code>$ conda --version
-</code></pre><h2 id="二-使用-Conda-进行环境管理"><a href="#二-使用-Conda-进行环境管理" class="headerlink" title="二. 使用 Conda 进行环境管理"></a>二. 使用 Conda 进行环境管理</h2><p>Update Conda: </p>
+</code></pre><h2 id="二、-使用-Conda-进行环境管理"><a href="#二、-使用-Conda-进行环境管理" class="headerlink" title="二、 使用 Conda 进行环境管理"></a>二、 使用 Conda 进行环境管理</h2><p>Update Conda: </p>
 <pre><code>$ conda update -n base conda
 </code></pre><p>创建一个名为 <code>venv</code> 的环境，Python 版本指定为 2.7：</p>
 <pre><code>$ conda create -n venv python=2.7
@@ -510,7 +510,7 @@ export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
 </code></pre><p><br></p>
 <p>可以简化一下命令，在 <code>.zshrc</code> 中添加一个别名：<code>alias workon=&#39;source activate&#39;</code>，就可以用 <code>$ workon env-name</code> 的方式激活环境了。</p>
 <p>所有环境都会被安装在 <code>/anaconda3/envs/</code> 目录下。</p>
-<h2 id="三-Package-管理"><a href="#三-Package-管理" class="headerlink" title="三. Package 管理"></a>三. Package 管理</h2><p>给某个特定环境安装 Package 有两种方式：</p>
+<h2 id="三、-Package-管理"><a href="#三、-Package-管理" class="headerlink" title="三、 Package 管理"></a>三、 Package 管理</h2><p>给某个特定环境安装 Package 有两种方式：</p>
 <ol>
 <li>直接切换到那个环境中然后使用 <code>conda install package-name</code> 命令进行安装</li>
 <li>在执行安装命令时添加 <code>-n</code> 参数来指定环境：<code>conda install -n env-name package-name</code></li>
