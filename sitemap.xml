@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.cyris.cn/about/index.html</loc>
+    <loc>https://blog.cyris.cn/posts/php-fpm/</loc>
     
-    <lastmod>2018-05-06T14:45:31.000Z</lastmod>
+    <lastmod>2018-05-08T16:41:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.cyris.cn/posts/php-fpm/</loc>
+    <loc>https://blog.cyris.cn/about/index.html</loc>
     
-    <lastmod>2018-05-06T14:43:21.000Z</lastmod>
+    <lastmod>2018-05-06T14:45:31.000Z</lastmod>
     
   </url>
   
