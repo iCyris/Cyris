@@ -353,7 +353,14 @@
       <title>About</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      <content type="html"><![CDATA[<p>> 喜欢科技／设计<br>> 爱自由<br>> 享受深度阅读<br>> 世界观察中 :D</p><p>前端／The Piano Guys／MCU／有一只菊草叶！</p><p>探寻真理者不可心存傲慢。</p><p>我试图在寻找的，<br>也许是一种清晰而诚恳的自我表达。<br><br><br>CONTACT ME:</p><blockquote><p>Github : <a href="https://github.com/iCyris" target="_blank" rel="noopener">iCyris</a><br>Email : <a href="mailto: i@cyris.top" target="_blank" rel="noopener">i@cyris.top</a></p></blockquote>]]></content>
+      <content type="html"><![CDATA[<p>> 喜欢技术／设计<br>> 爱自由<br>> 享受深度阅读</p><p>Web 方向，<br>有许多平凡的爱好。</p><p>探寻真理者不可心存傲慢。<br><br><br>CONTACT ME:</p><blockquote><p>Github : <a href="https://github.com/iCyris" target="_blank" rel="noopener">iCyris</a><br>Email : <a href="mailto: i@cyris.top" target="_blank" rel="noopener">i@cyris.top</a></p></blockquote>]]></content>
+    </entry>
+    
+    <entry>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
@@ -374,13 +381,6 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>timeline</title>
-      <link href="/timeline/index.html"/>
-      <url>/timeline/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
