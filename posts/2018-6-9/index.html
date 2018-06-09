@@ -43,7 +43,7 @@
     
     <title>
         
-            Anaconda 初体验 | 
+            一篇水文 | 
         
         Cyris | 绿生
     </title>
@@ -53,8 +53,8 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。">
-    <meta name="keywords" content="null,Python">
+    <meta name="description" itemprop="description" content="写下这篇文章一部分原因是很久没更博客了，来除点草…另一部分是因为最近发生的事确实有点多，又忙于准备期末考，我觉得应该留点时间整理下心情，也当是记点流水以后无聊的时候翻着看吧～">
+    <meta name="keywords" content="null,煮字">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -220,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Cyris | 绿生">
-    <meta name="msapplication-starturl" content="https://blog.cyris.cn/posts/python-with-anaconda/">
+    <meta name="msapplication-starturl" content="https://blog.cyris.cn/posts/2018-6-9/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Cyris | 绿生">
@@ -239,16 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://blog.cyris.cn/posts/python-with-anaconda/">
+    <meta property="og:url" content="https://blog.cyris.cn/posts/2018-6-9/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Anaconda 初体验 | Cyris | 绿生">
+    <meta property="og:title" content="一篇水文 | Cyris | 绿生">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。">
-    <meta property="og:article:tag" content="Python"> 
+    <meta property="og:description" content="写下这篇文章一部分原因是很久没更博客了，来除点草…另一部分是因为最近发生的事确实有点多，又忙于准备期末考，我觉得应该留点时间整理下心情，也当是记点流水以后无聊的时候翻着看吧～">
+    <meta property="og:article:tag" content="煮字"> 
 
     
-        <meta property="article:published_time" content="Sun Apr 29 2018 13:47:25 GMT+0800">
-        <meta property="article:modified_time" content="Wed May 09 2018 07:50:19 GMT+0800">
+        <meta property="article:published_time" content="Sat Jun 09 2018 09:07:35 GMT+0800">
+        <meta property="article:modified_time" content="Sat Jun 09 2018 11:13:08 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://blog.cyris.cn/posts/python-with-anaconda/index.html" />
+        <link rel="canonical" href="https://blog.cyris.cn/posts/2018-6-9/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://blog.cyris.cn/posts/python-with-anaconda/index.html",
-    "headline": "Anaconda 初体验",
-    "datePublished": "Sun Apr 29 2018 13:47:25 GMT+0800",
-    "dateModified": "Wed May 09 2018 07:50:19 GMT+0800",
+    "mainEntityOfPage": "https://blog.cyris.cn/posts/2018-6-9/index.html",
+    "headline": "一篇水文",
+    "datePublished": "Sat Jun 09 2018 09:07:35 GMT+0800",
+    "dateModified": "Sat Jun 09 2018 11:13:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Cyris",
@@ -289,8 +289,8 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Pythonnull",
-    "description": "Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。",
+    "keywords": ",煮字null",
+    "description": "写下这篇文章一部分原因是很久没更博客了，来除点草…另一部分是因为最近发生的事确实有点多，又忙于准备期末考，我觉得应该留点时间整理下心情，也当是记点流水以后无聊的时候翻着看吧～",
 }
 </script>
 
@@ -349,15 +349,6 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、-安装-Anaconda"><span class="post-toc-text">一、 安装 Anaconda</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、-使用-Conda-进行环境管理"><span class="post-toc-text">二、 使用 Conda 进行环境管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、-Package-管理"><span class="post-toc-text">三、 Package 管理</span></a></li></ol>
-    </ul>
-    
 
 
 
@@ -387,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                Anaconda 初体验
+                一篇水文
             </p>
         </div>
 
@@ -406,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Cyris</strong>
-        <span>Apr 29, 2018</span>
+        <span>Jun 09, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -430,7 +421,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Python/">Python</a>
+        <a class="post_tag-link" href="/tags/煮字/">煮字</a>
     </ul>
     
 
@@ -450,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Anaconda 初体验&url=https://blog.cyris.cn/posts/python-with-anaconda/index.html&via=Cyris" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=一篇水文&url=https://blog.cyris.cn/posts/2018-6-9/index.html&via=Cyris" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -468,7 +459,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=Anaconda 初体验&summary=我试图在寻找的，也许是一种清晰而诚恳的自我表达。&pics=https://blog.cyris.cn/img/favicon.png&url=https://blog.cyris.cn/posts/python-with-anaconda/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=一篇水文&summary=我试图在寻找的，也许是一种清晰而诚恳的自我表达。&pics=https://blog.cyris.cn/img/favicon.png&url=https://blog.cyris.cn/posts/2018-6-9/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -487,46 +478,18 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。</p>
+        <p>写下这篇文章一部分原因是很久没更博客了，来除点草…另一部分是因为最近发生的事确实有点多，又忙于准备期末考，我觉得应该留点时间整理下心情，也当是记点流水以后无聊的时候翻着看吧～</p>
 <a id="more"></a>
-<p>它的体积确实有点大，小容量选手可以考虑 <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda</a>。</p>
-<h2 id="一、-安装-Anaconda"><a href="#一、-安装-Anaconda" class="headerlink" title="一、 安装 Anaconda"></a>一、 安装 Anaconda</h2><p>下载地址：<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">https://www.anaconda.com/download/</a></p>
-<p>以 macOS 为例，程序安装时它会在 <code>~/.bash_profile</code> 写入 Path：</p>
-<pre><code># added by Anaconda3 5.1.0 installer
-export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
-</code></pre><p>如果用的是 zsh ，就在 <code>.zshrc</code> 中手动添加这条命令。</p>
-<p>让配置生效：</p>
-<pre><code>$ source .zshrc
-</code></pre><p>查看配置是否生效：</p>
-<pre><code>$ conda --version
-</code></pre><h2 id="二、-使用-Conda-进行环境管理"><a href="#二、-使用-Conda-进行环境管理" class="headerlink" title="二、 使用 Conda 进行环境管理"></a>二、 使用 Conda 进行环境管理</h2><p>Update Conda: </p>
-<pre><code>$ conda update -n base conda
-</code></pre><p>创建一个名为 <code>venv</code> 的环境，Python 版本指定为 2.7：</p>
-<pre><code>$ conda create -n venv python=2.7
-</code></pre><p>激活环境：</p>
-<pre><code>$ source activate venv
-</code></pre><p>退出当前环境：</p>
-<pre><code>$ source deactivate
-</code></pre><p>删除环境：</p>
-<pre><code>$ conda remove -n venv --all
-</code></pre><p>复制一个环境（已有一个名为 venv 的环境）：</p>
-<pre><code>$ conda create -n venv-2 --clone venv
-</code></pre><p>查看所有环境：</p>
-<pre><code>$ conda info -e
-</code></pre><p><br></p>
-<p>可以简化一下命令，在 <code>.zshrc</code> 中添加一个别名：<code>alias workon=&#39;source activate&#39;</code>，就可以用 <code>$ workon env-name</code> 的方式激活环境了。</p>
-<p>所有环境都会被安装在 <code>/anaconda3/envs/</code> 目录下。</p>
-<h2 id="三、-Package-管理"><a href="#三、-Package-管理" class="headerlink" title="三、 Package 管理"></a>三、 Package 管理</h2><p>给某个特定环境安装 Package 有两种方式：</p>
-<ol>
-<li>直接切换到那个环境中然后使用 <code>conda install package-name</code> 命令进行安装</li>
-<li>在执行安装命令时添加 <code>-n</code> 参数来指定环境：<code>conda install -n env-name package-name</code></li>
-</ol>
-<p>查看已经安装的 Package：<code>conda list</code> （要查看指定环境中安装的包，同样在后面加上 <code>-n</code> 参数就好了。）</p>
-<p>查找包：</p>
-<pre><code>$ conda search package-name
-</code></pre><p>更新包：</p>
-<pre><code>$ conda update package-name
-</code></pre><p>一些 conda 没有的包，可以使用 pip 安装。</p>
+<p>先说说教学评估的事，前几天学校在做评估，又是刷墙又是xxx的，领导们应该也神经紧张了挺久，倒不是说期望它评不上，其实评上了也有很多好处，只是不知道我们能获益多少罢了。但是部分教职工的素质却得推敲一番，比如有位辅导员在检查的那几天，发了个通知，大概是“你们下课了就得去图书馆，早上x点就要起床了“之类。在教室的表现需要端正一点还情有可原，难道日常起居也要作势一番？未免有股虚假之风的味道，如果全都是这样的表演，评上了也没有什么意义，反倒被自家学生：超-记-仇。</p>
+<p>另外对学校的教师水平还是挺失望的，从大一到马上步入大三，遇到的优秀的老师不是没有，而是真的过少。有实验课连自己都不知道怎么写实验的，有对着 ppt 照搬照念的，几个学期过来，我自学所学到的东西远远大于老师教的。说是自由选的公选课，培养计划给你写死你要选哪几门（仅部分专业），可笑的是后来那些课都不开了，只留下一门能选的，而且作为一门公选课，作业比主课都要多，甚至期末了还要给你带来双份的快乐，也许这也是一种负责，但对我来说，对大多数忙于备考的人来说，这样的做法未免缺少了一点“xxxx”数。因此如果说有后悔的东西，那就是大一大二没好好地翘课去学喜欢的东西，浪费了大把时间。</p>
+<p>印象深刻的教师自然也是有的，比如上学期的概率论老师，非常优秀，条理清晰，很近人，也能感受到他对教育的负责与热爱；以及另一位英语教师，为了能让学生真正地了解外国文化，当其他老师只呆了一周进行实地考察时，他呆了几个月。他所带回来的东西，分享给我们的东西，十分客观，深入而富有情趣，非常喜欢。因此每当遇到高质量的课程，我都会满怀兴奋地去听讲。</p>
+<p>很多领导也都只围绕着自己学院的利益办事，并不会考虑你们学生的发展如何，“利益关系”并不是不行，但是吃相得好看。例如某学院的行事，只要去搜搜他们庆祝的文章，然后加上他们不喜欢的词就是一篇真实的文章了。学校里都有着那样一股作风，难怪会有像微博那样随意删帖／炒热的事。他们本质是一样的，只要”让这块地方看起来是我喜欢的样子“，就好了。</p>
+<p>“我们一路奋战，不是为了能改变世界，而是为了不让世界改变我们。“</p>
+<p>灵魂的对峙是沉重的，尤其是对于那些嘴上常挂”他们都是这样的，我这样有什么问题吗？“的人。由此可见鲁迅先生的笔力量有多大。讽刺的是，当时他写的话，仍然适用于这个时代。”适应社会“一词对我来说，不是去成为一个把刚才提到的那句话挂在嘴边，让利好控制自己精神的人，而是守护好自己还算健全的思想，至少在你清晰地知道”我觉得这样是对的“的情况下，不做悖于自己理念的事，否则就算做了，也会感觉到一种空洞，一种受侵蚀的空洞。</p>
+<p>同样的，我不愿意以赚钱为目的去选择学习的内容，觉得什么好玩，就去学了。因此不太看好各大培训机构（以“提升你某项技能水平”为核心目的的那些课程除外），尤其是那种只会教你怎么写出欺骗式的简历的，不知道砸这个钱有什么意义…当然很多人其实做着与兴趣不同的事，也需要养家糊口，还是存在着很大的社会压力的，他们需要速成，需要马上得到一份工作，这其实也是那些无良机构的市场所在。</p>
+<p>对于“浪费时间”的看法：我觉得那些做了会轻松的事，之后也会觉得开心的事，就像打会儿游戏，陪陪女票，都是很棒的生活体验，才不是整天学习就是优秀呢。其实这种让心情变好的东西，也会让自己在学习的时候更有精神力呀。</p>
+<p>就谈这些吧，一点小牢骚。</p>
+<p><img src="/posts/2018-6-9/relax.jpg" alt=""></p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -535,7 +498,7 @@ export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
                             版权声明：本文遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> 协议，转载请注明出处。
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://blog.cyris.cn/posts/python-with-anaconda/">https://blog.cyris.cn/posts/python-with-anaconda/</a>
+                        <strong>本文链接：</strong><a href="https://blog.cyris.cn/posts/2018-6-9/">https://blog.cyris.cn/posts/2018-6-9/</a>
                     </p>
                 </blockquote>
         
@@ -557,21 +520,13 @@ export PATH=&quot;/Users/cyris/anaconda3/bin:$PATH&quot;
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/posts/php-fpm/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/posts/Vidar-logo/" id="post_nav-older" class="next-content">
+        <a href="/posts/php-fpm/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
