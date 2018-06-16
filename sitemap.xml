@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.cyris.cn/posts/2018-6-16/</loc>
+    
+    <lastmod>2018-06-16T04:30:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.cyris.cn/about/index.html</loc>
+    
+    <lastmod>2018-06-16T04:27:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.cyris.cn/posts/vidar-logo/</loc>
     
     <lastmod>2018-06-12T16:07:15.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://blog.cyris.cn/posts/2018-6-9/</loc>
     
     <lastmod>2018-06-12T15:41:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.cyris.cn/about/index.html</loc>
-    
-    <lastmod>2018-06-12T00:38:02.000Z</lastmod>
     
   </url>
   

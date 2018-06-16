@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.cyris.cn/"/>
-  <updated>2018-06-12T15:41:42.000Z</updated>
+  <updated>2018-06-16T04:30:54.000Z</updated>
   <id>https://blog.cyris.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无题</title>
+    <link href="https://blog.cyris.cn/posts/2018-6-16/"/>
+    <id>https://blog.cyris.cn/posts/2018-6-16/</id>
+    <published>2018-06-16T03:12:15.000Z</published>
+    <updated>2018-06-16T04:30:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>交了一堆 deadline，心情舒畅，忙里偷闲一下。</p><a id="more"></a><p>不知道取什么标题，就直接 Untitled 了…前几天奖学金终于到账了，于是新购了个 <code>.moe</code> 的域名，虽然现在的 <code>.cn</code> 没有什么问题，价格也还算友善，但还是更喜欢个性点的东西，至于 <code>.me</code>，实在是太贵了。唯一不足的是腾讯的域名邮箱不支持 <code>.moe</code> ，其他的企业邮箱接收起来不太方便。除了一点强迫症心理，问题不大。比起腾讯云的乱杂臃肿，还是更喜欢主机壳那种类型的。</p><p>这个博客中途更换过很多主题，最后稳定在这款 Material ，整体的风格还是挺符合自己的，但是不太喜欢文章上方的图片块，虽然现在直接调成了纯色看起来舒服了点，还是不太满意。打算用 <code>Laravel</code> + <code>Vue</code> 写一套能复用的博客，自己写的当然是最舒服的啦，都可以掌握在自己手里。加之静态博客更新起来还是挺麻烦的，不过省去了很多不稳定因素，所以目前的改一下 CSS 也许也能用，it depends。</p><p>安全还是开发，很久前想了好几个晚上，最后决定走开发，因为更喜欢去做出好看的好玩的东西。偶尔也会考虑到工作的事，也会看到国内有点浮躁的技术圈、学术圈，但是总是会有一批纯粹的人在做着、讨论着他们所热爱的东西。</p><p>守护住这些笑容就好啦。</p><p>想要去旅游，很久没有去远一点的地方走走了，它们是自己灵感的来源。</p><p>小知了响了。挺喜欢这个季节的，能做的让人愉悦的事有很多！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;交了一堆 deadline，心情舒畅，忙里偷闲一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="煮字" scheme="https://blog.cyris.cn/categories/%E7%85%AE%E5%AD%97/"/>
+    
+    
+      <category term="煮字" scheme="https://blog.cyris.cn/tags/%E7%85%AE%E5%AD%97/"/>
+    
+  </entry>
   
   <entry>
     <title>一篇水文</title>
