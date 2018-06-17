@@ -1,503 +1,197 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
 
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
+<head>
+  <title>GIT 时光机 | Cyris&#39;s pen</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Cyris's pen">
+    <meta name="author" content="Cyris">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
+    <link rel="alternate" href="/atom.xml" title="Cyris&#39;s pen" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
-    <title>
-        
-            GIT 时光机 | 
-        
-        Cyris | 绿生
-    </title>
+    <link rel="stylesheet" href="/highlightjs/tomorrow-night.css" type="text/css">
+    
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。">
-    <meta name="keywords" content="null,GIT,Wiki">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
     <![endif]-->
 
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
 
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
 
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?VbSuLZyOpxJuf3o2tYEOVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
 
-  a {
-    color: #4d4d4d;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #6e7d90 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #6e7d90 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #6e7d90 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #4d4d4d;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Cyris | 绿生">
-    <meta name="msapplication-starturl" content="https://cyris.pen.moe/posts/git/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Cyris | 绿生">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-        
-            <link rel=alternate type="application/atom+xml" href="/atom.xml">
-        
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://cyris.pen.moe/posts/git/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="GIT 时光机 | Cyris | 绿生">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。">
-    <meta property="og:article:tag" content="GIT"> <meta property="og:article:tag" content="Wiki"> 
-
-    
-        <meta property="article:published_time" content="Sat May 13 2017 00:17:27 GMT+0800">
-        <meta property="article:modified_time" content="Sun Apr 01 2018 14:39:14 GMT+0800">
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://cyris.pen.moe/posts/git/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "https://cyris.pen.moe/posts/git/index.html",
-    "headline": "GIT 时光机",
-    "datePublished": "Sat May 13 2017 00:17:27 GMT+0800",
-    "dateModified": "Sun Apr 01 2018 14:39:14 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Cyris",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/cyris.png"
-        },
-        "description": "时雨金时，抓住有味。"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Cyris | 绿生",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",GIT,Wikinull",
-    "description": "Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。",
-}
-</script>
-
-
-    
-
-    <!-- Analytics -->
-    
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-120896908-1', 'auto');ga('send', 'pageview');
-</script>
-    
-    
-    
-
-    <!-- Custom Head -->
-    
-
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
 
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+      <!-- ============================ Off-canvas navigation =========================== -->
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/CTF/" class="animsition-link">CTF<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Crypto/" class="animsition-link">Crypto<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Git/" class="animsition-link">Git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hexo/" class="animsition-link">Hexo<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Pwn/" class="animsition-link">Pwn<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Python/" class="animsition-link">Python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习资料/" class="animsition-link">学习资料<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/小笔记/" class="animsition-link">小笔记<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/煮字/" class="animsition-link">煮字<small>(6)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
                     
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
+                    <li><a href="https://blog.acalepher.cn/" class="animsition-link">水母酱</a></li>
                     
-
-                    <!-- Post TOC -->
-
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
+                    <li><a href="https://ash-zd.com/" class="animsition-link">Ash 是只萌兔</a></li>
+                    
+                    <li><a href="http://webdog.top/" class="animsition-link">hammer 小可爱</a></li>
+                    
+                    <li><a href="http://tan90.me/" class="animsition-link">Alias</a></li>
+                    
+                    <li><a href="http://veritas501.space/" class="animsition-link">veritas501</a></li>
+                    
+                    <li><a href="http://vvv-347.space/" class="animsition-link">vvv</a></li>
+                    
+                    <li><a href="https://b0lv42.github.io/" class="animsition-link">大果子</a></li>
+                    
+                    <li><a href="http://aklis.info/" class="animsition-link">Aklis</a></li>
+                    
+                    <li><a href="https://lightless.me/" class="animsition-link">Lightless</a></li>
+                    
+                    <li><a href="http://lorexxar.cn/" class="animsition-link">土土</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
     </div>
-    -->
-
-
-    <!-- Left aligned menu below button -->
     
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
+    <!-- ============================ END Off-canvas navigation =========================== -->
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、时光机硬件说明书"><span class="post-toc-text">一、时光机硬件说明书</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X01-零件组装"><span class="post-toc-text">0X01 零件组装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X02-时光机的配置"><span class="post-toc-text">0X02 时光机的配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X03-在时光机上注入add钙奶"><span class="post-toc-text">0X03 在时光机上注入add钙奶</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X04-挪挪挪，挪进仓库"><span class="post-toc-text">0X04 挪挪挪，挪进仓库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X05-时光机分机"><span class="post-toc-text">0X05 时光机分机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X06-Tag"><span class="post-toc-text">0X06 Tag</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X07-信息查看"><span class="post-toc-text">0X07 信息查看</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X08-远程同步篇"><span class="post-toc-text">0X08 远程同步篇</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0X09-时光回溯篇"><span class="post-toc-text">0X09 时光回溯篇</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、Github与信仰"><span class="post-toc-text">二、Github与信仰</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1X01-设置Git"><span class="post-toc-text">1X01 设置Git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1X02-配置SSH"><span class="post-toc-text">1X02 配置SSH</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1X03-push-and-pull-from-github"><span class="post-toc-text">1X03 push and pull from github</span></a></li></ol></li></ol>
-    </ul>
-    
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
 
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
 
+        <!-- ============================ Header & Logo bar =========================== -->
 
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 1 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
-    
-            <p class="article-headline-p">
-                GIT 时光机
-            </p>
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
         </div>
 
+        <!-- ============================ Header & Logo bar =========================== -->
 
 
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/cyris.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Cyris</strong>
-        <span>May 13, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-05-12T16:17:27.000Z" itemprop="datePublished">
+          2017-05-13
+      </time>
     
-
-    <!-- Tags (bookmark) -->
     
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/GIT/">GIT</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Wiki/">Wiki</a>
-    </ul>
+    | 
+    <a href='/tags/GIT/'>GIT</a>,
     
-
-    <!-- Share -->
+    <a href='/tags/Wiki/'>Wiki</a>
     
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
     
-
-    
-
-    <!-- Share Weibo -->
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=GIT 时光机&url=https://cyris.pen.moe/posts/git/index.html&via=Cyris" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Cyris | 绿生&title=GIT 时光机&summary=我试图在寻找的，也许是一种清晰而诚恳的自我表达。&pics=https://cyris.pen.moe/img/favicon.png&url=https://cyris.pen.moe/posts/git/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
+</span>
+                <h1>GIT 时光机</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>Ak师傅的小灶上谈了些关于git的常见用法，回去以后做了些整理。</p>
 <a id="more"></a>
 <p>参考链接：</p>
 <blockquote>
@@ -512,748 +206,609 @@
 <li><strong>Commit history：</strong> 历史记录</li>
 </ul>
 <h2 id="0X01-零件组装"><a href="#0X01-零件组装" class="headerlink" title="0X01 零件组装"></a>0X01 零件组装</h2><p>这里有三种情况：  </p>
-<pre><code class="Bash">    1. 在当前目录新建一个Git代码库(如果是要使用github上的库，需要先pull下来，不然无法
-    push到目标库，这里的第三种方法就可以。)
-    $ git init
-
-    2. 新建目录，将其初始化为Git仓库
-    $ git init project-name
-
-    3. pull下来一个项目与其代码历史
-    $ git clone URL
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 在当前目录新建一个Git代码库(如果是要使用github上的库，需要先pull下来，不然无法</span><br><span class="line">push到目标库，这里的第三种方法就可以。)</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line">2. 新建目录，将其初始化为Git仓库</span><br><span class="line">$ git init project-name</span><br><span class="line"></span><br><span class="line">3. pull下来一个项目与其代码历史</span><br><span class="line">$ git <span class="built_in">clone</span> URL</span><br></pre></td></tr></table></figure>
 <h2 id="0X02-时光机的配置"><a href="#0X02-时光机的配置" class="headerlink" title="0X02 时光机的配置"></a>0X02 时光机的配置</h2><p>Git有个设置文件<strong>.gitconfig</strong>，它可以全局配置，也可以项目配置。</p>
-<pre><code>    1.显示当前的Git配置
-    $ git config --list
-
-    2.编辑Git配置文件
-    $ git config -e [--global]
-
-    3.设置提交代码时的用户信息
-    $ git config [--global] user.name &quot;name&quot;
-    $ git config [--global] user.email &quot;email address&quot;
-</code></pre><h2 id="0X03-在时光机上注入add钙奶"><a href="#0X03-在时光机上注入add钙奶" class="headerlink" title="0X03 在时光机上注入add钙奶"></a>0X03 在时光机上注入add钙奶</h2><pre><code>    1.添加指定文件到暂存区
-    $ git add file1 file2 ...    
-
-    2.添加指定目录到暂存区（包括其中的子目录）
-    $ git add dir（文件夹名称）
-
-    3.添加当前目录所有文件到暂存区
-    $ git add .
-
-    4.分次提交
-    $ git add -p
-
-    5.删除工作区文件，并且把这次删除放入暂存区
-    $ git rm file1 file2 ...
-
-    6.停止追踪指定文件（该文件会保留在工作区）
-    $ git rm --cached file
-
-    7.改名文件，然后把这个改名文件放入暂存区
-    $ git mv file-original file-renamed
-</code></pre><h2 id="0X04-挪挪挪，挪进仓库"><a href="#0X04-挪挪挪，挪进仓库" class="headerlink" title="0X04 挪挪挪，挪进仓库"></a>0X04 挪挪挪，挪进仓库</h2><pre><code>    1.提交暂存区到仓库区
-    $ git commit -m &quot;message&quot;
-
-    2.提交暂存区指定文件到仓库区
-    $ git commit file1 file2 ... -m &quot;message&quot;
-
-    3.提交工作区自上次commit之后的变化，直接到仓库区
-    $ git commit -a
-
-    4.提交时显示所有diff信息
-    $ git commit -v
-
-    5.使用一次新的commit，替代上一次提交。如果代码没有任何新变化，则用来改写上一次commit的提交信息
-    $ git commit --amend -m &quot;message&quot;
-
-    6.重做上一次commit，并包括指定文件的新变化
-    $ git commit --amend file1 file2 ...
-</code></pre><h2 id="0X05-时光机分机"><a href="#0X05-时光机分机" class="headerlink" title="0X05 时光机分机"></a>0X05 时光机分机</h2><pre><code>    1.列出所有本地分支
-    $ git branch
-
-    2.列出所有远程分支
-    $ git branch -r
-
-    3.列出所有本地分支和远程分支
-    $ git branch -a
-
-    4.新建一个分支，但依然停留在当前分支
-    $ git branch [branch-name]
-
-    5.新建一个分支，并切换到该分支
-    $ git checkout -b [branch]
-
-    6.新建一个分支，指向指定commit
-    $ git branch [branch] [commit]
-
-    7.新建一个分支，与指定的远程分支建立追踪关系
-    $ git branch --track [branch] [remote-branch]
-
-    8.切换到指定分支，并更新工作区
-    $ git checkout [branch-name]
-
-    9.切换到上一个分支
-    $ git checkout -
-
-    10.建立追踪关系，在现有分支与指定的远程分支之间
-    $ git branch --set-upstream [branch] [remote-branch]
-
-    11.合并指定分支到当前分支
-    $ git merge [branch]
-
-    12.选择一个commit，合并进当前分支
-    $ git cherry-pick [commit]
-
-    13.删除分支
-    $ git branch -d [branch-name]
-
-    14.删除远程分支
-    $ git push origin --delete [branch-name]
-    $ git branch -dr [remote/branch]
-</code></pre><h2 id="0X06-Tag"><a href="#0X06-Tag" class="headerlink" title="0X06 Tag"></a>0X06 Tag</h2><pre><code>    1.列出所有tag
-    $ git tag
-
-    2.新建一个tag在当前commit
-    $ git tag [tag]
-
-    3.新建一个tag在指定commit
-    $ git tag [tag] [commit]
-
-    4.删除本地tag
-    $ git tag -d [tag]
-
-    5.删除远程tag
-    $ git push origin :refs/tags/[tagName]
-
-    6.查看tag信息
-    $ git show [tag]
-
-    7.提交指定tag
-    $ git push [remote] [tag]
-
-    8.提交所有tag
-    $ git push [remote] --tags
-
-    9.新建一个分支，指向某个tag
-    $ git checkout -b [branch] [tag]
-</code></pre><h2 id="0X07-信息查看"><a href="#0X07-信息查看" class="headerlink" title="0X07 信息查看"></a>0X07 信息查看</h2><pre><code>    1.显示有变更的文件
-    $ git status
-
-    2.显示当前分支的版本历史
-    $ git log
-
-    3.显示commit历史，以及每次commit发生变更的文件
-    $ git log --stat
-
-    4.搜索提交历史，根据关键词
-    $ git log -S [keyword]
-
-    5.显示某个commit之后的所有变动，每个commit占据一行
-    $ git log [tag] HEAD --pretty=format:%s
-
-    6.显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件
-    $ git log [tag] HEAD --grep feature
-
-    7.显示某个文件的版本历史，包括文件改名
-    $ git log --follow [file]
-    $ git whatchanged [file]
-
-    8.显示指定文件相关的每一次diff
-    $ git log -p [file]
-
-    9.显示过去5次提交
-    $ git log -5 --pretty --oneline
-
-    10.显示所有提交过的用户，按提交次数排序
-    $ git shortlog -sn
-
-    11.显示指定文件是什么人在什么时间修改过
-    $ git blame [file]
-
-    12.显示暂存区和工作区的差异
-    $ git diff
-
-    13.显示暂存区和上一个commit的差异
-    $ git diff --cached [file]
-
-    14.显示工作区与当前分支最新commit之间的差异
-    $ git diff HEAD
-
-    15.显示两次提交之间的差异
-    $ git diff [first-branch]...[second-branch]
-
-    16.显示今天你写了多少行代码
-    $ git diff --shortstat &quot;@{0 day ago}&quot;
-
-    17.显示某次提交的元数据和内容变化
-    $ git show [commit]
-
-    18.显示某次提交发生变化的文件
-    $ git show --name-only [commit]
-
-    19.显示某次提交时，某个文件的内容
-    $ git show [commit]:[filename]
-
-    20.显示当前分支的最近几次提交
-    $ git reflog
-</code></pre><h2 id="0X08-远程同步篇"><a href="#0X08-远程同步篇" class="headerlink" title="0X08 远程同步篇"></a>0X08 远程同步篇</h2><pre><code>    1.下载远程仓库的所有变动
-    $ git fetch [remote]
-
-    2.显示所有远程仓库
-    $ git remote -v
-
-    3.显示某个远程仓库的信息
-    $ git remote show [remote]
-
-    4.增加一个新的远程仓库，并命名
-    $ git remote add [shortname] [url]
-
-    5.取回远程仓库的变化，并与本地分支合并
-    $ git pull [remote] [branch]
-
-    6.上传本地指定分支到远程仓库
-    $ git push [remote] [branch]
-
-    7.强行推送当前分支到远程仓库，即使有冲突
-    $ git push [remote] --force
-
-    8.推送所有分支到远程仓库
-    $ git push [remote] --all
-</code></pre><h2 id="0X09-时光回溯篇"><a href="#0X09-时光回溯篇" class="headerlink" title="0X09 时光回溯篇"></a>0X09 时光回溯篇</h2><pre><code>    1.恢复暂存区的指定文件到工作区
-    $ git checkout [file]
-
-    2.恢复某个commit的指定文件到暂存区和工作区
-    $ git checkout [commit] [file]
-
-    3.恢复暂存区的所有文件到工作区
-    $ git checkout .
-
-    4.重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
-    $ git reset [file]
-
-    5.重置暂存区与工作区，与上一次commit保持一致
-    $ git reset --hard
-
-    6.重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
-    $ git reset [commit]
-
-    7.重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
-    $ git reset --hard [commit]
-
-    8.重置当前HEAD为指定commit，但保持暂存区和工作区不变
-    $ git reset --keep [commit]
-
-    9.新建一个commit，用来撤销指定commit，后者的所有变化都将被前者抵消，并且应用到当前分支
-    $ git revert [commit]
-
-    10.暂时将未提交的变化移除，稍后再移入
-    $ git stash
-    $ git stash pop
-</code></pre><h1 id="二、Github与信仰"><a href="#二、Github与信仰" class="headerlink" title="二、Github与信仰"></a>二、Github与信仰</h1><p><img src="/posts/git/30.png" alt=""></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.显示当前的Git配置</span><br><span class="line">$ git<span class="built_in"> config </span>--list</span><br><span class="line"></span><br><span class="line">2.编辑Git配置文件</span><br><span class="line">$ git<span class="built_in"> config </span>-e [--global]</span><br><span class="line"></span><br><span class="line">3.设置提交代码时的用户信息</span><br><span class="line">$ git<span class="built_in"> config </span>[--global] user.name <span class="string">"name"</span></span><br><span class="line">$ git<span class="built_in"> config </span>[--global] user.email <span class="string">"email address"</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X03-在时光机上注入add钙奶"><a href="#0X03-在时光机上注入add钙奶" class="headerlink" title="0X03 在时光机上注入add钙奶"></a>0X03 在时光机上注入add钙奶</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1.添加指定文件到暂存区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add file1 file2 ...    </span></span><br><span class="line"></span><br><span class="line">2.添加指定目录到暂存区（包括其中的子目录）</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add dir（文件夹名称）</span></span><br><span class="line"></span><br><span class="line">3.添加当前目录所有文件到暂存区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"></span><br><span class="line">4.分次提交</span><br><span class="line"><span class="meta">$</span><span class="bash"> git add -p</span></span><br><span class="line"></span><br><span class="line">5.删除工作区文件，并且把这次删除放入暂存区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git rm file1 file2 ...</span></span><br><span class="line"></span><br><span class="line">6.停止追踪指定文件（该文件会保留在工作区）</span><br><span class="line"><span class="meta">$</span><span class="bash"> git rm --cached file</span></span><br><span class="line"></span><br><span class="line">7.改名文件，然后把这个改名文件放入暂存区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git mv file-original file-renamed</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X04-挪挪挪，挪进仓库"><a href="#0X04-挪挪挪，挪进仓库" class="headerlink" title="0X04 挪挪挪，挪进仓库"></a>0X04 挪挪挪，挪进仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.提交暂存区到仓库区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"message"</span></span></span><br><span class="line"></span><br><span class="line">2.提交暂存区指定文件到仓库区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit file1 file2 ... -m <span class="string">"message"</span></span></span><br><span class="line"></span><br><span class="line">3.提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit <span class="_">-a</span></span></span><br><span class="line"></span><br><span class="line">4.提交时显示所有diff信息</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -v</span></span><br><span class="line"></span><br><span class="line">5.使用一次新的commit，替代上一次提交。如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit --amend -m <span class="string">"message"</span></span></span><br><span class="line"></span><br><span class="line">6.重做上一次commit，并包括指定文件的新变化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit --amend file1 file2 ...</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X05-时光机分机"><a href="#0X05-时光机分机" class="headerlink" title="0X05 时光机分机"></a>0X05 时光机分机</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">1.列出所有本地分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line"></span><br><span class="line">2.列出所有远程分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -r</span></span><br><span class="line"></span><br><span class="line">3.列出所有本地分支和远程分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-a</span></span></span><br><span class="line"></span><br><span class="line">4.新建一个分支，但依然停留在当前分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch [branch-name]</span></span><br><span class="line"></span><br><span class="line">5.新建一个分支，并切换到该分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch]</span></span><br><span class="line"></span><br><span class="line">6.新建一个分支，指向指定commit</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch [branch] [commit]</span></span><br><span class="line"></span><br><span class="line">7.新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --track [branch] [remote-branch]</span></span><br><span class="line"></span><br><span class="line">8.切换到指定分支，并更新工作区</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout [branch-name]</span></span><br><span class="line"></span><br><span class="line">9.切换到上一个分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout -</span></span><br><span class="line"></span><br><span class="line">10.建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --set-upstream [branch] [remote-branch]</span></span><br><span class="line"></span><br><span class="line">11.合并指定分支到当前分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge [branch]</span></span><br><span class="line"></span><br><span class="line">12.选择一个commit，合并进当前分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git cherry-pick [commit]</span></span><br><span class="line"></span><br><span class="line">13.删除分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-d</span> [branch-name]</span></span><br><span class="line"></span><br><span class="line">14.删除远程分支</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin --delete [branch-name]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -dr [remote/branch]</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X06-Tag"><a href="#0X06-Tag" class="headerlink" title="0X06 Tag"></a>0X06 Tag</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.列出所有<span class="keyword">tag</span></span><br><span class="line">$ git <span class="keyword">tag</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.新建一个<span class="keyword">tag</span>在当前commit</span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">[tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>.新建一个<span class="keyword">tag</span>在指定commit</span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">[tag</span>] [commit]</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>.删除本地<span class="keyword">tag</span></span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">-d</span> [<span class="keyword">tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>.删除远程<span class="keyword">tag</span></span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>.查看<span class="keyword">tag</span>信息</span><br><span class="line">$ git show [<span class="keyword">tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>.提交指定<span class="keyword">tag</span></span><br><span class="line">$ git push [remote] [<span class="keyword">tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>.提交所有<span class="keyword">tag</span></span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>.新建一个分支，指向某个<span class="keyword">tag</span></span><br><span class="line">$ git checkout -b [branch] [<span class="keyword">tag</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="0X07-信息查看"><a href="#0X07-信息查看" class="headerlink" title="0X07 信息查看"></a>0X07 信息查看</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">1.显示有变更的文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line"></span><br><span class="line">2.显示当前分支的版本历史</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line"></span><br><span class="line">3.显示commit历史，以及每次commit发生变更的文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --stat</span></span><br><span class="line"></span><br><span class="line">4.搜索提交历史，根据关键词</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -S [keyword]</span></span><br><span class="line"></span><br><span class="line">5.显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span></span><br><span class="line"></span><br><span class="line">6.显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --grep feature</span></span><br><span class="line"></span><br><span class="line">7.显示某个文件的版本历史，包括文件改名</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --follow [file]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git whatchanged [file]</span></span><br><span class="line"></span><br><span class="line">8.显示指定文件相关的每一次diff</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -p [file]</span></span><br><span class="line"></span><br><span class="line">9.显示过去5次提交</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -5 --pretty --oneline</span></span><br><span class="line"></span><br><span class="line">10.显示所有提交过的用户，按提交次数排序</span><br><span class="line"><span class="meta">$</span><span class="bash"> git shortlog -sn</span></span><br><span class="line"></span><br><span class="line">11.显示指定文件是什么人在什么时间修改过</span><br><span class="line"><span class="meta">$</span><span class="bash"> git blame [file]</span></span><br><span class="line"></span><br><span class="line">12.显示暂存区和工作区的差异</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff</span></span><br><span class="line"></span><br><span class="line">13.显示暂存区和上一个commit的差异</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff --cached [file]</span></span><br><span class="line"></span><br><span class="line">14.显示工作区与当前分支最新commit之间的差异</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD</span></span><br><span class="line"></span><br><span class="line">15.显示两次提交之间的差异</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff [first-branch]...[second-branch]</span></span><br><span class="line"></span><br><span class="line">16.显示今天你写了多少行代码</span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff --shortstat <span class="string">"@&#123;0 day ago&#125;"</span></span></span><br><span class="line"></span><br><span class="line">17.显示某次提交的元数据和内容变化</span><br><span class="line"><span class="meta">$</span><span class="bash"> git show [commit]</span></span><br><span class="line"></span><br><span class="line">18.显示某次提交发生变化的文件</span><br><span class="line"><span class="meta">$</span><span class="bash"> git show --name-only [commit]</span></span><br><span class="line"></span><br><span class="line">19.显示某次提交时，某个文件的内容</span><br><span class="line"><span class="meta">$</span><span class="bash"> git show [commit]:[filename]</span></span><br><span class="line"></span><br><span class="line">20.显示当前分支的最近几次提交</span><br><span class="line"><span class="meta">$</span><span class="bash"> git reflog</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X08-远程同步篇"><a href="#0X08-远程同步篇" class="headerlink" title="0X08 远程同步篇"></a>0X08 远程同步篇</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1.下载远程仓库的所有变动</span><br><span class="line"><span class="meta">$</span><span class="bash"> git fetch [remote]</span></span><br><span class="line"></span><br><span class="line">2.显示所有远程仓库</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line"></span><br><span class="line">3.显示某个远程仓库的信息</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote show [remote]</span></span><br><span class="line"></span><br><span class="line">4.增加一个新的远程仓库，并命名</span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add [shortname] [url]</span></span><br><span class="line"></span><br><span class="line">5.取回远程仓库的变化，并与本地分支合并</span><br><span class="line"><span class="meta">$</span><span class="bash"> git pull [remote] [branch]</span></span><br><span class="line"></span><br><span class="line">6.上传本地指定分支到远程仓库</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push [remote] [branch]</span></span><br><span class="line"></span><br><span class="line">7.强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push [remote] --force</span></span><br><span class="line"></span><br><span class="line">8.推送所有分支到远程仓库</span><br><span class="line"><span class="meta">$</span><span class="bash"> git push [remote] --all</span></span><br></pre></td></tr></table></figure>
+<h2 id="0X09-时光回溯篇"><a href="#0X09-时光回溯篇" class="headerlink" title="0X09 时光回溯篇"></a>0X09 时光回溯篇</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">1.恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line">2.恢复某个<span class="keyword">commit</span>的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [<span class="keyword">commit</span>] [<span class="keyword">file</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>重置暂存区的指定文件，与上一次<span class="keyword">commit</span>保持一致，但工作区不变</span><br><span class="line">$ git <span class="keyword">reset</span> [<span class="keyword">file</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>重置暂存区与工作区，与上一次<span class="keyword">commit</span>保持一致</span><br><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>重置当前分支的指针为指定<span class="keyword">commit</span>，同时重置暂存区，但工作区不变</span><br><span class="line">$ git <span class="keyword">reset</span> [<span class="keyword">commit</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>重置当前分支的<span class="keyword">HEAD</span>为指定<span class="keyword">commit</span>，同时重置暂存区和工作区，与指定<span class="keyword">commit</span>一致</span><br><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard [commit]</span></span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>重置当前<span class="keyword">HEAD</span>为指定<span class="keyword">commit</span>，但保持暂存区和工作区不变</span><br><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--keep [commit]</span></span><br><span class="line"></span><br><span class="line"><span class="number">9.</span>新建一个<span class="keyword">commit</span>，用来撤销指定<span class="keyword">commit</span>，后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [<span class="keyword">commit</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<h1 id="二、Github与信仰"><a href="#二、Github与信仰" class="headerlink" title="二、Github与信仰"></a>二、Github与信仰</h1><p><img src="/posts/git/30.png" alt=""></p>
 <ul>
 <li>这个周目是关于Linux下git时光机的实际应用 —— 把已有项目推到Github上。     </li>
 <li>Github账号的创建与git的安装配置不再作说明。</li>
 </ul>
 <h2 id="1X01-设置Git"><a href="#1X01-设置Git" class="headerlink" title="1X01 设置Git"></a>1X01 设置Git</h2><p>设置用户名与email：</p>
-<pre><code>    git config --global user.name &quot;your name&quot;
-    git config --global user.email &quot;youremail@lalala.com&quot;
-</code></pre><p>此时在/home下会新建一个<strong>.gitconfig</strong>文件</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"your name"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"youremail@lalala.com"</span></span><br></pre></td></tr></table></figure>
+<p>此时在/home下会新建一个<strong>.gitconfig</strong>文件</p>
 <h2 id="1X02-配置SSH"><a href="#1X02-配置SSH" class="headerlink" title="1X02 配置SSH"></a>1X02 配置SSH</h2><p>1.创建SSH Key</p>
-<pre><code>    $ ssh-keygen -t rsa -C &quot;youremail@lalala.com&quot;
-</code></pre><p>系统会提示key的保存位置，一般为~/.ssh，接下来会请求输入口令，一路默认，敲三次回车即可。   </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C <span class="string">"youremail@lalala.com"</span></span></span><br></pre></td></tr></table></figure>
+<p>系统会提示key的保存位置，一般为~/.ssh，接下来会请求输入口令，一路默认，敲三次回车即可。   </p>
 <p>然后登陆gayhub -&gt; Accounting settings -&gt; SSH key -&gt; Add SSH Key -&gt; 取个容易区分的名字 -&gt; 把~/.ssh/id_rsa.pub文件中的内容粘贴上去即可。</p>
 <p>用下面的命令进行测试：</p>
-<pre><code>    ssh -T git@github.com
-</code></pre><h2 id="1X03-push-and-pull-from-github"><a href="#1X03-push-and-pull-from-github" class="headerlink" title="1X03 push and pull from github"></a>1X03 push and pull from github</h2><p>1.在新建的~/My_Message_Board目录中git clone已存在GitHub上的Repository</p>
-<pre><code>    git clone URL
-</code></pre><p>2.先修改个readme，提交。</p>
-<pre><code>    sudo vi README.md
-    git status
-    git add README.md
-    git status
-    git commit -m &quot;Cyris readme-change 5/17&quot;
-    git status
-    git remote add origin URL
-</code></pre><p>报了个错：</p>
-<pre><code>    fatal: remote origin already exists.
-</code></pre><p>解决方法：</p>
-<pre><code>    $ git remote rm origin
-</code></pre><p>再来。</p>
-<pre><code>    $ git remote add origin URL（这些URL都是github里复制的URL）
-</code></pre><p>3.下面把它push上去</p>
-<pre><code>    $ git push -u origin master
-</code></pre><p>这里会要求输入GitHub账户的用户名和密码。输入即可。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></span><br></pre></td></tr></table></figure>
+<h2 id="1X03-push-and-pull-from-github"><a href="#1X03-push-and-pull-from-github" class="headerlink" title="1X03 push and pull from github"></a>1X03 push and pull from github</h2><p>1.在新建的~/My_Message_Board目录中git clone已存在GitHub上的Repository</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">URL</span></span><br></pre></td></tr></table></figure>
+<p>2.先修改个readme，提交。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo vi README.md</span><br><span class="line">git status</span><br><span class="line">git <span class="keyword">add</span><span class="bash"> README.md</span></span><br><span class="line"><span class="bash">git status</span></span><br><span class="line"><span class="bash">git commit -m <span class="string">"Cyris readme-change 5/17"</span></span></span><br><span class="line"><span class="bash">git status</span></span><br><span class="line"><span class="bash">git remote add origin URL</span></span><br></pre></td></tr></table></figure>
+<p>报了个错：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fata<span class="variable">l:</span> remote origin already <span class="built_in">exists</span>.</span><br></pre></td></tr></table></figure>
+<p>解决方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git remote rm origin</span></span><br></pre></td></tr></table></figure>
+<p>再来。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote <span class="built_in">add</span> origin <span class="built_in">URL</span>（这些<span class="built_in">URL</span>都是github里复制的<span class="built_in">URL</span>）</span><br></pre></td></tr></table></figure>
+<p>3.下面把它push上去</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">push</span> -u <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
+<p>这里会要求输入GitHub账户的用户名和密码。输入即可。</p>
 <p>4.提交完成，去GitHub看眼Repository。内容修改成功。</p>
 
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            版权声明：本文遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> 协议，转载请注明出处。
-                        </strong>
-                        <br>
-                        <strong>本文链接：</strong><a href="https://cyris.pen.moe/posts/git/">https://cyris.pen.moe/posts/git/</a>
-                    </p>
-                </blockquote>
-        
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-
+    <a class="pull-left" href="/posts/tea-maker/" style="float: left;">
+        ← 菠萝牛肉饭
+    </a>
     
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <div id="comment" style='padding:10px;' class="vcomment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-        return GUEST_INFO.indexOf(item) > -1
-    });
-    var notify = 'false' == true;
-    var verify = 'false' == true;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "Tc3hMcV7kOlKq2bcPSEbyLRu-gzGzoHsz",
-        appKey: "faJUYmscbAk2HMcNTBzwiuGk",
-        placeholder: "ヾﾉ≧∀≦)o 说点什么吧!",
-        pageSize:'10',
-        avatar:'identicon',
-        lang:'zh-cn'
-    });
-</script>
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
     
-        <a href="/posts/tea-maker/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/posts/wiki/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
+    <a class="pull-right" href="/posts/wiki/">
+        魔法禁书目录 →
+    </a>
     
 </nav>
 
-        </div>
-    </div>
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
 
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
 
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
 
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/cyris.png" alt="Cyris's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        i@cyris.cn
-        <b class="caret"></b>
-    </a>
+</script>
 </div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="https://cyris.pen.moe" target="_blank" title="MoePen">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">sd_card</i>
-                        
-                        MoePen
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                Home
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    Archives
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">July 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">May 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">April 2017<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                Categories
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Crypto/">Crypto<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Pwn/">Pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习资料/">学习资料<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/小笔记/">小笔记<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/煮字/">煮字<span class="sidebar_archives-count">6</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/tags" title="Tags">
-                
-                Tags
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="About">
-                
-                About
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/links" title="Links">
-                
-                Links
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
     </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/iCyris" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-        <a href="https://www.zhihu.com/people/icyris/activities" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
-                <span class="visuallyhidden">Zhihu</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
+</section>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Cyris | 绿生
-            
-        </div>
+      
+<!-- ============================ Footer =========================== -->
 
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>Contact me:  i@cyris.cn</p>
+                <p>
+                    &copy; 2016<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Cyris. All Rights Reserved.
+                </p>
             </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/iCyris" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
         </div>
-    
 </footer>
 
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-        
-            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
-        
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
-        
-            $(function() {
-                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-                prettyPrint();
-                })
-        
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
         });
-    });
+    };
 
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
     });
 </script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
 
-<!-- Custom Footer -->
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+      
+            <style>
+.local-search-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: rgba(255, 255, 255, .9);
+  color: #333;
+  z-index: 9999;
+  border-radius: 5px;
+  overflow: scroll;
+}
+#local-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #151515;
+  background-color: initial;
+}
+.search-result-list {
+  list-style: none;
+  padding-left: 0;
+}
+.search-result-list > li {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: all ease .3s;
+}
+.search-result-list > li:hover {
+  border-bottom: 1px solid gray;
+}
+.search-result-title {
+  font-size: 16px;
+}
+.search-result {
+  line-height: 20px;
+}
+.search-keyword {
+  font-weight: normal;
+  color: #c00;
+}
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
+@media (min-width: 890px) {
+  .popup-btn-close {
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    border: 1px solid #151515;
+    padding: 0px 10px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+  }
+  .popup-btn-close:hover {
+    background: #151515;
+    opacity: .9;
+    color: #fff;
+  }
+}
+@media (max-width: 890px) {
+  .popup-btn-close {
+    font-size: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #888;
+    cursor: pointer;
+  }
+  .popup-btn-close::after {
+    content: '←';
+    color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="local-search-header clearfix">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+        </div>
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/undefined?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/undefined'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.xml'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
         }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
+      })
+    }
 
-                </main>
-            </div>
-        </body>
-    
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('-1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
+                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                  "...</p>" + "</a>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+      
+</body>
 </html>
