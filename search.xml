@@ -392,13 +392,6 @@
   
     
     <entry>
-      <title>おもしろい！</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>About</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -406,10 +399,10 @@
     </entry>
     
     <entry>
-      <title>Friends</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
-      <content type="html"><![CDATA[<ul><li>小伙伴们～<br><a href="http://blog.acalepher.cn/" target="_blank" rel="noopener">Acaleph</a><br><a href="http://aklis.info/" target="_blank" rel="noopener">Aklis</a><br><a href="https://lightless.me/" target="_blank" rel="noopener">Lightless</a><br><a href="http://lorexxar.cn/" target="_blank" rel="noopener">Lorexxar</a><br><a href="http://c014.cn/" target="_blank" rel="noopener">c014</a><br><a href="http://tan90.me/" target="_blank" rel="noopener">一叶知秋</a><br><a href="http://heartsky.info/#blog" target="_blank" rel="noopener">heartsky</a><br><a href="http://0x48.pw/" target="_blank" rel="noopener">Hcamael</a><br><a href="http://gqhappy.xyz/" target="_blank" rel="noopener">ngc7293</a><br><a href="http://webdog.top/" target="_blank" rel="noopener">hammer</a><br><a href="https://ash-zd.com/" target="_blank" rel="noopener">Ash</a><br><a href="http://www.sysorem.xyz/" target="_blank" rel="noopener">Sysorem</a><br><a href="http://veritas501.space/" target="_blank" rel="noopener">veritas501</a><br><a href="http://spineee.space/" target="_blank" rel="noopener">Spine</a><br><a href="http://vvv-347.space/" target="_blank" rel="noopener">vvv_347</a><br><a href="https://b0lv42.github.io/" target="_blank" rel="noopener">b0lv42</a><br><a href="http://libc.pw/" target="_blank" rel="noopener">zh-explorer</a></li></ul><p><br></p><blockquote><p>“The only true voyage of discovery, the only fountain of Eternal Youth, would be not to visit strange lands but to possess other eyes, to behold the universe through the eyes of another, of a hundred others, to behold the hundred universes that each of them beholds, that each of them is. “  – Marcel Proust</p></blockquote>]]></content>
+      <title>おもしろい！</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
@@ -417,6 +410,13 @@
       <link href="/project/index.html"/>
       <url>/project/index.html</url>
       <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>Friends</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
+      <content type="html"><![CDATA[<ul><li>小伙伴们～<br><a href="http://blog.acalepher.cn/" target="_blank" rel="noopener">Acaleph</a><br><a href="http://aklis.info/" target="_blank" rel="noopener">Aklis</a><br><a href="https://lightless.me/" target="_blank" rel="noopener">Lightless</a><br><a href="http://lorexxar.cn/" target="_blank" rel="noopener">Lorexxar</a><br><a href="http://c014.cn/" target="_blank" rel="noopener">c014</a><br><a href="http://tan90.me/" target="_blank" rel="noopener">一叶知秋</a><br><a href="http://heartsky.info/#blog" target="_blank" rel="noopener">heartsky</a><br><a href="http://0x48.pw/" target="_blank" rel="noopener">Hcamael</a><br><a href="http://gqhappy.xyz/" target="_blank" rel="noopener">ngc7293</a><br><a href="http://webdog.top/" target="_blank" rel="noopener">hammer</a><br><a href="https://ash-zd.com/" target="_blank" rel="noopener">Ash</a><br><a href="http://www.sysorem.xyz/" target="_blank" rel="noopener">Sysorem</a><br><a href="http://veritas501.space/" target="_blank" rel="noopener">veritas501</a><br><a href="http://spineee.space/" target="_blank" rel="noopener">Spine</a><br><a href="http://vvv-347.space/" target="_blank" rel="noopener">vvv_347</a><br><a href="https://b0lv42.github.io/" target="_blank" rel="noopener">b0lv42</a><br><a href="http://libc.pw/" target="_blank" rel="noopener">zh-explorer</a></li></ul><p><br></p><blockquote><p>“The only true voyage of discovery, the only fountain of Eternal Youth, would be not to visit strange lands but to possess other eyes, to behold the universe through the eyes of another, of a hundred others, to behold the hundred universes that each of them beholds, that each of them is. “  – Marcel Proust</p></blockquote>]]></content>
     </entry>
     
     <entry>
