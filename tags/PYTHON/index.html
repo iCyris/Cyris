@@ -31,8 +31,8 @@
     <![endif]-->
 
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
 
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -55,13 +55,17 @@
 -->
 <body id="index" class="lightnav animsition">
 
-          <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
         <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
             <img src="/img/close.png" alt="Close"/>
         </div>
+        <!-- Lists in Slidebars -->
         <ul class="sb-menu">
             <li><a href="/" class="animsition-link" title="Home">Home</a></li>
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
 			 
             
         	<li>
@@ -120,6 +124,7 @@
             </li>
             
         </ul>
+        <!-- Lists in Slidebars -->
         <ul class="sb-menu secondary">
             
             <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
@@ -129,9 +134,14 @@
         </ul>
     </div>
     
+    <!-- ============================ END Off-canvas navigation =========================== -->
 
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
 
     <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
 
         <div id="navigation" class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -143,7 +153,11 @@
                 <span class="icon-bar after"></span>
                 </button>
             </div>
+            <!-- // .navbar-inner -->
         </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
 
       <!-- ============================ Hero Image =========================== -->
 
