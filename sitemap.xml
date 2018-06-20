@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://cyris.pen.moe/posts/%E5%A4%A7%E5%8D%83%E4%B8%96%E7%95%8C/</loc>
-    
-    <lastmod>2018-06-19T16:26:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://cyris.pen.moe/posts/2018-6-16/</loc>
     
-    <lastmod>2018-06-18T17:00:18.000Z</lastmod>
+    <lastmod>2018-06-20T17:49:24.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://cyris.pen.moe/about.html</loc>
     
-    <lastmod>2018-06-17T18:36:47.000Z</lastmod>
+    <lastmod>2018-06-20T17:32:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://cyris.pen.moe/posts/%E5%A4%A7%E5%8D%83%E4%B8%96%E7%95%8C/</loc>
+    
+    <lastmod>2018-06-19T16:26:53.000Z</lastmod>
     
   </url>
   
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://cyris.pen.moe/project/index.html</loc>
+    <loc>https://cyris.pen.moe/tags/index.html</loc>
     
     <lastmod>2018-06-11T14:44:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://cyris.pen.moe/tags/index.html</loc>
+    <loc>https://cyris.pen.moe/project/index.html</loc>
     
     <lastmod>2018-06-11T14:44:34.000Z</lastmod>
     
