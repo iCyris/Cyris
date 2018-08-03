@@ -1,1066 +1,723 @@
 <!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
-<!--<![endif]-->
-
+<html>
 <head>
+  <meta charset="utf-8">
+  
   <title>Cyris&#39;s pen</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Cyris's pen">
-    <meta name="author" content="Cyris">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
-
-    <link rel="alternate" href="/atom.xml" title="Cyris&#39;s pen" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/tomorrow.css" type="text/css">
-    
-
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Share the world with you.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cyris&#39;s pen">
+<meta property="og:url" content="https://cyris.pen.moe/index.html">
+<meta property="og:site_name" content="Cyris&#39;s pen">
+<meta property="og:description" content="Share the world with you.">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cyris&#39;s pen">
+<meta name="twitter:description" content="Share the world with you.">
   
   
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
+    <link rel="icon" href="/favicon.png">
   
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <link rel="stylesheet" href="/css/icomoon/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://use.typekit.net/eyf3hir.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
 </head>
 
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
+<body>
+  <div class="site-wrapper">
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<script>document.getElementById("loading-bar").style.width="20%";</script>
 
-      <!-- ============================ Off-canvas navigation =========================== -->
 
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            
-        	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
-            	<ul class="sb-submenu">
-				  	
-				    <li><a href="/categories/CTF/" class="animsition-link">CTF<small>(2)</small></a></li>
-				    
-				    <li><a href="/categories/Crypto/" class="animsition-link">Crypto<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Git/" class="animsition-link">Git<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Hexo/" class="animsition-link">Hexo<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Pwn/" class="animsition-link">Pwn<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Python/" class="animsition-link">Python<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/学习资料/" class="animsition-link">学习资料<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/小笔记/" class="animsition-link">小笔记<small>(3)</small></a></li>
-				    
-				    <li><a href="/categories/煮字/" class="animsition-link">煮字<small>(6)</small></a></li>
-				    
-				</ul>
-        	</li>
-			
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="https://blog.acalepher.cn/" class="animsition-link">水母酱</a></li>
-                    
-                    <li><a href="https://ash-zd.com/" class="animsition-link">Ash 是只萌兔</a></li>
-                    
-                    <li><a href="http://webdog.top/" class="animsition-link">hammer 小可爱</a></li>
-                    
-                    <li><a href="http://tan90.me/" class="animsition-link">Alias</a></li>
-                    
-                    <li><a href="http://veritas501.space/" class="animsition-link">veritas501</a></li>
-                    
-                    <li><a href="http://vvv-347.space/" class="animsition-link">vvv</a></li>
-                    
-                    <li><a href="https://b0lv42.github.io/" class="animsition-link">大果子</a></li>
-                    
-                    <li><a href="http://aklis.info/" class="animsition-link">Aklis</a></li>
-                    
-                    <li><a href="https://lightless.me/" class="animsition-link">Lightless</a></li>
-                    
-                    <li><a href="http://lorexxar.cn/" class="animsition-link">土土</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            
-            <li><a href="javascript:;" class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
-            
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
+<header id="header" class="site-header clearfix">
+
+  <div class="header-bar">
+    <button class="site-nav-switch svg-anime-icon icon-menu-cross">
+      <span>toggle menu</span>
+    </button>
+    <a class="site-title" href="/">
+      <span class="site-brand light">Arti</span>
+      <span class="site-brand dark">fact.</span>
+    </a>
+    <button type="button" class="site-bio-switch">
+      <span class="icon icon-v-card"></span>
+    </button>
+  </div>
+
+  <nav class="site-menu">
+  <ul>
     
-    <!-- ============================ END Off-canvas navigation =========================== -->
+    <li>
+      <a href="/" class="artifact_btn sm teal">
+        <span class="icon icon-line-home"></span>
+        <span class="name">Home</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/atom.xml" class="artifact_btn sm orange">
+        <span class="icon icon-feed"></span>
+        <span class="name">Subscribe</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/tags" class="artifact_btn sm red">
+        <span class="icon icon-tag"></span>
+        <span class="name">All Tags</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/archives" class="artifact_btn sm blue">
+        <span class="icon icon-box"></span>
+        <span class="name">Archives</span>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
 
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
 
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+</header>
 
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>Cyris's pen</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>Share the words with you.</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
+    <script>document.getElementById("loading-bar").style.width="40%";</script>
+    <main id="main">
+      <div class="main-wrapper clearfix">
+        <div class="main-column clearfix">
+  <div class="post-list white-box">
+    <div class="post-list-header">
+      <div class="popular-tags">
         
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/大千世界/">大千世界</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-06-19T01:26:31.000Z" itemprop="datePublished">
-          2018-06-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/煮字/'>煮字</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>追的是幻想还是真理，大千世界，体悟万千；<br>而自己正在不同描述，关于，学习一个现实。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/大千世界/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
+        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRYPTO/">CRYPTO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FPM/">FPM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Notebook/">Notebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PWN/">PWN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wiki/">Wiki</a></li></ul>
         
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/2018-6-16/">域名更换</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-06-16T03:12:15.000Z" itemprop="datePublished">
-          2018-06-16
-      </time>
-    
-    
-    | 
-    <a href='/tags/煮字/'>煮字</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>换域名啦！blog.cyris.cn -&gt; cyris.pen.moe</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/2018-6-16/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/php-fpm/">浅谈 PHP-FPM</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-06T11:20:00.000Z" itemprop="datePublished">
-          2018-05-06
-      </time>
-    
-    
-    | 
-    <a href='/tags/PHP/'>PHP</a>,
-    
-    <a href='/tags/FPM/'>FPM</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>关于 FPM ，FastCGI ，CGI 之间的关系与区别。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/php-fpm/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/python-with-anaconda/">Anaconda 初体验</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-04-29T05:47:25.000Z" itemprop="datePublished">
-          2018-04-29
-      </time>
-    
-    
-    | 
-    <a href='/tags/Python/'>Python</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/python-with-anaconda/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/vidar-logo/">Vidar-Team 夏季会服设计</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-04-23T14:25:59.000Z" itemprop="datePublished">
-          2018-04-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/煮字/'>煮字</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>咕了很久的会服上线啦，加入了点十周年纪念的元素 XD。</p>
-<p>顺便整理了下美工材料：<a href="https://github.com/iCyris/Vidar-Logo" target="_blank" rel="noopener">Vidar-Logo</a><br></p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/vidar-logo/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/markdown-tip/">利用 HTML 在 Markdown 中打出数学符号</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-03-28T04:03:56.000Z" itemprop="datePublished">
-          2018-03-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/Notebook/'>Notebook</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>想要打出奇奇怪怪的符号 :D</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/markdown-tip/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/docker-php/">利用 Dokcer 部署 PHP 开发环境</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-03-19T06:28:15.000Z" itemprop="datePublished">
-          2018-03-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/Notebook/'>Notebook</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>利用 Docker 手动配置 PHP + Njinx + MySQL 开发环境。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/docker-php/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/url-talk/">小谈 URI、URL 与 URN</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-03-18T08:37:08.000Z" itemprop="datePublished">
-          2018-03-18
-      </time>
-    
-    
-    | 
-    <a href='/tags/Notebook/'>Notebook</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>Talk about URL. 🐥</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/url-talk/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/pwnable-kr/">pwnable.kr writeup</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-03-12T06:25:28.000Z" itemprop="datePublished">
-          2018-03-12
-      </time>
-    
-    
-    | 
-    <a href='/tags/CTF/'>CTF</a>,
-    
-    <a href='/tags/PWN/'>PWN</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>学习一下 Pwn 。</p>
-<p>网址：<a href="http://pwnable.kr" target="_blank" rel="noopener">http://pwnable.kr</a></p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/pwnable-kr/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/posts/hash-extender-attack/">哈希长度扩展攻击</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-02-02T09:00:58.000Z" itemprop="datePublished">
-          2018-02-02
-      </time>
-    
-    
-    | 
-    <a href='/tags/CRYPTO/'>CRYPTO</a>,
-    
-    <a href='/tags/CTF/'>CTF</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        <p>哈希长度扩展攻击利用了 MD5 ，SHA1 等加密算法的缺陷，可以在不知道原始密钥的情况下计算出一个对应的 hash 值。</p>
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/posts/hash-extender-attack/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
-
-      
-<!-- ============================ Footer =========================== -->
-
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>Contact me:  i@cyris.moe</p>
-                <p>
-                    &copy; 2016<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Cyris. All Rights Reserved.
-                </p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/iCyris" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    
-                    
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-</footer>
-
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-
-    resizeHero();
-
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-
-      
-            <style>
-.local-search-popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  background: rgba(255, 255, 255, .9);
-  color: #333;
-  z-index: 9999;
-  border-radius: 5px;
-  overflow: scroll;
-}
-#local-search-input {
-  width: 100%;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #151515;
-  background-color: initial;
-}
-.search-result-list {
-  list-style: none;
-  padding-left: 0;
-}
-.search-result-list > li {
-  margin-top: 15px;
-  border-bottom: 1px solid #ddd;
-  transition: all ease .3s;
-}
-.search-result-list > li:hover {
-  border-bottom: 1px solid gray;
-}
-.search-result-title {
-  font-size: 16px;
-}
-.search-result {
-  line-height: 20px;
-}
-.search-keyword {
-  font-weight: normal;
-  color: #c00;
-}
-
-@media (min-width: 890px) {
-  .popup-btn-close {
-    position: absolute;
-    top: 15px;
-    left: 35px;
-    border: 1px solid #151515;
-    padding: 0px 10px;
-    border-top-left-radius: 8px;
-    cursor: pointer;
-    transition: all ease .3s;
-  }
-  .popup-btn-close:hover {
-    background: #151515;
-    opacity: .9;
-    color: #fff;
-  }
-}
-@media (max-width: 890px) {
-  .popup-btn-close {
-    font-size: 0;
-    position: fixed;
-    right: 20px;
-    bottom: 50px;
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 1px 1px 5px #888;
-    cursor: pointer;
-  }
-  .popup-btn-close::after {
-    content: '←';
-    color: #151515;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-    line-height: 50px;
-    text-align: center;
-  }
-}
-</style>
-
-<div class="popup search-popup local-search-popup">
-  <span class="popup-btn-close">
-    ESC
-  </span>
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="local-search-header clearfix">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="local-search-input-wrapper">
-          <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
-        </div>
       </div>
-      <div id="local-search-result"></div>
+      <div class="navigation">
+        <a href="/">Home</a>
+
+        
+          <span class="divider">/</span>
+          <span class="text">Post List</span>
+
+        
+      </div>
+    </div>
+    <ul>
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/大千世界/">大千世界</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-06-19T01:26:31.000Z" itemprop="datePublished">
+        2018-06-19
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/煮字/">煮字</a>
+      
     </div>
   </div>
+
+  <div class="post-excerpt">
+    
+      <p>追的是幻想还是真理，大千世界，体悟万千；<br>而自己正在不同描述，关于，学习一个现实。</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/大千世界/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/煮字/">煮字</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/2018-6-16/">域名更换</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-06-16T03:12:15.000Z" itemprop="datePublished">
+        2018-06-16
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/煮字/">煮字</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>换域名啦！blog.cyris.cn -&gt; cyris.pen.moe</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/2018-6-16/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/煮字/">煮字</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/php-fpm/">浅谈 PHP-FPM</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-05-06T11:20:00.000Z" itemprop="datePublished">
+        2018-05-06
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/PHP/">PHP</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>关于 FPM ，FastCGI ，CGI 之间的关系与区别。</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/php-fpm/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/FPM/">FPM</a>, <a class="post-tag-link" href="/tags/PHP/">PHP</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/python-with-anaconda/">Anaconda 初体验</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-04-29T05:47:25.000Z" itemprop="datePublished">
+        2018-04-29
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/Python/">Python</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>Anaconda 是一个 Python 的发行版，包含了丰富的科学计算包，并有 Conda 这一工具进行包与环境的管理。</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/python-with-anaconda/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/Python/">Python</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/vidar-logo/">Vidar-Team 夏季会服设计</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-04-23T14:25:59.000Z" itemprop="datePublished">
+        2018-04-23
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/煮字/">煮字</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>咕了很久的会服上线啦，加入了点十周年纪念的元素 XD。</p>
+<p>顺便整理了下美工材料：<a href="https://github.com/iCyris/Vidar-Logo" target="_blank" rel="noopener">Vidar-Logo</a><br></p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/vidar-logo/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/煮字/">煮字</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/markdown-tip/">利用 HTML 在 Markdown 中打出数学符号</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-03-28T04:03:56.000Z" itemprop="datePublished">
+        2018-03-28
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/小笔记/">小笔记</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>想要打出奇奇怪怪的符号 :D</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/markdown-tip/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/Notebook/">Notebook</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/docker-php/">利用 Dokcer 部署 PHP 开发环境</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-03-19T06:28:15.000Z" itemprop="datePublished">
+        2018-03-19
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/小笔记/">小笔记</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>利用 Docker 手动配置 PHP + Njinx + MySQL 开发环境。</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/docker-php/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/Notebook/">Notebook</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/url-talk/">小谈 URI、URL 与 URN</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-03-18T08:37:08.000Z" itemprop="datePublished">
+        2018-03-18
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/小笔记/">小笔记</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>Talk about URL. 🐥</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/url-talk/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/Notebook/">Notebook</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/pwnable-kr/">pwnable.kr writeup</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-03-12T06:25:28.000Z" itemprop="datePublished">
+        2018-03-12
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/Pwn/">Pwn</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>学习一下 Pwn 。</p>
+<p>网址：<a href="http://pwnable.kr" target="_blank" rel="noopener">http://pwnable.kr</a></p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/pwnable-kr/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/CTF/">CTF</a>, <a class="post-tag-link" href="/tags/PWN/">PWN</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+      <li class="post-item">
+  <div class="post-title">
+    <h3>
+      
+      <a href="/posts/hash-extender-attack/">哈希长度扩展攻击</a>
+      
+    </h3>
+  </div>
+  <div class="post-meta">
+    <div class="post-time">
+      <time datetime="2018-02-02T09:00:58.000Z" itemprop="datePublished">
+        2018-02-02
+      </time>
+      <span class="divider">/</span>
+      
+      Posted in
+      <a class="post-cat-link" href="/categories/Crypto/">Crypto</a>
+      
+    </div>
+  </div>
+
+  <div class="post-excerpt">
+    
+      <p>哈希长度扩展攻击利用了 MD5 ，SHA1 等加密算法的缺陷，可以在不知道原始密钥的情况下计算出一个对应的 hash 值。</p>
+    
+
+    <div class="post-tools clearfix">
+      <a href="/posts/hash-extender-attack/" class="right artifact_btn sm read-more">
+        <span class="icon icon-eye"></span>
+        <span class="text">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="post-tags">
+    <span class="icon-tag icon"></span>
+    
+    <a class="post-tag-link" href="/tags/CRYPTO/">CRYPTO</a>, <a class="post-tag-link" href="/tags/CTF/">CTF</a>
+    
+  </div>
+  <div class="post-image">
+    
+  </div>
+</li>
+
+    
+    </ul>
+    <footer class="post-list-footer">
+    
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+      </nav>
+    
+    <a class="rss" href="/atom.xml">
+      <span class="icon icon-feed-sqround"></span>
+    </a>
+    </footer>
+  </div>
+</div>
+<aside class="site-sidebar">
+  <div class="row">
+  
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    
+  <div class="widget-wrap white-box category">
+    <h3 class="widget-title clearfix">
+      <span>Categories<span>
+      <a href="/categories" class="more right">
+        <span class="icon icon-more2"></span>
+      </a>
+    </h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CTF/">CTF</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Crypto/">Crypto</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pwn/">Pwn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习资料/">学习资料</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/小笔记/">小笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/煮字/">煮字</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    </div>
+  
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    
+  <div class="widget-wrap white-box archive">
+    <h3 class="widget-title">
+      <span>Archives</span>
+      <a href="/archives" class="more right">
+        <span class="icon icon-more2"></span>
+      </a>
+    </h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    </div>
+  
+  </div>
+</aside>
+
+
+
+        <script>document.getElementById("loading-bar").style.width="60%";</script>
+      </div>
+    </main>
+    
+
+
+<footer id="footer" class="clearfix">
+  <div class="right">&copy; <a href="http://cyris.pen.moe">Cyris&#39;s pen</a> Theme by <a href="http://artifact.me/" target="_blank">Art Chen</a>.</div>
+  <div class="left">Powered by <a href="https://hexo.io/" rel="external" target="_blank">Hexo</a>.</div>
+</footer>
+
+    <script>document.getElementById("loading-bar").style.width="80%";</script>
+    <div class="overlay"></div>
+  </div>
+  <div class="site-bio">
+
+  <!-- About Me -->
+  <div class="about-me clearfix">
+    <div class="avatar">
+      <img src="/css/images/avatar.png" />
+    </div>
+    <div class="info">
+      <a class="name dark-btn" href="/about">
+        Cyris
+      </a>
+    </div>
+    <div class="info">
+      <span class="item desc">
+        Share the world with you.
+      </span>
+    </div>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social clearfix">
+    
+      
+        <a href="mailto:i@cyris.moe" class="email"
+          target="_blank" rel="external">
+          <span class="icon icon-email"></span>
+        </a>
+      
+        <a href="https://github.com/iCyris" class="github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://weibo.com/iCyr1s" class="weibo"
+          target="_blank" rel="external">
+          <span class="icon icon-weibo"></span>
+        </a>
+      
+    
+  </div>
+
+  <!-- Home & Bottom -->
+  <div class="shortcuts clearfix">
+    <div class="bk">
+      <a href="#header" class="dark-btn window-nav">
+        <span class="icon icon-chevron-up"></span>
+        <span class="text">Back to Top</span>
+      </a>
+    </div>
+    <div class="bk">
+      <a href="#footer" class="dark-btn window-nav">
+        <span class="icon icon-chevron-down"></span>
+        <span class="text">Go to Bottom</span>
+      </a>
+    </div>
+  </div>
+
 </div>
 
-<script src="/js/ziploader.js"></script>
+</div>
 
+  
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    // monitor main search box;
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-    var onPopupClose = function (e) {
-      $('.popup').fadeOut(300);
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $('body').css('overflow', '');
-    }
+  _st('install','FHMeAyBdVccJECstf-XJ','2.0.0');
+</script>
 
-    function proceedsearch() {
-      $('.popup').fadeIn(300);
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- use local jQuery if CDN is down -->
+<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+<script src="/js/artifact.js"></script>
 
-    // get search zip version
-    $.get('/undefined?t=' + (+new Date()), function(res) {
-      if (localStorage.getItem('searchVersion') !== res) {
-        localStorage.setItem('searchVersion', res);
-        initSearchJson();
-      }
-    });
-
-    function initSearchJson () {
-      initLoad(['/undefined'], {
-        loadOptions: {
-          success: function(obj) {
-            localStorage.setItem('searchJson', obj['search.xml'])
-          },
-          error: function(e) {
-            return console.log(e)
-          }
-        },
-        returnOptions: {
-          'json': TYPE_TEXT
-        },
-        mimeOptions:{
-          'json':'application/json'
-        }
-      })
-    }
-
-
-    // search function;
-    var searchFunc = function(search_id, content_id) {
-      'use strict';
-
-      isfetched = true;
-      var datas = JSON.parse(localStorage.getItem('searchJson'));
-      console.log(search_id)
-      var input = document.getElementById(search_id);
-      var resultContent = document.getElementById(content_id);
-      var inputEventFunction = function() {
-        var searchText = input.value.trim().toLowerCase();
-        var keywords = searchText.split(/[\s\-]+/);
-        if (keywords.length > 1) {
-          keywords.push(searchText);
-        }
-        var resultItems = [];
-        if (searchText.length > 0) {
-          // perform local searching
-          datas.forEach(function(data) {
-            var isMatch = false;
-            var hitCount = 0;
-            var searchTextCount = 0;
-            var title = data.title ? data.title.trim() : '';
-            var titleInLowerCase = title.toLowerCase();
-            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
-            var contentInLowerCase = content.toLowerCase();
-            var articleUrl = decodeURIComponent(data.url);
-            var indexOfTitle = [];
-            var indexOfContent = [];
-            // only match articles with not empty titles
-            keywords.forEach(function(keyword) {
-              function getIndexByWord(word, text, caseSensitive) {
-                var wordLen = word.length;
-                if (wordLen === 0) {
-                  return [];
-                }
-                var startPosition = 0, position = [], index = [];
-                if (!caseSensitive) {
-                  text = text.toLowerCase();
-                  word = word.toLowerCase();
-                }
-                while ((position = text.indexOf(word, startPosition)) > -1) {
-                  index.push({position: position, word: word});
-                  startPosition = position + wordLen;
-                }
-                return index;
-              }
-
-              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-            });
-            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-              isMatch = true;
-              hitCount = indexOfTitle.length + indexOfContent.length;
-            }
-
-            // show search results
-
-            if (isMatch) {
-              // sort index by position of keyword
-
-              [indexOfTitle, indexOfContent].forEach(function (index) {
-                index.sort(function (itemLeft, itemRight) {
-                  if (itemRight.position !== itemLeft.position) {
-                    return itemRight.position - itemLeft.position;
-                  } else {
-                    return itemLeft.word.length - itemRight.word.length;
-                  }
-                });
-              });
-
-              // merge hits into slices
-
-              function mergeIntoSlice(text, start, end, index) {
-                var item = index[index.length - 1];
-                var position = item.position;
-                var word = item.word;
-                var hits = [];
-                var searchTextCountInSlice = 0;
-                while (position + word.length <= end && index.length != 0) {
-                  if (word === searchText) {
-                    searchTextCountInSlice++;
-                  }
-                  hits.push({position: position, length: word.length});
-                  var wordEnd = position + word.length;
-
-                  // move to next position of hit
-
-                  index.pop();
-                  while (index.length != 0) {
-                    item = index[index.length - 1];
-                    position = item.position;
-                    word = item.word;
-                    if (wordEnd > position) {
-                      index.pop();
-                    } else {
-                      break;
-                    }
-                  }
-                }
-                searchTextCount += searchTextCountInSlice;
-                return {
-                  hits: hits,
-                  start: start,
-                  end: end,
-                  searchTextCount: searchTextCountInSlice
-                };
-              }
-
-              var slicesOfTitle = [];
-              if (indexOfTitle.length != 0) {
-                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-              }
-
-              var slicesOfContent = [];
-              while (indexOfContent.length != 0) {
-                var item = indexOfContent[indexOfContent.length - 1];
-                var position = item.position;
-                var word = item.word;
-                // cut out 100 characters
-                var start = position - 20;
-                var end = position + 80;
-                if(start < 0){
-                  start = 0;
-                }
-                if (end < position + word.length) {
-                  end = position + word.length;
-                }
-                if(end > content.length){
-                  end = content.length;
-                }
-                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-              }
-
-              // sort slices in content by search text's count and hits' count
-
-              slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                  return sliceRight.hits.length - sliceLeft.hits.length;
-                } else {
-                  return sliceLeft.start - sliceRight.start;
-                }
-              });
-
-              // select top N slices in content
-
-              var upperBound = parseInt('-1');
-              if (upperBound >= 0) {
-                slicesOfContent = slicesOfContent.slice(0, upperBound);
-              }
-
-              // highlight title and content
-
-              function highlightKeyword(text, slice) {
-                var result = '';
-                var prevEnd = slice.start;
-                slice.hits.forEach(function (hit) {
-                  result += text.substring(prevEnd, hit.position);
-                  var end = hit.position + hit.length;
-                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                  prevEnd = end;
-                });
-                result += text.substring(prevEnd, slice.end);
-                return result;
-              }
-
-              var resultItem = '';
-
-              if (slicesOfTitle.length != 0) {
-                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-              } else {
-                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-              }
-
-              slicesOfContent.forEach(function (slice) {
-                resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
-                  "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                  "...</p>" + "</a>";
-              });
-
-              resultItem += "</li>";
-              resultItems.push({
-                item: resultItem,
-                searchTextCount: searchTextCount,
-                hitCount: hitCount,
-                id: resultItems.length
-              });
-            }
-          })
-        };
-        if (keywords.length === 1 && keywords[0] === "") {
-          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-        } else if (resultItems.length === 0) {
-          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-        } else {
-          resultItems.sort(function (resultLeft, resultRight) {
-            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-              return resultRight.searchTextCount - resultLeft.searchTextCount;
-            } else if (resultLeft.hitCount !== resultRight.hitCount) {
-              return resultRight.hitCount - resultLeft.hitCount;
-            } else {
-              return resultRight.id - resultLeft.id;
-            }
-          });
-          var searchResultList = '<ul class=\"search-result-list\">';
-          resultItems.forEach(function (result) {
-            searchResultList += result.item;
-          })
-          searchResultList += "</ul>";
-          resultContent.innerHTML = searchResultList;
-        }
-      }
-
-      if ('auto' === 'auto') {
-        input.addEventListener('input', inputEventFunction);
-      } else {
-        $('.search-icon').click(inputEventFunction);
-        input.addEventListener('keypress', function (event) {
-          if (event.keyCode === 13) {
-            inputEventFunction();
-          }
-        });
-      }
-
-      // remove loading animation
-      $('body').css('overflow', '');
-
-      proceedsearch();
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        $('.sb-close').click();
-        searchFunc('local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-      
+  <script>document.getElementById("loading-bar").style.width="100%";</script>
 </body>
 </html>

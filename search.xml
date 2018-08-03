@@ -392,30 +392,16 @@
   
     
     <entry>
-      <title></title>
-      <link href="/about.html"/>
-      <url>/about.html</url>
-      <content type="html"><![CDATA[<p>> 喜欢技术／设计<br>> 爱自由<br>> 享受深度阅读</p><p>Web 方向，<br>有许多平凡的爱好。</p><p>探寻真理者不可心存傲慢。<br><br><br>CONTACT ME:</p><blockquote><p>Github : <a href="https://github.com/iCyris" target="_blank" rel="noopener">iCyris</a><br>Email : i@cyris.moe</p></blockquote>]]></content>
-    </entry>
-    
-    <entry>
       <title>About</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      <content type="html"><![CDATA[<p>> 喜欢技术／设计<br>> 爱自由<br>> 享受深度阅读</p><p>Web 方向，<br>有许多平凡的爱好。</p><p>探寻真理者不可心存傲慢。<br><br><br>CONTACT ME:</p><blockquote><p>Github : <a href="https://github.com/iCyris" target="_blank" rel="noopener">iCyris</a><br>Email : i@cyris.cn</p></blockquote>]]></content>
+      <content type="html"><![CDATA[<p>> 喜欢技术／设计<br>> 爱自由<br>> 享受深度阅读</p><p>Web 方向，<br>有许多平凡的爱好。</p><p>探求真理者不可心存傲慢。<br><br></p><h3 id="CONTACT-ME"><a href="#CONTACT-ME" class="headerlink" title="CONTACT ME:"></a>CONTACT ME:</h3><p>Github : <a href="https://github.com/iCyris" target="_blank" rel="noopener">iCyris</a><br>Email : i@cyris.moe</p><h3 id="LINKS"><a href="#LINKS" class="headerlink" title="LINKS:"></a>LINKS:</h3><p><a href="https://blog.acalepher.cn/" target="_blank" rel="noopener">水母酱</a><br><a href="https://ash-zd.com/" target="_blank" rel="noopener">萌兔 Ash</a><br><a href="http://webdog.top/" target="_blank" rel="noopener">LuckyCat</a><br><a href="http://tan90.me/" target="_blank" rel="noopener">Alias</a><br><a href="http://veritas501.space/" target="_blank" rel="noopener">veritas501</a><br><a href="http://vvv-347.space/" target="_blank" rel="noopener">vvv</a><br><a href="https://b0lv42.github.io/" target="_blank" rel="noopener">大果子</a><br><a href="http://aklis.info/" target="_blank" rel="noopener">Aklis</a><br><a href="https://lightless.me/" target="_blank" rel="noopener">Lightless</a><br><a href="http://lorexxar.cn/" target="_blank" rel="noopener">Lorexxar</a></p>]]></content>
     </entry>
     
     <entry>
       <title>おもしろい！</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
@@ -427,16 +413,9 @@
     </entry>
     
     <entry>
-      <title>Project</title>
-      <link href="/project/index.html"/>
-      <url>/project/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>timeline</title>
-      <link href="/timeline/index.html"/>
-      <url>/timeline/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
