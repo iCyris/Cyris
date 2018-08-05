@@ -168,7 +168,7 @@
 <p>复制一个环境（已有一个名为 venv 的环境）：</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ conda create -n venv-<span class="number">2</span> --<span class="keyword">clone</span> <span class="title">venv</span></span><br></pre></td></tr></table></figure>
 <p>查看所有环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> conda info <span class="_">-e</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ conda <span class="builtin-name">info</span> -e</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>可以简化一下命令，在 <code>.zshrc</code> 中添加一个别名：<code>alias workon=&#39;source activate&#39;</code>，就可以用 <code>$ workon env-name</code> 的方式激活环境了。</p>
 <p>所有环境都会被安装在 <code>/anaconda3/envs/</code> 目录下。</p>
