@@ -1,8 +1,139 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Cyris"><title>给你压缩包却不给你密码的人到底在想什么 · Cyris's pen</title><meta name="description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>给你压缩包却不给你密码的人到底在想什么 | Cyris&#39;s pen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给你压缩包却不给你密码的人到底在想什么">
+<meta property="og:url" content="https://cyris.pen.moe/posts/rar-attack/index.html">
+<meta property="og:site_name" content="Cyris&#39;s pen">
+<meta property="og:description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/1.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/2.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/3.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/4.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/5.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/6.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/7.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/8.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/9.png">
+<meta property="og:image" content="https://cyris.pen.moe/posts/rar-attack/10.png">
+<meta property="og:updated_time" content="2018-04-01T06:35:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给你压缩包却不给你密码的人到底在想什么">
+<meta name="twitter:description" content="纯转载。原帖戳这里：veritas501 - 给你压缩包却不给你密码的人到底在想什么">
+<meta name="twitter:image" content="https://cyris.pen.moe/posts/rar-attack/1.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+	<!-- If needed, replace your own web font service -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
 
-0x00 开始在这里，我建议大家装两个解压软件，一个随意（我用的7z），一个是winrar。   
-嫌右键菜单挤你就装虚拟机里呗。  
-因为这两个压缩软件压缩出来的zip总是有点不同，最明显的一点，就是在已知明文"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Cyris's pen</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">绿生</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/about/index.html">About</a></li><li class="soc"><a href="https://github.com/iCyris" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://cyris.pen.moe/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2018&nbsp;<a target="_blank" href="https://cyris.pen.moe" rel="noopener noreferrer">Cyris</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Powered by&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>给你压缩包却不给你密码的人到底在想什么</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2017-10-19</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/CTF/" title="CTF" class="a-tag">CTF</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>纯转载。原帖戳这里：<a href="http://veritas501.space/2017/06/23/%E7%BB%99%E4%BD%A0%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%8D%B4%E4%B8%8D%E7%BB%99%E4%BD%A0%E5%AF%86%E7%A0%81%E7%9A%84%E4%BA%BA%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/" target="_blank" rel="noopener">veritas501 - 给你压缩包却不给你密码的人到底在想什么</a></p>
+  
+   
+  <link rel="stylesheet" href="/icomoon/style.css">
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<script>document.getElementById("loading-bar").style.width="20%";</script>
+
+
+<header id="header" class="site-header clearfix">
+
+  <a class="logo square clearfix" href="/">
+    <!-- 
+      Replace with your own size name, for example:
+      <span class="b">A</span>
+      <span class="w">B</span>
+      <span class="b">C</span>
+     -->
+    
+      <span class="b">
+        C
+      </span>
+    
+      <span class="w">
+        y
+      </span>
+    
+      <span class="b">
+        r
+      </span>
+    
+      <span class="b">
+        i
+      </span>
+    
+      <span class="b">
+        s
+      </span>
+    
+      <span class="b">
+        '
+      </span>
+    
+      <span class="b">
+        s
+      </span>
+    
+      <span class="w">
+         
+      </span>
+    
+      <span class="b">
+        p
+      </span>
+    
+      <span class="b">
+        e
+      </span>
+    
+      <span class="b">
+        n
+      </span>
+    
+  </a>
+  <a class="me square site-nav-switch clearfix">
+    <span class="b">
+    	<span class="icon icon-menu"></span>
+    </span>
+  </a>
+
+</header>
+
+    <script>document.getElementById("loading-bar").style.width="40%";</script>
+    <main id="main" class="clearfix">
+      <article id="post-rar-attack"
+  class="article white-box article-type-post"
+  itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="article-title" itemprop="name">
+      给你压缩包却不给你密码的人到底在想什么
+    </h1>
+    <div class="article-meta">
+      Posted on 
+      <time class="article-time" datetime="2017-10-19T06:58:50.000Z" itemprop="datePublished">
+        Oct 19, 2017
+      </time>
+    </div>
+  </header>
+
+  <div class="article-entry" itemprop="articleBody">
+    <p>纯转载。原帖戳这里：<a href="http://veritas501.space/2017/06/23/%E7%BB%99%E4%BD%A0%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%8D%B4%E4%B8%8D%E7%BB%99%E4%BD%A0%E5%AF%86%E7%A0%81%E7%9A%84%E4%BA%BA%E5%88%B0%E5%BA%95%E5%9C%A8%E6%83%B3%E4%BB%80%E4%B9%88/" target="_blank" rel="noopener">veritas501 - 给你压缩包却不给你密码的人到底在想什么</a></p>
 <a id="more"></a>
 <h2 id="0x00-开始"><a href="#0x00-开始" class="headerlink" title="0x00 开始"></a>0x00 开始</h2><p>在这里，我建议大家装两个解压软件，一个随意（我用的7z），一个是winrar。   </p>
 <p>嫌右键菜单挤你就装虚拟机里呗。  </p>
@@ -50,4 +181,151 @@
 <p>示例：</p>
 <p><img src="/posts/rar-attack/10.png" alt=""></p>
 <h2 id="0x06-MORE"><a href="#0x06-MORE" class="headerlink" title="0x06 MORE"></a>0x06 MORE</h2><p>还有很多压缩包的密码需要联系题中的其他文件来解，这个就不在本篇的讨论范围内了，故不再讨论。</p>
-</p></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/posts/jarvisoj-wp/" title="Jarvis OJ Writeup"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Jarvis OJ Writeup</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/posts/the-seed/" title="觉得理性的人快乐吗">Next post: 觉得理性的人快乐吗&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2018&nbsp;<a target="_blank" href="https://cyris.pen.moe" rel="noopener noreferrer">Cyris</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Powered by&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+
+  </div>
+  
+  <div class="article-tags">
+    
+      <a class="tag-link" href="/tags/CTF/">CTF</a>
+    
+  </div>
+    
+  
+
+</article>
+
+      <script>document.getElementById("loading-bar").style.width="60%";</script>
+    </main>
+    
+<footer id="footer" class="clearfix">
+	
+  <div>&copy; <a href="https://cyris.pen.moe">Cyris&#39;s pen</a> Theme by <a href="http://artifact.me/" target="_blank">Art Chen</a>.</div>
+  <div>Powered by <a href="https://hexo.io/" rel="external">Hexo</a>.</div>
+</footer>
+
+
+    <script>document.getElementById("loading-bar").style.width="80%";</script>
+    <div class="overlay"></div>
+  </div>
+  <div class="site-sidebar">
+
+	
+	
+	<div class="sidebar-switch clearfix show"
+		style="display: block">
+		<a class="dark-btn active" data-toggle="toc">
+	    <span class="icon icon-list"></span>
+	    <span class="text">Index</span>
+	  </a>
+	  <a class="dark-btn" data-toggle="bio">
+	    <span class="icon icon-person"></span>
+	    <span class="text">Bio</span>
+	  </a>
+	</div>
+
+	<div class="site-toc show"
+		style="display: block">
+		
+	  	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-开始"><span class="toc-number">1.</span> <span class="toc-text">0x00 开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-注释"><span class="toc-number">2.</span> <span class="toc-text">0x01 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-弱密码"><span class="toc-number">3.</span> <span class="toc-text">0x02 弱密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-压缩包伪加密"><span class="toc-number">4.</span> <span class="toc-text">0x03 压缩包伪加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-已知明文攻击"><span class="toc-number">5.</span> <span class="toc-text">0x04 已知明文攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-CRC碰撞"><span class="toc-number">6.</span> <span class="toc-text">0x05 CRC碰撞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-MORE"><span class="toc-number">7.</span> <span class="toc-text">0x06 MORE</span></a></li></ol>
+	  
+  </div>
+  
+	<div class="site-bio "
+		style="display: none">
+		
+	  <!-- About Me -->
+	  <div class="about-me clearfix">
+	    <div class="avatar">
+	      <img src="/img/avatar.png" />
+	    </div>
+	    <div class="info">
+	      <a class="name dark-btn" href="/about">
+	        Cyris
+	      </a>
+	    </div>
+	    <div class="info">
+	      <span class="item desc">
+	        Share the world with you.
+	      </span>
+	    </div>
+	  </div>
+	
+	  <!-- Social Icons -->
+	  <div class="social clearfix">
+	    
+	      
+	        <a href="/atom.xml" class="feed"
+	          target="_blank" rel="external">
+	          <span class="icon icon-feed"></span>
+	        </a>
+	      
+	        <a href="https://github.com/iCyris" class="github"
+	          target="_blank" rel="external">
+	          <span class="icon icon-github"></span>
+	        </a>
+	      
+	    
+	  </div>
+	
+	  <!-- Home & Bottom -->
+	  <div class="shortcuts clearfix">
+	    <div class="bk">
+	      <a href="#header" class="dark-btn window-nav">
+	        <span class="icon icon-chevron-thin-up"></span>
+	        <span class="text">Back to Top</span>
+	      </a>
+	    </div>
+	    <div class="bk">
+	      <a href="#footer" class="dark-btn window-nav">
+	        <span class="icon icon-chevron-thin-down"></span>
+	        <span class="text">Go to Bottom</span>
+	      </a>
+	    </div>
+	  </div>
+
+	</div>
+
+</div>
+
+  <!-- Universal Search -->
+
+<script type="text/javascript">
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+</script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery.js"><\/script>')</script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+<!-- Disqus -->
+
+
+
+<!-- Swiftype -->
+<!-- Please replace with your own swiftype settings -->
+<!--
+<script type="text/javascript">
+  /* Swiftype */
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','FHMeAyBdVccJECstf-XJ','2.0.0');
+</script>
+-->
+
+  <script>document.getElementById("loading-bar").style.width="100%";</script>
+</body>
+</html>
