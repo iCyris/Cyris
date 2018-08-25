@@ -45,28 +45,6 @@
 
     
   <url>
-    <loc>https://cyris.pen.moe/posts/%E6%98%9F%E7%B5%B5/</loc>
-    <lastmod>2018-08-17T04:02:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>星絵</title>
-        <pubTime>2018-08-17T03:35:42.000Z</pubTime>
-        
-        <tag>煮字</tag>
-         
-        <tag>ACG</tag>
-         
-         
-           
-             
-              <breadCrumb title="煮字" url="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://cyris.pen.moe/posts/magpie-festival/</loc>
     <lastmod>2018-08-16T15:57:21.000Z</lastmod>
     <data>
@@ -278,9 +256,9 @@
         <title>GIT 时光机</title>
         <pubTime>2017-05-12T16:17:27.000Z</pubTime>
         
-        <tag>GIT</tag>
-         
         <tag>Wiki</tag>
+         
+        <tag>GIT</tag>
          
          
            
