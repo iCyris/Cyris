@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cyris.pen.moe/"/>
-  <updated>2018-08-16T15:57:21.000Z</updated>
+  <updated>2018-09-06T05:41:15.000Z</updated>
   <id>https://cyris.pen.moe/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://cyris.pen.moe/posts/magpie-festival/"/>
     <id>https://cyris.pen.moe/posts/magpie-festival/</id>
     <published>2018-08-16T15:43:02.000Z</published>
-    <updated>2018-08-16T15:57:21.000Z</updated>
+    <updated>2018-09-06T05:41:15.000Z</updated>
     
     <summary type="html">
     
@@ -72,11 +72,11 @@
     <link href="https://cyris.pen.moe/posts/2018-6-16/"/>
     <id>https://cyris.pen.moe/posts/2018-6-16/</id>
     <published>2018-06-16T03:12:15.000Z</published>
-    <updated>2018-06-21T08:23:59.000Z</updated>
+    <updated>2018-09-06T05:45:12.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;换域名啦！blog.cyris.cn -&amp;gt; cyris.pen.moe&lt;/p&gt;
+      &lt;p&gt;换域名啦，blog.cyris.cn -&amp;gt; cyris.pen.moe。&lt;/p&gt;
     
     </summary>
     
@@ -297,26 +297,6 @@
   </entry>
   
   <entry>
-    <title>觉得理性的人快乐吗</title>
-    <link href="https://cyris.pen.moe/posts/the-seed/"/>
-    <id>https://cyris.pen.moe/posts/the-seed/</id>
-    <published>2017-07-12T12:34:52.000Z</published>
-    <updated>2018-08-17T05:11:29.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;只是你不知道我的狂野。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="煮字" scheme="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-    
-    
-      <category term="煮字" scheme="https://cyris.pen.moe/tags/%E7%85%AE%E5%AD%97/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo 博客图片问题解决办法</title>
     <link href="https://cyris.pen.moe/posts/blog-picture-issue/"/>
     <id>https://cyris.pen.moe/posts/blog-picture-issue/</id>
@@ -337,26 +317,6 @@
   </entry>
   
   <entry>
-    <title>菠萝牛肉饭</title>
-    <link href="https://cyris.pen.moe/posts/tea-maker/"/>
-    <id>https://cyris.pen.moe/posts/tea-maker/</id>
-    <published>2017-07-02T03:54:20.000Z</published>
-    <updated>2018-08-15T09:21:47.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;菠萝，青菜，牛肉，米饭，芝麻，番茄蛋汤。      &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="煮字" scheme="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-    
-    
-      <category term="煮字" scheme="https://cyris.pen.moe/tags/%E7%85%AE%E5%AD%97/"/>
-    
-  </entry>
-  
-  <entry>
     <title>GIT 时光机</title>
     <link href="https://cyris.pen.moe/posts/git/"/>
     <id>https://cyris.pen.moe/posts/git/</id>
@@ -372,38 +332,18 @@
       <category term="Git" scheme="https://cyris.pen.moe/categories/Git/"/>
     
     
-      <category term="Wiki" scheme="https://cyris.pen.moe/tags/Wiki/"/>
-    
       <category term="GIT" scheme="https://cyris.pen.moe/tags/GIT/"/>
     
-  </entry>
-  
-  <entry>
-    <title>魔法禁书目录</title>
-    <link href="https://cyris.pen.moe/posts/wiki/"/>
-    <id>https://cyris.pen.moe/posts/wiki/</id>
-    <published>2017-04-15T01:38:00.000Z</published>
-    <updated>2018-08-30T16:42:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Vidar-Team 整理的一份推荐书单。  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习资料" scheme="https://cyris.pen.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    
-    
       <category term="Wiki" scheme="https://cyris.pen.moe/tags/Wiki/"/>
     
   </entry>
   
   <entry>
-    <title>绿生</title>
+    <title>Hello World</title>
     <link href="https://cyris.pen.moe/posts/acaleph/"/>
     <id>https://cyris.pen.moe/posts/acaleph/</id>
     <published>2017-04-04T08:19:49.000Z</published>
-    <updated>2018-08-17T05:12:05.000Z</updated>
+    <updated>2018-09-06T05:42:57.000Z</updated>
     
     <summary type="html">
     

@@ -5,19 +5,19 @@
     
     
   <url>
-    <loc>https://cyris.pen.moe/posts/wiki/</loc>
-    <lastmod>2018-08-30T16:42:01.000Z</lastmod>
+    <loc>https://cyris.pen.moe/posts/2018-6-16/</loc>
+    <lastmod>2018-09-06T05:45:12.000Z</lastmod>
     <data>
         <display>
-        <title>魔法禁书目录</title>
-        <pubTime>2017-04-15T01:38:00.000Z</pubTime>
+        <title>域名更换</title>
+        <pubTime>2018-06-16T03:12:15.000Z</pubTime>
         
-        <tag>Wiki</tag>
+        <tag>煮字</tag>
          
          
            
              
-              <breadCrumb title="学习资料" url="https://cyris.pen.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+              <breadCrumb title="煮字" url="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
           
         </display>
     </data>
@@ -26,10 +26,10 @@
     
   <url>
     <loc>https://cyris.pen.moe/posts/acaleph/</loc>
-    <lastmod>2018-08-17T05:12:05.000Z</lastmod>
+    <lastmod>2018-09-06T05:42:57.000Z</lastmod>
     <data>
         <display>
-        <title>绿生</title>
+        <title>Hello World</title>
         <pubTime>2017-04-04T08:19:49.000Z</pubTime>
         
         <tag>煮字</tag>
@@ -45,52 +45,12 @@
 
     
   <url>
-    <loc>https://cyris.pen.moe/posts/the-seed/</loc>
-    <lastmod>2018-08-17T05:11:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>觉得理性的人快乐吗</title>
-        <pubTime>2017-07-12T12:34:52.000Z</pubTime>
-        
-        <tag>煮字</tag>
-         
-         
-           
-             
-              <breadCrumb title="煮字" url="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://cyris.pen.moe/posts/magpie-festival/</loc>
-    <lastmod>2018-08-16T15:57:21.000Z</lastmod>
+    <lastmod>2018-09-06T05:41:15.000Z</lastmod>
     <data>
         <display>
         <title>先生的猫</title>
         <pubTime>2018-08-16T15:43:02.000Z</pubTime>
-        
-        <tag>煮字</tag>
-         
-         
-           
-             
-              <breadCrumb title="煮字" url="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cyris.pen.moe/posts/tea-maker/</loc>
-    <lastmod>2018-08-15T09:21:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>菠萝牛肉饭</title>
-        <pubTime>2017-07-02T03:54:20.000Z</pubTime>
         
         <tag>煮字</tag>
          
@@ -111,26 +71,6 @@
         <display>
         <title>大千世界</title>
         <pubTime>2018-06-19T01:26:31.000Z</pubTime>
-        
-        <tag>煮字</tag>
-         
-         
-           
-             
-              <breadCrumb title="煮字" url="https://cyris.pen.moe/categories/%E7%85%AE%E5%AD%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cyris.pen.moe/posts/2018-6-16/</loc>
-    <lastmod>2018-06-21T08:23:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>域名更换</title>
-        <pubTime>2018-06-16T03:12:15.000Z</pubTime>
         
         <tag>煮字</tag>
          
@@ -276,9 +216,9 @@
         <title>GIT 时光机</title>
         <pubTime>2017-05-12T16:17:27.000Z</pubTime>
         
-        <tag>Wiki</tag>
-         
         <tag>GIT</tag>
+         
+        <tag>Wiki</tag>
          
          
            
