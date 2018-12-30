@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cyris.pen.moe/posts/tail/</loc>
+    
+    <lastmod>2018-12-30T12:32:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cyris.pen.moe/about/index.html</loc>
     
-    <lastmod>2018-11-04T15:55:53.000Z</lastmod>
+    <lastmod>2018-12-20T04:56:38.000Z</lastmod>
     
   </url>
   
